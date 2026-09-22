@@ -65486,3 +65486,490 @@ vid_csvs_em_files | 21 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | outp
 vid_colunas_documentadas | 368 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
 verif_exportacao_v1_n_arquivos_data_v1 | 28 |  | 2026-09-22 | 973661bd3c1a461991c9deb41f101924 | output/numeros_assinatura.txt
 verif_exportacao_v1_n_problemas | 0 |  | 2026-09-22 | 973661bd3c1a461991c9deb41f101924 | output/numeros_assinatura.txt
+vint_nao_observado_com_fonte | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_posse_antes_do_inicio_convencional | 714 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_posse_mais_de_1_ano_apos_inicio | 898 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_fim_efetiva_apos_fim_convencional | 1284 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_fim_efetiva_apos_fim_convencional_mais_1_ano | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_fonte_exercicio_sem_data | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_mandatos_com_mais_de_uma_fonte_candidata | 2369 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_prioridade_divergente | 1149 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_nao_observado_sobrepondo_forma_observada_de_fonte_inferior | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_fonte_data_fim_efetiva | 1 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_auditadas | 74 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_ponte_true | 45 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_auditoria_consistente | 45 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_auditoria_suspeito | 29 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_auditoria_indeterminado | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_libs_externas_fora_do_zip | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+v1_n_mandatos | 4253 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_pessoas | 2155 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_posicoes_ano | 18092 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_ocupacoes | 6287 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_filiacoes | 5942 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_pessoas_com_filiacao | 2126 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_pct_pessoas_com_filiacao | 0.9865 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_lista_suplencia | 24706 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_pessoas_suplentes | 19095 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_suplentes_identidade | 28038 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_lista | 3591 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_saida_executivos | 392 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_saida_legislativo_federal | 3861 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_interregnos_legislativo_federal | 1316 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_forma_saida_suplementar | 3 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_eleicoes_suplementares | 5 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_ocupantes_legislativo_federal | 323 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_exercicio_camara | 6329 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_exercicio_senado | 707 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_camara_biografia_eventos | 4969 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_camara_biografia_posses | 5298 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_auditoria_homonimos | 0 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_pessoas_flags_dedup | 2155 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_presidente | 7 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_vice_presidente | 7 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_governador | 189 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_vice_governador | 189 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_senador | 270 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_deputado_federal | 3591 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_mandatos_com_saida_observada | 3660 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_mandatos_em_curso | 593 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+cb_arquivos_documentados | 21 |  | 2026-09-22 | 1950ff93a6a74d11d9e917962e072c8a | output/numeros_assinatura.txt
+cb_variaveis_documentadas | 368 |  | 2026-09-22 | 1950ff93a6a74d11d9e917962e072c8a | output/numeros_assinatura.txt
+cb_variaveis_com_fonte_externa | 124 |  | 2026-09-22 | 1950ff93a6a74d11d9e917962e072c8a | output/numeros_assinatura.txt
+cb_variaveis_derivadas_pelo_autor | 244 |  | 2026-09-22 | 1950ff93a6a74d11d9e917962e072c8a | output/numeros_assinatura.txt
+edb_ocupacoes | 492455 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_ocupantes_nao_titulares | 7683 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_troca_de_partido_na_cadeira | 271 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_municipios_sem_saida | 2848 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_tce_ufs_coletadas | 19 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_total | 484772 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_com_forma | 60128 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_pct_com_forma | 12.4 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_com_forma_federal | 3314 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_pct_com_forma_federal | 85.52 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_com_forma_estadual | 5626 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_pct_com_forma_estadual | 72.21 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_com_forma_municipal | 51188 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_pct_com_forma_municipal | 10.82 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_sapl_municipal | 30840 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_tce | 8340 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_portal_camara | 5368 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_wikipedia | 3155 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_camara_api | 2581 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_assembleia_portal | 2414 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_derivado_titular | 1257 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_fonte_oficial_curada | 1227 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_assembleia_api | 963 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_cargo_incompativel | 839 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_tse_suplementar | 607 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_ibge_munic | 602 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_assembleia_historico | 564 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_camara_biografia | 511 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_sapl_observacao | 273 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_senado_api | 197 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_diario_oficial | 151 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_wikidata | 117 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_noticia_orgao_publico_curada | 40 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_pista_nao_oficial | 36 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_wikidata_obito | 23 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_base_dhbb_curada | 20 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_assembleia_inventario | 2 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_data_fim_efetiva | 1 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_municipios_com_saida | 2721 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_n_fontes_de_forma | 24 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_com_posse | 71581 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_com_fim_efetiva | 57873 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_com_exercicio | 160498 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+bocel_chapa_vice_prefeito_maior_lacuna | 49 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_chapa_vice_governador_maior_lacuna | 0 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_chapa_vice_presidente_maior_lacuna | 0 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_n_filiacoes | 780860 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_pessoas_com_filiacao | 267151 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_pct_pessoas_com_filiacao | 0.9906 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_n_pessoas | 269690 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_n_mandatos | 484772 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_n_posicoes_ano | 1940168 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_anos_cobertos | 1998;2000;2002;2004;2006;2008;2010;2012;2014;2016;2018;2020;2022;2024 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_pct_dedup_por_titulo | 0.9998 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_n_imputados_por_votos | 205 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_n_duplicatas_posicao_removidas | 894 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_n_eleitos_sem_identidade_excluidos | 0 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_fonte_situacao_cadastro | 467745 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_fonte_situacao_imputacao_titular | 16820 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_fonte_situacao_imputacao_votos | 205 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+bocel_fonte_situacao_fonte_oficial_casa | 2 |  | 2026-09-22 | a243cfb2c2961fb4d173e9fb483c620a | output/numeros_assinatura.txt
+verif_aud_n_componentes_excecao_ponte_referencia | 1 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_componentes_excecao_fusao_documentos | 154 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_candidaturas_excecao_fusao_documentos | 674 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_pessoas | 269690 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_componentes_sem_regra3 | 269719 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_pessoas_ponte | 29 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_pessoas_so_nome_nascimento | 45 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_auditadas | 74 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_suspeitos | 29 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_consistentes | 45 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_indeterminados | 0 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_ponte_suspeitos | 29 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_ponte_consistentes | 0 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_ponte_indeterminados | 0 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_suspeitos_titulo_conflito | 29 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_suspeitos_cpf_conflito | 8 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_suspeitos_genero | 1 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_suspeitos_mesmo_ano | 4 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_suspeitos_forte | 8 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_suspeitos_fraca | 21 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_mandatos_em_pontes | 98 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_mandatos_em_suspeitos | 98 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_pessoas_se_regra_final | 269719 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_pct_pessoas_ponte | 0.00011 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_pct_pessoas_suspeitas | 0.00011 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_so_nome_nascimento_sem_dt_nascimento | 43 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+verif_aud_n_nao_auditadas_titulos_distintos_via_cpf | 676 |  | 2026-09-22 | 0c677d9fe26dec275c2d6163834b0946 | output/numeros_assinatura.txt
+vcons_n_mandatos | 484772 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_observada_total | 60128 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_observada_estadual | 5626 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_n_exercicio_confirmado | 160498 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_n_substituicao_inferida_munic | 602 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_n_substituicao_munic_sem_data_fim | 0 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_n_ibge_munic_sem_exercicio_confirmado | 0 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_n_nao_observado_com_fonte | 0 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_fim_regular | 2973 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_impeachment | 1 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_nao_observado | 561 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_assumiu_titular | 1 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_fim_regular | 4775 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_renuncia | 320 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_nao_observado | 2165 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_cassacao | 40 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_impeachment | 1 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_falecimento | 44 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_assumiu_titular | 56 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_renuncia | 245 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_falecimento | 50 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_cassacao | 27 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_nao_tomou_posse | 5 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_retotalizacao | 7 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_federal_aposentadoria | 5 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_outro | 254 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_afastamento | 35 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_suplente_efetivado | 21 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_licenca | 78 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_estadual_nao_tomou_posse | 2 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_substituicao_inferida_munic | 602 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_nao_observado | 421918 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_perda_do_mandato_inferida_por_eleicao_suplementar | 597 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_fim_regular | 45044 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_outro | 2952 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_renuncia | 194 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_cassacao | 167 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_nao_tomou_posse | 10 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_afastamento | 37 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_falecimento | 187 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_licenca | 121 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_assumiu_titular | 1257 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_forma_saida_municipal_suplente_efetivado | 20 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_federal_fonte_oficial_curada | 23 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_federal_noticia_orgao_publico_curada | 2 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_wikipedia | 291 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_pista_nao_oficial | 36 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_noticia_orgao_publico_curada | 38 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_fonte_oficial_curada | 1204 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_base_dhbb_curada | 20 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_federal_senado_api | 197 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_federal_camara_biografia | 511 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_federal_camara_api | 2581 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_assembleia_api | 963 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_cargo_incompativel | 65 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_wikidata | 22 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_assembleia_portal | 2414 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_wikidata_obito | 7 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_assembleia_historico | 564 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_estadual_assembleia_inventario | 2 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_ibge_munic | 602 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_tse_suplementar | 607 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_wikipedia | 2864 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_cargo_incompativel | 774 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_wikidata | 95 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_wikidata_obito | 16 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_diario_oficial | 151 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_tce | 8340 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_data_fim_efetiva | 1 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_derivado_titular | 1257 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_sapl_municipal | 30840 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_sapl_observacao | 273 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_fonte_municipal_portal_camara | 5368 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_n_checks_passaram | 9 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+vcons_n_checks_falharam | 0 |  | 2026-09-22 | 8b7e67112a22c5919cb8eab4f46cb3b4 | output/numeros_assinatura.txt
+sinais_verif_n_mudou_partido_por_renomeacao_legenda | 18461 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_mudou_partido_por_renomeacao_legenda | 0.1101 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cache_divulgacand | 101305 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cache_divulgacand_sem_resposta | 0 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_mesmo_cargo_sem_st_reeleicao | 18 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2002_estadual | 0.961 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2002_federal | 0.965 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2004_municipal | 0.049 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2006_estadual | 0.987 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2006_federal | 0.978 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2008_municipal | 0.074 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2010_estadual | 0.007 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2010_federal | 0.002 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2012_municipal | 0.251 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2014_estadual | 0.757 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2014_federal | 0.617 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2016_municipal | 0.967 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2018_estadual | 0.985 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2018_federal | 0.971 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2020_municipal | 0.447 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2022_estadual | 0.94 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2022_federal | 0.961 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_prop_S_mesmo_cargo_2024_municipal | 0.82 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_anos_esfera_st_reeleicao_subpreenchido | 2004-municipal(0.049);2008-municipal(0.074);2010-estadual(0.007);2010-federal(0.002);2012-municipal(0.251);2020-municipal(0.447) |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_titulos_repetidos_entre_pessoas_separadas | 99 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cand_seguinte_false_titulo_de_pessoa_separada | 26 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cand_seguinte_perdida_por_titulo_divergente_mesmo_cpf | 47 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cand_seguinte_perdida_titulo_repetido_no_cadastro | 27 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cand_seguinte_true | 325058 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cand_seguinte_mesmo_titulo_ou_cpf | 324977 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cand_seguinte_so_nome_nascimento | 47 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_cand_seguinte_chave_indireta | 34 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_mandatos | 484772 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_mandatos_janela_seguinte | 413790 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_candidatura_seguinte | 325058 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_mesmo_cargo_unidade | 284682 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_mesmo_cargo_st_reeleicao_lido | 284664 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_exercicio_confirmado | 128706 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_mesmo_cargo_st_reeleicao_N | 155958 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_st_reeleicao_fonte_api | 101310 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_sinais_n_mudou_partido | 167633 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+verif_bocel_mandatos_com_exercicio_confirmado | 160498 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+sinais_verif_n_exercicio_confirmado_mandatos_fonte_tse | 128706 |  | 2026-09-22 | 68112c06af9b181aac1c16e9376212ad | output/numeros_assinatura.txt
+vexe_encerrados_sem_forma | 0 |  | 2026-09-22 | 7bf5c84d0a23447c1fe7a967121b7aa1 | output/numeros_assinatura.txt
+vexe_saidas_antecipadas_pela_lista | 140 |  | 2026-09-22 | 7bf5c84d0a23447c1fe7a967121b7aa1 | output/numeros_assinatura.txt
+vexe_rotulo_pista_nao_oficial | 36 |  | 2026-09-22 | 7bf5c84d0a23447c1fe7a967121b7aa1 | output/numeros_assinatura.txt
+verif_cam_camara_n_deputados_api | 2324 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_linhas_exercicio | 6329 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_eleitos_bocel_dep_fed | 3591 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_eleitos_nao_tomou_posse | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_eleitos_nao_pareados | 5 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_eleitos_listados_sem_historico | 512 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_suplentes_leg51_listados_sem_historico | 208 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_suplentes_fora_bocel | 189 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_falecimentos_arquivo_massa | 8 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_periodos_leg51_no_historico | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_pareados_bocel | 2113 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_saidas_sem_entrada_previa | 110 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_outro | 724 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_falecimento | 48 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_licenca | 373 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_fim_regular | 2570 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_afastamento | 1825 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_cassacao | 25 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_renuncia | 193 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_suplente_efetivado | 50 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_forma_saida_em_exercicio | 521 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_com_periodo_exercicio_leg51 | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_taxa_pareamento_leg51 | 512/513=0.9981 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_com_periodo_exercicio_leg52 | 511 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_taxa_pareamento_leg52 | 511/513=0.9961 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_com_periodo_exercicio_leg53 | 513 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_taxa_pareamento_leg53 | 513/513=1.0000 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_com_periodo_exercicio_leg54 | 513 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_taxa_pareamento_leg54 | 513/513=1.0000 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_com_periodo_exercicio_leg55 | 513 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_taxa_pareamento_leg55 | 513/513=1.0000 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_com_periodo_exercicio_leg56 | 511 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_taxa_pareamento_leg56 | 511/513=0.9961 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_n_com_periodo_exercicio_leg57 | 513 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_camara_taxa_pareamento_leg57 | 513/513=1.0000 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_numeros_comparados | 35 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_numeros_divergentes | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_celulas_vazias | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_fim_antes_inicio | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_inicio_antes_1999_02_01 | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_inicio_fora_janela_leg | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_fim_fora_janela_leg | 3 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_inicio_fora_janela_60d | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_fim_fora_janela_60d | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_periodos_pos_obito | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_periodos_fim_pos_obito | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_periodos_sobrepostos | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_mandatos_so_suplente | 2 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_nome_nasc_ambiguos | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_cpf_nome_divergente | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_cpf_nasc_divergente | 38 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_uf_divergente_bocel | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_pessoa_orfa | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_mandato_orfao | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_sem_data_multi_linha | 15 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_id_camara_multi_pessoa | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_pessoa_multi_id_camara | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_amostra_api_viva | NA |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_amostra_api_viva_igual_cache | NA |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_casos_conhecidos_ok | 12 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_cam_n_problemas | 0 |  | 2026-09-22 | 6c53317e9c558774782231883931e3dd | output/numeros_assinatura.txt
+verif_senado_n_linhas | 707 |  | 2026-09-22 | 594b994bd2fe23f17e6c53aa9ac85909 | output/numeros_assinatura.txt
+verif_senado_n_numeros_conferidos | 32/32 |  | 2026-09-22 | 594b994bd2fe23f17e6c53aa9ac85909 | output/numeros_assinatura.txt
+verif_senado_n_fim_antes_inicio | 0 |  | 2026-09-22 | 594b994bd2fe23f17e6c53aa9ac85909 | output/numeros_assinatura.txt
+verif_senado_n_sobreposicao_exercicio_mesmo_mandato | 0 |  | 2026-09-22 | 594b994bd2fe23f17e6c53aa9ac85909 | output/numeros_assinatura.txt
+verif_senado_n_uf_leg_deficit_bocel | 0 |  | 2026-09-22 | 594b994bd2fe23f17e6c53aa9ac85909 | output/numeros_assinatura.txt
+verif_senado_n_uf_leg_excesso_titular | 6 |  | 2026-09-22 | 594b994bd2fe23f17e6c53aa9ac85909 | output/numeros_assinatura.txt
+verif_senado_n_problemas | 0 |  | 2026-09-22 | 594b994bd2fe23f17e6c53aa9ac85909 | output/numeros_assinatura.txt
+vlf_encerrados_sem_forma | 0 |  | 2026-09-22 | 163f6976a0ca2df6e9362fa554b4a910 | output/numeros_assinatura.txt
+vlf_atos_definitivos_recontados | 292 |  | 2026-09-22 | 163f6976a0ca2df6e9362fa554b4a910 | output/numeros_assinatura.txt
+vlf_saidas_silenciosas_na_camara | 9 |  | 2026-09-22 | 163f6976a0ca2df6e9362fa554b4a910 | output/numeros_assinatura.txt
+verif_sup_n_vencedores_sem_votos | 0 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_datas_vencedores_sem_votos |  |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_titulos_repetidos_por_separacao_de_fusao | 46 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_cpfs_repetidos_por_separacao_de_fusao | 29 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_mandatos_2_pleitos_intervalo_menor_90d | 4 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_min_gap_dias_entre_pleitos_mesmo_mandato | 21 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_pleitos_turno_com_mais_de_um_eleito_no_cadastro | 4 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_vencedores_votos_por_turno_divergente | 8 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_datas_vencedores_votos_por_turno_divergente | 2022-10-30 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_candidaturas_votos_ligados_por_turno_divergente | 20 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_mandatos_forma_saida_sobreposta_por_fonte_maior | 9 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_mandatos_tse_sup_data_fim_efetiva_diferente_da_inferida | 0 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_mandatos_csv_perda_inferida | 597 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_mandatos_csv_nao_tomou_posse_tse_sup | 10 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_mandatos_csv_via_eleicao_suplementar | 482 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_checksum_bloco_mais_recente | 50faee1fc8a44a16ce8aa0c94bb55b14 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_blocos_de_checksum_distintos | 18 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_numeros_recontados | 45 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_numeros_que_batem | 45 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_taxa_vencedor_com_id_pessoa | 0.8285 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_taxa_vencedor_titulo_disponivel | 0.9898 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_taxa_pleito_realizado_com_vencedor | 0.9203 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_taxa_pleito_prefeito_gov_com_mandato_afetado | 0.9953 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_pleitos_sem_vencedor_por_ano | 2004=5;2008=11;2016=14;2018=1;2020=14;2022=1;2024=5 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+verif_sup_n_vencedor_e_ocupante_ordinario_antes_da_posse | 1 |  | 2026-09-22 | 959e07a7dfdeba8cfe779d94985f2ecd | output/numeros_assinatura.txt
+voc_cadeiras | 484772 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_ocupacoes | 492455 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_ocupantes_nao_titulares | 7683 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_datas_invertidas_marcadas | 23 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_pessoas_nucleo | 269690 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_pessoas_suplentes | 1291256 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_ordem_acerto_pct | 99.99 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_suplentes | 1971009 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_suplentes_ligados_a_cadeira | 738 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_ocupacao_fora_da_janela_do_mandato | 0 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_troca_de_partido_na_cadeira | 271 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_cadeiras_com_mais_de_um_ocupante | 1210 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_saida_no_universo_federal | 85.6 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_saida_no_universo_estadual | 81.4 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+voc_saida_no_universo_municipal | 72.4 |  | 2026-09-22 | b2476eb437c92b96e1c2f4d4047bacd8 | output/numeros_assinatura.txt
+doc_camara_leg51_linhas_com_data_inicio | 0 |  | 2026-09-22 | 2f2425a991800da1e22c37bc57463431 | output/numeros_assinatura.txt
+doc_camara_leg51_linhas | 721 |  | 2026-09-22 | 2f2425a991800da1e22c37bc57463431 | output/numeros_assinatura.txt
+doc_suplementares_cargos | GOVERNADOR;SENADOR |  | 2026-09-22 | 2f2425a991800da1e22c37bc57463431 | output/numeros_assinatura.txt
+doc_auditoria_homonimos_n | 0 |  | 2026-09-22 | 2f2425a991800da1e22c37bc57463431 | output/numeros_assinatura.txt
+doc_auditoria_homonimos_suspeitos | 0 |  | 2026-09-22 | 2f2425a991800da1e22c37bc57463431 | output/numeros_assinatura.txt
+doc_pessoas_dedup_ponte_nome_nascimento | 0 |  | 2026-09-22 | 2f2425a991800da1e22c37bc57463431 | output/numeros_assinatura.txt
+vint_nao_observado_com_fonte | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_posse_antes_do_inicio_convencional | 714 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_posse_mais_de_1_ano_apos_inicio | 898 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_fim_efetiva_apos_fim_convencional | 1284 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_fim_efetiva_apos_fim_convencional_mais_1_ano | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_fonte_exercicio_sem_data | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_mandatos_com_mais_de_uma_fonte_candidata | 2369 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_prioridade_divergente | 1149 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_nao_observado_sobrepondo_forma_observada_de_fonte_inferior | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_fonte_data_fim_efetiva | 1 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_auditadas | 74 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_ponte_true | 45 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_auditoria_consistente | 45 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_auditoria_suspeito | 29 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_pessoas_auditoria_indeterminado | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vint_libs_externas_fora_do_zip | 0 |  | 2026-09-22 | a07a012a26818d873dd83b3b47571c65 | output/numeros_assinatura.txt
+vid_fontes_forma_saida_usadas | assembleia_api;assembleia_historico;assembleia_inventario;assembleia_portal;base_dhbb_curada;camara_api;camara_biografia;cargo_incompativel;data_fim_efetiva;derivado_titular;diario_oficial;fonte_oficial_curada;ibge_munic;noticia_orgao_publico_curada;pista_nao_oficial;portal_camara;sapl_municipal;sapl_observacao;senado_api;tce;tse_suplementar;wikidata;wikidata_obito;wikipedia |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_fontes_do_livro_sem_uso | 1 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_antecipada_fim_igual_convencional_munic | 479 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_antecipada_fim_igual_convencional_outras_fontes | 59 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_mandatos_em_curso_com_fim_regular | 0 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_n_data_posse | 71581 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_n_data_fim_efetiva | 57873 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_n_forma_observada | 60128 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_mandatos_com_mais_de_uma_fonte_candidata | 2369 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_mandatos_multi_fonte_nivel_gravado_inferior_ao_esperado | 15 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_multi_fonte_gravada_sapl_municipal | 1022 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_multi_fonte_gravada_wikipedia | 129 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_csvs_em_files | 21 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+vid_colunas_documentadas | 368 |  | 2026-09-22 | 900fcb43820571ebb5c523707ed862ea | output/numeros_assinatura.txt
+verif_exportacao_v1_n_arquivos_data_v1 | 28 |  | 2026-09-22 | 973661bd3c1a461991c9deb41f101924 | output/numeros_assinatura.txt
+verif_exportacao_v1_n_problemas | 0 |  | 2026-09-22 | 973661bd3c1a461991c9deb41f101924 | output/numeros_assinatura.txt
+v1_n_mandatos | 4253 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_pessoas | 2155 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_posicoes_ano | 18092 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_ocupacoes | 6287 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_filiacoes | 5942 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_pessoas_com_filiacao | 2126 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_pct_pessoas_com_filiacao | 0.9865 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_lista_suplencia | 24706 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_pessoas_suplentes | 19095 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_suplentes_identidade | 28038 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_lista | 3591 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_saida_executivos | 392 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_saida_legislativo_federal | 3861 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_interregnos_legislativo_federal | 1316 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_forma_saida_suplementar | 3 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_eleicoes_suplementares | 5 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_ocupantes_legislativo_federal | 323 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_exercicio_camara | 6329 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_exercicio_senado | 707 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_camara_biografia_eventos | 4969 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_camara_biografia_posses | 5298 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_auditoria_homonimos | 0 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_pessoas_flags_dedup | 2155 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_presidente | 7 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_vice_presidente | 7 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_governador | 189 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_vice_governador | 189 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_senador | 270 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_n_mandatos_deputado_federal | 3591 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_mandatos_com_saida_observada | 3660 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+v1_mandatos_em_curso | 593 |  | 2026-09-22 | bafe8f2b82aa8a074e2d09a772bee895 | output/numeros_assinatura.txt
+cb_arquivos_documentados | 21 |  | 2026-09-22 | 1950ff93a6a74d11d9e917962e072c8a | output/numeros_assinatura.txt
+cb_variaveis_documentadas | 368 |  | 2026-09-22 | 1950ff93a6a74d11d9e917962e072c8a | output/numeros_assinatura.txt
+cb_variaveis_com_fonte_externa | 124 |  | 2026-09-22 | 1950ff93a6a74d11d9e917962e072c8a | output/numeros_assinatura.txt
+cb_variaveis_derivadas_pelo_autor | 244 |  | 2026-09-22 | 1950ff93a6a74d11d9e917962e072c8a | output/numeros_assinatura.txt
+edb_ocupacoes | 492455 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_ocupantes_nao_titulares | 7683 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_troca_de_partido_na_cadeira | 271 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_municipios_sem_saida | 2848 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_tce_ufs_coletadas | 19 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_total | 484772 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_com_forma | 60128 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_pct_com_forma | 12.4 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_com_forma_federal | 3314 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_pct_com_forma_federal | 85.52 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_com_forma_estadual | 5626 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_pct_com_forma_estadual | 72.21 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_com_forma_municipal | 51188 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_pct_com_forma_municipal | 10.82 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_sapl_municipal | 30840 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_tce | 8340 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_portal_camara | 5368 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_wikipedia | 3155 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_camara_api | 2581 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_assembleia_portal | 2414 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_derivado_titular | 1257 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_fonte_oficial_curada | 1227 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_assembleia_api | 963 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_cargo_incompativel | 839 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_tse_suplementar | 607 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_ibge_munic | 602 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_assembleia_historico | 564 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_camara_biografia | 511 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_sapl_observacao | 273 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_senado_api | 197 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_diario_oficial | 151 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_wikidata | 117 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_noticia_orgao_publico_curada | 40 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_pista_nao_oficial | 36 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_wikidata_obito | 23 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_base_dhbb_curada | 20 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_assembleia_inventario | 2 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_fonte_data_fim_efetiva | 1 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_municipios_com_saida | 2721 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_n_fontes_de_forma | 24 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_com_posse | 71581 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_com_fim_efetiva | 57873 |  | 2026-09-22 |  | output/numeros_assinatura.txt
+edb_mandatos_com_exercicio | 160498 |  | 2026-09-22 |  | output/numeros_assinatura.txt

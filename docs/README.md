@@ -23,7 +23,7 @@ histórico partidário de cada pessoa aos cargos que ocupou.
 - **Pessoas:** 2.155
 - **Mandatos:** 4.253
 - **Posições pessoa × cargo × ano:** 18.092
-- **Cobertura:** eleições ordinárias de 1998 a 2024, no recorte federal (ver NOTA_DE_COBERTURA.md)
+- **Cobertura:** eleições ordinárias de 1998 a 2022, no recorte federal (ver NOTA_DE_COBERTURA.md)
 
 ## Fonte
 
@@ -57,7 +57,7 @@ uma API ou página pública e gravando o retorno sem alteração de conteúdo.
 | R/coleta/divulgacand_reeleicao.R | Situação de candidatura seguinte na API DivulgaCandContas do TSE (divulgacandcontas.tse.jus.br) |
 
 O script de reconstrução acompanha o depósito (reconstruir_banco.zip) e roda
-do zero num diretório limpo com R 4.3+ (data.table, arrow, stringi,
+do zero num diretório limpo com R 4.3+ (data.table, arrow, stringi, httr2,
 jsonlite). As bibliotecas de verificação (asserts_rigor.R, proveniencia.R)
 acompanham o pacote em lib/.
 
@@ -86,6 +86,7 @@ acompanham o pacote em lib/.
 | camara_biografia_posses.csv | data de posse do deputado federal por legislatura, na biografia oficial da Câmara |
 | auditoria_homonimos.csv | pessoas cuja identificação depende só de nome e nascimento, com classificação |
 | pessoas_flags_dedup.csv | marcas da auditoria de homônimos sobre a deduplicação de pessoas |
+| ids_pessoa_referencia.parquet | número de id_pessoa atribuído a cada candidatura (chave_cand), que mantém o identificador de uma pessoa quando o banco é refeito; cobre as candidaturas do banco inteiro, inclusive as de fora do recorte da v1.0, porque o mesmo número vale para as versões seguintes |
 | LIVRO_DE_CODIGOS.md | nome, tipo, descrição e preenchimento de cada variável |
 | LIVRO_DE_CODIGOS.csv / .xlsx | o mesmo livro em formato tabular, com nível de medida e a fonte de cada variável |
 | NOTA_DE_COBERTURA.md | o que está completo, parcial e ausente |
@@ -96,7 +97,7 @@ acompanham o pacote em lib/.
 
 > Lins, Igor Novaes. (2026). Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian
 > Elective Office Occupancy Database (BOCEL), 1998–2024 (v1.0) [Conjunto de dados].
-> Zenodo. DOI atribuído no momento do depósito.
+> Zenodo. https://doi.org/10.5281/zenodo.22896272
 
 ## Fontes complementares da camada de posse e saída
 
@@ -122,7 +123,7 @@ acrescenta dado pessoal além do que essas fontes divulgam.
 
 ## Versão
 
-v1.0, 21 de setembro de 2026. Correções entram como versões novas no mesmo
+v1.0, 22 de setembro de 2026. Correções entram como versões novas no mesmo
 registro do Zenodo, sob o mesmo concept DOI.
 
 ## Contato

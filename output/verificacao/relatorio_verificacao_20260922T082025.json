@@ -1,6 +1,6 @@
 {
   "alvo": "data/mandatos.csv",
-  "data_iso": "2026-09-22T00:33:10",
+  "data_iso": "2026-09-22T08:20:25",
   "checksum_script": "8b7e67112a22c5919cb8eab4f46cb3b4",
   "passou": ["id_mandato unico","esfera em federal/estadual/municipal","ano_eleicao em 1998..2024","substituicao inferida pela MUNIC sempre com data_fim_efetiva","fonte ibge_munic sempre com exercicio_confirmado","nao_observado nunca com fonte de forma de saida","bocel_n_mandatos registrado = recontado","bocel_mandatos_com_exercicio_confirmado registrado = recontado","forma_saida_por_esfera.csv coincide com mandatos.csv"],
   "falhou": [],

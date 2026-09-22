@@ -1,6 +1,6 @@
 {
   "alvo": "legislativo federal: data/mandatos.csv (cd_cargo 5 e 6), data/saida_legislativo_federal.csv, ref/eventos_legislativo_federal_fonte_oficial.csv, ref/ocupantes_federais_fonte_oficial.csv",
-  "data_iso": "2026-09-22T00:36:27",
+  "data_iso": "2026-09-22T08:22:06",
   "checksum_script": "163f6976a0ca2df6e9362fa554b4a910",
   "passou": ["mandato de senador e deputado federal encerrado tem forma de saida","nenhuma licenca ou afastamento como forma de saida do mandato","toda forma federal vem das fontes autoritativas","mandatos.csv reproduz saida_legislativo_federal.csv (forma, fim e precisao)","ato definitivo recontado do historico = forma e data em mandatos.csv","eventos curados: todo mandato existe, com URL de fonte e confianca alta ou media","ocupantes curados: toda cadeira nomeada existe em mandatos.csv","ocupantes curados: fonte com URL e confianca alta ou media","todo titular da casa sem mandato no TSE e nao efetivado tem cadeira curada","deputado em exercicio no historico e fora da composicao atual tem saida curada","senadores eleitos em 2018 = 54 (cadeira de Selma Arruda restaurada)","deputados federais = 513 por eleicao"],
   "falhou": [],

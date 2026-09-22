@@ -2,7 +2,7 @@
 
 ## O que está completo
 
-O recorte federal das eleições ordinárias de 1998 a 2024, a saber presidente e
+O recorte federal das eleições ordinárias de 1998 a 2022, a saber presidente e
 vice-presidente, senador, deputado federal, governador e vice-governador, a
 partir dos arquivos de candidaturas do TSE regenerados no layout unificado.
 Assembleias Legislativas, câmaras e prefeituras municipais ficam para a v1.5

@@ -1,6 +1,6 @@
 {
   "alvo": "executivos: data/mandatos.csv (cd_cargo 1 a 4), data/saida_executivos.csv, ref/eventos_governos_fonte_oficial.csv, ref/eventos_presidencia_fonte_oficial.csv",
-  "data_iso": "2026-09-22T00:36:10",
+  "data_iso": "2026-09-22T08:21:56",
   "checksum_script": "7bf5c84d0a23447c1fe7a967121b7aa1",
   "passou": ["mandato executivo encerrado tem forma de saida","seis presidentes e seis vices encerrados, dois em curso","impeachment de 2016 registrado na presidencia e posse do vice na mesma data","toda saida antecipada pela lista tem evento curado com fonte","eventos curados: fonte com URL, confianca alta ou media e sem Wikipedia como fonte principal","mandatos.csv reproduz os eventos curados (forma e data)","titular com saida definitiva: o vice assumiu, saiu antes ou caiu junto na cassacao","vice assumiu na data da saida do titular ou ate 15 dias depois","rotulo de fonte de data/saida_executivos.csv no vocabulario esperado","rotulo do evento curado bate com lib/tipo_fonte.R aplicado a fonte_1/fonte_2"],
   "falhou": [],

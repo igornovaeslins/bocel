@@ -840,7 +840,7 @@ nc <- sprintf('# Nota de cobertura — BOCEL v1.0
 
 ## O que está completo
 
-O recorte federal das eleições ordinárias de 1998 a 2024, a saber presidente e
+O recorte federal das eleições ordinárias de 1998 a 2022, a saber presidente e
 vice-presidente, senador, deputado federal, governador e vice-governador, a
 partir dos arquivos de candidaturas do TSE regenerados no layout unificado.
 Assembleias Legislativas, câmaras e prefeituras municipais ficam para a v1.5
@@ -1079,7 +1079,10 @@ writeLines(nc, "docs/NOTA_DE_COBERTURA.md")
 ## ---------------------------------------------------------- README
 doi_info <- tryCatch(jsonlite::fromJSON("zenodo/deposito_info.json"),
                      error = function(e) NULL)
-doi_txt <- if (!is.null(doi_info)) doi_info$conceptdoi else NULL
+# 22/09/2026: o zenodo/deposit.py grava o DOI da versao em doi_reservado, e o campo conceptdoi que se lia aqui
+# nunca existiu, o que deixava o README e o CITATION.cff sem DOI. A citacao da v1.0 usa o DOI da versao, que o
+# Zenodo reserva no rascunho; o concept DOI so se confirma quando a primeira versao publica
+doi_txt <- if (!is.null(doi_info)) doi_info$doi_reservado else NULL
 
 # 04/09/2026: o formato passou de 8.192 bytes, limite do sprintf, quando a tabela de arquivos ganhou
 # as 18 linhas do nivel de ocupacao e do interregno; o README e montado em tres pedacos.
@@ -1108,7 +1111,7 @@ histórico partidário de cada pessoa aos cargos que ocupou.
 - **Pessoas:** %s
 - **Mandatos:** %s
 - **Posições pessoa × cargo × ano:** %s
-- **Cobertura:** eleições ordinárias de 1998 a 2024, no recorte federal (ver NOTA_DE_COBERTURA.md)
+- **Cobertura:** eleições ordinárias de 1998 a 2022, no recorte federal (ver NOTA_DE_COBERTURA.md)
 
 ## Fonte
 
@@ -1142,7 +1145,7 @@ uma API ou página pública e gravando o retorno sem alteração de conteúdo.
 | R/coleta/divulgacand_reeleicao.R | Situação de candidatura seguinte na API DivulgaCandContas do TSE (divulgacandcontas.tse.jus.br) |
 
 O script de reconstrução acompanha o depósito (reconstruir_banco.zip) e roda
-do zero num diretório limpo com R 4.3+ (data.table, arrow, stringi,
+do zero num diretório limpo com R 4.3+ (data.table, arrow, stringi, httr2,
 jsonlite). As bibliotecas de verificação (asserts_rigor.R, proveniencia.R)
 acompanham o pacote em lib/.
 
@@ -1174,6 +1177,7 @@ rd_tab <- '| mandatos.csv/.parquet | pessoa × cargo × mandato, com partido, vo
 | camara_biografia_posses.csv | data de posse do deputado federal por legislatura, na biografia oficial da Câmara |
 | auditoria_homonimos.csv | pessoas cuja identificação depende só de nome e nascimento, com classificação |
 | pessoas_flags_dedup.csv | marcas da auditoria de homônimos sobre a deduplicação de pessoas |
+| ids_pessoa_referencia.parquet | número de id_pessoa atribuído a cada candidatura (chave_cand), que mantém o identificador de uma pessoa quando o banco é refeito; cobre as candidaturas do banco inteiro, inclusive as de fora do recorte da v1.0, porque o mesmo número vale para as versões seguintes |
 | LIVRO_DE_CODIGOS.md | nome, tipo, descrição e preenchimento de cada variável |
 | LIVRO_DE_CODIGOS.csv / .xlsx | o mesmo livro em formato tabular, com nível de medida e a fonte de cada variável |
 | NOTA_DE_COBERTURA.md | o que está completo, parcial e ausente |
@@ -1212,7 +1216,7 @@ acrescenta dado pessoal além do que essas fontes divulgam.
 
 ## Versão
 
-v1.0, 21 de setembro de 2026. Correções entram como versões novas no mesmo
+v1.0, 22 de setembro de 2026. Correções entram como versões novas no mesmo
 registro do Zenodo, sob o mesmo concept DOI.
 
 ## Contato
@@ -1229,7 +1233,7 @@ cff_doi <- if (!is.null(doi_txt)) sprintf('
 identifiers:
   - type: doi
     value: "%s"
-    description: "Concept DOI do Zenodo (todas as versoes)"', doi_txt) else ""
+    description: "DOI da versao v1.0 no Zenodo"', doi_txt) else ""
 cff <- sprintf('cff-version: 1.2.0
 message: "Ao usar este banco, cite-o conforme os metadados abaixo."
 type: dataset
@@ -1240,7 +1244,7 @@ authors:
     orcid: "https://orcid.org/0000-0003-0510-8355"
     affiliation: "Centro Brasileiro de Análise e Planejamento (CEBRAP)"
 version: "v1.0"
-date-released: "2026-09-21"
+date-released: "2026-09-22"
 license: "CC-BY-4.0"
 repository-code: "https://github.com/igornovaeslins/bocel"%s
 ', cff_doi)
