@@ -1,0 +1,4 @@
+"id_deputado_camara","leg_inicio","id_mandato","ano_eleicao","forma_saida","data_fim_efetiva","tipo","datas","trecho","data_ev","classe","bate"
+"160634","2011",NA,NA,NA,NA,"perda_mandato","2011-02","Tomou posse como Deputado Federal, na Legislatura 2011-2015, em 1° de fevereiro de 2011.",NA,"cassacao",FALSE
+"160634","2011",NA,NA,NA,NA,"perda_mandato","2011-05-11;2012-12-13","Perdeu o mandato de Deputado Federal, na Legislatura 2011-2015, por decisão da Justiça Eleitoral, em 11 de maio de 2011; Retomou o mandato de acordo com o Ato da Mesa nº 55/2012 que determina a posse por decisão do TSE; Retornando ao Mandato na qualidade de Titular, em 13 de dezembro de 2012.",2011-05-11,"cassacao",FALSE
+"74222","2011","M2010_PA_6_1512_140000000183","2010","renuncia","2014-03-26",NA,NA,NA,NA,NA,FALSE

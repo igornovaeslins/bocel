@@ -1,0 +1,11 @@
+arquivo,variavel,preench_recontado,tipo_recontado,tipo_doc,preench_doc
+eleicoes_suplementares.csv,id_pleito,100.0%,texto,texto,100.0%
+eleicoes_suplementares.csv,sg_partido_vencedor,60.0%,texto,texto,60.0%
+eleicoes_suplementares.csv,unidade_posicao,100.0%,texto,texto,100.0%
+exercicio_camara.csv,data_inicio_exercicio,86.8%,data ISO,data ISO,86.8%
+exercicio_senado.csv,codigo_exercicio,100.0%,inteiro,inteiro,100.0%
+mandatos.csv,reeleicao_declarada,43.3%,texto,texto,43.3%
+ocupacoes.csv,partido_difere_do_titular,4.1%,logico,logico,4.1%
+pessoas.csv,nome,100.0%,texto,texto,100.0%
+saida_legislativo_federal.csv,casa,100.0%,texto,texto,100.0%
+saida_legislativo_federal.csv,fonte,100.0%,texto,texto,100.0%

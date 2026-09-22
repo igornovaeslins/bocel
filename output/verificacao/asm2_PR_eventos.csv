@@ -1,0 +1,292 @@
+rid,legislatura,nome_norm,data_ato,forma,papel,padrao,doc_id
+2,14,ADEMIR BIER,2002-02-26,outro,sai,substituicao,2002-02-26_diario-006.zip
+3,14,ALBANOR GOMES,1999-09-13,suplente_efetivado,entra,assume_cadeira,1999-09-13_diario-114.zip
+3,14,ALBANOR GOMES,2000-06-14,licenca,sai,pedido_licenca,2000-06-14_diario-078-e-079.zip
+3,14,ALBANOR GOMES,2000-06-19,licenca,sai,marca_licenca,2000-06-19_diario-081-e-082.zip
+3,14,ALBANOR GOMES,2000-06-19,licenca,sai,marca_licenca,2000-06-19_diario-081-e-082.zip
+3,14,ALBANOR GOMES,2000-06-20,licenca,sai,marca_licenca,2000-06-20_diario-083-e-084.zip
+3,14,ALBANOR GOMES,2000-06-20,licenca,sai,marca_licenca,2000-06-20_diario-083-e-084.zip
+3,14,ALBANOR GOMES,2000-06-26,licenca,sai,marca_licenca,2000-06-26_diario-087-e-088.zip
+3,14,ALBANOR GOMES,2000-06-28,licenca,sai,marca_licenca,2000-06-28_diario-092.zip
+3,14,ALBANOR GOMES,2000-06-28,licenca,sai,marca_licenca,2000-06-28_diario-092.zip
+4,14,ALGACI TULIO,2001-06-19,cassacao,sai,substituicao,2001-06-19_diario-086.zip
+5,14,ANGELO VANHONI,2000-10-04,licenca,sai,pedido_licenca,2000-10-04_diario-132-e-133.zip
+6,14,ANIBAL KHURY,1999-10-26,falecimento,sai,falecido_em,1999-10-26_diario-152-e-153.zip
+8,14,ANTONIO BARATTER,1999-02-23,suplente_efetivado,entra,ata_posse,1999-02-23_diario-005.zip
+8,14,ANTONIO BARATTER,2001-09-19,falecimento,sai,falecido_em,2001-09-19_diario-129.zip
+8,14,ANTONIO BARATTER,2001-09-20,falecimento,sai,falecido_em,2001-09-20_diario-130.zip
+12,14,BETO RICHA,2001-02-15,renuncia,sai,ata_posse,2001-02-15_diario-001.zip
+13,14,CAITO QUINTANA,1999-02-23,suplente_efetivado,entra,ata_posse,1999-02-23_diario-005.zip
+13,14,CAITO QUINTANA,1999-09-01,suplente_efetivado,entra,ata_posse,1999-09-01_avulso.zip
+13,14,CAITO QUINTANA,1999-09-01,suplente_efetivado,entra,ata_posse,1999-09-01_avulsoanais.zip
+14,14,CARLOS SIMOES,2001-06-19,suplente_efetivado,entra,substituicao,2001-06-19_diario-086.zip
+19,14,DIVANIR BRAZ PALMA,2002-02-26,suplente_efetivado,entra,substituicao,2002-02-26_diario-006.zip
+21,14,DURVAL AMARAL,2001-04-17,outro,sai,substituicao,2001-04-17_diario-039-e-040.zip
+22,14,EDGAR BUENO,2000-08-10,licenca,sai,pedido_licenca,2000-08-10_diario-100.zip
+22,14,EDGAR BUENO,2000-08-10,licenca,sai,pedido_licenca,2000-08-10_diario-100.zip
+22,14,EDGAR BUENO,2001-02-15,renuncia,sai,ata_posse,2001-02-15_diario-001.zip
+25,14,ELI GHELLERE,2001-02-15,suplente_efetivado,entra,ata_posse,2001-02-15_diario-001.zip
+26,14,ELIO RUSCH,2001-04-17,suplente_efetivado,entra,substituicao,2001-04-17_diario-039-e-040.zip
+27,14,FERNANDO GUIMARAES,2002-02-18,suplente_efetivado,entra,ata_posse,2002-02-18_diario-001.zip
+28,14,FERNANDO RIBAS CARLI,2000-04-06,licenca,sai,marca_licenca,2000-04-06_diario-030.zip
+28,14,FERNANDO RIBAS CARLI,2000-06-28,licenca,sai,marca_licenca,2000-06-28_diario-092.zip
+29,14,GERALDO CARTARIO,1999-02-01,licenca,sai,marca_licenca,1999-02-01_solene.zip
+29,14,GERALDO CARTARIO,1999-02-23,licenca,sai,ata_posse,1999-02-23_diario-005.zip
+32,14,HIDEKAZU TAKAYAMA,2000-05-11,licenca,sai,pedido_licenca,2000-05-11_diario-049.zip
+32,14,HIDEKAZU TAKAYAMA,2000-05-11,licenca,sai,pedido_licenca,2000-05-11_diario-049.zip
+32,14,HIDEKAZU TAKAYAMA,2000-05-15,licenca,sai,marca_licenca,2000-05-15_diario-050.zip
+32,14,HIDEKAZU TAKAYAMA,2000-06-13,licenca,sai,marca_licenca,2000-06-13_diario-076.zip
+32,14,HIDEKAZU TAKAYAMA,2000-06-20,licenca,sai,marca_licenca,2000-06-20_diario-083-e-084.zip
+32,14,HIDEKAZU TAKAYAMA,2000-06-26,licenca,sai,marca_licenca,2000-06-26_diario-087-e-088.zip
+32,14,HIDEKAZU TAKAYAMA,2000-06-28,licenca,sai,marca_licenca,2000-06-28_diario-092.zip
+33,14,IRINEU COLOMBO,1999-10-06,licenca,sai,pedido_licenca,1999-10-06_diario-134.zip
+33,14,IRINEU COLOMBO,1999-10-07,licenca,sai,assume_cadeira,1999-10-07_diario-135.zip
+33,14,IRINEU COLOMBO,1999-10-07,licenca,sai,marca_licenca,1999-10-07_diario-135.zip
+33,14,IRINEU COLOMBO,1999-10-13,licenca,sai,marca_licenca,1999-10-13_diario-137.zip
+33,14,IRINEU COLOMBO,1999-10-14,licenca,sai,marca_licenca,1999-10-14_diario-138.zip
+33,14,IRINEU COLOMBO,2000-02-16,licenca,sai,substituicao,2000-02-16_diario-002.zip
+33,14,IRINEU COLOMBO,1999-11-30,licenca,sai,marca_licenca,1999-11-30_diario-182.zip
+33,14,IRINEU COLOMBO,1999-12-02,licenca,sai,marca_licenca,1999-12-02_diario-185.zip
+34,14,JOSE MARIA FERREIRA,1999-11-22,outro,sai,substituicao,1999-11-22_diario-172-e-173.zip
+35,14,LUCIANA RAFAGNIN,1999-10-07,suplente_efetivado,entra,assume_cadeira,1999-10-07_diario-135.zip
+35,14,LUCIANA RAFAGNIN,2001-02-15,suplente_efetivado,entra,ata_posse,2001-02-15_diario-001.zip
+40,14,LUIZ FERNANDES DA SILVA LITRO,1999-11-22,suplente_efetivado,entra,substituicao,1999-11-22_diario-172-e-173.zip
+40,14,LUIZ FERNANDES DA SILVA LITRO,1999-11-24,outro,sai,substituicao,1999-11-24_diario-178.zip
+40,14,LUIZ FERNANDES DA SILVA LITRO,2000-04-03,licenca,sai,pedido_licenca,2000-04-03_diario-027.zip
+40,14,LUIZ FERNANDES DA SILVA LITRO,2000-04-03,licenca,sai,marca_licenca,2000-04-03_diario-027.zip
+40,14,LUIZ FERNANDES DA SILVA LITRO,2002-06-27,licenca,sai,pedido_licenca,2002-06-27_diario-092.zip
+41,14,MARCOS ISFER,1999-06-29,licenca,sai,pedido_licenca,1999-06-29_diario-082.zip
+41,14,MARCOS ISFER,1999-08-12,licenca,sai,marca_licenca,1999-08-12_diario-098.zip
+41,14,MARCOS ISFER,1999-09-13,afastamento,sai,assume_cadeira,1999-09-13_diario-114.zip
+41,14,MARCOS ISFER,1999-09-13,licenca,sai,pedido_licenca,1999-09-13_diario-114.zip
+41,14,MARCOS ISFER,1999-09-15,licenca,sai,marca_licenca,1999-09-15_diario-115.zip
+41,14,MARCOS ISFER,1999-09-20,licenca,sai,marca_licenca,1999-09-20_diario-119.zip
+41,14,MARCOS ISFER,1999-09-22,licenca,sai,marca_licenca,1999-09-22_diario-123.zip
+41,14,MARCOS ISFER,1999-09-28,licenca,sai,marca_licenca,1999-09-28_diario-128.zip
+41,14,MARCOS ISFER,2000-03-20,licenca,sai,marca_licenca,2000-03-20_diario-018.zip
+41,14,MARCOS ISFER,2002-11-04,licenca,sai,pedido_licenca,2002-11-04_diario-134.zip
+45,14,NELSON GARCIA,2001-10-10,licenca,sai,marca_licenca,2001-10-10_diario-145.zip
+45,14,NELSON GARCIA,2002-02-18,licenca,sai,marca_licenca,2002-02-18_diario-001.zip
+46,14,NELSON JUSTUS,1999-12-01,licenca,sai,pedido_licenca,1999-12-01_diario-184.zip
+46,14,NELSON JUSTUS,2001-02-15,suplente_efetivado,entra,ata_posse,2001-02-15_diario-001.zip
+46,14,NELSON JUSTUS,2001-03-12,licenca,sai,marca_licenca,2001-03-12_diario-013.zip
+46,14,NELSON JUSTUS,2001-05-29,licenca,sai,marca_licenca,2001-05-29_diario-071.zip
+46,14,NELSON JUSTUS,2001-10-09,licenca,sai,marca_licenca,2001-10-09_diario-144.zip
+50,14,PASTOR EDSON PRACZYK,2001-03-06,licenca,sai,pedido_licenca,2001-03-06_diario-008.zip
+50,14,PASTOR EDSON PRACZYK,2001-03-12,licenca,sai,marca_licenca,2001-03-12_diario-013.zip
+50,14,PASTOR EDSON PRACZYK,2001-03-20,licenca,sai,marca_licenca,2001-03-20_diario-020-e-021.zip
+50,14,PASTOR EDSON PRACZYK,2001-06-27,licenca,sai,marca_licenca,2001-06-27_diario-093.zip
+51,14,PERICLES DE H MELLO,2001-02-15,renuncia,sai,ata_posse,2001-02-15_diario-001.zip
+52,14,PLAUTO MIRO GUIMARAES,2002-02-26,outro,sai,substituicao,2002-02-26_diario-006.zip
+52,14,PLAUTO MIRO GUIMARAES,2002-02-26,suplente_efetivado,entra,substituicao,2002-02-26_diario-006.zip
+53,14,RENATO GAUCHO,2000-08-03,licenca,sai,pedido_licenca,2000-08-03_diario-096.zip
+53,14,RENATO GAUCHO,2000-09-12,licenca,sai,marca_licenca,2000-09-12_diario-119.zip
+53,14,RENATO GAUCHO,2000-09-12,licenca,sai,marca_licenca,2000-09-12_diario-119.zip
+53,14,RENATO GAUCHO,2000-10-09,licenca,sai,marca_licenca,2000-10-09_diario-134-e-135.zip
+53,14,RENATO GAUCHO,2001-08-01,licenca,sai,pedido_licenca,2001-08-01_diario-101.zip
+56,14,SERAFINA CARRILHO,1999-11-24,suplente_efetivado,entra,substituicao,1999-11-24_diario-178.zip
+57,14,SERGIO SPADA,1999-02-02,licenca,sai,pedido_licenca,1999-02-02_diario-003.zip
+57,14,SERGIO SPADA,1999-02-23,afastamento,sai,ata_posse,1999-02-23_diario-005.zip
+57,14,SERGIO SPADA,1999-09-20,licenca,sai,marca_licenca,1999-09-20_diario-119.zip
+57,14,SERGIO SPADA,2000-03-20,licenca,sai,marca_licenca,2000-03-20_diario-018.zip
+58,14,TIAGO AMORIM NOVAES,2000-08-03,licenca,sai,marca_licenca,2000-08-03_diario-096.zip
+58,14,TIAGO AMORIM NOVAES,2002-02-18,falecimento,sai,ata_posse,2002-02-18_diario-001.zip
+58,14,TIAGO AMORIM NOVAES,2002-02-18,falecimento,sai,falecimento,2002-02-18_diario-001.zip
+63,14,JOSE DOMINGOS SCARPELLINI,2003-01-20,suplente_efetivado,entra,ata_posse,2003-01-20_diario-003-especial.zip
+64,15,ADEMAR TRAIANO,2004-03-10,licenca,sai,pedido_licenca,2004-03-10_diario-012.zip
+64,15,ADEMAR TRAIANO,2004-03-10,licenca,sai,marca_licenca,2004-03-10_diario-012.zip
+64,15,ADEMAR TRAIANO,2004-03-25,licenca,sai,marca_licenca,2004-03-25_solene-v.zip
+64,15,ADEMAR TRAIANO,2004-04-05,licenca,sai,marca_licenca,2004-04-05_solene-vi.zip
+65,15,ADEMIR BIER,2004-03-31,suplente_efetivado,entra,substituicao,2004-03-31_diario-021.zip
+65,15,ADEMIR BIER,2004-04-26,licenca,sai,substituicao,2004-04-26_diario-032.zip
+65,15,ADEMIR BIER,2004-04-26,outro,sai,substituicao,2004-04-26_diario-032.zip
+65,15,ADEMIR BIER,2006-04-05,outro,sai,substituicao,2006-04-05_diario-026-e-027.zip
+65,15,ADEMIR BIER,2006-04-05,outro,sai,substituicao,2006-04-05_diario-026-e-027.zip
+66,15,AILTON ARAUJO,2005-08-23,outro,sai,substituicao,2005-08-23_diario-085-e-086.zip
+67,15,ALEXANDRE CURI,2006-05-16,suplente_efetivado,entra,substituicao,2006-05-16_diario-049.zip
+69,15,ANGELO VANHONI,2004-08-16,licenca,sai,pedido_licenca,2004-08-16_diario-070.zip
+71,15,ARLETE CARAMES,2003-11-20,licenca,sai,marca_licenca,2003-11-20_solene-xix.zip
+71,15,ARLETE CARAMES,2004-03-03,licenca,sai,marca_licenca,2004-03-03_avulso.zip
+71,15,ARLETE CARAMES,2003-12-08,licenca,sai,marca_licenca,2003-12-08_diario-107.zip
+71,15,ARLETE CARAMES,2004-06-29,licenca,sai,marca_licenca,2004-06-29_diario-064-e-065-e-066.zip
+72,15,ARTAGAO JUNIOR,2006-05-16,outro,sai,substituicao,2006-05-16_diario-049.zip
+74,15,BARBOSA NETO,2003-03-17,outro,sai,substituicao,2003-03-17_diario-006.zip
+75,15,CAITO QUINTANA,2003-10-13,falecimento,sai,falecimento,2003-10-13_diario-081.zip
+76,15,CARLOS SIMOES,2005-08-23,suplente_efetivado,entra,substituicao,2005-08-23_diario-085-e-086.zip
+77,15,CESAR SELEME,2005-01-18,suplente_efetivado,entra,ata_posse,2005-01-18_avulso.zip
+78,15,CHICO NOROESTE,2004-06-09,licenca,sai,pedido_licenca,2004-06-09_diario-053.zip
+80,15,CLEITON KIELSE,2004-05-10,licenca,sai,pedido_licenca,2004-05-10_diario-039.zip
+81,15,DELEGADO BRADOCK,2006-05-16,licenca,sai,substituicao,2006-05-16_diario-049.zip
+81,15,DELEGADO BRADOCK,2006-05-16,licenca,sai,substituicao,2006-05-16_diario-049.zip
+81,15,DELEGADO BRADOCK,2006-05-16,licenca,sai,substituicao,2006-05-16_diario-049.zip
+85,15,DUILIO GENARI,2004-02-12,licenca,sai,ata_posse,2004-02-12_diario-001.zip
+85,15,DUILIO GENARI,2004-02-12,licenca,sai,marca_licenca,2004-02-12_diario-001.zip
+85,15,DUILIO GENARI,2004-02-16,licenca,sai,marca_licenca,2004-02-16_solene-i.zip
+85,15,DUILIO GENARI,2004-03-25,licenca,sai,marca_licenca,2004-03-25_solene-v.zip
+85,15,DUILIO GENARI,2004-03-25,licenca,sai,marca_licenca,2004-03-25_solene-v.zip
+87,15,EDSON STRAPASSON,2006-04-05,suplente_efetivado,entra,substituicao,2006-04-05_diario-026-e-027.zip
+87,15,EDSON STRAPASSON,2006-04-05,suplente_efetivado,entra,substituicao,2006-04-05_diario-026-e-027.zip
+90,15,ELZA CORREIA,2003-08-18,licenca,sai,pedido_licenca,2003-08-18_diario-061.zip
+90,15,ELZA CORREIA,2003-08-25,licenca,sai,pedido_licenca,2003-08-25_diario-063.zip
+90,15,ELZA CORREIA,2004-04-26,suplente_efetivado,entra,substituicao,2004-04-26_diario-032.zip
+90,15,ELZA CORREIA,2004-04-26,suplente_efetivado,entra,substituicao,2004-04-26_diario-032.zip
+91,15,FELIPE LUCAS,2004-03-10,licenca,sai,pedido_licenca,2004-03-10_diario-012.zip
+95,15,HERMAS BRANDAO,2003-06-25,licenca,sai,pedido_licenca,2003-06-25_diario-052.zip
+96,15,HERMES FONSECA,2005-03-22,suplente_efetivado,entra,substituicao,2005-03-22_diario-015-e-016.zip
+96,15,HERMES FONSECA,2005-03-22,suplente_efetivado,entra,substituicao,2005-03-22_diario-015-e-016.zip
+101,15,LUIZ ACCORSI,2003-08-05,licenca,sai,pedido_licenca,2003-08-05_diario-057.zip
+101,15,LUIZ ACCORSI,2003-08-05,licenca,sai,marca_licenca,2003-08-05_diario-057.zip
+101,15,LUIZ ACCORSI,2003-08-05,licenca,sai,marca_licenca,2003-08-05_diario-057.zip
+101,15,LUIZ ACCORSI,2003-08-11,licenca,sai,marca_licenca,2003-08-11_diario-058.zip
+101,15,LUIZ ACCORSI,2003-08-11,licenca,sai,marca_licenca,2003-08-11_diario-058.zip
+101,15,LUIZ ACCORSI,2003-08-29,licenca,sai,marca_licenca,2003-08-29_solene-xi.zip
+101,15,LUIZ ACCORSI,2003-08-29,licenca,sai,marca_licenca,2003-08-29_solene-xi.zip
+101,15,LUIZ ACCORSI,2003-09-09,licenca,sai,marca_licenca,2003-09-09_avulso-viii.zip
+101,15,LUIZ ACCORSI,2003-11-03,licenca,sai,marca_licenca,2003-11-03_diario-090.zip
+101,15,LUIZ ACCORSI,2003-11-03,licenca,sai,marca_licenca,2003-11-03_diario-090.zip
+101,15,LUIZ ACCORSI,2003-12-09,licenca,sai,marca_licenca,2003-12-09_diario-109.zip
+101,15,LUIZ ACCORSI,2003-12-09,licenca,sai,marca_licenca,2003-12-09_diario-109.zip
+101,15,LUIZ ACCORSI,2003-10-09,licenca,sai,marca_licenca,2003-10-09_diario-110-e-111.zip
+101,15,LUIZ ACCORSI,2003-10-09,licenca,sai,marca_licenca,2003-10-09_diario-110-e-111.zip
+101,15,LUIZ ACCORSI,2003-11-24,licenca,sai,marca_licenca,2003-11-24_diario-099.zip
+101,15,LUIZ ACCORSI,2003-12-02,licenca,sai,marca_licenca,2003-12-02_diario-104.zip
+101,15,LUIZ ACCORSI,2003-12-02,licenca,sai,marca_licenca,2003-12-02_diario-104.zip
+105,15,MARCOS ISFER,2004-03-31,outro,sai,substituicao,2004-03-31_diario-021.zip
+107,15,MILTINHO PUPIO,2004-03-03,licenca,sai,marca_licenca,2004-03-03_avulso.zip
+107,15,MILTINHO PUPIO,2004-03-03,licenca,sai,marca_licenca,2004-03-03_avulso.zip
+107,15,MILTINHO PUPIO,2004-04-13,licenca,sai,pedido_licenca,2004-04-13_diario-026.zip
+107,15,MILTINHO PUPIO,2004-04-26,licenca,sai,marca_licenca,2004-04-26_diario-032.zip
+107,15,MILTINHO PUPIO,2004-05-04,licenca,sai,marca_licenca,2004-05-04_diario-037.zip
+107,15,MILTINHO PUPIO,2004-06-29,licenca,sai,marca_licenca,2004-06-29_diario-064-e-065-e-066.zip
+109,15,NEIVO BERALDIN,2006-10-02,licenca,sai,pedido_licenca,2006-10-02_diario-107.zip
+111,15,NELSON GARCIA,2003-05-26,licenca,sai,marca_licenca,2003-05-26_especial-v.zip
+111,15,NELSON GARCIA,2003-05-27,licenca,sai,marca_licenca,2003-05-27_diario-039.zip
+111,15,NELSON GARCIA,2003-06-11,licenca,sai,marca_licenca,2003-06-11_especial-vi.zip
+111,15,NELSON GARCIA,2003-06-16,licenca,sai,marca_licenca,2003-06-16_diario-048.zip
+111,15,NELSON GARCIA,2003-09-09,licenca,sai,pedido_licenca,2003-09-09_diario-070.zip
+111,15,NELSON GARCIA,2004-02-16,licenca,sai,marca_licenca,2004-02-16_solene-i.zip
+111,15,NELSON GARCIA,2003-11-19,licenca,sai,marca_licenca,2003-11-19_diario-098.zip
+113,15,NELSON TURECK,2003-03-11,licenca,sai,pedido_licenca,2003-03-11_diario-005.zip
+113,15,NELSON TURECK,2003-03-11,licenca,sai,marca_licenca,2003-03-11_diario-005.zip
+113,15,NELSON TURECK,2003-03-12,licenca,sai,marca_licenca,2003-03-12_solene-iii.zip
+113,15,NELSON TURECK,2003-03-17,licenca,sai,marca_licenca,2003-03-17_diario-006.zip
+113,15,NELSON TURECK,2003-04-09,licenca,sai,marca_licenca,2003-04-09_diario-017.zip
+116,15,PASTOR EDSON PRACZYK,2004-03-03,licenca,sai,marca_licenca,2004-03-03_avulso.zip
+116,15,PASTOR EDSON PRACZYK,2004-03-22,licenca,sai,marca_licenca,2004-03-22_avulso-iii.zip
+116,15,PASTOR EDSON PRACZYK,2004-05-03,licenca,sai,pedido_licenca,2004-05-03_diario-036.zip
+116,15,PASTOR EDSON PRACZYK,2004-08-04,licenca,sai,marca_licenca,2004-08-04_diario-067.zip
+116,15,PASTOR EDSON PRACZYK,2004-08-09,licenca,sai,marca_licenca,2004-08-09_avulso-x.zip
+116,15,PASTOR EDSON PRACZYK,2004-06-29,licenca,sai,marca_licenca,2004-06-29_diario-064-e-065-e-066.zip
+125,15,VANDERLEI IENSEN,2003-03-17,suplente_efetivado,entra,substituicao,2003-03-17_diario-006.zip
+125,15,VANDERLEI IENSEN,2006-05-16,suplente_efetivado,entra,substituicao,2006-05-16_diario-049.zip
+125,15,VANDERLEI IENSEN,2006-05-16,suplente_efetivado,entra,substituicao,2006-05-16_diario-049.zip
+125,15,VANDERLEI IENSEN,2006-05-16,suplente_efetivado,entra,substituicao,2006-05-16_diario-049.zip
+129,16,ADEMIR BIER,2009-05-11,suplente_efetivado,entra,ata_posse,2009-05-11_diario-046.zip
+133,16,ANTONIO BELINATI,2008-10-13,licenca,sai,pedido_licenca,2008-10-13_diario-119.zip
+135,16,AUGUSTINHO ZUCCHI,2008-12-01,suplente_efetivado,entra,substituicao,2008-12-01_especial-iii.zip
+136,16,BETI PAVIN,2008-09-02,licenca,sai,pedido_licenca,2008-09-02_diario-107.zip
+138,16,CARLOS SIMOES,2009-05-25,outro,sai,ata_posse,2009-05-25_diario-053.zip
+138,16,CARLOS SIMOES,2009-05-25,cassacao,sai,cassacao,2009-05-25_diario-053.zip
+138,16,CARLOS SIMOES,2009-05-25,cassacao,sai,cassacao,2009-05-25_diario-053.zip
+138,16,CARLOS SIMOES,2009-05-25,cassacao,sai,cassacao,2009-05-25_diario-053.zip
+138,16,CARLOS SIMOES,2009-05-25,cassacao,sai,cassacao,2009-05-25_diario-053.zip
+146,16,DUILIO GENARI,2009-07-01,licenca,sai,pedido_licenca,2009-07-01_diario-073.zip
+147,16,DURVAL AMARAL,2011-01-18,afastamento,sai,ata_posse,2011-01-18_di-rio-131.zip
+148,16,EDGAR BUENO,2009-02-03,renuncia,sai,ata_posse,2009-02-03_diario-001.zip
+154,16,FELIPE LUCAS,2008-08-04,licenca,sai,pedido_licenca,2008-08-04_diario-088.zip
+155,16,FERNANDO SCANAVACA,2009-06-09,renuncia,sai,ata_posse,2009-06-09_diario-061.zip
+156,16,FRANCISCO BUHRER,2007-10-29,licenca,sai,pedido_licenca,2007-10-29_diario-138.zip
+157,16,GERALDO CARTARIO,2007-03-19,licenca,sai,pedido_licenca,2007-03-19_diario-013.zip
+157,16,GERALDO CARTARIO,2009-02-18,licenca,sai,pedido_licenca,2009-02-18_diario-010.zip
+157,16,GERALDO CARTARIO,2009-02-18,licenca,sai,pedido_licenca,2009-02-18_diario-010.zip
+157,16,GERALDO CARTARIO,2009-05-11,outro,sai,ata_posse,2009-05-11_diario-046.zip
+160,16,LUCIANA RAFAGNIN,2007-03-27,licenca,sai,pedido_licenca,2007-03-27_diario-017.zip
+160,16,LUCIANA RAFAGNIN,2007-09-10,licenca,sai,pedido_licenca,2007-09-10_diario-108.zip
+161,16,LUIZ ACCORSI,2008-05-27,licenca,sai,pedido_licenca,2008-05-27_diario-057.zip
+161,16,LUIZ ACCORSI,2008-11-19,licenca,sai,pedido_licenca,2008-11-19_diario-139.zip
+163,16,LUIZ CLAUDIO ROMANELLI,2011-01-18,renuncia,sai,ata_posse,2011-01-18_di-rio-131.zip
+165,16,LUIZ FERNANDES LITRO,2007-06-06,licenca,sai,ata_posse,2007-06-06_diario-061.zip
+165,16,LUIZ FERNANDES LITRO,2007-06-06,afastamento,sai,substituicao,2007-06-06_diario-061.zip
+165,16,LUIZ FERNANDES LITRO,2007-06-06,afastamento,sai,substituicao,2007-06-06_diario-061.zip
+166,16,LUIZ MALUCELLI,2008-05-27,licenca,sai,pedido_licenca,2008-05-27_diario-057.zip
+170,16,MARIO ROQUE,2008-01-15,suplente_efetivado,entra,ata_posse,2008-01-15_avulso.zip
+170,16,MARIO ROQUE,2009-06-09,suplente_efetivado,entra,ata_posse,2009-06-09_diario-061.zip
+170,16,MARIO ROQUE,2009-11-30,cassacao,sai,cassacao,2009-11-30_diario-147.zip
+170,16,MARIO ROQUE,2009-12-07,outro,sai,ata_posse,2009-12-07_diario-151.zip
+172,16,MILTINHO PUPIO,2007-06-06,suplente_efetivado,entra,substituicao,2007-06-06_diario-061.zip
+172,16,MILTINHO PUPIO,2007-06-06,suplente_efetivado,entra,substituicao,2007-06-06_diario-061.zip
+174,16,NEIVO BERALDIN,2009-05-25,suplente_efetivado,entra,ata_posse,2009-05-25_diario-053.zip
+176,16,NELSON JUSTUS,2008-02-14,licenca,sai,pedido_licenca,2008-02-14_diario-003.zip
+176,16,NELSON JUSTUS,2008-05-19,licenca,sai,pedido_licenca,2008-05-19_diario-053.zip
+176,16,NELSON JUSTUS,2008-06-25,licenca,sai,pedido_licenca,2008-06-25_diario-074-e-075.zip
+176,16,NELSON JUSTUS,2008-08-05,licenca,sai,pedido_licenca,2008-08-05_diario-089.zip
+176,16,NELSON JUSTUS,2008-08-13,licenca,sai,pedido_licenca,2008-08-13_diario-094-e-095.zip
+176,16,NELSON JUSTUS,2009-04-08,licenca,sai,pedido_licenca,2009-04-08_diario-032.zip
+176,16,NELSON JUSTUS,2009-07-13,licenca,sai,pedido_licenca,2009-07-13_diario-079.zip
+176,16,NELSON JUSTUS,2010-07-06,licenca,sai,pedido_licenca,2010-07-06_diario-075.zip
+177,16,NEREU MOURA,2007-09-11,licenca,sai,pedido_licenca,2007-09-11_diario-109.zip
+184,16,PROFESSOR LEMOS,2009-02-03,suplente_efetivado,entra,ata_posse,2009-02-03_diario-001.zip
+185,16,PROFESSOR LUIZAO,2009-02-03,renuncia,sai,ata_posse,2009-02-03_diario-001.zip
+186,16,RAFAEL GRECA,2010-04-20,suplente_efetivado,entra,ata_posse,2010-04-20_diario-038.zip
+187,16,RENI PEREIRA,2008-01-15,licenca,sai,ata_posse,2008-01-15_avulso.zip
+187,16,RENI PEREIRA,2008-08-20,licenca,sai,pedido_licenca,2008-08-20_diario-101.zip
+188,16,RIBAS CARLI FILHO,2009-06-01,renuncia,sai,escritura_renuncia,2009-06-01_diario-057.zip
+188,16,RIBAS CARLI FILHO,2009-06-01,renuncia,sai,renuncia,2009-06-01_diario-057.zip
+189,16,ROSANE FERREIRA,2008-08-05,licenca,sai,pedido_licenca,2008-08-05_diario-089.zip
+189,16,ROSANE FERREIRA,2008-10-06,licenca,sai,pedido_licenca,2008-10-06_diario-115.zip
+192,16,TADEU VENERI,2008-12-01,afastamento,sai,substituicao,2008-12-01_especial-iii.zip
+196,16,WILSON QUINTEIRO,2009-12-07,suplente_efetivado,entra,ata_posse,2009-12-07_diario-151.zip
+196,16,WILSON QUINTEIRO,2011-01-18,afastamento,sai,ata_posse,2011-01-18_di-rio-131.zip
+200,17,ALCEU MARON,2013-01-07,suplente_efetivado,entra,materia_titulada,sumario_2013-01-07_3231
+207,17,AUGUSTINHO ZUCCHI,2012-12-28,renuncia,sai,materia_titulada,sumario_2012-12-28_3148
+212,17,CESAR SILVESTRI FILHO,2012-12-28,renuncia,sai,materia_titulada,sumario_2012-12-28_3148
+221,17,ELTON WELTER,2011-05-02,suplente_efetivado,entra,materia_titulada,sumario_2011-05-02_1379
+221,17,ELTON WELTER,2013-01-07,suplente_efetivado,entra,materia_titulada,sumario_2013-01-07_3231
+229,17,GILBERTO MARTIN,2013-01-07,suplente_efetivado,entra,materia_titulada,sumario_2013-01-07_3231
+239,17,MARCELO RANGEL,2012-12-28,renuncia,sai,materia_titulada,sumario_2012-12-28_3148
+254,17,RENI PEREIRA,2012-12-28,renuncia,sai,materia_titulada,sumario_2012-12-28_3148
+259,17,TERCILIO TURINI,2013-01-07,suplente_efetivado,entra,materia_titulada,sumario_2013-01-07_3231
+264,17,WILSON QUINTEIRO,2013-01-07,suplente_efetivado,entra,materia_titulada,sumario_2013-01-07_3231
+271,18,ANIBELLI NETO,2017-04-27,licenca,sai,pedido_licenca,2017-04-27_7622_714812.html
+275,18,CHICO BRASILEIRO,2017-03-22,licenca,sai,pedido_licenca,2017-03-22_7539_702630.html
+275,18,CHICO BRASILEIRO,2017-05-02,renuncia,sai,ata_posse,2017-05-02_7756_715767.html
+278,18,COBRA REPORTER,2017-06-29,outro,sai,substituicao,2017-06-29_7901_737254.html
+279,18,CRISTINA SILVESTRI,2015-02-04,suplente_efetivado,entra,materia_titulada,sumario_2015-02-04_5593
+280,18,DELEGADO RECALCATTI,2017-05-18,licenca,sai,pedido_licenca,2017-05-18_7768_722002.html
+280,18,DELEGADO RECALCATTI,2017-06-29,suplente_efetivado,entra,substituicao,2017-06-29_7901_737254.html
+286,18,FELIPE FRANCISCHINI,2018-04-13,outro,sai,substituicao,2018-04-13_8657_843578.html
+291,18,GUTO SILVA,2019-01-09,afastamento,sai,ata_posse,2019-01-09_9418_945298.html
+294,18,LUIS RAIMUNDO CORTI,2019-01-02,suplente_efetivado,entra,ata_posse,2019-01-02_9413_943667.html
+300,18,MARIA VICTORIA,2018-04-13,suplente_efetivado,entra,substituicao,2018-04-13_8657_843578.html
+314,18,RATINHO JUNIOR,2018-08-15,licenca,sai,pedido_licenca,2018-08-15_9006_893219.html
+314,18,RATINHO JUNIOR,2019-01-02,renuncia,sai,ata_posse,2019-01-02_9413_943667.html
+324,18,WILSON QUINTEIRO,2018-07-24,suplente_efetivado,entra,ata_posse,2018-07-24_8921_884157.html
+324,18,WILSON QUINTEIRO,2018-07-24,suplente_efetivado,entra,materia_titulada,2018-07-24_8921_884157.html
+325,19,ADELINO RIBEIRO,2021-11-08,suplente_efetivado,entra,assume_cadeira,2021-11-08_12272_1349536.html
+326,19,ADEMAR TRAIANO,2020-07-29,outro,sai,substituicao,2020-07-29_10972_1138824.html
+327,19,ADEMIR BIER,2021-04-13,suplente_efetivado,entra,assume_cadeira,2021-04-13_11684_1269937.html
+327,19,ADEMIR BIER,2021-04-13,suplente_efetivado,entra,vaga_de,2021-04-13_11684_1269937.html
+327,19,ADEMIR BIER,2021-04-13,suplente_efetivado,entra,materia_titulada,2021-04-13_11684_1269937.html
+333,19,BAZANA,2021-11-08,suplente_efetivado,entra,assume_cadeira,2021-11-08_12272_1349536.html
+334,19,BOCA ABERTA JUNIOR,2020-07-29,suplente_efetivado,entra,substituicao,2020-07-29_10972_1138824.html
+343,19,DELEGADO RECALCATTI,2021-04-13,outro,sai,assume_cadeira,2021-04-13_11684_1269937.html
+343,19,DELEGADO RECALCATTI,2021-04-13,outro,sai,vaga_de,2021-04-13_11684_1269937.html
+346,19,ELIO RUSCH,2019-04-15,suplente_efetivado,entra,ata_posse,2019-04-15_9648_977119.html
+346,19,ELIO RUSCH,2019-04-15,suplente_efetivado,entra,assume_cadeira,2019-04-15_9648_977119.html
+346,19,ELIO RUSCH,2021-11-08,suplente_efetivado,entra,assume_cadeira,2021-11-08_12272_1349536.html
+346,19,ELIO RUSCH,2019-04-15,suplente_efetivado,entra,materia_titulada,2019-04-15_9648_977119.html
+364,19,MARCEL MICHELETTO,2020-07-10,licenca,sai,pedido_licenca,2020-07-10_10959_1132355.html
+364,19,MARCEL MICHELETTO,2020-07-03,licenca,sai,materia_titulada,sumario_2020-07-03_10954
+367,19,MARIA VICTORIA,2019-04-15,licenca,sai,ata_posse,2019-04-15_9648_977119.html
+367,19,MARIA VICTORIA,2019-04-15,licenca,sai,assume_cadeira,2019-04-15_9648_977119.html
+367,19,MARIA VICTORIA,2022-09-05,licenca,sai,pedido_licenca,2022-09-05_13122_1468508.html
+368,19,MAURO MORAES,2019-03-28,licenca,sai,pedido_licenca,2019-03-28_9573_970658.html
+373,19,NEREU MOURA,2021-11-08,suplente_efetivado,entra,assume_cadeira,2021-11-08_12272_1349536.html
+408,20,DOUGLAS FABRICIO,2024-12-30,renuncia,sai,materia_titulada,2024-12-30_15550_1809392.html
+425,20,MARCEL MICHELETTO,2024-12-30,renuncia,sai,materia_titulada,2024-12-30_15550_1809394.html
+435,20,NELSON JUSTUS,2023-02-06,suplente_efetivado,entra,vaga_de,2023-02-06_13520_1523393.html
+435,20,NELSON JUSTUS,2023-02-06,suplente_efetivado,entra,materia_titulada,2023-02-06_13520_1523393.html
+440,20,RENATO FREITAS,2026-05-15,cassacao,sai,cassacao,2026-05-15_16807_2049509.html
+440,20,RENATO FREITAS,2026-05-15,cassacao,sai,cassacao,2026-05-15_16807_2049509.html
+440,20,RENATO FREITAS,2026-05-15,cassacao,sai,cassacao,2026-05-15_16807_2049509.html
+447,20,TIAGO AMARAL,2024-12-30,renuncia,sai,materia_titulada,2024-12-30_15550_1809395.html

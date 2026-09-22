@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Ao usar este banco, cite-o conforme os metadados abaixo."
+type: dataset
+title: "Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian Elective Office Occupancy Database (BOCEL), 1998–2024"
+authors:
+  - family-names: "Lins"
+    given-names: "Igor Novaes"
+    orcid: "https://orcid.org/0000-0003-0510-8355"
+    affiliation: "Centro Brasileiro de Análise e Planejamento (CEBRAP)"
+version: "v1.0"
+date-released: "2026-09-21"
+license: "CC-BY-4.0"
+repository-code: "https://github.com/igornovaeslins/bocel"
+

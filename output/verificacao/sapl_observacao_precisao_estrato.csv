@@ -1,0 +1,7 @@
+"estrato","n","certo","parcial","errado","precisao_estrita","precisao_com_parcial","fonte_julgamento"
+"com_data_afastamento_sem_retorno_observado",5,1,3,1,0.2,0.8,"automatico (julgamento do autor vazio)"
+"com_data_fim_de_mandato",8,3,2,3,0.375,0.625,"automatico (julgamento do autor vazio)"
+"com_data_interregno_temporario",18,8,9,1,0.444,0.944,"automatico (julgamento do autor vazio)"
+"confianca_baixa",10,4,5,1,0.4,0.9,"automatico (julgamento do autor vazio)"
+"nao_classificada",10,5,4,1,0.5,0.9,"automatico (julgamento do autor vazio)"
+"todos",51,21,23,7,0.412,0.863,"automatico (julgamento do autor vazio)"

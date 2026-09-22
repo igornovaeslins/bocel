@@ -1,0 +1,56 @@
+ano_eleicao,legislatura,nome,nome_completo,data_nascimento,condicao,forma_saida
+1998,14,Antonio Vieira,ANTONIO VIEIRA DE SOUZA,1947-10-12,suplente,suplente_efetivado
+1998,14,Eliana Boaventura,ELIANA MARIA SANTOS BOAVENTURA,1951-01-12,suplente,suplente_efetivado
+1998,14,Itamar Saraiva,Antonio Itamar Macedo Saraiva,1948-11-28,suplente,suplente_efetivado
+1998,14,José Clemente,José Clemente Alves Gondim,1943-04-07,suplente,suplente_efetivado
+1998,14,Márcio Oliveira,Márcio Montenegro Cerqueira de Oliveira,1955-02-06,suplente,suplente_efetivado
+1998,14,Paulo Anunciação,Antonio Paulo da Anunciação,1957-03-10,suplente,suplente_efetivado
+1998,14,Prudente de Morais,Prudente José de Morais,1958-04-13,titular,renuncia
+1998,14,Ângelo Coronel,ANGELO MARIO CORONEL DE AZEVEDO MARTINS,1958-05-03,nao_informado,nao_observado
+2002,15,Carlinhos Oliveira,Carlos Alberto Oliveira de Carvalho,1952-01-15,suplente,suplente_efetivado
+2002,15,Edmon Lucas,EDMON LOPES LUCAS,1944-08-17,suplente,afastamento
+2002,15,Luiz Augusto,LUIZ AUGUSTO GORDIANO DE MORAES,1960-01-26,suplente,suplente_efetivado
+2002,15,Padre Joel,JOEL VALENTIM DA SILVA,1959-11-09,suplente,suplente_efetivado
+2002,15,Paulo Rangel,PAULO FERNANDO RANGEL DE LIMA,1961-03-07,suplente,suplente_efetivado
+2002,15,Raimundo Nonato,Raimundo Nonato Santos,1948-02-13,suplente,suplente_efetivado
+2002,15,Valmir Assunção,VALMIR CARLOS DA ASSUNCAO,1964-12-17,suplente,suplente_efetivado
+2006,16,Cleide Vieira,CLEIDE VIEIRA DA SILVA OLIVEIRA,1966-02-26,nao_informado,nao_observado
+2006,16,Eliana Boaventura,ELIANA MARIA SANTOS BOAVENTURA,1951-01-12,suplente,outro
+2006,16,Humberto Leite,HUMBERTO SOARES LEITE,1949-12-23,suplente,suplente_efetivado
+2006,16,Isaac Cunha,ISAAC CUNHA DO NASCIMENTO,1958-08-08,suplente,suplente_efetivado
+2006,16,Pedro Alcântara,PEDRO ALCANTARA DE SOUSA,1947-10-17,suplente,suplente_efetivado
+2006,16,Prof. Valdeci,VALDECI AUGUSTO DE OLIVEIRA,1965-09-23,suplente,outro
+2006,16,Yulo Oiticica,YULO OITICICA PEREIRA,1965-01-25,suplente,suplente_efetivado
+2010,17,Capitão Tadeu,ANTONIO TADEU NASCIMENTO FERNANDES,1961-05-21,titular,cassacao
+2010,17,Gaban,CARLOS RICARDO GABAN,1950-12-24,nao_informado,nao_observado
+2010,17,Javier Alfaya,FRANCISCO JAVIER ULPIANO ALFAYA RODRIGUEZ,1956-07-31,suplente,suplente_efetivado
+2010,17,Joacy Dourado,JOACY NUNES DOURADO,1940-06-02,suplente,suplente_efetivado
+2010,17,Jurandy Oliveira,JURANDY CUNHA OLIVEIRA,1937-01-15,suplente,suplente_efetivado
+2010,17,Luizinho Sobral,LUIZ PIMENTEL SOBRAL,1978-06-08,suplente,renuncia
+2010,17,Marquinho Viana,MARCOS AGUIAR VIANA,1968-09-23,suplente,suplente_efetivado
+2010,17,Uziel Bueno,UZIEL BUENO BARBOSA DE SANTANA JUNIOR,1976-11-22,suplente,suplente_efetivado
+2014,18,Anderson Muniz,ANDERSON DA SILVA MUNIZ,1966-11-24,nao_informado,nao_observado
+2014,18,Angelo Almeida,ANGELO MARIO CERQUEIRA DE ALMEIDA,1963-11-29,nao_informado,nao_observado
+2014,18,Bira Corôa Lula,UBIRAJARA DA SILVA RAMOS COROA,1957-03-13,suplente,afastamento
+2014,18,Heber Santana,HEBER DE SOUSA SANTANA,1983-06-25,suplente,suplente_efetivado
+2014,18,Herzem Gusmão,HERZEM GUSMÃO PEREIRA,1948-06-02,nao_informado,nao_observado
+2014,18,Mirela Macedo,MIRELA DE OLIVEIRA MACEDO NEIVA,1979-01-31,suplente,suplente_efetivado
+2014,18,Samuel Junior,SAMUEL SANTANA COUTO JUNIOR,1979-04-17,suplente,suplente_efetivado
+2018,19,Bira Corôa Lula,UBIRAJARA DA SILVA RAMOS COROA,1957-03-13,nao_informado,nao_observado
+2018,19,Carlos Geilson,CARLOS GEILSON DOS SANTOS SILVA,1960-02-21,suplente,suplente_efetivado
+2018,19,Carlos Ubaldino,CARLOS UBALDINO DE SANTANA,1948-06-12,nao_informado,nao_observado
+2018,19,Luiz Augusto,LUIZ AUGUSTO GORDIANO DE MORAES,1960-01-26,nao_informado,nao_observado
+2018,19,Marcell dos Animais,MARCELL CARVALHO DE MORAES,1978-08-29,titular,cassacao
+2018,19,Reinaldo Braga,REINALDO TEIXEIRA BRAGA,1940-05-16,suplente,afastamento
+2018,19,Targino Machado,TARGINO MACHADO PEDREIRA FILHO,1952-09-04,titular,cassacao
+2018,19,Tom é Meu Amigo,EWERTON CARNEIRO DA COSTA,1975-01-06,titular,cassacao
+2018,19,Valda ACS,MARIVALDA SANTOS PEREIRA DE ARAUJO,1969-08-20,suplente,afastamento
+2022,20,Fabíola Mansur,FABIOLA MANSUR DE CARVALHO,1962-10-22,suplente,outro
+2022,20,Jusmari Oliveira,JUSMARI TEREZINHA DE SOUZA OLIVEIRA,1963-03-02,suplente,
+2022,20,Luciano Ribeiro,JOSE LUCIANO SANTOS RIBEIRO,1960-12-22,suplente,falecimento
+2022,20,Lucinha do MST,VERA LUCIA DA CRUZ BARBOSA,1972-07-28,nao_informado,nao_observado
+2022,20,Marcelino Galo,MARCELINO ANTONIO MARTINS GALO,1956-03-04,suplente,outro
+2022,20,Marcone Amaral,MARCONE AMARAL COSTA JUNIOR,1978-04-05,nao_informado,nao_observado
+2022,20,Neusa Cadore,NEUSA CADORE,1955-02-09,suplente,licenca
+2022,20,Paulo Câmara,PAULO SERGIO DE SA BITTENCOURT CAMARA,1972-11-07,nao_informado,
+2022,20,Radiovaldo Costa,RADIOVALDO COSTA SANTOS,1966-03-19,nao_informado,nao_observado

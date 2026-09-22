@@ -1,0 +1,14 @@
+condicao,forma_saida,N
+suplente,outro,173
+suplente,suplente_efetivado,40
+suplente,licenca,22
+suplente,renuncia,9
+suplente,,9
+suplente,afastamento,7
+titular,fim_regular,148
+titular,licenca,105
+titular,,72
+titular,afastamento,71
+titular,renuncia,34
+titular,falecimento,11
+titular,cassacao,6

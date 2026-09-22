@@ -1,0 +1,1494 @@
+ano,sigla_uf,cargo_n,bocel,bd,dif,pct_dif
+1998,DF,deputado distrital,24,0,24,
+2002,DF,deputado distrital,24,24,0,0.0
+2006,DF,deputado distrital,24,24,0,0.0
+2010,DF,deputado distrital,24,24,0,0.0
+2014,DF,deputado distrital,24,24,0,0.0
+2018,DF,deputado distrital,24,24,0,0.0
+2022,DF,deputado distrital,24,24,0,0.0
+1998,AC,deputado estadual,24,24,0,0.0
+1998,AL,deputado estadual,27,27,0,0.0
+1998,AM,deputado estadual,24,24,0,0.0
+1998,AP,deputado estadual,24,24,0,0.0
+1998,BA,deputado estadual,63,63,0,0.0
+1998,CE,deputado estadual,46,46,0,0.0
+1998,ES,deputado estadual,30,30,0,0.0
+1998,GO,deputado estadual,41,41,0,0.0
+1998,MA,deputado estadual,42,42,0,0.0
+1998,MG,deputado estadual,77,77,0,0.0
+1998,MS,deputado estadual,24,24,0,0.0
+1998,MT,deputado estadual,24,24,0,0.0
+1998,PA,deputado estadual,41,41,0,0.0
+1998,PB,deputado estadual,36,37,-1,-2.7
+1998,PE,deputado estadual,49,49,0,0.0
+1998,PI,deputado estadual,30,30,0,0.0
+1998,PR,deputado estadual,54,54,0,0.0
+1998,RJ,deputado estadual,70,70,0,0.0
+1998,RN,deputado estadual,24,24,0,0.0
+1998,RO,deputado estadual,24,24,0,0.0
+1998,RR,deputado estadual,24,24,0,0.0
+1998,RS,deputado estadual,55,55,0,0.0
+1998,SC,deputado estadual,40,40,0,0.0
+1998,SE,deputado estadual,24,24,0,0.0
+1998,SP,deputado estadual,94,95,-1,-1.05
+1998,TO,deputado estadual,24,24,0,0.0
+2002,AC,deputado estadual,24,24,0,0.0
+2002,AL,deputado estadual,27,27,0,0.0
+2002,AM,deputado estadual,24,24,0,0.0
+2002,AP,deputado estadual,24,24,0,0.0
+2002,BA,deputado estadual,63,63,0,0.0
+2002,CE,deputado estadual,46,46,0,0.0
+2002,ES,deputado estadual,30,30,0,0.0
+2002,GO,deputado estadual,41,41,0,0.0
+2002,MA,deputado estadual,42,42,0,0.0
+2002,MG,deputado estadual,77,77,0,0.0
+2002,MS,deputado estadual,24,24,0,0.0
+2002,MT,deputado estadual,24,24,0,0.0
+2002,PA,deputado estadual,41,41,0,0.0
+2002,PB,deputado estadual,36,36,0,0.0
+2002,PE,deputado estadual,49,49,0,0.0
+2002,PI,deputado estadual,30,30,0,0.0
+2002,PR,deputado estadual,54,54,0,0.0
+2002,RJ,deputado estadual,70,70,0,0.0
+2002,RN,deputado estadual,24,24,0,0.0
+2002,RO,deputado estadual,24,24,0,0.0
+2002,RR,deputado estadual,24,24,0,0.0
+2002,RS,deputado estadual,55,55,0,0.0
+2002,SC,deputado estadual,40,40,0,0.0
+2002,SE,deputado estadual,24,24,0,0.0
+2002,SP,deputado estadual,94,94,0,0.0
+2002,TO,deputado estadual,24,24,0,0.0
+2006,AC,deputado estadual,24,24,0,0.0
+2006,AL,deputado estadual,27,27,0,0.0
+2006,AM,deputado estadual,24,24,0,0.0
+2006,AP,deputado estadual,24,24,0,0.0
+2006,BA,deputado estadual,63,63,0,0.0
+2006,CE,deputado estadual,46,46,0,0.0
+2006,ES,deputado estadual,30,30,0,0.0
+2006,GO,deputado estadual,41,41,0,0.0
+2006,MA,deputado estadual,42,42,0,0.0
+2006,MG,deputado estadual,77,77,0,0.0
+2006,MS,deputado estadual,24,24,0,0.0
+2006,MT,deputado estadual,24,24,0,0.0
+2006,PA,deputado estadual,41,41,0,0.0
+2006,PB,deputado estadual,36,36,0,0.0
+2006,PE,deputado estadual,49,49,0,0.0
+2006,PI,deputado estadual,30,30,0,0.0
+2006,PR,deputado estadual,54,54,0,0.0
+2006,RJ,deputado estadual,70,70,0,0.0
+2006,RN,deputado estadual,24,24,0,0.0
+2006,RO,deputado estadual,24,24,0,0.0
+2006,RR,deputado estadual,24,24,0,0.0
+2006,RS,deputado estadual,55,55,0,0.0
+2006,SC,deputado estadual,40,40,0,0.0
+2006,SE,deputado estadual,24,24,0,0.0
+2006,SP,deputado estadual,94,94,0,0.0
+2006,TO,deputado estadual,24,24,0,0.0
+2010,AC,deputado estadual,24,24,0,0.0
+2010,AL,deputado estadual,27,27,0,0.0
+2010,AM,deputado estadual,24,24,0,0.0
+2010,AP,deputado estadual,24,24,0,0.0
+2010,BA,deputado estadual,63,63,0,0.0
+2010,CE,deputado estadual,46,46,0,0.0
+2010,ES,deputado estadual,30,30,0,0.0
+2010,GO,deputado estadual,41,41,0,0.0
+2010,MA,deputado estadual,42,42,0,0.0
+2010,MG,deputado estadual,77,77,0,0.0
+2010,MS,deputado estadual,24,24,0,0.0
+2010,MT,deputado estadual,24,24,0,0.0
+2010,PA,deputado estadual,41,41,0,0.0
+2010,PB,deputado estadual,36,36,0,0.0
+2010,PE,deputado estadual,49,49,0,0.0
+2010,PI,deputado estadual,30,30,0,0.0
+2010,PR,deputado estadual,54,54,0,0.0
+2010,RJ,deputado estadual,70,70,0,0.0
+2010,RN,deputado estadual,24,24,0,0.0
+2010,RO,deputado estadual,24,24,0,0.0
+2010,RR,deputado estadual,24,24,0,0.0
+2010,RS,deputado estadual,55,55,0,0.0
+2010,SC,deputado estadual,40,40,0,0.0
+2010,SE,deputado estadual,24,24,0,0.0
+2010,SP,deputado estadual,94,94,0,0.0
+2010,TO,deputado estadual,24,24,0,0.0
+2014,AC,deputado estadual,24,24,0,0.0
+2014,AL,deputado estadual,27,27,0,0.0
+2014,AM,deputado estadual,24,24,0,0.0
+2014,AP,deputado estadual,24,24,0,0.0
+2014,BA,deputado estadual,63,63,0,0.0
+2014,CE,deputado estadual,46,46,0,0.0
+2014,ES,deputado estadual,30,30,0,0.0
+2014,GO,deputado estadual,41,41,0,0.0
+2014,MA,deputado estadual,42,42,0,0.0
+2014,MG,deputado estadual,77,77,0,0.0
+2014,MS,deputado estadual,24,24,0,0.0
+2014,MT,deputado estadual,24,24,0,0.0
+2014,PA,deputado estadual,41,41,0,0.0
+2014,PB,deputado estadual,36,36,0,0.0
+2014,PE,deputado estadual,49,49,0,0.0
+2014,PI,deputado estadual,30,30,0,0.0
+2014,PR,deputado estadual,54,54,0,0.0
+2014,RJ,deputado estadual,70,70,0,0.0
+2014,RN,deputado estadual,24,24,0,0.0
+2014,RO,deputado estadual,24,24,0,0.0
+2014,RR,deputado estadual,24,24,0,0.0
+2014,RS,deputado estadual,55,55,0,0.0
+2014,SC,deputado estadual,40,40,0,0.0
+2014,SE,deputado estadual,24,24,0,0.0
+2014,SP,deputado estadual,94,94,0,0.0
+2014,TO,deputado estadual,24,24,0,0.0
+2018,AC,deputado estadual,24,24,0,0.0
+2018,AL,deputado estadual,27,27,0,0.0
+2018,AM,deputado estadual,24,24,0,0.0
+2018,AP,deputado estadual,24,24,0,0.0
+2018,BA,deputado estadual,63,63,0,0.0
+2018,CE,deputado estadual,46,46,0,0.0
+2018,ES,deputado estadual,30,30,0,0.0
+2018,GO,deputado estadual,41,41,0,0.0
+2018,MA,deputado estadual,42,42,0,0.0
+2018,MG,deputado estadual,77,77,0,0.0
+2018,MS,deputado estadual,24,24,0,0.0
+2018,MT,deputado estadual,24,24,0,0.0
+2018,PA,deputado estadual,41,41,0,0.0
+2018,PB,deputado estadual,36,36,0,0.0
+2018,PE,deputado estadual,49,49,0,0.0
+2018,PI,deputado estadual,30,30,0,0.0
+2018,PR,deputado estadual,54,54,0,0.0
+2018,RJ,deputado estadual,70,70,0,0.0
+2018,RN,deputado estadual,24,24,0,0.0
+2018,RO,deputado estadual,24,24,0,0.0
+2018,RR,deputado estadual,24,24,0,0.0
+2018,RS,deputado estadual,55,55,0,0.0
+2018,SC,deputado estadual,40,40,0,0.0
+2018,SE,deputado estadual,24,24,0,0.0
+2018,SP,deputado estadual,94,94,0,0.0
+2018,TO,deputado estadual,24,24,0,0.0
+2022,AC,deputado estadual,24,24,0,0.0
+2022,AL,deputado estadual,27,27,0,0.0
+2022,AM,deputado estadual,24,24,0,0.0
+2022,AP,deputado estadual,24,24,0,0.0
+2022,BA,deputado estadual,63,63,0,0.0
+2022,CE,deputado estadual,46,46,0,0.0
+2022,ES,deputado estadual,30,30,0,0.0
+2022,GO,deputado estadual,41,41,0,0.0
+2022,MA,deputado estadual,42,42,0,0.0
+2022,MG,deputado estadual,77,77,0,0.0
+2022,MS,deputado estadual,24,24,0,0.0
+2022,MT,deputado estadual,24,24,0,0.0
+2022,PA,deputado estadual,41,41,0,0.0
+2022,PB,deputado estadual,36,36,0,0.0
+2022,PE,deputado estadual,49,49,0,0.0
+2022,PI,deputado estadual,30,30,0,0.0
+2022,PR,deputado estadual,54,54,0,0.0
+2022,RJ,deputado estadual,70,70,0,0.0
+2022,RN,deputado estadual,24,24,0,0.0
+2022,RO,deputado estadual,24,24,0,0.0
+2022,RR,deputado estadual,24,24,0,0.0
+2022,RS,deputado estadual,55,55,0,0.0
+2022,SC,deputado estadual,40,40,0,0.0
+2022,SE,deputado estadual,24,24,0,0.0
+2022,SP,deputado estadual,94,94,0,0.0
+2022,TO,deputado estadual,24,24,0,0.0
+1998,AC,deputado federal,8,8,0,0.0
+1998,AL,deputado federal,9,9,0,0.0
+1998,AM,deputado federal,8,8,0,0.0
+1998,AP,deputado federal,8,8,0,0.0
+1998,BA,deputado federal,39,39,0,0.0
+1998,CE,deputado federal,22,22,0,0.0
+1998,DF,deputado federal,8,0,8,
+1998,ES,deputado federal,10,11,-1,-9.09
+1998,GO,deputado federal,17,17,0,0.0
+1998,MA,deputado federal,18,18,0,0.0
+1998,MG,deputado federal,53,53,0,0.0
+1998,MS,deputado federal,8,8,0,0.0
+1998,MT,deputado federal,8,8,0,0.0
+1998,PA,deputado federal,17,17,0,0.0
+1998,PB,deputado federal,12,12,0,0.0
+1998,PE,deputado federal,25,25,0,0.0
+1998,PI,deputado federal,10,10,0,0.0
+1998,PR,deputado federal,30,32,-2,-6.25
+1998,RJ,deputado federal,46,46,0,0.0
+1998,RN,deputado federal,8,8,0,0.0
+1998,RO,deputado federal,8,8,0,0.0
+1998,RR,deputado federal,8,8,0,0.0
+1998,RS,deputado federal,31,31,0,0.0
+1998,SC,deputado federal,16,16,0,0.0
+1998,SE,deputado federal,8,8,0,0.0
+1998,SP,deputado federal,70,70,0,0.0
+1998,TO,deputado federal,8,8,0,0.0
+2002,AC,deputado federal,8,8,0,0.0
+2002,AL,deputado federal,9,9,0,0.0
+2002,AM,deputado federal,8,8,0,0.0
+2002,AP,deputado federal,8,8,0,0.0
+2002,BA,deputado federal,39,39,0,0.0
+2002,CE,deputado federal,22,22,0,0.0
+2002,DF,deputado federal,8,8,0,0.0
+2002,ES,deputado federal,10,10,0,0.0
+2002,GO,deputado federal,17,17,0,0.0
+2002,MA,deputado federal,18,18,0,0.0
+2002,MG,deputado federal,53,53,0,0.0
+2002,MS,deputado federal,8,8,0,0.0
+2002,MT,deputado federal,8,8,0,0.0
+2002,PA,deputado federal,17,17,0,0.0
+2002,PB,deputado federal,12,12,0,0.0
+2002,PE,deputado federal,25,25,0,0.0
+2002,PI,deputado federal,10,10,0,0.0
+2002,PR,deputado federal,30,30,0,0.0
+2002,RJ,deputado federal,46,46,0,0.0
+2002,RN,deputado federal,8,8,0,0.0
+2002,RO,deputado federal,8,8,0,0.0
+2002,RR,deputado federal,8,8,0,0.0
+2002,RS,deputado federal,31,31,0,0.0
+2002,SC,deputado federal,16,16,0,0.0
+2002,SE,deputado federal,8,8,0,0.0
+2002,SP,deputado federal,70,70,0,0.0
+2002,TO,deputado federal,8,8,0,0.0
+2006,AC,deputado federal,8,8,0,0.0
+2006,AL,deputado federal,9,9,0,0.0
+2006,AM,deputado federal,8,8,0,0.0
+2006,AP,deputado federal,8,8,0,0.0
+2006,BA,deputado federal,39,39,0,0.0
+2006,CE,deputado federal,22,22,0,0.0
+2006,DF,deputado federal,8,8,0,0.0
+2006,ES,deputado federal,10,10,0,0.0
+2006,GO,deputado federal,17,17,0,0.0
+2006,MA,deputado federal,18,18,0,0.0
+2006,MG,deputado federal,53,53,0,0.0
+2006,MS,deputado federal,8,8,0,0.0
+2006,MT,deputado federal,8,8,0,0.0
+2006,PA,deputado federal,17,17,0,0.0
+2006,PB,deputado federal,12,12,0,0.0
+2006,PE,deputado federal,25,25,0,0.0
+2006,PI,deputado federal,10,10,0,0.0
+2006,PR,deputado federal,30,30,0,0.0
+2006,RJ,deputado federal,46,46,0,0.0
+2006,RN,deputado federal,8,8,0,0.0
+2006,RO,deputado federal,8,8,0,0.0
+2006,RR,deputado federal,8,8,0,0.0
+2006,RS,deputado federal,31,31,0,0.0
+2006,SC,deputado federal,16,16,0,0.0
+2006,SE,deputado federal,8,8,0,0.0
+2006,SP,deputado federal,70,70,0,0.0
+2006,TO,deputado federal,8,8,0,0.0
+2010,AC,deputado federal,8,8,0,0.0
+2010,AL,deputado federal,9,9,0,0.0
+2010,AM,deputado federal,8,8,0,0.0
+2010,AP,deputado federal,8,8,0,0.0
+2010,BA,deputado federal,39,39,0,0.0
+2010,CE,deputado federal,22,22,0,0.0
+2010,DF,deputado federal,8,8,0,0.0
+2010,ES,deputado federal,10,10,0,0.0
+2010,GO,deputado federal,17,17,0,0.0
+2010,MA,deputado federal,18,18,0,0.0
+2010,MG,deputado federal,53,53,0,0.0
+2010,MS,deputado federal,8,8,0,0.0
+2010,MT,deputado federal,8,8,0,0.0
+2010,PA,deputado federal,17,17,0,0.0
+2010,PB,deputado federal,12,12,0,0.0
+2010,PE,deputado federal,25,25,0,0.0
+2010,PI,deputado federal,10,10,0,0.0
+2010,PR,deputado federal,30,30,0,0.0
+2010,RJ,deputado federal,46,46,0,0.0
+2010,RN,deputado federal,8,8,0,0.0
+2010,RO,deputado federal,8,8,0,0.0
+2010,RR,deputado federal,8,8,0,0.0
+2010,RS,deputado federal,31,31,0,0.0
+2010,SC,deputado federal,16,16,0,0.0
+2010,SE,deputado federal,8,8,0,0.0
+2010,SP,deputado federal,70,70,0,0.0
+2010,TO,deputado federal,8,8,0,0.0
+2014,AC,deputado federal,8,8,0,0.0
+2014,AL,deputado federal,9,9,0,0.0
+2014,AM,deputado federal,8,8,0,0.0
+2014,AP,deputado federal,8,8,0,0.0
+2014,BA,deputado federal,39,39,0,0.0
+2014,CE,deputado federal,22,22,0,0.0
+2014,DF,deputado federal,8,8,0,0.0
+2014,ES,deputado federal,10,10,0,0.0
+2014,GO,deputado federal,17,17,0,0.0
+2014,MA,deputado federal,18,18,0,0.0
+2014,MG,deputado federal,53,53,0,0.0
+2014,MS,deputado federal,8,8,0,0.0
+2014,MT,deputado federal,8,8,0,0.0
+2014,PA,deputado federal,17,17,0,0.0
+2014,PB,deputado federal,12,12,0,0.0
+2014,PE,deputado federal,25,25,0,0.0
+2014,PI,deputado federal,10,10,0,0.0
+2014,PR,deputado federal,30,30,0,0.0
+2014,RJ,deputado federal,46,46,0,0.0
+2014,RN,deputado federal,8,8,0,0.0
+2014,RO,deputado federal,8,8,0,0.0
+2014,RR,deputado federal,8,8,0,0.0
+2014,RS,deputado federal,31,31,0,0.0
+2014,SC,deputado federal,16,16,0,0.0
+2014,SE,deputado federal,8,8,0,0.0
+2014,SP,deputado federal,70,70,0,0.0
+2014,TO,deputado federal,8,8,0,0.0
+2018,AC,deputado federal,8,8,0,0.0
+2018,AL,deputado federal,9,9,0,0.0
+2018,AM,deputado federal,8,8,0,0.0
+2018,AP,deputado federal,8,8,0,0.0
+2018,BA,deputado federal,39,39,0,0.0
+2018,CE,deputado federal,22,22,0,0.0
+2018,DF,deputado federal,8,8,0,0.0
+2018,ES,deputado federal,10,10,0,0.0
+2018,GO,deputado federal,17,17,0,0.0
+2018,MA,deputado federal,18,18,0,0.0
+2018,MG,deputado federal,53,53,0,0.0
+2018,MS,deputado federal,8,8,0,0.0
+2018,MT,deputado federal,8,8,0,0.0
+2018,PA,deputado federal,17,17,0,0.0
+2018,PB,deputado federal,12,12,0,0.0
+2018,PE,deputado federal,25,25,0,0.0
+2018,PI,deputado federal,10,10,0,0.0
+2018,PR,deputado federal,30,30,0,0.0
+2018,RJ,deputado federal,46,46,0,0.0
+2018,RN,deputado federal,8,8,0,0.0
+2018,RO,deputado federal,8,8,0,0.0
+2018,RR,deputado federal,8,8,0,0.0
+2018,RS,deputado federal,31,31,0,0.0
+2018,SC,deputado federal,16,16,0,0.0
+2018,SE,deputado federal,8,8,0,0.0
+2018,SP,deputado federal,70,70,0,0.0
+2018,TO,deputado federal,8,8,0,0.0
+2022,AC,deputado federal,8,8,0,0.0
+2022,AL,deputado federal,9,9,0,0.0
+2022,AM,deputado federal,8,8,0,0.0
+2022,AP,deputado federal,8,8,0,0.0
+2022,BA,deputado federal,39,39,0,0.0
+2022,CE,deputado federal,22,22,0,0.0
+2022,DF,deputado federal,8,8,0,0.0
+2022,ES,deputado federal,10,10,0,0.0
+2022,GO,deputado federal,17,17,0,0.0
+2022,MA,deputado federal,18,18,0,0.0
+2022,MG,deputado federal,53,53,0,0.0
+2022,MS,deputado federal,8,8,0,0.0
+2022,MT,deputado federal,8,8,0,0.0
+2022,PA,deputado federal,17,17,0,0.0
+2022,PB,deputado federal,12,12,0,0.0
+2022,PE,deputado federal,25,25,0,0.0
+2022,PI,deputado federal,10,10,0,0.0
+2022,PR,deputado federal,30,30,0,0.0
+2022,RJ,deputado federal,46,46,0,0.0
+2022,RN,deputado federal,8,8,0,0.0
+2022,RO,deputado federal,8,8,0,0.0
+2022,RR,deputado federal,8,8,0,0.0
+2022,RS,deputado federal,31,31,0,0.0
+2022,SC,deputado federal,16,16,0,0.0
+2022,SE,deputado federal,8,8,0,0.0
+2022,SP,deputado federal,70,70,0,0.0
+2022,TO,deputado federal,8,8,0,0.0
+1998,AC,governador,1,1,0,0.0
+1998,AL,governador,1,1,0,0.0
+1998,AM,governador,1,1,0,0.0
+1998,AP,governador,1,1,0,0.0
+1998,BA,governador,1,1,0,0.0
+1998,CE,governador,1,1,0,0.0
+1998,DF,governador,1,0,1,
+1998,ES,governador,1,1,0,0.0
+1998,GO,governador,1,1,0,0.0
+1998,MA,governador,1,1,0,0.0
+1998,MG,governador,1,1,0,0.0
+1998,MS,governador,1,1,0,0.0
+1998,MT,governador,1,1,0,0.0
+1998,PA,governador,1,1,0,0.0
+1998,PB,governador,1,1,0,0.0
+1998,PE,governador,1,1,0,0.0
+1998,PI,governador,1,1,0,0.0
+1998,PR,governador,1,1,0,0.0
+1998,RJ,governador,1,1,0,0.0
+1998,RN,governador,1,1,0,0.0
+1998,RO,governador,1,1,0,0.0
+1998,RR,governador,1,1,0,0.0
+1998,RS,governador,1,1,0,0.0
+1998,SC,governador,1,1,0,0.0
+1998,SE,governador,1,1,0,0.0
+1998,SP,governador,1,1,0,0.0
+1998,TO,governador,1,1,0,0.0
+2002,AC,governador,1,1,0,0.0
+2002,AL,governador,1,1,0,0.0
+2002,AM,governador,1,1,0,0.0
+2002,AP,governador,1,1,0,0.0
+2002,BA,governador,1,1,0,0.0
+2002,CE,governador,1,1,0,0.0
+2002,DF,governador,1,1,0,0.0
+2002,ES,governador,1,1,0,0.0
+2002,GO,governador,1,1,0,0.0
+2002,MA,governador,1,1,0,0.0
+2002,MG,governador,1,1,0,0.0
+2002,MS,governador,1,1,0,0.0
+2002,MT,governador,1,1,0,0.0
+2002,PA,governador,1,1,0,0.0
+2002,PB,governador,1,1,0,0.0
+2002,PE,governador,1,1,0,0.0
+2002,PI,governador,1,1,0,0.0
+2002,PR,governador,1,1,0,0.0
+2002,RJ,governador,1,1,0,0.0
+2002,RN,governador,1,1,0,0.0
+2002,RO,governador,1,1,0,0.0
+2002,RR,governador,1,1,0,0.0
+2002,RS,governador,1,1,0,0.0
+2002,SC,governador,1,1,0,0.0
+2002,SE,governador,1,1,0,0.0
+2002,SP,governador,1,1,0,0.0
+2002,TO,governador,1,1,0,0.0
+2006,AC,governador,1,1,0,0.0
+2006,AL,governador,1,1,0,0.0
+2006,AM,governador,1,1,0,0.0
+2006,AP,governador,1,1,0,0.0
+2006,BA,governador,1,1,0,0.0
+2006,CE,governador,1,1,0,0.0
+2006,DF,governador,1,1,0,0.0
+2006,ES,governador,1,1,0,0.0
+2006,GO,governador,1,1,0,0.0
+2006,MA,governador,1,1,0,0.0
+2006,MG,governador,1,1,0,0.0
+2006,MS,governador,1,1,0,0.0
+2006,MT,governador,1,1,0,0.0
+2006,PA,governador,1,1,0,0.0
+2006,PB,governador,1,1,0,0.0
+2006,PE,governador,1,1,0,0.0
+2006,PI,governador,1,1,0,0.0
+2006,PR,governador,1,1,0,0.0
+2006,RJ,governador,1,1,0,0.0
+2006,RN,governador,1,1,0,0.0
+2006,RO,governador,1,1,0,0.0
+2006,RR,governador,1,1,0,0.0
+2006,RS,governador,1,1,0,0.0
+2006,SC,governador,1,1,0,0.0
+2006,SE,governador,1,1,0,0.0
+2006,SP,governador,1,1,0,0.0
+2006,TO,governador,1,1,0,0.0
+2010,AC,governador,1,1,0,0.0
+2010,AL,governador,1,1,0,0.0
+2010,AM,governador,1,1,0,0.0
+2010,AP,governador,1,1,0,0.0
+2010,BA,governador,1,1,0,0.0
+2010,CE,governador,1,1,0,0.0
+2010,DF,governador,1,1,0,0.0
+2010,ES,governador,1,1,0,0.0
+2010,GO,governador,1,1,0,0.0
+2010,MA,governador,1,1,0,0.0
+2010,MG,governador,1,1,0,0.0
+2010,MS,governador,1,1,0,0.0
+2010,MT,governador,1,1,0,0.0
+2010,PA,governador,1,1,0,0.0
+2010,PB,governador,1,1,0,0.0
+2010,PE,governador,1,1,0,0.0
+2010,PI,governador,1,1,0,0.0
+2010,PR,governador,1,1,0,0.0
+2010,RJ,governador,1,1,0,0.0
+2010,RN,governador,1,1,0,0.0
+2010,RO,governador,1,1,0,0.0
+2010,RR,governador,1,1,0,0.0
+2010,RS,governador,1,1,0,0.0
+2010,SC,governador,1,1,0,0.0
+2010,SE,governador,1,1,0,0.0
+2010,SP,governador,1,1,0,0.0
+2010,TO,governador,1,1,0,0.0
+2014,AC,governador,1,1,0,0.0
+2014,AL,governador,1,1,0,0.0
+2014,AM,governador,1,1,0,0.0
+2014,AP,governador,1,1,0,0.0
+2014,BA,governador,1,1,0,0.0
+2014,CE,governador,1,1,0,0.0
+2014,DF,governador,1,1,0,0.0
+2014,ES,governador,1,1,0,0.0
+2014,GO,governador,1,1,0,0.0
+2014,MA,governador,1,1,0,0.0
+2014,MG,governador,1,1,0,0.0
+2014,MS,governador,1,1,0,0.0
+2014,MT,governador,1,1,0,0.0
+2014,PA,governador,1,1,0,0.0
+2014,PB,governador,1,1,0,0.0
+2014,PE,governador,1,1,0,0.0
+2014,PI,governador,1,1,0,0.0
+2014,PR,governador,1,1,0,0.0
+2014,RJ,governador,1,1,0,0.0
+2014,RN,governador,1,1,0,0.0
+2014,RO,governador,1,1,0,0.0
+2014,RR,governador,1,1,0,0.0
+2014,RS,governador,1,1,0,0.0
+2014,SC,governador,1,1,0,0.0
+2014,SE,governador,1,1,0,0.0
+2014,SP,governador,1,1,0,0.0
+2014,TO,governador,1,1,0,0.0
+2018,AC,governador,1,1,0,0.0
+2018,AL,governador,1,1,0,0.0
+2018,AM,governador,1,1,0,0.0
+2018,AP,governador,1,1,0,0.0
+2018,BA,governador,1,1,0,0.0
+2018,CE,governador,1,1,0,0.0
+2018,DF,governador,1,1,0,0.0
+2018,ES,governador,1,1,0,0.0
+2018,GO,governador,1,1,0,0.0
+2018,MA,governador,1,1,0,0.0
+2018,MG,governador,1,1,0,0.0
+2018,MS,governador,1,1,0,0.0
+2018,MT,governador,1,1,0,0.0
+2018,PA,governador,1,1,0,0.0
+2018,PB,governador,1,1,0,0.0
+2018,PE,governador,1,1,0,0.0
+2018,PI,governador,1,1,0,0.0
+2018,PR,governador,1,1,0,0.0
+2018,RJ,governador,1,1,0,0.0
+2018,RN,governador,1,1,0,0.0
+2018,RO,governador,1,1,0,0.0
+2018,RR,governador,1,1,0,0.0
+2018,RS,governador,1,1,0,0.0
+2018,SC,governador,1,1,0,0.0
+2018,SE,governador,1,1,0,0.0
+2018,SP,governador,1,1,0,0.0
+2018,TO,governador,1,1,0,0.0
+2022,AC,governador,1,1,0,0.0
+2022,AL,governador,1,1,0,0.0
+2022,AM,governador,1,1,0,0.0
+2022,AP,governador,1,1,0,0.0
+2022,BA,governador,1,1,0,0.0
+2022,CE,governador,1,1,0,0.0
+2022,DF,governador,1,1,0,0.0
+2022,ES,governador,1,1,0,0.0
+2022,GO,governador,1,1,0,0.0
+2022,MA,governador,1,1,0,0.0
+2022,MG,governador,1,1,0,0.0
+2022,MS,governador,1,1,0,0.0
+2022,MT,governador,1,1,0,0.0
+2022,PA,governador,1,1,0,0.0
+2022,PB,governador,1,1,0,0.0
+2022,PE,governador,1,1,0,0.0
+2022,PI,governador,1,1,0,0.0
+2022,PR,governador,1,1,0,0.0
+2022,RJ,governador,1,1,0,0.0
+2022,RN,governador,1,1,0,0.0
+2022,RO,governador,1,1,0,0.0
+2022,RR,governador,1,1,0,0.0
+2022,RS,governador,1,1,0,0.0
+2022,SC,governador,1,1,0,0.0
+2022,SE,governador,1,1,0,0.0
+2022,SP,governador,1,1,0,0.0
+2022,TO,governador,1,1,0,0.0
+2000,AC,prefeito,22,17,5,29.41
+2000,AL,prefeito,102,66,36,54.55
+2000,AM,prefeito,62,39,23,58.97
+2000,AP,prefeito,16,16,0,0.0
+2000,BA,prefeito,417,213,204,95.77
+2000,CE,prefeito,184,118,66,55.93
+2000,ES,prefeito,78,60,18,30.0
+2000,GO,prefeito,245,175,70,40.0
+2000,MA,prefeito,214,141,73,51.77
+2000,MG,prefeito,853,384,469,122.14
+2000,MS,prefeito,77,57,20,35.09
+2000,MT,prefeito,139,109,30,27.52
+2000,PA,prefeito,143,102,41,40.2
+2000,PB,prefeito,223,146,77,52.74
+2000,PE,prefeito,184,107,77,71.96
+2000,PI,prefeito,222,122,100,81.97
+2000,PR,prefeito,399,218,181,83.03
+2000,RJ,prefeito,92,76,16,21.05
+2000,RN,prefeito,167,109,58,53.21
+2000,RO,prefeito,52,46,6,13.04
+2000,RR,prefeito,15,16,-1,-6.25
+2000,RS,prefeito,497,265,232,87.55
+2000,SC,prefeito,293,177,116,65.54
+2000,SE,prefeito,75,50,25,50.0
+2000,SP,prefeito,645,320,325,101.56
+2000,TO,prefeito,139,104,35,33.65
+2004,AC,prefeito,22,21,1,4.76
+2004,AL,prefeito,102,66,36,54.55
+2004,AM,prefeito,62,42,20,47.62
+2004,AP,prefeito,16,13,3,23.08
+2004,BA,prefeito,417,226,191,84.51
+2004,CE,prefeito,183,93,90,96.77
+2004,ES,prefeito,78,62,16,25.81
+2004,GO,prefeito,245,143,102,71.33
+2004,MA,prefeito,217,152,65,42.76
+2004,MG,prefeito,847,318,529,166.35
+2004,MS,prefeito,78,53,25,47.17
+2004,MT,prefeito,141,109,32,29.36
+2004,PA,prefeito,143,96,47,48.96
+2004,PB,prefeito,223,146,77,52.74
+2004,PE,prefeito,184,121,63,52.07
+2004,PI,prefeito,223,130,93,71.54
+2004,PR,prefeito,398,194,204,105.15
+2004,RJ,prefeito,92,69,23,33.33
+2004,RN,prefeito,167,107,60,56.07
+2004,RO,prefeito,52,46,6,13.04
+2004,RR,prefeito,15,15,0,0.0
+2004,RS,prefeito,496,216,280,129.63
+2004,SC,prefeito,293,179,114,63.69
+2004,SE,prefeito,75,57,18,31.58
+2004,SP,prefeito,642,307,335,109.12
+2004,TO,prefeito,139,101,38,37.62
+2008,AC,prefeito,22,22,0,0.0
+2008,AL,prefeito,102,100,2,2.0
+2008,AM,prefeito,62,61,1,1.64
+2008,AP,prefeito,16,16,0,0.0
+2008,BA,prefeito,416,417,-1,-0.24
+2008,CE,prefeito,184,184,0,0.0
+2008,ES,prefeito,78,78,0,0.0
+2008,GO,prefeito,246,245,1,0.41
+2008,MA,prefeito,217,217,0,0.0
+2008,MG,prefeito,853,853,0,0.0
+2008,MS,prefeito,78,78,0,0.0
+2008,MT,prefeito,140,140,0,0.0
+2008,PA,prefeito,143,143,0,0.0
+2008,PB,prefeito,223,223,0,0.0
+2008,PE,prefeito,184,184,0,0.0
+2008,PI,prefeito,224,224,0,0.0
+2008,PR,prefeito,399,398,1,0.25
+2008,RJ,prefeito,91,91,0,0.0
+2008,RN,prefeito,167,167,0,0.0
+2008,RO,prefeito,52,52,0,0.0
+2008,RR,prefeito,15,15,0,0.0
+2008,RS,prefeito,496,496,0,0.0
+2008,SC,prefeito,293,293,0,0.0
+2008,SE,prefeito,74,75,-1,-1.33
+2008,SP,prefeito,642,645,-3,-0.47
+2008,TO,prefeito,139,139,0,0.0
+2012,AC,prefeito,22,22,0,0.0
+2012,AL,prefeito,102,102,0,0.0
+2012,AM,prefeito,62,62,0,0.0
+2012,AP,prefeito,16,16,0,0.0
+2012,BA,prefeito,417,417,0,0.0
+2012,CE,prefeito,184,184,0,0.0
+2012,ES,prefeito,78,78,0,0.0
+2012,GO,prefeito,245,245,0,0.0
+2012,MA,prefeito,217,217,0,0.0
+2012,MG,prefeito,853,853,0,0.0
+2012,MS,prefeito,79,79,0,0.0
+2012,MT,prefeito,141,141,0,0.0
+2012,PA,prefeito,144,144,0,0.0
+2012,PB,prefeito,223,223,0,0.0
+2012,PE,prefeito,184,184,0,0.0
+2012,PI,prefeito,224,224,0,0.0
+2012,PR,prefeito,399,399,0,0.0
+2012,RJ,prefeito,92,92,0,0.0
+2012,RN,prefeito,167,167,0,0.0
+2012,RO,prefeito,52,52,0,0.0
+2012,RR,prefeito,15,15,0,0.0
+2012,RS,prefeito,497,497,0,0.0
+2012,SC,prefeito,295,295,0,0.0
+2012,SE,prefeito,75,75,0,0.0
+2012,SP,prefeito,645,645,0,0.0
+2012,TO,prefeito,139,139,0,0.0
+2016,AC,prefeito,22,22,0,0.0
+2016,AL,prefeito,102,102,0,0.0
+2016,AM,prefeito,62,62,0,0.0
+2016,AP,prefeito,16,16,0,0.0
+2016,BA,prefeito,417,417,0,0.0
+2016,CE,prefeito,184,184,0,0.0
+2016,ES,prefeito,78,77,1,1.3
+2016,GO,prefeito,246,245,1,0.41
+2016,MA,prefeito,216,216,0,0.0
+2016,MG,prefeito,853,835,18,2.16
+2016,MS,prefeito,79,79,0,0.0
+2016,MT,prefeito,141,141,0,0.0
+2016,PA,prefeito,144,144,0,0.0
+2016,PB,prefeito,223,223,0,0.0
+2016,PE,prefeito,184,184,0,0.0
+2016,PI,prefeito,224,224,0,0.0
+2016,PR,prefeito,399,398,1,0.25
+2016,RJ,prefeito,92,92,0,0.0
+2016,RN,prefeito,167,167,0,0.0
+2016,RO,prefeito,52,52,0,0.0
+2016,RR,prefeito,15,15,0,0.0
+2016,RS,prefeito,497,491,6,1.22
+2016,SC,prefeito,295,291,4,1.37
+2016,SE,prefeito,75,73,2,2.74
+2016,SP,prefeito,643,628,15,2.39
+2016,TO,prefeito,139,139,0,0.0
+2020,AC,prefeito,22,22,0,0.0
+2020,AL,prefeito,102,101,1,0.99
+2020,AM,prefeito,62,61,1,1.64
+2020,AP,prefeito,16,15,1,6.67
+2020,BA,prefeito,417,415,2,0.48
+2020,CE,prefeito,183,179,4,2.23
+2020,ES,prefeito,78,77,1,1.3
+2020,GO,prefeito,246,246,0,0.0
+2020,MA,prefeito,217,217,0,0.0
+2020,MG,prefeito,853,845,8,0.95
+2020,MS,prefeito,79,75,4,5.33
+2020,MT,prefeito,141,138,3,2.17
+2020,PA,prefeito,144,142,2,1.41
+2020,PB,prefeito,223,221,2,0.9
+2020,PE,prefeito,184,180,4,2.22
+2020,PI,prefeito,224,222,2,0.9
+2020,PR,prefeito,399,396,3,0.76
+2020,RJ,prefeito,92,88,4,4.55
+2020,RN,prefeito,167,165,2,1.21
+2020,RO,prefeito,52,52,0,0.0
+2020,RR,prefeito,15,15,0,0.0
+2020,RS,prefeito,497,493,4,0.81
+2020,SC,prefeito,295,294,1,0.34
+2020,SE,prefeito,75,75,0,0.0
+2020,SP,prefeito,644,622,22,3.54
+2020,TO,prefeito,139,139,0,0.0
+2024,AC,prefeito,22,22,0,0.0
+2024,AL,prefeito,102,102,0,0.0
+2024,AM,prefeito,62,62,0,0.0
+2024,AP,prefeito,16,16,0,0.0
+2024,BA,prefeito,417,414,3,0.72
+2024,CE,prefeito,184,184,0,0.0
+2024,ES,prefeito,78,77,1,1.3
+2024,GO,prefeito,244,245,-1,-0.41
+2024,MA,prefeito,214,214,0,0.0
+2024,MG,prefeito,853,847,6,0.71
+2024,MS,prefeito,79,78,1,1.28
+2024,MT,prefeito,142,142,0,0.0
+2024,PA,prefeito,144,142,2,1.41
+2024,PB,prefeito,223,223,0,0.0
+2024,PE,prefeito,184,182,2,1.1
+2024,PI,prefeito,224,223,1,0.45
+2024,PR,prefeito,399,398,1,0.25
+2024,RJ,prefeito,92,88,4,4.55
+2024,RN,prefeito,167,167,0,0.0
+2024,RO,prefeito,52,52,0,0.0
+2024,RR,prefeito,15,15,0,0.0
+2024,RS,prefeito,497,496,1,0.2
+2024,SC,prefeito,295,295,0,0.0
+2024,SE,prefeito,72,70,2,2.86
+2024,SP,prefeito,645,627,18,2.87
+2024,TO,prefeito,139,138,1,0.72
+1998,BR,presidente,1,0,1,
+1998,,presidente,0,1,-1,-100.0
+2002,BR,presidente,1,0,1,
+2002,,presidente,0,1,-1,-100.0
+2006,BR,presidente,1,0,1,
+2010,BR,presidente,1,0,1,
+2014,BR,presidente,1,0,1,
+2014,,presidente,0,1,-1,-100.0
+2018,BR,presidente,1,0,1,
+2018,,presidente,0,1,-1,-100.0
+2022,BR,presidente,1,0,1,
+2022,,presidente,0,1,-1,-100.0
+1998,AC,senador,1,1,0,0.0
+1998,AL,senador,1,1,0,0.0
+1998,AM,senador,1,1,0,0.0
+1998,AP,senador,1,1,0,0.0
+1998,BA,senador,1,1,0,0.0
+1998,CE,senador,1,1,0,0.0
+1998,DF,senador,1,0,1,
+1998,ES,senador,1,1,0,0.0
+1998,GO,senador,1,1,0,0.0
+1998,MA,senador,1,1,0,0.0
+1998,MG,senador,1,1,0,0.0
+1998,MS,senador,1,1,0,0.0
+1998,MT,senador,1,1,0,0.0
+1998,PA,senador,1,1,0,0.0
+1998,PB,senador,1,1,0,0.0
+1998,PE,senador,1,1,0,0.0
+1998,PI,senador,1,1,0,0.0
+1998,PR,senador,1,1,0,0.0
+1998,RJ,senador,1,1,0,0.0
+1998,RN,senador,1,1,0,0.0
+1998,RO,senador,1,1,0,0.0
+1998,RR,senador,1,1,0,0.0
+1998,RS,senador,1,1,0,0.0
+1998,SC,senador,1,1,0,0.0
+1998,SE,senador,1,1,0,0.0
+1998,SP,senador,1,1,0,0.0
+1998,TO,senador,1,1,0,0.0
+2002,AC,senador,2,2,0,0.0
+2002,AL,senador,2,2,0,0.0
+2002,AM,senador,2,2,0,0.0
+2002,AP,senador,2,2,0,0.0
+2002,BA,senador,2,2,0,0.0
+2002,CE,senador,2,2,0,0.0
+2002,DF,senador,2,2,0,0.0
+2002,ES,senador,2,2,0,0.0
+2002,GO,senador,2,2,0,0.0
+2002,MA,senador,2,2,0,0.0
+2002,MG,senador,2,2,0,0.0
+2002,MS,senador,2,2,0,0.0
+2002,MT,senador,2,2,0,0.0
+2002,PA,senador,2,2,0,0.0
+2002,PB,senador,2,2,0,0.0
+2002,PE,senador,2,2,0,0.0
+2002,PI,senador,2,2,0,0.0
+2002,PR,senador,2,2,0,0.0
+2002,RJ,senador,2,2,0,0.0
+2002,RN,senador,2,2,0,0.0
+2002,RO,senador,2,2,0,0.0
+2002,RR,senador,2,2,0,0.0
+2002,RS,senador,2,2,0,0.0
+2002,SC,senador,2,2,0,0.0
+2002,SE,senador,2,2,0,0.0
+2002,SP,senador,2,2,0,0.0
+2002,TO,senador,2,2,0,0.0
+2006,AC,senador,1,1,0,0.0
+2006,AL,senador,1,1,0,0.0
+2006,AM,senador,1,1,0,0.0
+2006,AP,senador,1,1,0,0.0
+2006,BA,senador,1,1,0,0.0
+2006,CE,senador,1,1,0,0.0
+2006,DF,senador,1,1,0,0.0
+2006,ES,senador,1,1,0,0.0
+2006,GO,senador,1,1,0,0.0
+2006,MA,senador,1,1,0,0.0
+2006,MG,senador,1,1,0,0.0
+2006,MS,senador,1,1,0,0.0
+2006,MT,senador,1,1,0,0.0
+2006,PA,senador,1,1,0,0.0
+2006,PB,senador,1,1,0,0.0
+2006,PE,senador,1,1,0,0.0
+2006,PI,senador,1,1,0,0.0
+2006,PR,senador,1,1,0,0.0
+2006,RJ,senador,1,1,0,0.0
+2006,RN,senador,1,1,0,0.0
+2006,RO,senador,1,1,0,0.0
+2006,RR,senador,1,1,0,0.0
+2006,RS,senador,1,1,0,0.0
+2006,SC,senador,1,1,0,0.0
+2006,SE,senador,1,1,0,0.0
+2006,SP,senador,1,1,0,0.0
+2006,TO,senador,1,1,0,0.0
+2010,AC,senador,2,2,0,0.0
+2010,AL,senador,2,2,0,0.0
+2010,AM,senador,2,2,0,0.0
+2010,AP,senador,2,2,0,0.0
+2010,BA,senador,2,2,0,0.0
+2010,CE,senador,2,2,0,0.0
+2010,DF,senador,2,2,0,0.0
+2010,ES,senador,2,2,0,0.0
+2010,GO,senador,2,2,0,0.0
+2010,MA,senador,2,2,0,0.0
+2010,MG,senador,2,2,0,0.0
+2010,MS,senador,2,2,0,0.0
+2010,MT,senador,2,2,0,0.0
+2010,PA,senador,2,2,0,0.0
+2010,PB,senador,2,2,0,0.0
+2010,PE,senador,2,2,0,0.0
+2010,PI,senador,2,2,0,0.0
+2010,PR,senador,2,2,0,0.0
+2010,RJ,senador,2,2,0,0.0
+2010,RN,senador,2,2,0,0.0
+2010,RO,senador,2,2,0,0.0
+2010,RR,senador,2,2,0,0.0
+2010,RS,senador,2,2,0,0.0
+2010,SC,senador,2,2,0,0.0
+2010,SE,senador,2,2,0,0.0
+2010,SP,senador,2,2,0,0.0
+2010,TO,senador,2,2,0,0.0
+2014,AC,senador,1,1,0,0.0
+2014,AL,senador,1,1,0,0.0
+2014,AM,senador,1,1,0,0.0
+2014,AP,senador,1,1,0,0.0
+2014,BA,senador,1,1,0,0.0
+2014,CE,senador,1,1,0,0.0
+2014,DF,senador,1,1,0,0.0
+2014,ES,senador,1,1,0,0.0
+2014,GO,senador,1,1,0,0.0
+2014,MA,senador,1,1,0,0.0
+2014,MG,senador,1,1,0,0.0
+2014,MS,senador,1,1,0,0.0
+2014,MT,senador,1,1,0,0.0
+2014,PA,senador,1,1,0,0.0
+2014,PB,senador,1,1,0,0.0
+2014,PE,senador,1,1,0,0.0
+2014,PI,senador,1,1,0,0.0
+2014,PR,senador,1,1,0,0.0
+2014,RJ,senador,1,1,0,0.0
+2014,RN,senador,1,1,0,0.0
+2014,RO,senador,1,1,0,0.0
+2014,RR,senador,1,1,0,0.0
+2014,RS,senador,1,1,0,0.0
+2014,SC,senador,1,1,0,0.0
+2014,SE,senador,1,1,0,0.0
+2014,SP,senador,1,1,0,0.0
+2014,TO,senador,1,1,0,0.0
+2018,AC,senador,2,2,0,0.0
+2018,AL,senador,2,2,0,0.0
+2018,AM,senador,2,2,0,0.0
+2018,AP,senador,2,2,0,0.0
+2018,BA,senador,2,2,0,0.0
+2018,CE,senador,2,2,0,0.0
+2018,DF,senador,2,2,0,0.0
+2018,ES,senador,2,2,0,0.0
+2018,GO,senador,2,2,0,0.0
+2018,MA,senador,2,2,0,0.0
+2018,MG,senador,2,2,0,0.0
+2018,MS,senador,2,2,0,0.0
+2018,MT,senador,1,1,0,0.0
+2018,PA,senador,2,2,0,0.0
+2018,PB,senador,2,2,0,0.0
+2018,PE,senador,2,2,0,0.0
+2018,PI,senador,2,2,0,0.0
+2018,PR,senador,2,2,0,0.0
+2018,RJ,senador,2,2,0,0.0
+2018,RN,senador,2,2,0,0.0
+2018,RO,senador,2,2,0,0.0
+2018,RR,senador,2,2,0,0.0
+2018,RS,senador,2,2,0,0.0
+2018,SC,senador,2,2,0,0.0
+2018,SE,senador,2,2,0,0.0
+2018,SP,senador,2,2,0,0.0
+2018,TO,senador,2,2,0,0.0
+2022,AC,senador,1,1,0,0.0
+2022,AL,senador,1,1,0,0.0
+2022,AM,senador,1,1,0,0.0
+2022,AP,senador,1,1,0,0.0
+2022,BA,senador,1,1,0,0.0
+2022,CE,senador,1,1,0,0.0
+2022,DF,senador,1,1,0,0.0
+2022,ES,senador,1,1,0,0.0
+2022,GO,senador,1,1,0,0.0
+2022,MA,senador,1,1,0,0.0
+2022,MG,senador,1,1,0,0.0
+2022,MS,senador,1,1,0,0.0
+2022,MT,senador,1,1,0,0.0
+2022,PA,senador,1,1,0,0.0
+2022,PB,senador,1,1,0,0.0
+2022,PE,senador,1,1,0,0.0
+2022,PI,senador,1,1,0,0.0
+2022,PR,senador,1,1,0,0.0
+2022,RJ,senador,1,1,0,0.0
+2022,RN,senador,1,1,0,0.0
+2022,RO,senador,1,1,0,0.0
+2022,RR,senador,1,1,0,0.0
+2022,RS,senador,1,1,0,0.0
+2022,SC,senador,1,1,0,0.0
+2022,SE,senador,1,1,0,0.0
+2022,SP,senador,1,1,0,0.0
+2022,TO,senador,1,1,0,0.0
+2000,AC,vereador,209,160,49,30.62
+2000,AL,vereador,1015,294,721,245.24
+2000,AM,vereador,630,281,349,124.2
+2000,AP,vereador,160,132,28,21.21
+2000,BA,vereador,4703,567,4136,729.45
+2000,CE,vereador,2504,464,2040,439.66
+2000,ES,vereador,994,346,648,187.28
+2000,GO,vereador,2457,532,1925,361.84
+2000,MA,vereador,2316,529,1787,337.81
+2000,MG,vereador,9093,763,8330,1091.74
+2000,MS,vereador,787,279,508,182.08
+2000,MT,vereador,1414,529,885,167.3
+2000,PA,vereador,1547,484,1063,219.63
+2000,PB,vereador,2497,429,2068,482.05
+2000,PE,vereador,1980,343,1637,477.26
+2000,PI,vereador,2122,379,1743,459.89
+2000,PR,vereador,4007,600,3407,567.83
+2000,RJ,vereador,1279,496,783,157.86
+2000,RN,vereador,1639,382,1257,329.06
+2000,RO,vereador,527,349,178,51.0
+2000,RR,vereador,158,142,16,11.27
+2000,RS,vereador,5113,596,4517,757.89
+2000,SC,vereador,2995,443,2552,576.07
+2000,SE,vereador,806,307,499,162.54
+2000,SP,vereador,8017,710,7307,1029.15
+2000,TO,vereador,1269,445,824,185.17
+2004,AC,vereador,204,151,53,35.1
+2004,AL,vereador,940,252,688,273.02
+2004,AM,vereador,592,169,423,250.3
+2004,AP,vereador,151,95,56,58.95
+2004,BA,vereador,3868,415,3453,832.05
+2004,CE,vereador,1729,287,1442,502.44
+2004,ES,vereador,742,242,500,206.61
+2004,GO,vereador,2273,373,1900,509.38
+2004,MA,vereador,1992,484,1508,311.57
+2004,MG,vereador,7853,566,7287,1287.46
+2004,MS,vereador,721,179,542,302.79
+2004,MT,vereador,1291,370,921,248.92
+2004,PA,vereador,1361,344,1017,295.64
+2004,PB,vereador,2033,335,1698,506.87
+2004,PE,vereador,1752,323,1429,442.41
+2004,PI,vereador,2024,258,1766,684.5
+2004,PR,vereador,3683,410,3273,798.29
+2004,RJ,vereador,1000,323,677,209.6
+2004,RN,vereador,1527,301,1226,407.31
+2004,RO,vereador,482,213,269,126.29
+2004,RR,vereador,139,130,9,6.92
+2004,RS,vereador,4584,401,4183,1043.14
+2004,SC,vereador,2691,420,2271,540.71
+2004,SE,vereador,692,239,453,189.54
+2004,SP,vereador,6248,570,5678,996.14
+2004,TO,vereador,1257,307,950,309.45
+2008,AC,vereador,204,204,0,0.0
+2008,AL,vereador,931,932,-1,-0.11
+2008,AM,vereador,584,584,0,0.0
+2008,AP,vereador,152,152,0,0.0
+2008,BA,vereador,3894,3899,-5,-0.13
+2008,CE,vereador,1737,1737,0,0.0
+2008,ES,vereador,745,745,0,0.0
+2008,GO,vereador,2245,2260,-15,-0.66
+2008,MA,vereador,1982,1986,-4,-0.2
+2008,MG,vereador,7858,7861,-3,-0.04
+2008,MS,vereador,721,721,0,0.0
+2008,MT,vereador,1284,1284,0,0.0
+2008,PA,vereador,1346,1368,-22,-1.61
+2008,PB,vereador,2034,2035,-1,-0.05
+2008,PE,vereador,1751,1751,0,0.0
+2008,PI,vereador,2032,2033,-1,-0.05
+2008,PR,vereador,3686,3689,-3,-0.08
+2008,RJ,vereador,1005,1007,-2,-0.2
+2008,RN,vereador,1515,1527,-12,-0.79
+2008,RO,vereador,482,482,0,0.0
+2008,RR,vereador,140,140,0,0.0
+2008,RS,vereador,4573,4573,0,0.0
+2008,SC,vereador,2693,2697,-4,-0.15
+2008,SE,vereador,684,692,-8,-1.16
+2008,SP,vereador,6255,6287,-32,-0.51
+2008,TO,vereador,1250,1257,-7,-0.56
+2012,AC,vereador,225,225,0,0.0
+2012,AL,vereador,1049,1049,0,0.0
+2012,AM,vereador,708,708,0,0.0
+2012,AP,vereador,166,166,0,0.0
+2012,BA,vereador,4540,4540,0,0.0
+2012,CE,vereador,2132,2132,0,0.0
+2012,ES,vereador,844,844,0,0.0
+2012,GO,vereador,2493,2493,0,0.0
+2012,MA,vereador,2373,2373,0,0.0
+2012,MG,vereador,8438,8438,0,0.0
+2012,MS,vereador,833,833,0,0.0
+2012,MT,vereador,1390,1390,0,0.0
+2012,PA,vereador,1699,1699,0,0.0
+2012,PB,vereador,2185,2185,0,0.0
+2012,PE,vereador,2062,2062,0,0.0
+2012,PI,vereador,2136,2136,0,0.0
+2012,PR,vereador,3866,3866,0,0.0
+2012,RJ,vereador,1188,1188,0,0.0
+2012,RN,vereador,1618,1618,0,0.0
+2012,RO,vereador,533,533,0,0.0
+2012,RR,vereador,151,151,0,0.0
+2012,RS,vereador,4904,4904,0,0.0
+2012,SC,vereador,2864,2864,0,0.0
+2012,SE,vereador,788,788,0,0.0
+2012,SP,vereador,6943,6943,0,0.0
+2012,TO,vereador,1291,1291,0,0.0
+2016,AC,vereador,229,229,0,0.0
+2016,AL,vereador,1076,1076,0,0.0
+2016,AM,vereador,722,722,0,0.0
+2016,AP,vereador,170,170,0,0.0
+2016,BA,vereador,4599,4599,0,0.0
+2016,CE,vereador,2176,2176,0,0.0
+2016,ES,vereador,856,856,0,0.0
+2016,GO,vereador,2506,2506,0,0.0
+2016,MA,vereador,2394,2394,0,0.0
+2016,MG,vereador,8481,8481,0,0.0
+2016,MS,vereador,845,845,0,0.0
+2016,MT,vereador,1404,1404,0,0.0
+2016,PA,vereador,1734,1734,0,0.0
+2016,PB,vereador,2203,2203,0,0.0
+2016,PE,vereador,2126,2099,27,1.29
+2016,PI,vereador,2143,2143,0,0.0
+2016,PR,vereador,3877,3877,0,0.0
+2016,RJ,vereador,1152,1190,-38,-3.19
+2016,RN,vereador,1640,1640,0,0.0
+2016,RO,vereador,529,529,0,0.0
+2016,RR,vereador,153,153,0,0.0
+2016,RS,vereador,4910,4910,0,0.0
+2016,SC,vereador,2898,2898,0,0.0
+2016,SE,vereador,797,797,0,0.0
+2016,SP,vereador,6923,6912,11,0.16
+2016,TO,vereador,1299,1299,0,0.0
+2020,AC,vereador,231,231,0,0.0
+2020,AL,vereador,1086,1086,0,0.0
+2020,AM,vereador,738,738,0,0.0
+2020,AP,vereador,174,151,23,15.23
+2020,BA,vereador,4621,4621,0,0.0
+2020,CE,vereador,2192,2192,0,0.0
+2020,ES,vereador,860,860,0,0.0
+2020,GO,vereador,2516,2516,0,0.0
+2020,MA,vereador,2425,2425,0,0.0
+2020,MG,vereador,8480,8480,0,0.0
+2020,MS,vereador,847,847,0,0.0
+2020,MT,vereador,1404,1404,0,0.0
+2020,PA,vereador,1764,1764,0,0.0
+2020,PB,vereador,2207,2207,0,0.0
+2020,PE,vereador,2151,2151,0,0.0
+2020,PI,vereador,2144,2144,0,0.0
+2020,PR,vereador,3869,3869,0,0.0
+2020,RJ,vereador,1184,1184,0,0.0
+2020,RN,vereador,1654,1636,18,1.1
+2020,RO,vereador,533,533,0,0.0
+2020,RR,vereador,157,157,0,0.0
+2020,RS,vereador,4903,4892,11,0.22
+2020,SC,vereador,2890,2890,0,0.0
+2020,SE,vereador,805,805,0,0.0
+2020,SP,vereador,6963,6963,0,0.0
+2020,TO,vereador,1307,1307,0,0.0
+2024,AC,vereador,241,241,0,0.0
+2024,AL,vereador,1090,1092,-2,-0.18
+2024,AM,vereador,750,726,24,3.31
+2024,AP,vereador,174,174,0,0.0
+2024,BA,vereador,4593,4384,209,4.77
+2024,CE,vereador,2190,2190,0,0.0
+2024,ES,vereador,870,870,0,0.0
+2024,GO,vereador,2431,2521,-90,-3.57
+2024,MA,vereador,2335,2357,-22,-0.93
+2024,MG,vereador,8526,8472,54,0.64
+2024,MS,vereador,849,849,0,0.0
+2024,MT,vereador,1433,1433,0,0.0
+2024,PA,vereador,1737,1715,22,1.28
+2024,PB,vereador,2201,2192,9,0.41
+2024,PE,vereador,2149,2055,94,4.57
+2024,PI,vereador,2143,2125,18,0.85
+2024,PR,vereador,3905,3896,9,0.23
+2024,RJ,vereador,1208,1208,0,0.0
+2024,RN,vereador,1655,1657,-2,-0.12
+2024,RO,vereador,531,522,9,1.72
+2024,RR,vereador,161,161,0,0.0
+2024,RS,vereador,4902,4878,24,0.49
+2024,SC,vereador,2912,2912,0,0.0
+2024,SE,vereador,801,812,-11,-1.35
+2024,SP,vereador,7047,7038,9,0.13
+2024,TO,vereador,1317,1298,19,1.46
+1998,AM,vice governador,1,0,1,
+1998,CE,vice governador,1,0,1,
+1998,ES,vice governador,1,0,1,
+1998,MA,vice governador,1,0,1,
+1998,MG,vice governador,1,0,1,
+1998,MT,vice governador,1,0,1,
+1998,PB,vice governador,1,0,1,
+1998,RO,vice governador,1,0,1,
+1998,RS,vice governador,1,0,1,
+1998,SP,vice governador,1,0,1,
+1998,TO,vice governador,1,0,1,
+2002,AC,vice governador,1,0,1,
+2002,AL,vice governador,1,0,1,
+2002,AM,vice governador,1,0,1,
+2002,AP,vice governador,1,0,1,
+2002,BA,vice governador,1,0,1,
+2002,CE,vice governador,1,0,1,
+2002,DF,vice governador,1,0,1,
+2002,ES,vice governador,1,0,1,
+2002,GO,vice governador,1,0,1,
+2002,MA,vice governador,1,0,1,
+2002,MG,vice governador,1,0,1,
+2002,MS,vice governador,1,0,1,
+2002,MT,vice governador,1,0,1,
+2002,PA,vice governador,1,0,1,
+2002,PB,vice governador,1,0,1,
+2002,PE,vice governador,1,0,1,
+2002,PI,vice governador,1,0,1,
+2002,PR,vice governador,1,0,1,
+2002,RJ,vice governador,1,0,1,
+2002,RN,vice governador,1,0,1,
+2002,RO,vice governador,1,0,1,
+2002,RR,vice governador,1,0,1,
+2002,RS,vice governador,1,0,1,
+2002,SC,vice governador,1,0,1,
+2002,SE,vice governador,1,0,1,
+2002,SP,vice governador,1,0,1,
+2002,TO,vice governador,1,0,1,
+2006,AC,vice governador,1,0,1,
+2006,AL,vice governador,1,0,1,
+2006,AM,vice governador,1,0,1,
+2006,AP,vice governador,1,0,1,
+2006,BA,vice governador,1,0,1,
+2006,CE,vice governador,1,0,1,
+2006,DF,vice governador,1,0,1,
+2006,ES,vice governador,1,0,1,
+2006,GO,vice governador,1,0,1,
+2006,MA,vice governador,1,0,1,
+2006,MG,vice governador,1,0,1,
+2006,MS,vice governador,1,0,1,
+2006,MT,vice governador,1,0,1,
+2006,PA,vice governador,1,0,1,
+2006,PB,vice governador,1,0,1,
+2006,PE,vice governador,1,0,1,
+2006,PI,vice governador,1,0,1,
+2006,PR,vice governador,1,0,1,
+2006,RJ,vice governador,1,0,1,
+2006,RN,vice governador,1,0,1,
+2006,RO,vice governador,1,0,1,
+2006,RR,vice governador,1,0,1,
+2006,RS,vice governador,1,0,1,
+2006,SC,vice governador,1,0,1,
+2006,SE,vice governador,1,0,1,
+2006,SP,vice governador,1,0,1,
+2006,TO,vice governador,1,0,1,
+2010,AC,vice governador,1,0,1,
+2010,AL,vice governador,1,0,1,
+2010,AM,vice governador,1,0,1,
+2010,AP,vice governador,1,0,1,
+2010,BA,vice governador,1,0,1,
+2010,CE,vice governador,1,0,1,
+2010,DF,vice governador,1,0,1,
+2010,ES,vice governador,1,0,1,
+2010,GO,vice governador,1,0,1,
+2010,MA,vice governador,1,0,1,
+2010,MG,vice governador,1,0,1,
+2010,MS,vice governador,1,0,1,
+2010,MT,vice governador,1,0,1,
+2010,PA,vice governador,1,0,1,
+2010,PB,vice governador,1,0,1,
+2010,PE,vice governador,1,0,1,
+2010,PI,vice governador,1,0,1,
+2010,PR,vice governador,1,0,1,
+2010,RJ,vice governador,1,0,1,
+2010,RN,vice governador,1,0,1,
+2010,RO,vice governador,1,0,1,
+2010,RR,vice governador,1,0,1,
+2010,RS,vice governador,1,0,1,
+2010,SC,vice governador,1,0,1,
+2010,SE,vice governador,1,0,1,
+2010,SP,vice governador,1,0,1,
+2010,TO,vice governador,1,0,1,
+2014,AC,vice governador,1,0,1,
+2014,AL,vice governador,1,0,1,
+2014,AM,vice governador,1,0,1,
+2014,AP,vice governador,1,0,1,
+2014,BA,vice governador,1,0,1,
+2014,CE,vice governador,1,0,1,
+2014,DF,vice governador,1,0,1,
+2014,ES,vice governador,1,0,1,
+2014,GO,vice governador,1,0,1,
+2014,MA,vice governador,1,0,1,
+2014,MG,vice governador,1,0,1,
+2014,MS,vice governador,1,0,1,
+2014,MT,vice governador,1,0,1,
+2014,PA,vice governador,1,0,1,
+2014,PB,vice governador,1,0,1,
+2014,PE,vice governador,1,0,1,
+2014,PI,vice governador,1,0,1,
+2014,PR,vice governador,1,0,1,
+2014,RJ,vice governador,1,0,1,
+2014,RN,vice governador,1,0,1,
+2014,RO,vice governador,1,0,1,
+2014,RR,vice governador,1,0,1,
+2014,RS,vice governador,1,0,1,
+2014,SC,vice governador,1,0,1,
+2014,SE,vice governador,1,0,1,
+2014,SP,vice governador,1,0,1,
+2014,TO,vice governador,1,0,1,
+2018,AC,vice governador,1,0,1,
+2018,AL,vice governador,1,0,1,
+2018,AM,vice governador,1,0,1,
+2018,AP,vice governador,1,0,1,
+2018,BA,vice governador,1,0,1,
+2018,CE,vice governador,1,0,1,
+2018,DF,vice governador,1,0,1,
+2018,ES,vice governador,1,0,1,
+2018,GO,vice governador,1,0,1,
+2018,MA,vice governador,1,0,1,
+2018,MG,vice governador,1,0,1,
+2018,MS,vice governador,1,0,1,
+2018,MT,vice governador,1,0,1,
+2018,PA,vice governador,1,0,1,
+2018,PB,vice governador,1,0,1,
+2018,PE,vice governador,1,0,1,
+2018,PI,vice governador,1,0,1,
+2018,PR,vice governador,1,0,1,
+2018,RJ,vice governador,1,0,1,
+2018,RN,vice governador,1,0,1,
+2018,RO,vice governador,1,0,1,
+2018,RR,vice governador,1,0,1,
+2018,RS,vice governador,1,0,1,
+2018,SC,vice governador,1,0,1,
+2018,SE,vice governador,1,0,1,
+2018,SP,vice governador,1,0,1,
+2018,TO,vice governador,1,0,1,
+2022,AC,vice governador,1,0,1,
+2022,AL,vice governador,1,0,1,
+2022,AM,vice governador,1,0,1,
+2022,AP,vice governador,1,0,1,
+2022,BA,vice governador,1,0,1,
+2022,CE,vice governador,1,0,1,
+2022,DF,vice governador,1,0,1,
+2022,ES,vice governador,1,0,1,
+2022,GO,vice governador,1,0,1,
+2022,MA,vice governador,1,0,1,
+2022,MG,vice governador,1,0,1,
+2022,MS,vice governador,1,0,1,
+2022,MT,vice governador,1,0,1,
+2022,PA,vice governador,1,0,1,
+2022,PB,vice governador,1,0,1,
+2022,PE,vice governador,1,0,1,
+2022,PI,vice governador,1,0,1,
+2022,PR,vice governador,1,0,1,
+2022,RJ,vice governador,1,0,1,
+2022,RN,vice governador,1,0,1,
+2022,RO,vice governador,1,0,1,
+2022,RR,vice governador,1,0,1,
+2022,RS,vice governador,1,0,1,
+2022,SC,vice governador,1,0,1,
+2022,SE,vice governador,1,0,1,
+2022,SP,vice governador,1,0,1,
+2022,TO,vice governador,1,0,1,
+2000,AC,vice prefeito,4,0,4,
+2000,AL,vice prefeito,33,0,33,
+2000,AM,vice prefeito,11,0,11,
+2000,AP,vice prefeito,5,0,5,
+2000,BA,vice prefeito,190,0,190,
+2000,CE,vice prefeito,85,0,85,
+2000,ES,vice prefeito,25,0,25,
+2000,GO,vice prefeito,103,0,103,
+2000,MA,vice prefeito,64,0,64,
+2000,MG,vice prefeito,390,0,390,
+2000,MS,vice prefeito,20,0,20,
+2000,MT,vice prefeito,47,0,47,
+2000,PA,vice prefeito,40,0,40,
+2000,PB,vice prefeito,128,0,128,
+2000,PE,vice prefeito,70,0,70,
+2000,PI,vice prefeito,79,0,79,
+2000,PR,vice prefeito,116,0,116,
+2000,RJ,vice prefeito,32,0,32,
+2000,RN,vice prefeito,73,0,73,
+2000,RO,vice prefeito,17,0,17,
+2000,RR,vice prefeito,2,0,2,
+2000,RS,vice prefeito,257,0,257,
+2000,SC,vice prefeito,123,0,123,
+2000,SE,vice prefeito,27,0,27,
+2000,SP,vice prefeito,271,0,271,
+2000,TO,vice prefeito,62,0,62,
+2004,AC,vice prefeito,22,0,22,
+2004,AL,vice prefeito,100,0,100,
+2004,AM,vice prefeito,61,0,61,
+2004,AP,vice prefeito,16,0,16,
+2004,BA,vice prefeito,413,0,413,
+2004,CE,vice prefeito,181,0,181,
+2004,ES,vice prefeito,78,0,78,
+2004,GO,vice prefeito,245,0,245,
+2004,MA,vice prefeito,213,0,213,
+2004,MG,vice prefeito,839,0,839,
+2004,MS,vice prefeito,78,0,78,
+2004,MT,vice prefeito,139,0,139,
+2004,PA,vice prefeito,143,0,143,
+2004,PB,vice prefeito,222,0,222,
+2004,PE,vice prefeito,183,0,183,
+2004,PI,vice prefeito,222,0,222,
+2004,PR,vice prefeito,395,0,395,
+2004,RJ,vice prefeito,91,0,91,
+2004,RN,vice prefeito,165,0,165,
+2004,RO,vice prefeito,50,0,50,
+2004,RR,vice prefeito,15,0,15,
+2004,RS,vice prefeito,495,0,495,
+2004,SC,vice prefeito,293,0,293,
+2004,SE,vice prefeito,75,0,75,
+2004,SP,vice prefeito,637,0,637,
+2004,TO,vice prefeito,139,0,139,
+2008,AC,vice prefeito,22,0,22,
+2008,AL,vice prefeito,99,0,99,
+2008,AM,vice prefeito,60,0,60,
+2008,AP,vice prefeito,16,0,16,
+2008,BA,vice prefeito,412,0,412,
+2008,CE,vice prefeito,183,0,183,
+2008,ES,vice prefeito,77,0,77,
+2008,GO,vice prefeito,244,0,244,
+2008,MA,vice prefeito,214,0,214,
+2008,MG,vice prefeito,850,0,850,
+2008,MS,vice prefeito,78,0,78,
+2008,MT,vice prefeito,139,0,139,
+2008,PA,vice prefeito,140,0,140,
+2008,PB,vice prefeito,220,0,220,
+2008,PE,vice prefeito,184,0,184,
+2008,PI,vice prefeito,219,0,219,
+2008,PR,vice prefeito,392,0,392,
+2008,RJ,vice prefeito,89,0,89,
+2008,RN,vice prefeito,166,0,166,
+2008,RO,vice prefeito,52,0,52,
+2008,RR,vice prefeito,15,0,15,
+2008,RS,vice prefeito,496,0,496,
+2008,SC,vice prefeito,291,0,291,
+2008,SE,vice prefeito,72,0,72,
+2008,SP,vice prefeito,638,0,638,
+2008,TO,vice prefeito,139,0,139,
+2012,AC,vice prefeito,22,0,22,
+2012,AL,vice prefeito,102,0,102,
+2012,AM,vice prefeito,62,0,62,
+2012,AP,vice prefeito,16,0,16,
+2012,BA,vice prefeito,417,0,417,
+2012,CE,vice prefeito,184,0,184,
+2012,ES,vice prefeito,78,0,78,
+2012,GO,vice prefeito,245,0,245,
+2012,MA,vice prefeito,217,0,217,
+2012,MG,vice prefeito,853,0,853,
+2012,MS,vice prefeito,79,0,79,
+2012,MT,vice prefeito,141,0,141,
+2012,PA,vice prefeito,144,0,144,
+2012,PB,vice prefeito,223,0,223,
+2012,PE,vice prefeito,184,0,184,
+2012,PI,vice prefeito,224,0,224,
+2012,PR,vice prefeito,399,0,399,
+2012,RJ,vice prefeito,92,0,92,
+2012,RN,vice prefeito,167,0,167,
+2012,RO,vice prefeito,52,0,52,
+2012,RR,vice prefeito,15,0,15,
+2012,RS,vice prefeito,497,0,497,
+2012,SC,vice prefeito,295,0,295,
+2012,SE,vice prefeito,75,0,75,
+2012,SP,vice prefeito,645,0,645,
+2012,TO,vice prefeito,139,0,139,
+2016,AC,vice prefeito,22,0,22,
+2016,AL,vice prefeito,102,0,102,
+2016,AM,vice prefeito,62,0,62,
+2016,AP,vice prefeito,16,0,16,
+2016,BA,vice prefeito,417,0,417,
+2016,CE,vice prefeito,184,0,184,
+2016,ES,vice prefeito,77,0,77,
+2016,GO,vice prefeito,245,0,245,
+2016,MA,vice prefeito,216,0,216,
+2016,MG,vice prefeito,836,0,836,
+2016,MS,vice prefeito,79,0,79,
+2016,MT,vice prefeito,141,0,141,
+2016,PA,vice prefeito,144,0,144,
+2016,PB,vice prefeito,223,0,223,
+2016,PE,vice prefeito,184,0,184,
+2016,PI,vice prefeito,224,0,224,
+2016,PR,vice prefeito,398,0,398,
+2016,RJ,vice prefeito,92,0,92,
+2016,RN,vice prefeito,167,0,167,
+2016,RO,vice prefeito,52,0,52,
+2016,RR,vice prefeito,15,0,15,
+2016,RS,vice prefeito,491,0,491,
+2016,SC,vice prefeito,292,0,292,
+2016,SE,vice prefeito,73,0,73,
+2016,SP,vice prefeito,629,0,629,
+2016,TO,vice prefeito,139,0,139,
+2020,AC,vice prefeito,22,0,22,
+2020,AL,vice prefeito,101,0,101,
+2020,AM,vice prefeito,61,0,61,
+2020,AP,vice prefeito,16,0,16,
+2020,BA,vice prefeito,415,0,415,
+2020,CE,vice prefeito,179,0,179,
+2020,ES,vice prefeito,77,0,77,
+2020,GO,vice prefeito,246,0,246,
+2020,MA,vice prefeito,217,0,217,
+2020,MG,vice prefeito,846,0,846,
+2020,MS,vice prefeito,75,0,75,
+2020,MT,vice prefeito,138,0,138,
+2020,PA,vice prefeito,142,0,142,
+2020,PB,vice prefeito,221,0,221,
+2020,PE,vice prefeito,180,0,180,
+2020,PI,vice prefeito,222,0,222,
+2020,PR,vice prefeito,396,0,396,
+2020,RJ,vice prefeito,89,0,89,
+2020,RN,vice prefeito,166,0,166,
+2020,RO,vice prefeito,52,0,52,
+2020,RR,vice prefeito,15,0,15,
+2020,RS,vice prefeito,493,0,493,
+2020,SC,vice prefeito,293,0,293,
+2020,SE,vice prefeito,75,0,75,
+2020,SP,vice prefeito,623,0,623,
+2020,TO,vice prefeito,139,0,139,
+2024,AC,vice prefeito,22,0,22,
+2024,AL,vice prefeito,102,0,102,
+2024,AM,vice prefeito,62,0,62,
+2024,AP,vice prefeito,16,0,16,
+2024,BA,vice prefeito,416,0,416,
+2024,CE,vice prefeito,183,0,183,
+2024,ES,vice prefeito,78,0,78,
+2024,GO,vice prefeito,244,0,244,
+2024,MA,vice prefeito,214,0,214,
+2024,MG,vice prefeito,848,0,848,
+2024,MS,vice prefeito,78,0,78,
+2024,MT,vice prefeito,142,0,142,
+2024,PA,vice prefeito,143,0,143,
+2024,PB,vice prefeito,222,0,222,
+2024,PE,vice prefeito,183,0,183,
+2024,PI,vice prefeito,224,0,224,
+2024,PR,vice prefeito,398,0,398,
+2024,RJ,vice prefeito,90,0,90,
+2024,RN,vice prefeito,167,0,167,
+2024,RO,vice prefeito,52,0,52,
+2024,RR,vice prefeito,15,0,15,
+2024,RS,vice prefeito,497,0,497,
+2024,SC,vice prefeito,295,0,295,
+2024,SE,vice prefeito,72,0,72,
+2024,SP,vice prefeito,631,0,631,
+2024,TO,vice prefeito,139,0,139,
+2002,BR,vice presidente,1,0,1,
+2006,BR,vice presidente,1,0,1,
+2010,BR,vice presidente,1,0,1,
+2014,BR,vice presidente,1,0,1,
+2018,BR,vice presidente,1,0,1,
+2022,BR,vice presidente,1,0,1,

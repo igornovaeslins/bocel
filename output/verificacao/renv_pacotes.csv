@@ -1,0 +1,57 @@
+pacote,versao,origem,uso,scripts
+arrow,20.0.0.2,Repository,direto,R/01_ingest_cand.R R/02_ingest_votacao.R R/03_build_banco.R R/03b_filiacoes.R R/07_exercicio_camara.R R/07_exercicio_senado.R R/08_suplementares.R R/09_auditoria_homonimos.R R/10_integrar_exercicio.R R/13_exercicio_assembleias.R R/14_sinais_tse_exercicio.R R/15_exercicio_camaras_municipais.R R/20_exercicio_camaras_sem_sapl.R R/21_diarios_oficiais.R R/23_tce_gestores.R R/24_tce_gestores_b.R R/25_exercicio_camaras_sem_sapl_2.R R/28_raca.R R/31_migracao_territorial.R R/33_tce_gestores_c.R R/34_tce_gestores_d.R R/40_pessoas_suplentes.R R/41_lista_suplencia.R R/42_ocupacoes.R R/44_sapl_recuperado.R R/53_universo_comparavel.R R/54_sapl_observacao.R R/assembleias2/01_build_RS.R R/assembleias2/01_exercicio_PR.R R/assembleias2/02_build_PR.R R/assembleias2/build_BA.R R/assembleias2/build_PE.R R/assembleias2/build_RJ.R R/assembleias2/build_SP.R R/assembleias2/monta_CE.R R/assembleias2/monta_MA.R R/congela_referencia_ids.R R/sonda_chapa_vices.R R/verifica_camara.R R/verifica_camaras_rodada2.R R/verifica_homonimos.R R/verifica_reeleicao_tse.R R/verifica_sapl_municipal.R R/verifica_senado.R R/verifica_suplementares.R R/verifica_tce_sudeste_sul_centro.R
+askpass,1.2.1,Repository,dependencia,""
+assertthat,0.2.1,Repository,dependencia,""
+bit,4.6.0,Repository,dependencia,""
+bit64,4.6.0-1,Repository,dependencia,""
+cellranger,1.1.0,Repository,dependencia,""
+class,7.3-22,Repository,dependencia,""
+classInt,0.4-11,Repository,dependencia,""
+cli,3.6.5,Repository,dependencia,""
+cpp11,0.5.2,Repository,dependencia,""
+crayon,1.5.3,Repository,dependencia,""
+curl,6.4.0,Repository,dependencia,""
+data.table,1.17.8,Repository,direto,lib/data_referencia.R R/01_ingest_cand.R R/02_ingest_votacao.R R/03_build_banco.R R/03b_filiacoes.R R/04_verificar.R R/05_documentar.R R/06_amarracoes_fapesp.R R/07_exercicio_camara.R R/07_exercicio_senado.R R/08_suplementares.R R/09_auditoria_homonimos.R R/10_integrar_exercicio.R R/10_munic_inventario.R R/11_munic_prefeitos.R R/12_wikidata_mandatos.R R/13_exercicio_assembleias.R R/14_sinais_tse_exercicio.R R/15_exercicio_camaras_municipais.R R/16_wikipedia_estadual.R R/17_wikipedia_prefeitos.R R/18_datajud_cassacoes.R R/19_levantamento_lacunas.R R/20_exercicio_camaras_sem_sapl.R R/21_diarios_oficiais.R R/22_exercicio_assembleias_historico.R R/23_tce_gestores.R R/24_tce_gestores_b.R R/25_exercicio_camaras_sem_sapl_2.R R/26_descritivas_regionais.R R/27_idade_genero.R R/28_raca.R R/29_interrupcao.R R/30_migracao_partidaria.R R/31_migracao_territorial.R R/32_checagem_gelape_thome.R R/33_tce_gestores_c.R R/34_tce_gestores_d.R R/35_livro_codigos_tabular.R R/36_estado_do_banco.R R/37_cobertura_por_uf.R R/38_assembleias_portais.R R/39_saida_por_cargo_incompativel.R R/40_pessoas_suplentes.R R/41_lista_suplencia.R R/42_ocupacoes.R R/43_camaras_generico.R R/44_sapl_recuperado.R R/49_munic_ampliado.R R/50_assembleias_inventario.R R/51_verifica_tabelas_recuperadas.R R/52_balanco_aproveitamento.R R/53_universo_comparavel.R R/54_sapl_observacao.R R/55_sapl_presenca.R R/57_tce_ac.R R/58_saida_legislativo_federal.R R/59_camara_biografia.R R/60_saida_executivos.R R/61_saida_assembleias.R R/61a_consolidar_curadoria_assembleias.R R/61b_alvos_frentes_assembleias.R R/61c_pendentes_frentes_assembleias.R R/62a_alvos_frentes_capitais.R R/amostra_diarios_precisao.R R/amostra_divergencia_fontes.R R/amostra_sapl_observacao_precisao.R R/assembleias2/00_funcoes_PR.R R/assembleias2/01_build_RS.R R/assembleias2/01_exercicio_PR.R R/assembleias2/02_build_PR.R R/assembleias2/build_BA.R R/assembleias2/build_PE.R R/assembleias2/build_RJ.R R/assembleias2/build_SP.R R/assembleias2/monta_CE.R R/assembleias2/monta_MA.R R/assembleias2/verifica_CE.R R/assembleias2/verifica_MA.R R/assembleias2/verifica_PE.R R/assembleias2/verifica_PR.R R/assembleias2/verifica_RJ.R R/assembleias2/verifica_SP.R R/auditoria_fontes_e_linguagem.R R/congela_referencia_ids.R R/gera_renv_lock.R R/sonda_chapa_cascata.R R/sonda_chapa_vices.R R/verifica_assembleias_portais.R R/verifica_assembleias_saida.R R/verifica_assembleias_sem_historico.R R/verifica_assembleias.R R/verifica_camara.R R/verifica_camaras_rodada2.R R/verifica_camaras_sem_sapl_2.R R/verifica_camaras_sem_sapl.R R/verifica_consolidacao.R R/verifica_datajud.R R/verifica_descritivas.R R/verifica_diarios.R R/verifica_documentacao.R R/verifica_executivos.R R/verifica_homonimos.R R/verifica_integracao_docs.R R/verifica_integracao.R R/verifica_legislativo_federal.R R/verifica_munic_integracao.R R/verifica_munic.R R/verifica_municipal_estadual.R R/verifica_ocupacoes.R R/verifica_reeleicao_tse.R R/verifica_sapl_municipal.R R/verifica_sapl_observacao.R R/verifica_sapl_presenca.R R/verifica_senado.R R/verifica_suplementares.R R/verifica_tce_ac.R R/verifica_tce_b.R R/verifica_tce_c.R R/verifica_tce_d.R R/verifica_tce_existentes.R R/verifica_tce_norte_nordeste.R R/verifica_tce_sudeste_sul_centro.R R/verifica_tce.R R/verifica_verifica_tce_existentes.R R/verifica_wikidata.R R/verifica_wikipedia_estadual.R R/verifica_wikipedia_prefeitos.R
+DBI,1.2.3,Repository,dependencia,""
+dplyr,1.1.4,Repository,direto,lib/asserts_rigor.R R/verifica_homonimos.R
+e1071,1.7-16,Repository,dependencia,""
+generics,0.1.4,Repository,dependencia,""
+glue,1.8.0,Repository,dependencia,""
+hms,1.1.3,Repository,dependencia,""
+httr,1.4.7,Repository,dependencia,""
+jsonlite,2.0.0,Repository,direto,R/05_documentar.R R/06_amarracoes_fapesp.R R/07_exercicio_camara.R R/07_exercicio_senado.R R/12_wikidata_mandatos.R R/13_exercicio_assembleias.R R/15_exercicio_camaras_municipais.R R/16_wikipedia_estadual.R R/17_wikipedia_prefeitos.R R/18_datajud_cassacoes.R R/20_exercicio_camaras_sem_sapl.R R/21_diarios_oficiais.R R/23_tce_gestores.R R/24_tce_gestores_b.R R/25_exercicio_camaras_sem_sapl_2.R R/33_tce_gestores_c.R R/34_tce_gestores_d.R R/44_sapl_recuperado.R R/50_assembleias_inventario.R R/52_balanco_aproveitamento.R R/55_sapl_presenca.R R/57_tce_ac.R R/assembleias2/00_funcoes_PR.R R/assembleias2/01_build_RS.R R/assembleias2/01_exercicio_PR.R R/assembleias2/02_build_PR.R R/assembleias2/build_SP.R R/assembleias2/verifica_PE.R R/assembleias2/verifica_PR.R R/assembleias2/verifica_SP.R R/gera_renv_lock.R R/verifica_camara.R R/verifica_camaras_rodada2.R R/verifica_datajud.R R/verifica_diarios.R R/verifica_legislativo_federal.R R/verifica_sapl_municipal.R R/verifica_senado.R R/verifica_tce_b.R R/verifica_tce_c.R R/verifica_tce_d.R R/verifica_tce_norte_nordeste.R R/verifica_tce_sudeste_sul_centro.R R/verifica_wikipedia_estadual.R R/verifica_wikipedia_prefeitos.R
+KernSmooth,2.23-22,Repository,dependencia,""
+lifecycle,1.0.4,Repository,dependencia,""
+magrittr,2.0.3,Repository,dependencia,""
+MASS,7.3-60.0.1,Repository,dependencia,""
+mime,0.13,Repository,dependencia,""
+openssl,2.3.3,Repository,dependencia,""
+openxlsx,4.2.8,Repository,direto,R/35_livro_codigos_tabular.R
+pillar,1.11.0,Repository,dependencia,""
+pkgconfig,2.0.3,Repository,dependencia,""
+prettyunits,1.2.0,Repository,dependencia,""
+progress,1.2.3,Repository,dependencia,""
+proxy,0.4-27,Repository,dependencia,""
+purrr,1.0.4,Repository,dependencia,""
+R6,2.6.1,Repository,dependencia,""
+Rcpp,1.1.0,Repository,dependencia,""
+readxl,1.4.5,Repository,direto,R/10_munic_inventario.R R/11_munic_prefeitos.R R/23_tce_gestores.R R/49_munic_ampliado.R R/verifica_munic.R
+rematch,2.0.0,Repository,dependencia,""
+rlang,1.3.0,Repository,dependencia,""
+rvest,1.0.4,Repository,direto,R/16_wikipedia_estadual.R R/17_wikipedia_prefeitos.R R/22_exercicio_assembleias_historico.R
+s2,1.1.9,Repository,dependencia,""
+selectr,0.4-2,Repository,dependencia,""
+sf,1.0-21,Repository,direto,lib/asserts_rigor.R
+stringdist,0.9.15,Repository,direto,R/11_munic_prefeitos.R R/49_munic_ampliado.R R/57_tce_ac.R R/assembleias2/01_exercicio_PR.R R/assembleias2/02_build_PR.R R/verifica_munic_integracao.R
+stringi,1.8.7,Repository,direto,R/03_build_banco.R R/07_exercicio_camara.R R/07_exercicio_senado.R R/08_suplementares.R R/09_auditoria_homonimos.R R/10_munic_inventario.R R/11_munic_prefeitos.R R/12_wikidata_mandatos.R R/13_exercicio_assembleias.R R/14_sinais_tse_exercicio.R R/15_exercicio_camaras_municipais.R R/16_wikipedia_estadual.R R/17_wikipedia_prefeitos.R R/18_datajud_cassacoes.R R/20_exercicio_camaras_sem_sapl.R R/21_diarios_oficiais.R R/22_exercicio_assembleias_historico.R R/23_tce_gestores.R R/24_tce_gestores_b.R R/25_exercicio_camaras_sem_sapl_2.R R/33_tce_gestores_c.R R/34_tce_gestores_d.R R/40_pessoas_suplentes.R R/41_lista_suplencia.R R/42_ocupacoes.R R/44_sapl_recuperado.R R/49_munic_ampliado.R R/50_assembleias_inventario.R R/54_sapl_observacao.R R/57_tce_ac.R R/59_camara_biografia.R R/61a_consolidar_curadoria_assembleias.R R/assembleias2/00_funcoes_PR.R R/assembleias2/01_build_RS.R R/assembleias2/01_exercicio_PR.R R/assembleias2/02_build_PR.R R/assembleias2/build_BA.R R/assembleias2/build_PE.R R/assembleias2/build_RJ.R R/assembleias2/build_SP.R R/assembleias2/monta_CE.R R/assembleias2/monta_MA.R R/assembleias2/verifica_CE.R R/assembleias2/verifica_MA.R R/assembleias2/verifica_PE.R R/assembleias2/verifica_PR.R R/assembleias2/verifica_RJ.R R/assembleias2/verifica_SP.R R/verifica_assembleias_sem_historico.R R/verifica_assembleias.R R/verifica_camara.R R/verifica_camaras_rodada2.R R/verifica_camaras_sem_sapl_2.R R/verifica_datajud.R R/verifica_diarios.R R/verifica_homonimos.R R/verifica_munic_integracao.R R/verifica_munic.R R/verifica_reeleicao_tse.R R/verifica_sapl_municipal.R R/verifica_sapl_observacao.R R/verifica_senado.R R/verifica_tce_ac.R R/verifica_tce_b.R R/verifica_tce_c.R R/verifica_tce_d.R R/verifica_tce_existentes.R R/verifica_tce_norte_nordeste.R R/verifica_tce_sudeste_sul_centro.R R/verifica_tce.R R/verifica_verifica_tce_existentes.R R/verifica_wikidata.R R/verifica_wikipedia_estadual.R R/verifica_wikipedia_prefeitos.R
+stringr,1.5.1,Repository,dependencia,""
+sys,3.4.3,Repository,dependencia,""
+tibble,3.3.0,Repository,dependencia,""
+tidyselect,1.2.1,Repository,dependencia,""
+units,0.8-7,Repository,dependencia,""
+utf8,1.2.6,Repository,dependencia,""
+vctrs,0.6.5,Repository,dependencia,""
+withr,3.0.2,Repository,dependencia,""
+wk,0.9.4,Repository,dependencia,""
+xml2,1.3.8,Repository,direto,R/16_wikipedia_estadual.R R/17_wikipedia_prefeitos.R R/22_exercicio_assembleias_historico.R R/61a_consolidar_curadoria_assembleias.R
+zip,2.3.3,Repository,dependencia,""

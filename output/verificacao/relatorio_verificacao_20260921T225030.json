@@ -1,0 +1,9 @@
+{
+  "alvo": "data/munic_prefeitos.csv",
+  "data_iso": "2026-09-21T22:50:30",
+  "checksum_script": "e3d153cae0ed55b13652f052e833bc73",
+  "passou": ["chave (id_municipio_ibge, ano_munic) unica em munic_prefeitos.csv","status em {eleito_em_exercicio, outro_em_exercicio, indeterminado}","substituto_provavel preenchido sse status == outro_em_exercicio","correspondencia TSE-IBGE unica por sg_ue (5569 prefeituras, 5569 com codigo IBGE)","toda edicao com bloco prefeito e microdado foi lida (2004, 2005, 2009, 2013, 2017, 2021)"],
+  "falhou": [],
+  "fora_de_cobertura": ["veracidade do nome/sexo/idade declarados a MUNIC (dado administrativo do IBGE)","data exata da entrevista por municipio (a base nao a traz; idade calculada em 31 de dezembro do ano da pesquisa)","status 'outro_em_exercicio' inferido por sexo+idade em 2009/2013/2017/2021 e nao por nome; 'vice' por sexo+idade e apenas provavel","1999 (sem base no FTP), 2001 e 2002 (so tabelas agregadas) ficam sem pareamento"],
+  "veredito": "verificado"
+}

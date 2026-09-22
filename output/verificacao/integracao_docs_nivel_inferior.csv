@@ -1,0 +1,16 @@
+id_mandato,cd_cargo,esfera,forma_saida,fonte_forma_saida,data_fim_efetiva,mandato_fim,nivel_esp,fontes,formas,n_fontes,nivel_grav,evento_declarado,nivel_ok
+M2010_ES_7_12500_80000000561,7,estadual,renuncia,fonte_oficial_curada,2012-12-26,2015-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2010_ES_7_23123_80000000633,7,estadual,renuncia,fonte_oficial_curada,2013-01-01,2015-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2010_ES_7_25025_80000000427,7,estadual,renuncia,fonte_oficial_curada,2013-01-01,2015-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2010_ES_7_25222_80000000735,7,estadual,renuncia,fonte_oficial_curada,2013-01-01,2015-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2010_ES_7_44789_80000000229,7,estadual,renuncia,fonte_oficial_curada,2013-01-01,2015-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2010_GO_7_10190_90000000658,7,estadual,fim_regular,fonte_oficial_curada,2015-01-31,2015-01-31,1,assembleia_inventario;wikidata,wikidata=fim_regular;assembleia_inventario=fim_regular,2,,FALSE,FALSE
+M2010_MT_7_22666_110000000109,7,estadual,fim_regular,fonte_oficial_curada,2015-01-31,2015-01-31,1,assembleia_inventario;cargo_incompativel;wikidata,wikidata=fim_regular;assembleia_inventario=fim_regular;cargo_incompativel=outro,3,,FALSE,FALSE
+M2010_TO_7_23200_270000000057,7,estadual,fim_regular,fonte_oficial_curada,2015-01-31,2015-01-31,2,cargo_incompativel;wikidata,wikidata=renuncia;cargo_incompativel=outro,2,,FALSE,FALSE
+M2014_ES_7_11000_80000000109,7,estadual,renuncia,fonte_oficial_curada,2017-01-01,2019-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2014_GO_7_44190_90000000101,7,estadual,fim_regular,fonte_oficial_curada,2019-01-31,2019-01-31,2,cargo_incompativel;wikidata,wikidata=renuncia;cargo_incompativel=outro,2,,FALSE,FALSE
+M2014_MT_7_77000_110000000223,7,estadual,renuncia,fonte_oficial_curada,2016-12-31,2019-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2018_MT_7_17000_110000609523,7,estadual,falecimento,fonte_oficial_curada,2021-03-13,2023-01-31,2,wikidata_obito;wikipedia,wikidata_obito=falecimento;wikipedia=falecimento,2,,TRUE,FALSE
+M2022_ES_7_11100_80001649877,7,estadual,renuncia,fonte_oficial_curada,2025-01-01,2027-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2022_MT_7_14100_110001635705,7,estadual,renuncia,fonte_oficial_curada,2024-12-30,2027-01-31,1,assembleia_inventario;cargo_incompativel,assembleia_inventario=outro;cargo_incompativel=outro,2,,FALSE,FALSE
+M2022_TO_7_22111_270001643584,7,estadual,renuncia,fonte_oficial_curada,2024-12-31,2027-01-31,1,assembleia_api;cargo_incompativel,assembleia_api=outro;cargo_incompativel=outro,2,,FALSE,FALSE

@@ -1,0 +1,14 @@
+condicao,forma_saida,N
+nao_informado,fim_regular,15
+nao_informado,outro,15
+suplente,suplente_efetivado,54
+suplente,,5
+suplente,nao_observado,1
+suplente,licenca,1
+titular,fim_regular,252
+titular,,44
+titular,outro,20
+titular,licenca,4
+titular,falecimento,4
+titular,renuncia,4
+titular,nao_observado,1

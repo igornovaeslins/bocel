@@ -1,0 +1,9 @@
+{
+  "alvo": "data/exercicio_assembleias_historico.csv",
+  "data_iso": "2026-09-21T23:14:02",
+  "checksum_script": "267483628b4c311011473a3a4b0e0bf0",
+  "passou": ["forma_saida no vocabulario fechado","um mandato do BOCEL recebe no maximo uma linha","id_mandato_bocel existe em mandatos.csv (cargo 7/8)","ano_eleicao em 1998..2022 (eleicoes estaduais)","taxa de pareamento <= 1 por UF/eleicao","suplente so pareado por nome exato ou nascimento","legislatura em curso sem fim_regular (MG 2022)","pareado por nome nao diverge no nascimento","colunas identicas a exercicio_assembleias.csv"],
+  "falhou": [],
+  "fora_de_cobertura": ["datas de posse/saida nao existem nas fontes (so situacao ao fim da legislatura em MG e SE)","pertinencia do pareamento por tokens depende de unicidade do nome na UF/eleicao (amostra em output/verificacao/ash_amostra_tokens.csv)","listas da ALAP so trazem deputados com pagina ativa; ALESC Memoria Politica e prosa editada"],
+  "veredito": "verificado"
+}

@@ -1,0 +1,369 @@
+"arquivo","variavel","descricao","tipo_armazenamento","nivel_medida","fonte","preenchimento","cobertura_temporal","linhas"
+"mandatos.csv","ano_eleicao","Ano da eleicao de origem","inteiro","Ordinal","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","unidade_posicao","Unidade em que a posicao e disputada, isto e, codigo TSE do municipio (cargos municipais), UF (estaduais e federais) ou BR (presidente)","texto","Categorico","Autor, a partir de TSE","100.0%","1998(1)2022",4253
+"mandatos.csv","id_mandato","Identificador do mandato, na forma M<ano>_<unidade>_<cd_cargo>_<nr_candidato>_<sq_candidato>","texto","Categorico","Autor, identificador construido na deduplicacao","100.0%","1998(1)2022",4253
+"mandatos.csv","id_pessoa","Identificador estavel da pessoa (BOCEL + 7 digitos), herdado entre versoes pela referencia ref/ids_pessoa_referencia.parquet; pessoa nova recebe numero acima do maior ja usado","texto","Categorico","Autor, identificador construido na deduplicacao","100.0%","1998(1)2022",4253
+"mandatos.csv","sq_candidato","SQ_CANDIDATO do TSE (unico nacionalmente so a partir de 2010)","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","nr_candidato","Numero do candidato na eleicao de origem","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","nr_turno_decisivo","Turno em que a eleicao se decidiu (1 ou 2)","inteiro","Numerico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","dt_eleicao","Data do pleito (turno decisivo)","data dd/mm/aaaa","Data","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","cd_cargo","Codigo TSE do cargo","inteiro","Numerico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","cargo","Descricao do cargo (PREFEITO, VEREADOR, ...)","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","esfera","Esfera (municipal, estadual ou federal)","texto","Categorico","Autor, a partir de TSE","100.0%","1998(1)2022",4253
+"mandatos.csv","sg_uf","UF da posicao (BR para presidente)","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","sg_ue","Codigo TSE da unidade eleitoral (municipio ou UF)","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","nm_ue","Nome da unidade eleitoral","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","nr_partido","Numero do partido na eleicao de origem","inteiro","Numerico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","sg_partido","Sigla do partido na eleicao de origem","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","tp_agremiacao","Tipo de agremiacao (partido isolado, coligacao, federacao)","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","nm_coligacao","Nome da coligacao","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","composicao_coligacao","Partidos que compoem a coligacao","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","regra_chapa","Como a candidatura do vice foi ligada ao titular eleito da mesma chapa, so nos cargos de vice. Valores numero_do_titular (mesmo numero do titular, ou o numero dele seguido de 1 em 1998 e 2000, com situacao vazia no cadastro), numero_titular_imputado (vice de titular imputado por votos, com situacao no cadastro igual a do titular), sq_coligacao (mesma coligacao do titular na unidade, com correspondencia de um para um) e composicao_coligacao (mesma composicao da coligacao escrita por extenso). NA nos titulares e nos demais cargos","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","2.6%","1998(1)2022",4253
+"mandatos.csv","reeleicao_declarada","Candidato declarou concorrer a reeleicao (S/N, TSE)","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","43.3%","1998(1)2022",4253
+"mandatos.csv","situacao_totalizacao","Situacao de totalizacao no turno decisivo (ELEITO, ELEITO POR QP, ELEITO POR MEDIA; ELEITO (IMPUTADO DO TITULAR) para vices; ELEITO (IMPUTADO POR VOTOS) para majoritario sem vencedor marcado pelo TSE)","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","fonte_situacao","Origem da situacao, entre cadastro (consulta_cand), votacao (votacao_candidato_munzona), imputacao_titular e imputacao_votos","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","votos_t1","Votos nominais no 1o turno","inteiro","Numerico","TSE (consulta_cand e votacao_candidato_munzona)","95.4%","1998(1)2022",4253
+"mandatos.csv","votos_turno_decisivo","Votos nominais no turno decisivo","inteiro","Numerico","TSE (consulta_cand e votacao_candidato_munzona)","95.4%","1998(1)2022",4253
+"mandatos.csv","mandato_inicio","Inicio convencional do mandato (1o de fevereiro pos-eleicao para senador e deputados; 1o de janeiro para os demais)","data ISO","Data","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","mandato_fim","Fim convencional do mandato (31 de janeiro apos o ultimo ano para senador e deputados; 31 de dezembro para os demais)","data ISO","Data","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","forma_saida","Forma de saida do cargo, vocabulario fechado (fim_regular, renuncia, falecimento, cassacao, afastamento, licenca, nao_tomou_posse, suplente_efetivado, perda_do_mandato_inferida_por_eleicao_suplementar, substituicao_inferida_munic, assumiu_titular, aposentadoria, impeachment, retotalizacao, outro, nao_observado). Em senador, deputado federal, presidente, vice-presidente, governador e vice-governador, licenca e afastamento temporario nao encerram mandato, e o periodo fora do exercicio fica em data/interregnos_legislativo_federal.csv; retotalizacao e a perda da vaga por nova totalizacao dos votos, sem ato ilicito","texto","Categorico","Autor, a partir de TSE","100.0%","1998(1)2022",4253
+"mandatos.csv","antecessor_id","id_pessoa de quem ocupou a mesma posicao no mandato anterior (executivos)","texto","Categorico","Autor, a partir de TSE","4.0%","1998(1)2022",4253
+"mandatos.csv","sucessor_id","id_pessoa de quem ocupou a mesma posicao no mandato seguinte (executivos)","texto","Categorico","Autor, a partir de TSE","4.0%","1998(1)2022",4253
+"mandatos.csv","via_sucessao","Via institucional da sucessao; v1 = nova_eleicao (executivos)","texto","Categorico","Autor, a partir de TSE","4.6%","1998(1)2022",4253
+"mandatos.csv","reeleito_mesma_pessoa","Antecessor imediato e a mesma pessoa (executivos)","logico","Binario","Autor, a partir de TSE","4.0%","1998(1)2022",4253
+"mandatos.csv","data_posse","Inicio do primeiro periodo de exercicio registrado (Camara, Senado, Assembleias, Wikidata)","data ISO","Data","Autor, a partir de TSE","99.5%","1998(1)2022",4253
+"mandatos.csv","data_fim_efetiva","Fim do ultimo periodo de exercicio registrado, ou data da saida inferida","data ISO","Data","Autor, a partir de TSE","86.1%","1998(1)2022",4253
+"mandatos.csv","precisao_data_fim","Precisao de data_fim_efetiva, com os valores ato (data do ato registrado pela casa ou por fonte oficial), convencional (fim regular na data constitucional), intervalo (forma confirmada e dia exato fora do alcance das fontes, com os limites na tabela curada). Preenchida nesta versao para senador, deputado federal, presidente, vice-presidente, governador e vice-governador, e vazia nos demais cargos e no mandato sem saida","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","86.1%","1998(1)2022",4253
+"mandatos.csv","fonte_forma_saida","Fonte da forma de saida (camara_api, senado_api, camara_biografia, fonte_oficial_curada, base_dhbb_curada, noticia_orgao_publico_curada, pista_nao_oficial, assembleia_api, sapl_municipal, sapl_observacao, portal_camara, tce, assembleia_historico, assembleia_portal, assembleia_inventario, diario_oficial, wikipedia, wikidata, wikidata_obito, datajud, tse_suplementar, ibge_munic, cargo_incompativel, derivado_titular, data_fim_efetiva). sapl_observacao e o ato escrito no campo de texto livre do SAPL, lido por R/54; assembleia_inventario e a folha e a frequencia das casas estaduais; cargo_incompativel e a posse em outro cargo eletivo deduzida do proprio banco. camara_biografia e a biografia oficial do deputado na Camara, fonte da legislatura 1999-2003; fonte_oficial_curada e o evento das tabelas em ref/ com fonte oficial, e nos casos federais especiais tambem com materia e trecho literal conferido. Nos governos e na Presidencia, o evento curado sem fonte oficial leva o rotulo da melhor fonte que tem, base_dhbb_curada para o verbete do DHBB/CPDOC-FGV, noticia_orgao_publico_curada para a noticia publicada por orgao publico e pista_nao_oficial quando so ha imprensa ou Wikipedia, caso em que o mandato consta de docs/EXCECOES_CONHECIDAS.csv. derivado_titular marca o vice que assume quando o titular sai; data_fim_efetiva marca o fim efetivo registrado que iguala ou ultrapassa o fim convencional, promovido a fim_regular","texto","Categorico","Autor, a partir de TSE","86.1%","1998(1)2022",4253
+"mandatos.csv","exercicio_confirmado","Data mais recente em que o titular foi observado em exercicio (MUNIC; registro da candidatura a reeleicao no TSE)","data ISO","Data","Autor, a partir de TSE","45.0%","1998(1)2022",4253
+"mandatos.csv","fonte_exercicio","Fonte da confirmacao de exercicio (ibge_munic; ibge_munic_ampliado; tse_reeleicao; receita_cnpj; sapl_presenca; tce_ac), separadas por ponto e virgula quando ha mais de uma. sapl_presenca e a lista de presenca em plenario, na data da ultima presenca; ibge_munic_ampliado e a MUNIC lida por atributos, so no lado que confirma o eleito; tce_ac e o acordao de contas anuais do Tribunal de Contas do Acre, na data de inicio do periodo julgado","texto","Categorico","Autor, a partir de TSE","45.0%","1998(1)2022",4253
+"mandatos.csv","universo_comparavel","A unidade (municipio, UF ou casa nacional) teve varredura por fonte institucional naquela eleicao. Dentro do universo a ausencia de saida observada significa que o mandato terminou; fora dele significa que ninguem olhou. Use esta coluna antes de comparar forma de saida entre esferas, cargos ou anos","logico","Binario","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","motivo_sem_saida","Motivo da ausencia de forma de saida observada, derivado de universo_comparavel, mandato_fim e forma_saida sem fonte nova. Valores nao_se_aplica (saida observada), em_curso (fim convencional posterior a data de referencia da reconstrucao, output/data_referencia.txt), fim_regular_presumido (dentro do universo comparavel, em que a casa foi varrida) e fonte_ausente (fora dele)","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"mandatos.csv","chave_tse","Chave de juncao com bases derivadas do TSE (ano_eleicao, cd_cargo, sg_ue, nr_candidato), unica em todas as linhas (R/53 reprova duplicata). Preferir ao SQ_CANDIDATO, que so e unico nacionalmente a partir de 2010","texto","Categorico","TSE (consulta_cand e votacao_candidato_munzona)","100.0%","1998(1)2022",4253
+"posicoes_ano.csv","id_mandato","Chave para mandatos.csv","texto","Categorico","Autor, identificador construido na deduplicacao","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","id_pessoa","Identificador estavel da pessoa","texto","Categorico","Autor, identificador construido na deduplicacao","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","cd_cargo","Codigo TSE do cargo","inteiro","Numerico","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","cargo","Descricao do cargo","texto","Categorico","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","esfera","Esfera (municipal, estadual ou federal)","texto","Categorico","Autor, a partir de Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","sg_uf","UF da posicao","texto","Categorico","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","sg_ue","Codigo TSE da unidade eleitoral","texto","Categorico","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","nm_ue","Nome da unidade eleitoral","texto","Categorico","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","ano_eleicao","Ano da eleicao de origem","inteiro","Ordinal","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","sg_partido","Sigla do partido na eleicao de origem","texto","Categorico","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","nr_partido","Numero do partido na eleicao de origem","inteiro","Numerico","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"posicoes_ano.csv","ano","Ano-calendario em que a pessoa ocupa a posicao","inteiro","Ordinal","Autor, a partir de mandatos.csv","100.0%","1998(1)2022",18092
+"pessoas.csv","id_pessoa","Identificador estavel da pessoa","texto","Categorico","Autor, identificador construido na deduplicacao","100.0%",NA,2155
+"pessoas.csv","nome","Nome completo (registro mais recente no TSE)","texto","Categorico","TSE (consulta_cand)","100.0%",NA,2155
+"pessoas.csv","nome_urna_recente","Nome de urna mais recente","texto","Categorico","TSE (consulta_cand)","99.5%",NA,2155
+"pessoas.csv","dt_nascimento","Data de nascimento","data ISO","Data","TSE (consulta_cand)","100.0%",NA,2155
+"pessoas.csv","genero","Genero declarado ao TSE","texto","Categorico","TSE (consulta_cand)","100.0%",NA,2155
+"pessoas.csv","nr_titulo_eleitoral","Titulo de eleitor (12 digitos, divulgado pelo TSE)","texto","Categorico","TSE (consulta_cand)","100.0%",NA,2155
+"pessoas.csv","nr_cpf","CPF (11 digitos, divulgado pelo TSE)","texto","Categorico","TSE (consulta_cand)","99.9%",NA,2155
+"pessoas.csv","n_mandatos","Numero de mandatos da pessoa no banco","inteiro","Numerico","TSE (consulta_cand)","100.0%",NA,2155
+"pessoas.csv","primeiro_ano_eleito","Primeiro ano em que foi eleita","inteiro","Numerico","TSE (consulta_cand)","100.0%",NA,2155
+"pessoas.csv","ultimo_ano_eleito","Ultimo ano em que foi eleita","inteiro","Numerico","TSE (consulta_cand)","100.0%",NA,2155
+"pessoas.csv","chave_dedup","Regra que identificou a pessoa (titulo, cpf ou nome_nascimento)","texto","Categorico","Autor, a partir de TSE","100.0%",NA,2155
+"pessoas.csv","dedup_suspeita_fusao","Leitura da fusao por documento que R/03 manteve porque nome ou nascimento coincidem entre as candidaturas unidas por um titulo ou CPF (nome_diferente_mesmo_nascimento, mesmo_nome_nascimento_diferente, mesmo_nome_e_nascimento_documento_reemitido); NA quando nao ha suspeita. A lista das fusoes desfeitas esta em output/verificacao/fusao_documentos_separacao.csv","texto","Categorico","TSE (consulta_cand)","0.1%",NA,2155
+"pessoas.csv","dedup_ponte_nome_nascimento","Nome e data de nascimento sao a unica chave de identidade desta pessoa, sem titulo nem CPF em nenhuma candidatura (auditoria em data_v1/auditoria_homonimos.csv)","logico","Binario","Autor, a partir de TSE","100.0%",NA,2155
+"pessoas.csv","dedup_auditoria","Classificacao da auditoria de homonimos (consistente, suspeito, indeterminado) para as pessoas auditadas em data_v1/auditoria_homonimos.csv; nao_auditado para as demais","texto","Categorico","Autor, a partir de TSE","100.0%",NA,2155
+"filiacoes.csv","id_pessoa","Identificador estavel da pessoa","texto","Categorico","Autor, a partir de TSE","100.0%",NA,5942
+"filiacoes.csv","sigla_partido","Sigla do partido da filiacao","texto","Categorico","TSE (listas de filiacao, via Base dos Dados)","100.0%",NA,5942
+"filiacoes.csv","sg_uf","UF da zona eleitoral da filiacao","texto","Categorico","TSE (listas de filiacao, via Base dos Dados)","100.0%",NA,5942
+"filiacoes.csv","cd_municipio_tse","Codigo TSE do municipio da zona eleitoral","texto","Categorico","TSE (listas de filiacao, via Base dos Dados)","100.0%",NA,5942
+"filiacoes.csv","data_filiacao","Data de filiacao","data ISO","Data","TSE (listas de filiacao, via Base dos Dados)","99.6%",NA,5942
+"filiacoes.csv","situacao_registro","Situacao do registro na lista (REGULAR, CANCELADO, DESFILIADO, ...)","texto","Categorico","TSE (listas de filiacao, via Base dos Dados)","100.0%",NA,5942
+"filiacoes.csv","data_desfiliacao","Data de desfiliacao, quando houve","data ISO","Data","TSE (listas de filiacao, via Base dos Dados)","28.3%",NA,5942
+"filiacoes.csv","data_cancelamento","Data de cancelamento, quando houve","data ISO","Data","TSE (listas de filiacao, via Base dos Dados)","44.8%",NA,5942
+"filiacoes.csv","motivo","Motivo de desfiliacao ou cancelamento","texto","Categorico","TSE (listas de filiacao, via Base dos Dados)","42.7%",NA,5942
+"filiacoes.csv","fonte","lista_atual (extracao TSE 2026) ou lista_antiga (listas historicas ate 2019)","texto","Categorico","TSE (listas de filiacao, via Base dos Dados)","100.0%",NA,5942
+"filiacoes.csv","data_referencia","Data de extracao ou processamento da lista de origem","data ISO","Data","TSE (listas de filiacao, via Base dos Dados)","29.9%",NA,5942
+"exercicio_camara.csv","id_pessoa","Identificador da pessoa no BOCEL (NA para suplente fora do banco)","texto","Categorico","Autor, a partir de Camara dos Deputados","94.1%","1998(1)2022",6329
+"exercicio_camara.csv","id_mandato","Mandato do BOCEL a que o periodo pertence (cd_cargo 6, eleicao que abre a legislatura)","texto","Categorico","Autor, a partir de Camara dos Deputados","73.5%","1998(1)2022",6329
+"exercicio_camara.csv","id_deputado_camara","id do deputado na API da Camara","inteiro","Numerico","Camara dos Deputados (API de Dados Abertos)","99.9%","1998(1)2022",6329
+"exercicio_camara.csv","legislatura","Numero da legislatura (51 = 1999-2003 ... 57 = 2023-2027)","inteiro","Ordinal","Camara dos Deputados (API de Dados Abertos)","100.0%","1998(1)2022",6329
+"exercicio_camara.csv","ano_eleicao","Ano da eleicao que abriu a legislatura","inteiro","Ordinal","Camara dos Deputados (API de Dados Abertos)","100.0%","1998(1)2022",6329
+"exercicio_camara.csv","nome_civil","Nome civil na Camara","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","99.9%","1998(1)2022",6329
+"exercicio_camara.csv","nome_parlamentar","Nome parlamentar","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","99.9%","1998(1)2022",6329
+"exercicio_camara.csv","cpf","CPF (divulgado pela Camara)","inteiro","Numerico","Camara dos Deputados (API de Dados Abertos)","99.9%","1998(1)2022",6329
+"exercicio_camara.csv","dt_nascimento","Data de nascimento (Camara)","data ISO","Data","Camara dos Deputados (API de Dados Abertos)","99.9%","1998(1)2022",6329
+"exercicio_camara.csv","dt_falecimento","Data de falecimento (arquivo em massa da Camara)","data ISO","Data","Camara dos Deputados (API de Dados Abertos)","9.9%","1998(1)2022",6329
+"exercicio_camara.csv","sg_uf","UF","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","100.0%","1998(1)2022",6329
+"exercicio_camara.csv","sg_partido","Partido no ultimo status","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","90.6%","1998(1)2022",6329
+"exercicio_camara.csv","condicao","titular ou suplente","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","100.0%","1998(1)2022",6329
+"exercicio_camara.csv","efetivado","Suplente efetivado como titular (logico)","logico","Binario","Camara dos Deputados (API de Dados Abertos)","100.0%","1998(1)2022",6329
+"exercicio_camara.csv","data_inicio_exercicio","Inicio do periodo (evento Entrada no historico)","data ISO","Data","Camara dos Deputados (API de Dados Abertos)","86.8%","1998(1)2022",6329
+"exercicio_camara.csv","data_fim_exercicio","Fim do periodo (evento Saida); NA se em curso","data ISO","Data","Camara dos Deputados (API de Dados Abertos)","80.3%","1998(1)2022",6329
+"exercicio_camara.csv","situacao_final","Situacao ao fim do periodo (texto da Camara ou marcador do script)","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","100.0%","1998(1)2022",6329
+"exercicio_camara.csv","forma_saida","Forma de saida no vocabulario fechado","texto","Categorico","Autor, a partir de Camara dos Deputados","91.8%","1998(1)2022",6329
+"exercicio_camara.csv","descricao_entrada","Texto original do evento de entrada","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","99.9%","1998(1)2022",6329
+"exercicio_camara.csv","descricao_saida","Texto original do evento de saida","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","80.3%","1998(1)2022",6329
+"exercicio_camara.csv","regra_pareamento","Regra que pareou com o BOCEL (cpf, nome+nascimento, ...)","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","94.0%","1998(1)2022",6329
+"exercicio_camara.csv","fonte","camara_api","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","100.0%","1998(1)2022",6329
+"exercicio_camara.csv","url_fonte","URL do recurso na API","texto","Categorico","Camara dos Deputados (API de Dados Abertos)","99.9%","1998(1)2022",6329
+"exercicio_senado.csv","id_pessoa","Identificador da pessoa no BOCEL (NA para suplente fora do banco)","texto","Categorico","Autor, a partir de Senado Federal","70.2%",NA,707
+"exercicio_senado.csv","id_mandato","Mandato do BOCEL (cd_cargo 5)","texto","Categorico","Autor, a partir de Senado Federal","60.1%",NA,707
+"exercicio_senado.csv","codigo_senador","Codigo do parlamentar no Senado","inteiro","Numerico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","nome_senado","Nome completo no Senado","texto","Categorico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","nome_parlamentar","Nome parlamentar","texto","Categorico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","dt_nascimento","Data de nascimento (Senado)","data ISO","Data","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","sexo","Sexo (Senado)","texto","Categorico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","sg_uf","UF","texto","Categorico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","legislatura","Primeira legislatura do mandato","inteiro","Ordinal","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","leg_segunda","Segunda legislatura do mandato (mandato de 8 anos)","inteiro","Numerico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","ano_eleicao_ref","Ano da eleicao de referencia","inteiro","Ordinal","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","codigo_mandato","Codigo do mandato no Senado","inteiro","Numerico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","condicao","titular ou suplente","texto","Categorico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","participacao","Descricao de participacao (Senado)","texto","Categorico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","titular_codigo","Codigo do titular, para suplentes","inteiro","Numerico","Senado Federal (API de Dados Abertos)","36.8%",NA,707
+"exercicio_senado.csv","titular_nome","Nome do titular, para suplentes","texto","Categorico","Senado Federal (API de Dados Abertos)","36.8%",NA,707
+"exercicio_senado.csv","codigo_exercicio","Codigo do exercicio","inteiro","Numerico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","data_inicio_exercicio","Inicio do exercicio","data ISO","Data","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","data_fim_exercicio","Fim do exercicio; NA se em curso","data ISO","Data","Senado Federal (API de Dados Abertos)","88.5%",NA,707
+"exercicio_senado.csv","sigla_causa","Sigla da causa de afastamento (Senado)","texto","Categorico","Senado Federal (API de Dados Abertos)","88.4%",NA,707
+"exercicio_senado.csv","causa_afastamento","Descricao da causa de afastamento (Senado)","texto","Categorico","Senado Federal (API de Dados Abertos)","88.4%",NA,707
+"exercicio_senado.csv","forma_saida","Forma de saida no vocabulario fechado","texto","Categorico","Autor, a partir de Senado Federal","88.5%",NA,707
+"exercicio_senado.csv","metodo_pareamento","Regra que pareou com o BOCEL","texto","Categorico","Autor, a partir de Senado Federal","70.2%",NA,707
+"exercicio_senado.csv","fonte","senado_api","texto","Categorico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"exercicio_senado.csv","url_fonte","URL do recurso na API","texto","Categorico","Senado Federal (API de Dados Abertos)","100.0%",NA,707
+"camara_biografia_eventos.csv","id_deputado_camara","Id do deputado na API da Camara","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",4969
+"camara_biografia_eventos.csv","secao","Secao da biografia em que o evento apareceu","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",4969
+"camara_biografia_eventos.csv","leg_inicio","Legislatura a que o evento se refere","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","92.9%","1954(1)2022",4969
+"camara_biografia_eventos.csv","tipo","Tipo do evento (posse, licenca, renuncia, perda_mandato, aposentadoria, afastamento, suplencia, falecimento)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",4969
+"camara_biografia_eventos.csv","datas","Datas do evento, no texto da biografia","texto","Categorico","Autor, a partir das tabelas do BOCEL","98.6%","1954(1)2022",4969
+"camara_biografia_eventos.csv","trecho","Excerto da pagina que sustenta a leitura","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",4969
+"camara_biografia_eventos.csv","url","URL da biografia","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",4969
+"camara_biografia_eventos.csv","ano_eleicao","Eleicao do BOCEL correspondente a legislatura","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","92.9%","1954(1)2022",4969
+"camara_biografia_posses.csv","id_deputado_camara","Id do deputado na API da Camara","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",5298
+"camara_biografia_posses.csv","leg_inicio","Legislatura da posse","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",5298
+"camara_biografia_posses.csv","sg_uf","UF","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",5298
+"camara_biografia_posses.csv","data_posse","Data de posse na biografia","data ISO","Data","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",5298
+"camara_biografia_posses.csv","url","URL da biografia","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",5298
+"camara_biografia_posses.csv","ano_eleicao","Eleicao do BOCEL correspondente","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%","1954(1)2022",5298
+"interregnos_legislativo_federal.csv","id_mandato","Mandato do BOCEL (cd_cargo 5 ou 6)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","id_pessoa","Pessoa","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","casa","senado ou camara","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","cargo","Cargo","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","sg_uf","UF","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","ano_eleicao","Eleicao do mandato","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","tipo","Causa do afastamento no vocabulario da fonte (licenca, afastamento, suspensao)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","causa_original","Texto original da causa na fonte","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","inicio_fora","Inicio do periodo fora do exercicio","data ISO","Data","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","fim_fora","Fim do periodo, quando a casa registra a volta ou o mandato ja acabou","data ISO","Data","Autor, a partir das tabelas do BOCEL","98.5%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","retorno_observado","A casa registrou o retorno ao exercicio (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","fonte","senado_api ou camara_api","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"interregnos_legislativo_federal.csv","url_fonte","URL do recurso na API","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",1316
+"saida_legislativo_federal.csv","id_mandato","Mandato do BOCEL (cd_cargo 5 ou 6)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","casa","senado ou camara","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","cargo","Cargo","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","sg_uf","UF","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","ano_eleicao","Eleicao do mandato","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","data_posse","Data de posse","data ISO","Data","Autor, a partir de Autor, a partir das tabelas do BOCEL","99.7%","1998(1)2022",3861
+"saida_legislativo_federal.csv","data_fim_efetiva","Data do ato que encerrou o mandato, ou do fim convencional","data ISO","Data","Autor, a partir de Autor, a partir das tabelas do BOCEL","85.5%","1998(1)2022",3861
+"saida_legislativo_federal.csv","precisao_data_fim","Precisao da data (ato ou convencional)","texto","Categorico","Autor, a partir das tabelas do BOCEL","85.5%","1998(1)2022",3861
+"saida_legislativo_federal.csv","forma_saida","Forma de saida no vocabulario fechado (NA quando em curso)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","85.5%","1998(1)2022",3861
+"saida_legislativo_federal.csv","causa_original","Texto original da causa na fonte","texto","Categorico","Autor, a partir das tabelas do BOCEL","85.5%","1998(1)2022",3861
+"saida_legislativo_federal.csv","em_curso","Mandato em curso na data de referencia (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","afastado_no_fim","O titular estava licenciado ou afastado no fim regular do mandato, sem ter voltado (logico; NA quando nao se aplica)","logico","Binario","Autor, a partir das tabelas do BOCEL","72.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","cobertura","Fonte que resolveu o mandato, entre historico_da_casa, sem_historico_na_api, biografia_oficial_camara, biografia_sem_posse_na_legislatura e fonte_oficial_curada","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","fonte","senado_api, camara_api ou fonte_oficial_curada","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_legislativo_federal.csv","url_fonte","URL da fonte","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3861
+"saida_executivos.csv","id_mandato","Mandato do BOCEL (cd_cargo 1 a 4)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",392
+"saida_executivos.csv","cargo","Cargo","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",392
+"saida_executivos.csv","sg_uf","UF","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",392
+"saida_executivos.csv","ano_eleicao","Eleicao do mandato","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",392
+"saida_executivos.csv","forma_saida","Forma de saida no vocabulario fechado (NA quando em curso)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","91.3%","1998(1)2022",392
+"saida_executivos.csv","data_fim_efetiva","Data da saida ou do fim convencional","data ISO","Data","Autor, a partir de Autor, a partir das tabelas do BOCEL","91.3%","1998(1)2022",392
+"saida_executivos.csv","precisao_data_fim","Precisao da data (ato, convencional ou intervalo)","texto","Categorico","Autor, a partir das tabelas do BOCEL","91.3%","1998(1)2022",392
+"saida_executivos.csv","em_curso","Mandato em curso na data de referencia (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",392
+"saida_executivos.csv","via","Como a forma foi estabelecida, entre evento_curado (ref/eventos_governos_fonte_oficial.csv e ref/eventos_presidencia_fonte_oficial.csv), listas_wikipedia_e_wikidata, lista_wikipedia, derivado_do_titular_curado, em_curso_sem_evento e sem_confirmacao","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",392
+"saida_executivos.csv","confianca","alta ou media, conforme a via","texto","Categorico","Autor, a partir das tabelas do BOCEL","91.8%","1998(1)2022",392
+"saida_executivos.csv","fonte","fonte_oficial_curada, base_dhbb_curada, noticia_orgao_publico_curada, pista_nao_oficial ou wikipedia (lib/tipo_fonte.R)","texto","Categorico","Autor, a partir das tabelas do BOCEL","91.8%","1998(1)2022",392
+"saida_executivos.csv","url_fonte","URL da primeira fonte citada no evento curado, ou da pagina da Wikipedia","texto","Categorico","Autor, a partir das tabelas do BOCEL","91.8%","1998(1)2022",392
+"saida_executivos.csv","fonte_2","URL da segunda fonte citada no evento curado, quando ha","texto","Categorico","Autor, a partir das tabelas do BOCEL","37.8%","1998(1)2022",392
+"saida_executivos.csv","assumiu","Nome de quem assumiu o cargo no ato, quando o evento curado o registra","texto","Categorico","Autor, a partir das tabelas do BOCEL","22.4%","1998(1)2022",392
+"saida_executivos.csv","observacao","Nota da curadoria sobre o evento, quando ha","texto","Categorico","Autor, a partir das tabelas do BOCEL","41.3%","1998(1)2022",392
+"ocupantes_legislativo_federal.csv","casa","senado ou camara","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","cd_cargo","Codigo do cargo (5 ou 6)","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","sg_uf","UF","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","legislatura","Legislatura","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","id_pessoa","Pessoa no BOCEL, quando identificada","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","75.9%",NA,323
+"ocupantes_legislativo_federal.csv","nome_fonte","Nome civil na fonte","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","nome_alt","Nome parlamentar na fonte","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","efetivado","Suplente efetivado como titular, na Camara (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","data_inicio","Inicio do periodo de exercicio","data ISO","Data","Autor, a partir das tabelas do BOCEL","95.0%",NA,323
+"ocupantes_legislativo_federal.csv","data_fim","Fim do periodo de exercicio","data ISO","Data","Autor, a partir das tabelas do BOCEL","89.2%",NA,323
+"ocupantes_legislativo_federal.csv","causa_original","Causa de saida no texto da fonte","texto","Categorico","Autor, a partir das tabelas do BOCEL","89.2%",NA,323
+"ocupantes_legislativo_federal.csv","fonte","senado_api ou camara_api","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","url_fonte","URL do recurso na API","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","tipo_ocupante","suplente_efetivado, ou o tipo atribuido pela curadoria de ref/ocupantes_federais_fonte_oficial.csv (NA quando a cadeira nao foi identificada)","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,323
+"ocupantes_legislativo_federal.csv","id_mandato_cadeira","Cadeira do BOCEL ocupada, quando a curadoria a identifica","texto","Categorico","Autor, a partir das tabelas do BOCEL","15.2%",NA,323
+"ocupantes_legislativo_federal.csv","fonte_oficial","Fonte oficial do ato, quando curada","texto","Categorico","Autor, a partir das tabelas do BOCEL","15.2%",NA,323
+"ocupantes_legislativo_federal.csv","url_oficial","URL da fonte oficial, quando curada","texto","Categorico","Autor, a partir das tabelas do BOCEL","0.0%",NA,323
+"ocupacoes.csv","id_ocupacao","Identificador da ocupacao","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","id_mandato","Cadeira ocupada; NA quando a fonte nao permite identificar qual foi","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","74.6%","1998(1)2022",6287
+"ocupacoes.csv","id_pessoa","Pessoa que ocupou (cadastro do nucleo ou de suplentes)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","97.7%","1998(1)2022",6287
+"ocupacoes.csv","tipo_ocupante","titular, suplente, vice_assumiu ou interino","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","ordem_ocupacao","1 no titular, 2 em diante nos demais","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","74.6%","1998(1)2022",6287
+"ocupacoes.csv","id_lista","Lista partidaria de origem do suplente (coligacao, federacao ou partido)","texto","Categorico","Autor, a partir das tabelas do BOCEL","8.3%","1998(1)2022",6287
+"ocupacoes.csv","ano_eleicao","Eleicao que criou a cadeira","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","cd_cargo","Codigo do cargo (TSE)","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","cargo","Cargo","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","esfera","federal, estadual ou municipal","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","sg_uf","UF","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","sg_ue","Unidade eleitoral nos cargos municipais","texto","Categorico","Autor, a partir das tabelas do BOCEL","67.6%","1998(1)2022",6287
+"ocupacoes.csv","nm_ue","Nome da unidade","texto","Categorico","Autor, a partir das tabelas do BOCEL","67.6%","1998(1)2022",6287
+"ocupacoes.csv","unidade_posicao","Unidade em que a posicao e disputada","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","sg_partido_ocupante","Partido de quem ocupou","texto","Categorico","Autor, a partir das tabelas do BOCEL","91.6%","1998(1)2022",6287
+"ocupacoes.csv","sg_partido_titular","Partido do titular eleito para a cadeira","texto","Categorico","Autor, a partir das tabelas do BOCEL","74.6%","1998(1)2022",6287
+"ocupacoes.csv","data_inicio","Inicio da ocupacao","data ISO","Data","Autor, a partir das tabelas do BOCEL","96.3%","1998(1)2022",6287
+"ocupacoes.csv","data_fim","Fim da ocupacao","data ISO","Data","Autor, a partir das tabelas do BOCEL","86.1%","1998(1)2022",6287
+"ocupacoes.csv","origem_data_inicio","fonte quando ha ato ou registro, convencao quando e a data legal do mandato","texto","Categorico","Autor, a partir das tabelas do BOCEL","96.3%","1998(1)2022",6287
+"ocupacoes.csv","forma_saida","Forma de saida da ocupacao, no vocabulario fechado","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","94.4%","1998(1)2022",6287
+"ocupacoes.csv","fonte_forma_saida","Fonte da forma de saida","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","90.6%","1998(1)2022",6287
+"ocupacoes.csv","vinculo_cadeira","Caminho pelo qual a cadeira foi identificada, entre eleicao, chapa_senado, cadeira_unica_da_unidade, lista_vaga_unica, lista_data ou casa_legislatura (nao identificada)","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","fonte","Fonte do registro de ocupacao","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"ocupacoes.csv","url","URL de origem","texto","Categorico","Autor, a partir das tabelas do BOCEL","32.4%","1998(1)2022",6287
+"ocupacoes.csv","ordem_suplencia","Posicao do ocupante na fila da lista, quando suplente","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","8.3%","1998(1)2022",6287
+"ocupacoes.csv","regra_pareamento_ocupacao","Regra que ligou o nome da fonte a pessoa da lista de suplencia","texto","Categorico","Autor, a partir das tabelas do BOCEL","8.3%","1998(1)2022",6287
+"ocupacoes.csv","partido_difere_do_titular","A cadeira trocou de partido por dentro, sem eleicao (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","4.1%","1998(1)2022",6287
+"ocupacoes.csv","datas_inconsistentes","A fonte publicou fim anterior ao inicio (logico); a linha nao foi corrigida","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",6287
+"lista_suplencia.csv","id_suplencia","Identificador da suplencia","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","chave_cand","Chave da candidatura no TSE","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","id_pessoa","Pessoa (mesmo espaco de identificador do nucleo)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","ano_eleicao","Eleicao","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","cd_cargo_registro","Cargo do registro no TSE (9 e 10 sao os suplentes da chapa do Senado)","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","cargo_registro","Cargo do registro","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","cd_cargo","Cargo da cadeira que a suplencia alcanca","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","cargo","Cargo da cadeira","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","sg_uf","UF","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","sg_ue","Unidade eleitoral","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","nm_ue","Nome da unidade","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","unidade_posicao","Unidade em que a posicao e disputada","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","id_lista","Lista partidaria, seja coligacao, federacao ou partido isolado, pelo SQ_COLIGACAO do TSE","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","nr_partido","Numero do partido","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","sg_partido","Partido","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","tp_agremiacao","Tipo de agremiacao","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","nm_coligacao","Nome da coligacao","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","composicao_coligacao","Composicao da coligacao","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","nome","Nome do candidato","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","nome_urna","Nome de urna","texto","Categorico","Autor, a partir das tabelas do BOCEL","99.4%","1998(1)2022",24706
+"lista_suplencia.csv","nr_candidato","Numero na urna","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","sq_candidato","Sequencial da candidatura","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","votos_nominais","Votacao nominal","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","97.9%","1998(1)2022",24706
+"lista_suplencia.csv","ordem_suplencia","Posicao na fila da lista, derivada da votacao com desempate pelo mais idoso","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","ordem_suplencia_tse","Ordem publicada pelo TSE, existente so em 2016","texto","Categorico","Autor, a partir das tabelas do BOCEL","0.0%","1998(1)2022",24706
+"lista_suplencia.csv","fonte_ordem","derivada_votacao, tse_e_derivada ou chapa_senado","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","empate_na_ordem","Houve empate de votos e nascimento na lista (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","pessoa_tambem_eleita","A pessoa foi eleita em alguma eleicao do banco (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",24706
+"lista_suplencia.csv","id_mandato_cadeira","Cadeira que a suplencia alcanca, quando a chapa a nomeia","texto","Categorico","Autor, a partir das tabelas do BOCEL","2.1%","1998(1)2022",24706
+"pessoas_suplentes.csv","id_pessoa","Identificador no mesmo espaco de pessoas.csv, sem colisao","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%",NA,19095
+"pessoas_suplentes.csv","nome","Nome","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,19095
+"pessoas_suplentes.csv","nome_urna_recente","Nome de urna mais recente","texto","Categorico","Autor, a partir das tabelas do BOCEL","96.6%",NA,19095
+"pessoas_suplentes.csv","dt_nascimento","Nascimento","data ISO","Data","Autor, a partir das tabelas do BOCEL","99.8%",NA,19095
+"pessoas_suplentes.csv","genero","Genero","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,19095
+"pessoas_suplentes.csv","nr_titulo_eleitoral","Titulo de eleitor","texto","Categorico","Autor, a partir das tabelas do BOCEL","99.8%",NA,19095
+"pessoas_suplentes.csv","nr_cpf","CPF","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","99.6%",NA,19095
+"pessoas_suplentes.csv","n_candidaturas_suplente","Candidaturas em que ficou como suplente","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%",NA,19095
+"pessoas_suplentes.csv","primeiro_ano_suplente","Primeira eleicao","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%",NA,19095
+"pessoas_suplentes.csv","ultimo_ano_suplente","Ultima eleicao","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%",NA,19095
+"pessoas_suplentes.csv","chave_dedup","Chave que identificou a pessoa (titulo, cpf ou nome_nascimento)","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%",NA,19095
+"pessoas_suplentes.csv","condicao_no_banco","suplente_nao_eleito","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,19095
+"suplentes_identidade.csv","chave_cand","Chave da candidatura","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"suplentes_identidade.csv","id_pessoa","Pessoa","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"suplentes_identidade.csv","ano_eleicao","Eleicao","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"suplentes_identidade.csv","cd_cargo","Cargo","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"suplentes_identidade.csv","sg_uf","UF","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"suplentes_identidade.csv","sg_ue","Unidade eleitoral","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"suplentes_identidade.csv","sg_partido","Partido","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"suplentes_identidade.csv","regra_id","Regra que atribuiu a pessoa, entre nucleo, titulo, cpf, nome_nascimento, componente e novo","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"suplentes_identidade.csv","pessoa_tambem_eleita","A pessoa ja existia no cadastro do nucleo (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",28038
+"eleicoes_suplementares.csv","id_pleito","Identificador do pleito (S<ano>_<unidade>_<cargo>_<data>)","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","ano_arquivo","Ano do arquivo do TSE em que o pleito consta","inteiro","Ordinal","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","unidade_posicao","Unidade da posicao","texto","Categorico","Autor, a partir de TSE","100.0%",NA,5
+"eleicoes_suplementares.csv","sg_uf","UF","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","sg_ue","Codigo TSE da unidade eleitoral","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","nm_ue","Nome da unidade","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","cd_cargo","Codigo do cargo","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","cargo","Cargo","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","esfera","Esfera","texto","Categorico","Autor, a partir de TSE","100.0%",NA,5
+"eleicoes_suplementares.csv","dt_eleicao_suplementar","Data do 1o turno do pleito","data ISO","Data","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","dt_turno_decisivo","Data do turno decisivo","data ISO","Data","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","nr_turno","Turno decisivo","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","n_candidatos","Candidaturas ao cargo titular no pleito","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","status_vencedor","vencedor_identificado ou motivo da ausencia","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","vencedor_nome","Nome do vencedor","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","vencedor_titulo","Titulo de eleitor do vencedor","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","vencedor_cpf","CPF do vencedor","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","vencedor_id_pessoa","id_pessoa do vencedor, se ja consta do BOCEL","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","votos_vencedor","Votos do vencedor no turno decisivo","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","sq_candidato","SQ_CANDIDATO do vencedor","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","nr_candidato","Numero do vencedor","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","sg_partido_vencedor","Partido do vencedor","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","situacao_totalizacao","Situacao de totalizacao do vencedor","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","fonte_situacao","Origem da situacao (cadastro ou votacao)","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","vice_nome","Nome do vice eleito no pleito","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","40.0%",NA,5
+"eleicoes_suplementares.csv","vice_titulo","Titulo do vice","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","40.0%",NA,5
+"eleicoes_suplementares.csv","vice_cpf","CPF do vice","inteiro","Numerico","TSE (consulta_cand e votacao, pleitos suplementares)","40.0%",NA,5
+"eleicoes_suplementares.csv","vice_id_pessoa","id_pessoa do vice, se consta do BOCEL","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","40.0%",NA,5
+"eleicoes_suplementares.csv","id_mandato_ordinario_afetado","Mandato ordinario vigente na data do pleito","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","ocupante_ordinario_id_pessoa","Pessoa do mandato ordinario afetado","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","dt_dentro_mandato_ordinario","Data do pleito cai na janela do mandato ordinario (logico)","logico","Binario","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","momento","antes_da_posse ou durante_o_mandato","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","vencedor_e_o_ocupante_ordinario","O vencedor e a mesma pessoa do mandato ordinario (logico)","logico","Binario","TSE (consulta_cand e votacao, pleitos suplementares)","40.0%",NA,5
+"eleicoes_suplementares.csv","mandatos_ordinarios_candidatos","Mandatos ordinarios candidatos ao pareamento","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","40.0%",NA,5
+"eleicoes_suplementares.csv","realizado_ate_data_do_arquivo","Pleito realizado ate a data de geracao do arquivo do TSE (logico)","logico","Binario","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","chave_colide_com_ordinaria","Alguma candidatura do pleito tem chave igual a de candidatura ordinaria do mesmo ano (SQ reiniciado ate 2008; logico)","logico","Binario","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"eleicoes_suplementares.csv","vencedor_chave_colide_com_ordinaria","A chave do vencedor colide com candidatura ordinaria (logico)","logico","Binario","TSE (consulta_cand e votacao, pleitos suplementares)","60.0%",NA,5
+"eleicoes_suplementares.csv","fonte","tse_consulta_cand+votacao","texto","Categorico","TSE (consulta_cand e votacao, pleitos suplementares)","100.0%",NA,5
+"mandatos_forma_saida_suplementar.csv","id_mandato_ordinario_afetado","Mandato ordinario do BOCEL","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","forma_saida","Forma de saida inferida","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","momento","durante_o_mandato ou antes_da_posse","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","data_fim_inferida","Vespera do pleito suplementar","data ISO","Data","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","id_pleito_suplementar","Pleito suplementar (eleicoes_suplementares.csv)","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","sucessor_via_suplementar","id_pessoa do vencedor do pleito","texto","Categorico","Autor, a partir das tabelas do BOCEL","66.7%",NA,3
+"mandatos_forma_saida_suplementar.csv","sucessor_nome","Nome do vencedor","texto","Categorico","Autor, a partir das tabelas do BOCEL","66.7%",NA,3
+"mandatos_forma_saida_suplementar.csv","sucessor_titulo","Titulo de eleitor do vencedor","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","66.7%",NA,3
+"mandatos_forma_saida_suplementar.csv","via_sucessao","Via da sucessao","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","id_pleito_sucessor","Pleito que deu o sucessor","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","dt_pleito_sucessor","Data desse pleito","data ISO","Data","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","status_vencedor","vencedor_identificado ou sem_vencedor_marcado_no_tse","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","n_pleitos_suplementares","Pleitos suplementares na mesma unidade e mandato","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"mandatos_forma_saida_suplementar.csv","vencedor_e_o_ocupante_ordinario","O vencedor e a mesma pessoa do mandato afetado (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","66.7%",NA,3
+"mandatos_forma_saida_suplementar.csv","fonte","Arquivos do TSE usados","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,3
+"pessoas_flags_dedup.csv","id_pessoa","Pessoa no BOCEL","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%",NA,2155
+"pessoas_flags_dedup.csv","ponte_nome_nascimento","A pessoa une componentes so por nome e nascimento (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%",NA,2155
+"pessoas_flags_dedup.csv","so_nome_nascimento","A identificacao depende so de nome e nascimento (logico)","logico","Binario","Autor, a partir das tabelas do BOCEL","100.0%",NA,2155
+"pessoas_flags_dedup.csv","classificacao","nao_auditado, consistente ou suspeito","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%",NA,2155
+"auditoria_homonimos.csv","id_pessoa","Pessoa","texto","Categorico","Autor, a partir de Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","n_mandatos","Mandatos da pessoa","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","n_titulos_distintos","Titulos de eleitor distintos na componente","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","n_cpfs_distintos","CPFs distintos na componente","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","n_sem_titulo_nem_cpf","Candidaturas sem titulo nem CPF","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","n_comp_12","Componentes que a pessoa teria so com titulo e CPF","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","ponte_nome_nascimento","A regra nome+nascimento foi a unica ponte (logico)","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","so_nome_nascimento","A pessoa so tem nome e nascimento como chave (logico)","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","generos","Generos observados","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","ufs","UFs observadas","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","n_unidades","Unidades observadas","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","anos","Anos observados","texto","Ordinal","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","cargos","Cargos observados","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","n_nomes_distintos","Nomes distintos","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","n_nasc_distintos","Datas de nascimento distintas","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","classificacao","consistente, suspeito ou indeterminado","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","grau_suspeita","Grau da suspeita","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"auditoria_homonimos.csv","justificativa","Justificativa da classificacao","texto","Categorico","Autor, auditoria da deduplicacao","NaN%",NA,0
+"mandatos_lista.csv","chave_cand","Chave da candidatura","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","id_mandato","Cadeira","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","id_pessoa","Titular eleito","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","cd_cargo","Cargo","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","ano_eleicao","Eleicao","inteiro","Ordinal","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","unidade_posicao","Unidade","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","sg_partido","Partido do titular","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","forma_saida","Forma de saida do titular","texto","Categorico","Autor, a partir de Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","data_fim_efetiva","Fim efetivo do mandato do titular","data ISO","Data","Autor, a partir de Autor, a partir das tabelas do BOCEL","86.5%","1998(1)2022",3591
+"mandatos_lista.csv","data_posse","Posse do titular","data ISO","Data","Autor, a partir de Autor, a partir das tabelas do BOCEL","99.7%","1998(1)2022",3591
+"mandatos_lista.csv","mandato_inicio","Inicio convencional","data ISO","Data","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","mandato_fim","Fim convencional","data ISO","Data","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","id_lista","Lista partidaria","texto","Categorico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591
+"mandatos_lista.csv","sq_col","SQ_COLIGACAO do TSE","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","83.8%","1998(1)2022",3591
+"mandatos_lista.csv","NR_PARTIDO","Numero do partido","inteiro","Numerico","Autor, a partir das tabelas do BOCEL","100.0%","1998(1)2022",3591

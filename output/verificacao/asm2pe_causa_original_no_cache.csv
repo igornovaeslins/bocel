@@ -1,0 +1,14 @@
+legislatura,nome,forma_saida,url,arquivo,modo,achou,n_car
+16,ALBERTO FEITOSA,licenca,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-24022011/Flip.pdf,DO_2011-02-24__diario-oficial-24022011.txt.gz,literal_do,TRUE,281
+16,Isaltino Nascimento,licenca,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-05012011/Flip.pdf,DO_2011-01-05__diario-oficial-05012011.txt.gz,literal_do,TRUE,291
+16,João Negromonte,falecimento,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-18112008/Flip.pdf,DO_2008-11-18__diario-oficial-18112008.txt.gz,literal_do,TRUE,303
+16,Romário Dias,renuncia,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-19072007/Flip.pdf,DO_2007-07-19__diario-oficial-19072007.txt.gz,literal_do,TRUE,274
+17,IZAÍAS RÉGIS,licenca,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-04072013/Flip.pdf,DO_2013-07-04__diario-oficial-04072013.txt.gz,literal_do,TRUE,331
+18,AGLAILSON JÚNIOR,renuncia,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-2016-12-22/Flip.pdf,DO_2016-12-22__diario-oficial-2016-12-22.txt.gz,literal_do,TRUE,274
+18,ÂNGELO FERREIRA,renuncia,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-2016-12-22/Flip.pdf,DO_2016-12-22__diario-oficial-2016-12-22.txt.gz,literal_do,TRUE,273
+18,GUILHERME UCHOA,falecimento,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-2018-07-04/Flip.pdf,DO_2018-07-04__diario-oficial-2018-07-04.txt.gz,literal_do,TRUE,303
+18,LULA CABRAL,licenca,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-2016-11-24/Flip.pdf,DO_2016-11-24__diario-oficial-2016-11-24.txt.gz,literal_do,TRUE,294
+18,MIGUEL COELHO,licenca,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-2016-12-22/Flip.pdf,DO_2016-12-22__diario-oficial-2016-12-22.txt.gz,literal_do,TRUE,312
+18,ODACY AMORIM,renuncia,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-2019-01-17/Flip.pdf,DO_2019-01-17__diario-oficial-2019-01-17.txt.gz,literal_do,TRUE,287
+20,JOSÉ PATRIOTA,falecimento,https://www.alepe.pe.gov.br/2024/09/17/morre-o-deputado-jose-patriota/,post_553046.json,literal_noticia,TRUE,171
+20,WALDEMAR BORGES,falecimento,https://www.alepe.pe.gov.br/Flip/pubs/diario-oficial-2026-07-04-extra1/Flip.pdf,DO_2026-07-04__diario-oficial-2026-07-04-extra1.txt.gz,literal_do,TRUE,303

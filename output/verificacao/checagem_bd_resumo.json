@@ -1,0 +1,11 @@
+{
+  "cargos_com_diferenca_zero_em_todos_os_anos_desde_2002": [
+    "deputado distrital",
+    "deputado estadual",
+    "deputado federal",
+    "governador",
+    "senador"
+  ],
+  "celulas_cargo_ano": 76,
+  "celulas_identicas": 39
+}

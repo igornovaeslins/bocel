@@ -1,0 +1,9 @@
+{
+  "alvo": "data/exercicio_camara.csv",
+  "data_iso": "2026-09-22T00:36:20",
+  "checksum_script": "6c53317e9c558774782231883931e3dd",
+  "passou": ["colunas_prometidas","na_como_string_NA","parquet_rds_coincidem","in_set_forma_saida","in_set_condicao","em_faixa_legislatura_anos","chave_unica_periodo","chave_unica_sem_data","id_pessoa_em_pessoas","id_mandato_em_mandatos","join_many_to_one_id_mandato","todo_mandato_bocel_presente","taxa_pareamento_recontada_513","recontagem_numeros","amostra_api_viva","casos_conhecidos"],
+  "falhou": [],
+  "fora_de_cobertura": ["exatidao_das_datas_da_camara","homonimos_no_pareamento_por_nome","legislatura_51_sem_historico_na_fonte","semantica_de_licenca_vs_afastamento","divergencia_tse_eleito_vs_camara_suplente","renuncia_antes_da_posse_vs_nao_tomou_posse"],
+  "veredito": "verificado"
+}

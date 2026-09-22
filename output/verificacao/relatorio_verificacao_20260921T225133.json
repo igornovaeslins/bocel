@@ -1,0 +1,9 @@
+{
+  "alvo": "data/exercicio_assembleias.csv",
+  "data_iso": "2026-09-21T22:51:33",
+  "checksum_script": "64962d48048b4cc151faa52107bb7352",
+  "passou": ["forma_saida no vocabulario fechado ou NA","condicao em {titular, suplente, nao_informado}","ano_eleicao em 1998..2022","id_fonte unico por UF nas fontes SAPL","id_mandato_bocel nao aponta para dois nomes distintos","taxa de pareamento global (UFs x anos coletados) = 0.8410"],
+  "falhou": [],
+  "fora_de_cobertura": ["validade das datas e causas informadas pelos SAPL das Assembleias","homonimos no pareamento por nome (sem data de nascimento nas fontes das Assembleias)","listas HTML (SP, PR, BA, GO, DF, RJ) nao informam posse, saida nem, em SP e PR, partido","13 UFs sem fonte historica estruturada (ver data/exercicio_assembleias_lacunas.csv)"],
+  "veredito": "verificado"
+}

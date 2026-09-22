@@ -1,0 +1,77 @@
+cargo_n,ano,bocel,bd,dif
+deputado distrital,1998,24,0,24
+deputado distrital,2002,24,24,0
+deputado distrital,2006,24,24,0
+deputado distrital,2010,24,24,0
+deputado distrital,2014,24,24,0
+deputado distrital,2018,24,24,0
+deputado distrital,2022,24,24,0
+deputado estadual,1998,1035,1037,-2
+deputado estadual,2002,1035,1035,0
+deputado estadual,2006,1035,1035,0
+deputado estadual,2010,1035,1035,0
+deputado estadual,2014,1035,1035,0
+deputado estadual,2018,1035,1035,0
+deputado estadual,2022,1035,1035,0
+deputado federal,1998,513,508,5
+deputado federal,2002,513,513,0
+deputado federal,2006,513,513,0
+deputado federal,2010,513,513,0
+deputado federal,2014,513,513,0
+deputado federal,2018,513,513,0
+deputado federal,2022,513,513,0
+governador,1998,27,26,1
+governador,2002,27,27,0
+governador,2006,27,27,0
+governador,2010,27,27,0
+governador,2014,27,27,0
+governador,2018,27,27,0
+governador,2022,27,27,0
+prefeito,2000,5555,3253,2302
+prefeito,2004,5550,3082,2468
+prefeito,2008,5556,5556,0
+prefeito,2012,5567,5567,0
+prefeito,2016,5565,5517,48
+prefeito,2020,5566,5495,71
+prefeito,2024,5561,5519,42
+presidente,1998,1,1,0
+presidente,2002,1,1,0
+presidente,2006,1,0,1
+presidente,2010,1,0,1
+presidente,2014,1,1,0
+presidente,2018,1,1,0
+presidente,2022,1,1,0
+senador,1998,27,26,1
+senador,2002,54,54,0
+senador,2006,27,27,0
+senador,2010,54,54,0
+senador,2014,27,27,0
+senador,2018,53,53,0
+senador,2022,27,27,0
+vereador,2000,60238,10981,49257
+vereador,2004,51829,8157,43672
+vereador,2008,51783,51903,-120
+vereador,2012,57419,57419,0
+vereador,2016,57842,57842,0
+vereador,2020,58105,58053,52
+vereador,2024,58151,57778,373
+vice governador,1998,11,0,11
+vice governador,2002,27,0,27
+vice governador,2006,27,0,27
+vice governador,2010,27,0,27
+vice governador,2014,27,0,27
+vice governador,2018,27,0,27
+vice governador,2022,27,0,27
+vice prefeito,2000,2274,0,2274
+vice prefeito,2004,5510,0,5510
+vice prefeito,2008,5507,0,5507
+vice prefeito,2012,5567,0,5567
+vice prefeito,2016,5520,0,5520
+vice prefeito,2020,5499,0,5499
+vice prefeito,2024,5533,0,5533
+vice presidente,2002,1,0,1
+vice presidente,2006,1,0,1
+vice presidente,2010,1,0,1
+vice presidente,2014,1,0,1
+vice presidente,2018,1,0,1
+vice presidente,2022,1,0,1

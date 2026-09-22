@@ -1,0 +1,182 @@
+legislatura,nome,condicao,ev_chave,ev_forte,ev_data,ev_origem,ultima_exerc,ult_licenciado,chegou_ao_fim_exerc,ev_contradito,forma_saida,aplicado,motivo
+15,AUGUSTO CÉSAR,titular,licenca,FALSE,2005-09-06,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,BRUNO ARAÚJO,titular,licenca,FALSE,2006-05-23,do,2007-01-15,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,CLAUDIANO MARTINS,titular,licenca,FALSE,2005-06-28,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,ETTORE LABANCA,titular,licenca,FALSE,2006-11-14,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,IZAÍAS RÉGIS,titular,licenca,FALSE,2006-05-24,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,JOÃO NEGROMONTE,titular,licenca,FALSE,2007-03-02,do,2007-01-15,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+15,JOSÉ QUEIROZ,titular,licenca,FALSE,2006-11-14,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,LOURIVAL SIMÕES,titular,licenca,FALSE,2006-11-17,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,MANOEL FERREIRA,titular,licenca,FALSE,2005-06-07,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,MAVIAEL CAVALCANTI,titular,licenca,FALSE,2006-05-05,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,RAIMUNDO PIMENTEL,titular,licenca,FALSE,2005-12-16,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,ROMÁRIO DIAS,titular,licenca,FALSE,2007-03-02,do,2007-01-17,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+15,SEBASTIÃO OLIVEIRA JÚNIOR,titular,afastamento,FALSE,2007-02-06,do,2006-12-28,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+15,SÉRGIO LEITE,titular,licenca,FALSE,2005-06-07,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,Ana Cavalcanti,titular,licenca,FALSE,2005-08-24,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,Ciro Coelho,titular,licenca,FALSE,2005-04-26,do,2007-01-15,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+15,Raul Henry,titular,licenca,FALSE,2006-11-17,do,2007-01-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,André Campos,titular,afastamento,FALSE,2011-02-23,noticia,2011-01-06,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+16,Ângelo Ferreira,titular,licenca,FALSE,2009-01-06,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Augusto Coutinho,titular,licenca,FALSE,2010-11-24,do,2011-01-05,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Carlos Santana,titular,licenca,FALSE,2011-01-06,do,2011-01-06,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+16,Ceça Ribeiro,titular,licenca,FALSE,2010-12-23,do,2011-01-06,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+16,Ciro Coelho,titular,licenca,FALSE,2008-04-23,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Clodoaldo Magalhães,titular,licenca,FALSE,2010-12-01,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Coronel José Alves,titular,licenca,FALSE,2007-06-27,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Edson Vieira,titular,licenca,TRUE,2008-11-19,do,2010-12-23,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Elina Carneiro,titular,licenca,FALSE,2007-10-30,do,2011-01-05,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Everaldo Cabral,titular,licenca,FALSE,2008-11-13,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Henrique Queiroz,titular,licenca,FALSE,2008-12-30,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Isaltino Nascimento,titular,licenca,TRUE,2011-01-05,do,2010-12-23,TRUE,TRUE,FALSE,licenca,TRUE,aplicado
+16,Izaías Régis,titular,licenca,FALSE,2010-04-13,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,João Fernando Coutinho,titular,licenca,FALSE,2009-03-11,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,João Negromonte,titular,falecimento,TRUE,2008-11-18,do,2008-11-11,FALSE,FALSE,FALSE,falecimento,TRUE,aplicado
+16,Manoel Ferreira,titular,licenca,FALSE,2008-11-07,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Miriam Lacerda,titular,licenca,FALSE,2008-12-30,do,2010-12-23,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Raimundo Pimentel,titular,licenca,FALSE,2008-11-21,do,2011-01-05,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Romário Dias,titular,renuncia,FALSE,2007-07-19,do,2007-07-02,FALSE,FALSE,FALSE,renuncia,TRUE,aplicado
+16,Sílvio Costa Filho,titular,afastamento,FALSE,2008-04-01,noticia,2011-01-05,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Terezinha Nunes,titular,licenca,FALSE,2010-12-21,do,2011-01-06,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+16,Carla Lapa,titular,licenca,FALSE,2010-06-23,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Claudiano Martins,titular,licenca,FALSE,2010-05-20,do,2011-01-06,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+16,Ricardo Teobaldo,titular,licenca,FALSE,2008-05-30,do,2008-12-22,FALSE,FALSE,TRUE,outro,FALSE,serie mostra exercicio depois da data do ato
+16,ALBERTO FEITOSA,suplente,licenca,FALSE,2011-02-24,do,2010-03-30,FALSE,FALSE,FALSE,licenca,TRUE,aplicado
+16,JOÃO DA COSTA,titular,afastamento,FALSE,2007-03-08,do,2008-12-22,FALSE,FALSE,TRUE,outro,FALSE,serie mostra exercicio depois da data do ato
+16,ISABEL CRISTINA,suplente,licenca,FALSE,2008-05-20,do,2011-01-05,FALSE,TRUE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+16,JACILDA URQUISA,suplente,licenca,FALSE,2010-06-01,do,2011-01-06,FALSE,TRUE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+16,WALDEMAR BORGES,suplente,afastamento,FALSE,2009-02-06,do,2010-02-02,FALSE,FALSE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+16,NELSON PEREIRA DE CARVALHO,suplente,licenca,FALSE,2009-02-20,do,2011-01-05,FALSE,TRUE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+16,AMAURY PINTO,suplente,licenca,FALSE,2009-05-06,do,2010-03-30,FALSE,FALSE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+16,SEBASTIÃO OLIVEIRA JÚNIOR,titular,afastamento,FALSE,2007-02-06,do,2011-01-05,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,ALBERTO FEITOSA,titular,afastamento,FALSE,2015-02-11,noticia,2014-12-22,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+17,ALUÍSIO LESSA,titular,licenca,FALSE,2014-10-15,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,ANDRÉ CAMPOS,titular,afastamento,FALSE,2011-02-23,noticia,2014-12-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,ÂNGELO FERREIRA,titular,licenca,FALSE,2011-04-19,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,ANTÔNIO MORAES,titular,licenca,FALSE,2012-10-03,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,BETINHO GOMES,titular,licenca,FALSE,2014-11-27,do,2014-12-22,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+17,CARLOS SANTANA,titular,licenca,FALSE,2012-12-05,do,2014-03-17,FALSE,FALSE,TRUE,outro,FALSE,serie mostra exercicio depois da data do ato
+17,CLODOALDO MAGALHÃES,titular,licenca,FALSE,2012-05-24,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,DANIEL COELHO,titular,licenca,FALSE,2014-11-20,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,DIOGO MORAES,titular,licenca,FALSE,2014-02-28,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,ERIBERTO MEDEIROS,titular,licenca,FALSE,2014-03-11,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,EVERALDO CABRAL,titular,licenca,FALSE,2011-09-01,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,GUILHERME UCHÔA,titular,licenca,FALSE,2014-11-05,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,GUSTAVO NEGROMONTE,titular,licenca,FALSE,2013-04-02,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,ISALTINO NASCIMENTO,titular,afastamento,FALSE,2011-10-26,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,IZAÍAS RÉGIS,titular,licenca,FALSE,2013-07-04,do,2012-12-19,FALSE,FALSE,FALSE,licenca,TRUE,aplicado
+17,JOÃO FERNANDO COUTINHO,titular,licenca,FALSE,2014-11-04,do,2014-12-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,JULIO CAVALCANTI,titular,licenca,FALSE,2014-01-17,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,LAURA GOMES,titular,licenca,FALSE,2014-10-15,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,LEONARDO DIAS,titular,licenca,FALSE,2013-08-08,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,MANOEL SANTOS,titular,licenca,FALSE,2014-10-30,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,MARY GOUVEIA,titular,licenca,FALSE,2014-12-16,do,2014-12-22,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+17,MAVIAEL CAVALCANTI,titular,licenca,FALSE,2011-10-06,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,PEDRO SERAFIM NETO,titular,licenca,FALSE,2013-04-02,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,RAQUEL LYRA,titular,licenca,FALSE,2013-06-07,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,RILDO BRAZ,titular,licenca,FALSE,2013-09-25,do,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,SEBASTIÃO OLIVEIRA JÚNIOR,titular,licenca,FALSE,2011-09-01,do,2014-12-17,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,VINÍCIUS LABANCA,titular,licenca,FALSE,2013-03-22,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,WALDEMAR BORGES,titular,licenca,FALSE,2011-06-14,do,2014-12-22,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,SÉRGIO LEITE,titular,licenca,FALSE,2014-05-07,noticia,2014-12-18,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+17,ISABEL CRISTINA,suplente,licenca,FALSE,2011-12-20,do,2014-03-17,FALSE,FALSE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+17,OSSÉSIO SILVA,suplente,licenca,FALSE,2013-05-07,do,2014-03-17,FALSE,FALSE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+17,JOSÉ HUMBERTO CAVALCANTI,suplente,licenca,FALSE,2013-07-02,do,2014-03-17,FALSE,FALSE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+17,TEREZINHA NUNES,suplente,licenca,FALSE,2014-11-04,do,2014-12-22,FALSE,TRUE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+18,AGLAILSON JÚNIOR,titular,renuncia,FALSE,2016-12-22,do,2016-12-21,FALSE,FALSE,FALSE,renuncia,TRUE,aplicado
+18,ALUÍSIO LESSA,titular,licenca,FALSE,2019-03-01,do,2018-12-27,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+18,ÁLVARO PORTO,titular,licenca,FALSE,2018-12-04,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,ANDRÉ FERREIRA,titular,licenca,FALSE,2018-02-20,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,ÂNGELO FERREIRA,titular,renuncia,FALSE,2016-12-22,do,2016-12-21,FALSE,FALSE,FALSE,renuncia,TRUE,aplicado
+18,ANTÔNIO MORAES,suplente,licenca,FALSE,2016-12-21,do,2019-01-27,FALSE,TRUE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+18,AUGUSTO CÉSAR,titular,licenca,FALSE,2017-12-15,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,BETO ACCIOLY,titular,licenca,FALSE,2016-03-01,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,DIOGO MORAES,titular,licenca,FALSE,2019-02-26,do,2019-01-27,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+18,EDUÍNO BRITO,titular,licenca,FALSE,2016-12-20,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,ERIBERTO MEDEIROS,titular,renuncia,FALSE,2018-07-31,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,EVERALDO CABRAL,titular,licenca,FALSE,2015-09-10,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,FRANCISMAR PONTES,titular,licenca,FALSE,2018-12-04,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,GUILHERME UCHOA,titular,falecimento,TRUE,2018-07-04,do,2018-07-03,FALSE,FALSE,FALSE,falecimento,TRUE,aplicado
+18,JOÃO EUDES,titular,licenca,FALSE,2016-06-23,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,JOAQUIM LIRA,titular,licenca,FALSE,2015-08-04,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,JOSÉ HUMBERTO CAVALCANTI,titular,licenca,FALSE,2018-11-13,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,JULIO CAVALCANTI,titular,licenca,FALSE,2018-12-04,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,LUCAS RAMOS,titular,licenca,FALSE,2018-10-23,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,LULA CABRAL,titular,licenca,FALSE,2016-11-24,do,2016-12-21,FALSE,FALSE,FALSE,licenca,TRUE,aplicado
+18,MIGUEL COELHO,titular,licenca,FALSE,2016-12-22,do,2016-12-20,FALSE,FALSE,FALSE,licenca,TRUE,aplicado
+18,ODACY AMORIM,titular,renuncia,TRUE,2019-01-17,do,2019-01-27,FALSE,TRUE,FALSE,renuncia,TRUE,aplicado
+18,PEDRO SERAFIM NETO,titular,licenca,FALSE,2018-09-13,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,PRISCILA KRAUSE,titular,licenca,FALSE,2017-03-28,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,RICARDO COSTA,titular,licenca,FALSE,2018-04-24,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,RODRIGO NOVAES,titular,licenca,FALSE,2019-03-01,do,2018-12-27,FALSE,TRUE,FALSE,fim_regular,FALSE,voltou ao exercicio ate a reta final da legislatura
+18,ROGÉRIO LEÃO,titular,licenca,FALSE,2017-08-03,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,ROMÁRIO DIAS,titular,licenca,FALSE,2018-11-28,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,SÍLVIO COSTA FILHO,titular,licenca,FALSE,2017-12-07,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,TERESA LEITÃO,titular,licenca,FALSE,2018-06-12,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,ZÉ MAURÍCIO,titular,licenca,FALSE,2017-12-15,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,ALBERTO FEITOSA,titular,afastamento,FALSE,2015-02-11,noticia,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,NILTON MOTA,titular,licenca,FALSE,2018-06-12,do,2018-12-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,CLODOALDO MAGALHÃES,titular,licenca,FALSE,2017-08-15,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,VINÍCIUS LABANCA,titular,licenca,FALSE,2017-12-19,do,2019-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+18,GUSTAVO NEGROMONTE,suplente,licenca,FALSE,2018-04-04,do,2019-01-27,FALSE,TRUE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+18,ROBERTA ARRAES,suplente,licenca,FALSE,2017-06-27,do,2019-01-27,FALSE,TRUE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+18,TEREZINHA NUNES,suplente,licenca,FALSE,2018-01-18,do,2019-01-27,FALSE,TRUE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+19,ADALTO SANTOS,titular,licenca,FALSE,2019-06-26,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,AGLAILSON VICTOR,titular,licenca,FALSE,2020-05-26,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,CORONEL ALBERTO FEITOSA,titular,licenca,FALSE,2019-05-28,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,ALESSANDRA VIEIRA,titular,licenca,FALSE,2020-03-10,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,ANTONIO COELHO,titular,licenca,FALSE,2019-07-12,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,CLODOALDO MAGALHÃES,titular,licenca,FALSE,2019-12-20,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,FABÍOLA CABRAL,titular,licenca,FALSE,2019-11-19,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,GUILHERME UCHOA,titular,licenca,FALSE,2019-09-24,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,GUSTAVO GOUVEIA,titular,licenca,FALSE,2021-06-18,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,JOÃO PAULO,titular,licenca,FALSE,2019-08-13,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,JOEL DA HARPA,titular,licenca,FALSE,2019-08-02,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,LUCAS RAMOS,titular,afastamento,FALSE,2020-08-14,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,MARCO AURELIO MEU AMIGO,titular,licenca,FALSE,2021-11-18,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,PROFESSOR PAULO DUTRA,suplente,licenca,FALSE,2019-10-01,do,2022-03-31,FALSE,FALSE,TRUE,suplente_efetivado,FALSE,serie mostra exercicio depois da data do ato
+19,ROBERTA ARRAES,titular,licenca,FALSE,2019-09-12,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,ROMÁRIO DIAS,titular,licenca,FALSE,2021-08-19,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,ROMERO SALES FILHO,titular,licenca,FALSE,2019-08-02,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,SIMONE SANTANA,titular,licenca,FALSE,2019-11-05,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,TERESA LEITÃO,titular,licenca,FALSE,2022-12-08,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,WALDEMAR BORGES,titular,cassacao,FALSE,2021-06-14,noticia,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,DULCICLEIDE AMORIM,titular,licenca,FALSE,2019-05-15,do,2020-08-19,FALSE,FALSE,TRUE,outro,FALSE,serie mostra exercicio depois da data do ato
+19,ALUÍSIO LESSA,titular,licenca,FALSE,2022-02-15,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,R ODRIGO NOVAES,titular,licenca,FALSE,2022-04-01,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,PRISCILA KRAUSE,titular,licenca,FALSE,2019-04-12,do,2022-12-20,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+19,DIOGO MORAES,titular,licenca,FALSE,2019-02-26,do,2023-01-27,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+20,AGLAILSON VICTOR,titular,licenca,FALSE,2025-02-05,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,ÁLVARO PORTO,titular,licenca,FALSE,2023-08-22,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,ANTONIO COELHO,titular,afastamento,FALSE,2023-09-28,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,ANTONIO MORAES,titular,licenca,FALSE,2023-11-14,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,CLAUDIANO MARTINS FILHO,titular,licenca,FALSE,2024-10-16,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,CORONEL ALBERTO FEITOSA,titular,licenca,FALSE,2023-09-26,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,DÉBORA ALMEIDA,titular,licenca,FALSE,2023-08-04,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,ERIBERTO FILHO,titular,afastamento,FALSE,2026-04-10,noticia,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,FABRIZIO FERRAZ,titular,licenca,FALSE,2023-10-17,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,FRANCE HACKER,titular,licenca,FALSE,2024-02-27,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,GILMAR JÚNIOR,titular,licenca,FALSE,2026-05-15,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,IZAIAS REGIS,titular,licenca,FALSE,2023-02-28,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,JOÃO DE NADEGI,titular,licenca,FALSE,2023-11-02,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,JOAOZINHO TENÓRIO,titular,licenca,FALSE,2024-03-01,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,JOEL DA HARPA,titular,licenca,FALSE,2023-03-16,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,JOSÉ PATRIOTA,titular,falecimento,FALSE,2024-09-17,noticia,2024-09-25,FALSE,FALSE,FALSE,falecimento,TRUE,aplicado
+20,KAIO MANIÇOBA,titular,afastamento,FALSE,2025-03-27,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,LUCIANO DUQUE,titular,licenca,FALSE,2023-11-02,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,LULA CABRAL,titular,licenca,FALSE,2023-10-06,do,2024-12-25,FALSE,FALSE,TRUE,outro,FALSE,serie mostra exercicio depois da data do ato
+20,MÁRIO RICARDO,titular,licenca,FALSE,2023-10-31,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,PASTOR CLEITON COLLINS,titular,licenca,FALSE,2024-12-20,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,RENATO ANTUNES,titular,renuncia,FALSE,2023-03-08,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,RODRIGO FARIAS,titular,licenca,FALSE,2023-11-21,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,ROMERO ALBUQUERQUE,titular,licenca,FALSE,2026-05-28,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,ROMERO SALES FILHO,titular,licenca,FALSE,2023-11-01,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,ROSA AMORIM,titular,licenca,FALSE,2024-08-29,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,SILENO GUEDES,titular,licenca,FALSE,2023-11-01,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,SOCORRO PIMENTEL,titular,licenca,FALSE,2025-06-05,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,WALDEMAR BORGES,titular,falecimento,TRUE,2026-07-04,do,2026-06-16,TRUE,TRUE,FALSE,falecimento,TRUE,aplicado
+20,WILLIAM BRIGIDO,titular,licenca,FALSE,2024-04-23,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,DIOGO MORAES,suplente,renuncia,FALSE,2025-04-10,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+20,JUNIOR MATUTO,suplente,licenca,FALSE,2026-06-02,do,2026-08-25,FALSE,TRUE,TRUE,,FALSE,serie mostra exercicio depois da data do ato
+14,Augusto Coutinho,titular,licenca,FALSE,2000-10-03,noticia,2003-01-16,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato
+14,Eudo Magalhães,titular,cassacao,FALSE,2000-06-07,noticia,2002-11-01,FALSE,TRUE,TRUE,fim_regular,FALSE,serie mostra exercicio depois da data do ato

@@ -1,0 +1,21 @@
+uf,ano_eleicao,fonte,metodo_pareamento,nome,nome_completo,nome_bocel,partido,sg_partido,condicao,sexo_fonte,genero_bocel,id_mandato_bocel
+SP,2002,alesp_relacao_legislaturas,nome_parlamentar_x_urna,Roberto Morais,,ROBERTO TURCHI DE MORAIS,,PPS,nao_informado,,MASCULINO,M2002_SP_7_23623_7122
+AM,2018,sapl_api,nome_completo_x_nome_bocel,Josué Neto,JOSUÉ CLÁUDIO DE SOUZA NETO,JOSUE CLAUDIO DE SOUZA NETO,PSD,PSD,titular,M,MASCULINO,M2018_AM_7_55555_40000608857
+BA,2010,alba_legislatura,nome_parlamentar_x_urna,Temóteo Brito,,TEMOTEO ALVES DE BRITO,PSD,PMDB,nao_informado,,MASCULINO,M2010_BA_7_15155_50000000911
+PI,2022,sapl_api,nome_parlamentar_x_urna,Ana Paula,Ana Paula Mendes de Araújo,ANA PAULA MENDES DE ARAUJO SANTANA,MDB,MDB,titular,F,FEMININO,M2022_PI_7_15110_180001605751
+GO,2018,alego_legislaturas_anteriores,nome_parlamentar_x_urna,Diego Sorgatto,,DIEGO VAZ SORGATTO,PSDB,PSDB,nao_informado,,MASCULINO,M2018_GO_7_45333_90000620427
+BA,2006,alba_legislatura,nome_parlamentar_x_urna,Antônia Pedrosa,,ANTONIA PEDROSA PINA,"",PRP,nao_informado,,FEMININO,M2006_BA_7_44789_10339
+RO,2006,sapl_api,nome_completo_x_nome_bocel,JAIR MIOTO,Jair Miotto,JAIR MIOTTO,PPS,PPS,titular,M,MASCULINO,M2006_RO_7_23123_10330
+PB,2022,sapl_api,nome_completo_x_nome_bocel,Cida Ramos,Maria Aparecida Ramos de Meneses,MARIA APARECIDA RAMOS DE MENESES,PT,PT,titular,F,FEMININO,M2022_PB_7_13400_150001643182
+PB,1998,sapl_api,nome_parlamentar_x_urna,Frei Anastácio,Antônio Ribeiro Frei Anastácio Ribeiro,ANTONIO RIBEIRO,PT,PT,titular,M,MASCULINO,M1998_PB_7_13333_150001507133331
+GO,2014,alego_legislaturas_anteriores,nome_parlamentar_x_urna,Virmondes Cruvinel,,VIRMONDES BORGES CRUVINEL FILHO,UB,PSD,nao_informado,,MASCULINO,M2014_GO_7_55123_90000000970
+PB,1998,sapl_api,nome_completo_x_nome_bocel,Aércio Pereira,Aércio Pereira de Lima,AERCIO PEREIRA DE LIMA,PFL,PFL,titular,M,MASCULINO,M1998_PB_7_25111_150001507251111
+GO,2018,alego_legislaturas_anteriores,nome_parlamentar_x_urna,Karlos Cabral,,KARLOS MÁRCIO VIEIRA CABRAL,PSB,PDT,nao_informado,,MASCULINO,M2018_GO_7_12456_90000624219
+SP,2014,alesp_relacao_legislaturas,nome_parlamentar_x_urna,Celso Giglio,,CELSO ANTONIO GIGLIO,,PSDB,nao_informado,,MASCULINO,M2014_SP_7_45555_250000001536
+PI,1998,sapl_api,nome_completo_x_nome_bocel,Francisca Trindade,Francisca das Chagas da Trindade,FRANCISCA DAS CHAGAS DA TRINDADE,PT,PT,titular,M,FEMININO,M1998_PI_7_13123_180001807131231
+AC,2018,sapl_api,nome_completo_x_nome_bocel,LUIZ GONZAGA,Luiz Gonzaga Alves Filho,LUIZ GONZAGA ALVES FILHO,PSDB,PSDB,titular,M,MASCULINO,M2018_AC_7_45121_10000624289
+PI,2010,sapl_api,nome_parlamentar_x_urna,Ana Paula,Ana Paula Mendes de Araújo,ANA PAULA MENDES DE ARAUJO SANTANA,MDB,PMDB,titular,F,FEMININO,M2010_PI_7_15110_180000000273
+RO,2006,sapl_api,nome_parlamentar_x_urna,EZEQUIEL NEIVA,Izequiel Neiva de Carvalho,ISEQUIEL NEIVA DE CARVALHO,PPS,PPS,titular,M,MASCULINO,M2006_RO_7_23789_10347
+PB,2006,sapl_api,nome_completo_x_nome_bocel,Nivaldo  Manoel,Nivaldo  Manoel de Souza,NIVALDO MANOEL DE SOUZA,PPS,PPS,titular,M,MASCULINO,M2006_PB_7_23000_10074
+SP,2006,alesp_relacao_legislaturas,nome_parlamentar_x_urna,Simão Pedro,,SIMÃO PEDRO CHIOVETTI,,PT,nao_informado,,MASCULINO,M2006_SP_7_13134_12698
+AC,1998,sapl_api,nome_parlamentar_x_urna,Roberto Filho,Roberto Barroso Filho,ROBERTO BARROS FILHO,PP,PPB,titular,M,MASCULINO,M1998_AC_7_11122_100000107111221

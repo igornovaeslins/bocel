@@ -1,0 +1,9 @@
+{
+  "alvo": "data/auditoria_homonimos.csv; data/pessoas_flags_dedup.csv",
+  "data_iso": "2026-09-21T22:50:18",
+  "checksum_script": "799d3126dbae8b108f719cd43a50b6b1",
+  "passou": ["particao 1+2+3 reproduz id_pessoa do banco","so_nome_nascimento coincide com chave_dedup == nome_nascimento","todo mandato recuperou identidade no parquet","flags cobrem todas as pessoas"],
+  "falhou": [],
+  "fora_de_cobertura": ["homonimos com mesma data de nascimento sem contradicao interna","divisao indevida de pessoa (dois titulos, grafias distintas)"],
+  "veredito": "verificado"
+}

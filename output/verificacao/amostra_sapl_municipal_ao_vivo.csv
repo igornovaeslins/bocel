@@ -1,0 +1,11 @@
+url,metodo,nome_fonte,nome_api,nome_parl_api,ini_arq,ini_api,fim_arq,fim_api,leg_ini_api,titular_api,bate,erro
+https://sapl.aguaboa.mt.leg.br/api/parlamentares/mandato/47/,nome_completo,Heronides Silveira Junior,Heronides Silveira Junior,Heronides Silveira Junior,2021-01-01,2021-01-01,2024-12-31,2024-12-31,2021-01-01,True,TRUE,
+https://sapl.telemacoborba.pr.leg.br/api/parlamentares/mandato/22/,nome_completo,Mario Cesar Marcondes,Mario Cesar Marcondes,Cesinha,2013-01-01,2013-01-01,2016-12-31,2016-12-31,2013-01-01,True,TRUE,
+https://sapl.uruguaiana.rs.leg.br/api/parlamentares/mandato/38/,nome_completo,Joao Adalberto da Rosa e Silva,Joao Adalberto da Rosa e Silva,Adalberto Silva,2001-01-01,2001-01-01,2004-12-31,2004-12-31,2001-01-01,True,TRUE,
+https://sapl.teofilootoni.mg.leg.br/api/parlamentares/mandato/79/,nome_parlamentar=nome_urna,Juvenal Júnior,Juvenal Júnior,Juvenal Júnior,2021-01-01,2021-01-01,2024-12-31,2024-12-31,2021-01-01,True,TRUE,
+https://sapl.serratalhada.pe.leg.br/api/parlamentares/mandato/50/,nome_parlamentar=nome_urna,Wallacy Kleyton Caboclo,Wallacy Kleyton Caboclo,CHINA MENEZES,2025-01-01,2025-01-01,2028-12-31,2028-12-31,2025-01-01,True,TRUE,
+https://sapl.itanhem.ba.leg.br/api/parlamentares/mandato/135/,tokens_nome_parlamentar,ANTONIO CESAR CATABRIGA,ANTONIO CESAR CATABRIGA,ANTONIO CATABRIGA,2001-01-01,2001-01-01,2004-12-31,2004-12-31,2001-01-01,True,TRUE,
+https://sapl.campinapolis.mt.leg.br/api/parlamentares/mandato/117/,tokens_nome_parlamentar,Pedro Paulo Tseresii're Sereparan,Pedro Paulo Tseresii're Sereparan,Pedro Paulo Tseresii're Sereparan,2025-01-01,2025-01-01,2028-12-31,2028-12-31,2025-01-01,True,TRUE,
+https://sapl.zortea.sc.leg.br/api/parlamentares/mandato/79/,tokens_nome_parlamentar,Marisete Pereira Susin,Marisete Pereira Susin,Marisete Pereira Susin,2025-01-01,2025-01-01,2028-12-31,2028-12-31,2025-01-01,True,TRUE,
+https://sapl.sossego.pb.leg.br/api/parlamentares/mandato/9/,tokens_nome_parlamentar_no_nome_de_urna,Pedro Ferreira,Pedro Ferreira,Pedro Zumin,2021-01-01,2021-01-01,2024-12-31,2024-12-31,2021-01-01,True,TRUE,
+https://sapl.granito.pe.leg.br/api/parlamentares/mandato/7/,tokens_nome_parlamentar_no_nome_de_urna,Wanderson Silva de Menezes,Wanderson Silva de Menezes,Vanvan,2021-01-01,2021-01-01,2024-12-31,2024-12-31,2021-01-01,True,TRUE,

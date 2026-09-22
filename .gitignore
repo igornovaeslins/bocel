@@ -1,0 +1,8 @@
+# dados brutos e derivados ficam fora do repositorio: o deposito do Zenodo carrega o banco
+data_raw/
+data/
+data_v1/
+logs/
+.DS_Store
+.Rhistory
+.RData

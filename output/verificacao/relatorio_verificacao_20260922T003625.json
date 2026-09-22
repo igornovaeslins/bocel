@@ -1,0 +1,9 @@
+{
+  "alvo": "data/exercicio_senado.csv",
+  "data_iso": "2026-09-22T00:36:25",
+  "checksum_script": "594b994bd2fe23f17e6c53aa9ac85909",
+  "passou": ["colunas prometidas presentes; ausente = 'NA'","chave (codigo_mandato, codigo_exercicio) unica","forma_saida, condicao, sg_uf, metodo_pareamento no vocabulario","datas parseaveis, fim >= inicio, anos 1998-2026","id_mandato 1:1 com codigo_mandato; id_pessoa 1:1 com codigo_senador","numeros conferidos: 32/32"],
+  "falhou": [],
+  "fora_de_cobertura": ["validade das datas informadas pelo Senado","identidade de suplentes sem data de nascimento (homonimos)","reexecucao do fetch com --force (cache reutilizado; 0 lacunas registradas)"],
+  "veredito": "verificado"
+}

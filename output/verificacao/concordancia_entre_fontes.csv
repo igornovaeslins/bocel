@@ -1,0 +1,14 @@
+fonte_a,fonte_b,mandatos,concordam,pct_concordancia
+sapl_municipal,tce,1026,910,88.7
+wikidata,wikipedia,172,161,93.6
+portal_camara,tce,92,54,58.7
+tce,wikipedia,54,51,94.4
+assembleia_historico,wikipedia,41,21,51.2
+assembleia_api,wikidata,25,25,100
+diario_oficial,sapl_municipal,15,4,26.7
+diario_oficial,wikipedia,5,2,40
+assembleia_api,wikipedia,5,1,20
+assembleia_historico,wikidata,5,5,100
+diario_oficial,portal_camara,3,0,0
+diario_oficial,wikidata,2,0,0
+tce,wikidata,1,1,100

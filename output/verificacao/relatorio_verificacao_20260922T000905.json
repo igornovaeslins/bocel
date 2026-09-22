@@ -1,0 +1,9 @@
+{
+  "alvo": "data/exercicio_sapl_recuperado.csv",
+  "data_iso": "2026-09-22T00:09:05",
+  "checksum_script": "df64ebbdef3569832571707e773c5d39",
+  "passou": ["nenhuma requisicao de rede: leitura restrita a data_raw/","forma_saida so com valores do vocabulario fechado","nenhum id_mandato_bocel repetido na saida","nome com menos de 8 caracteres ou um unico token nao entra no pareamento"],
+  "falhou": [],
+  "fora_de_cobertura": ["distinguir, nos 143 caches vazios, falha de requisicao de falta de dado exigiria nova consulta","a legislatura das listas de HTML sem intervalo declarado e a corrente na data da coleta, nao um dado da fonte","titular/suplente e datas de posse e saida nao existem nas paginas recuperadas"],
+  "veredito": "verificado"
+}

@@ -1,0 +1,65 @@
+verifica_RJ — 2026-09-21 17:20:46
+
+PASS  21 colunas na ordem canonica
+PASS  uf sempre RJ
+PASS  vocabulario fechado de forma_saida
+PASS  condicao em titular/suplente/nao_informado
+PASS  legislatura de 7 a 13
+PASS  ano_eleicao em 1998..2022
+PASS  ano_eleicao e a legislatura sao coerentes
+PASS  uma linha por legislatura x nome
+PASS  datas em ISO
+PASS  inicio nao posterior ao fim
+PASS  toda linha traz url de origem
+PASS  url aponta para dominio da ALERJ
+PASS  sexo_fonte so M ou F
+PASS  ato nomeado traz o texto da fonte em causa_original
+PASS  forma sem texto so nos rotulos derivaveis da estrutura
+PASS  todo texto de ato existe literalmente no cache de noticias da Casa
+PASS  toda linha vem de um nome presente no cache bruto da Casa
+PASS  nenhuma legislatura tem mais nomes do que a fonte bruta
+PASS  id_mandato_bocel existe em mandatos.csv
+PASS  mandato pareado e deputado estadual do RJ
+PASS  ano do mandato bate com o ano da linha
+PASS  nenhum mandato do BOCEL aparece em duas linhas
+PASS  data de fim dentro da janela do mandato
+PASS  id_pessoa_bocel coerente com o mandato
+PASS  linha pareada sempre tem metodo de pareamento
+PASS  linha nao pareada nao tem metodo
+PASS  suplente nunca recebe fim_regular
+PASS  fim_regular so em legislatura ja encerrada
+PASS  fim_regular traz a data de termino publicada pela Casa
+PASS  a data de termino gravada e a do PDF da Biblioteca
+PASS  13a legislatura nao tem fim_regular nem termino
+PASS  cobertura gravada pelo build = cobertura recontada
+PASS  asm2rj_linhas registrado = recontado
+PASS  asm2rj_pareadas registrado = recontado
+PASS  asm2rj_mandatos_com_forma_saida registrado = recontado
+
+linhas: 612 | pareadas: 487 | mandatos do BOCEL com forma observada: 178 de 490
+
+cobertura por eleicao:
+Key: <ano_eleicao>
+   ano_eleicao n_bocel linhas pareadas com_forma
+        <char>   <int>  <int>    <int>     <int>
+1:        1998      70     82       70         0
+2:        2002      70     84       69        14
+3:        2006      70     85       70         8
+4:        2010      70     85       69         8
+5:        2014      70     91       69        69
+6:        2018      70     94       70        70
+7:        2022      70     91       70         9
+
+forma_saida das linhas pareadas:
+   condicao     forma_saida     N
+     <char>          <char> <int>
+1:  titular   nao_observado   309
+2:  titular     fim_regular   117
+3:  titular           outro    29
+4:  titular         licenca    21
+5:  titular     falecimento     7
+6:  titular        renuncia     2
+7:  titular nao_tomou_posse     1
+8:  titular        cassacao     1
+
+sem falhas

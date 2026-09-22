@@ -1,0 +1,9 @@
+{
+  "alvo": "data/exercicio_assembleias_inventario.csv",
+  "data_iso": "2026-09-22T00:13:14",
+  "checksum_script": "2ae78b193ed779bf83d3a179fa8e3ee2",
+  "passou": ["1166 linhas, 9 UFs, 612 mandatos pareados","205 linhas com forma de saida observada em 141 mandatos","141 mandatos com forma de saida ineditos nas tabelas de assembleia","concordancia com a forma de saida ja registrada no BOCEL: 86.5% em 141 mandatos","nenhuma requisicao a servidor: toda a entrada veio de data_raw/inventario_assembleias"],
+  "falhou": [],
+  "fora_de_cobertura": ["a causa da saida antecipada (renuncia, cassacao, licenca, posse em outro cargo) nao esta nas fontes de folha e de relacao nominal: fica em 'outro'","suplente convocado nao e pareado ao mandato do titular; o BOCEL so tem titulares eleitos","paginacao incompleta das amostras de folha (MT, ES): a relacao nominal de alguns exercicios cobre menos que a bancada"],
+  "veredito": "verificado"
+}

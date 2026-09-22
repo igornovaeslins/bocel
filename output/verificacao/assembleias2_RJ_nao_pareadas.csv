@@ -1,0 +1,126 @@
+legislatura,condicao,nome,partido,fonte
+10,suplente,André Ceciliano,PT,alerj_bib_suplente
+10,suplente,Armando José,PSB,alerj_bib_suplente
+10,suplente,Bruno Correia,PDT,alerj_bib_suplente
+10,suplente,Carlinhos Moutinho,PTB,alerj_bib_suplente
+10,suplente,Cida Diogo,PT,alerj_bib_suplente
+10,suplente,Dr. Gotardo,PSL,alerj_bib_suplente
+10,suplente,Geraldo Pudim,PR,alerj_bib_suplente
+10,suplente,Hélcio Ângelo,PSD,alerj_bib_suplente
+10,suplente,João Nacif,PDT,alerj_bib_suplente
+10,suplente,Jânio Mendes,PDT,alerj_bib_suplente
+10,suplente,Marcos Figueiredo,PSC,alerj_bib_suplente
+10,suplente,Nelson Gonçalves,PSD,alerj_bib_suplente
+10,suplente,Noel de Carvalho,PMDB,alerj_bib_suplente
+10,suplente,Robson Leite,PT,alerj_bib_suplente
+10,titular,Rogério Cabral,PSB,alerj_bib_titular+alerj_noticias
+10,suplente,Rosenverg Reis,PMDB,alerj_bib_suplente
+11,suplente,Ana Paula Rechuan,PMDB,alerj_bib_suplente+qs2
+11,suplente,Aramis Brito,PHS,alerj_bib_suplente+qs2
+11,titular,Carlos Augusto Baltazar,MDB,alerj_bib_titular+qs2+alerj_noticias
+11,suplente,Chico Machado,PDT,alerj_bib_suplente+qs2
+11,suplente,Coronel Jairo,PMDB,alerj_bib_suplente+qs1
+11,suplente,DICA - JORGE MOREIRA THEODORO,PODE,alerj_bib_suplente+qs1
+11,suplente,Dr. Gotardo,PSL,alerj_bib_suplente+qs2
+11,suplente,Fatinha,SDD,alerj_bib_suplente+qs2
+11,suplente,GERALDO MOREIRA DA SILVA,PODE,alerj_bib_suplente+qs1
+11,suplente,Gerson Bergher,PSDB,alerj_bib_suplente+qs2
+11,suplente,Gil Vianna,PSB,alerj_bib_suplente+qs2
+11,suplente,Gilberto Palmares,PT,alerj_bib_suplente+qs1
+11,suplente,Marcelo Queiroz,PP,alerj_bib_suplente+qs1
+11,suplente,Marcelo Simão,PMDB,alerj_bib_suplente+qs1
+11,suplente,Marco Figueiredo,PV,alerj_bib_suplente+qs1
+11,titular,Milton Rangel,DEM,alerj_bib_titular+qs2
+11,suplente,Nelson Gonçalves,PSD,alerj_bib_suplente+qs2
+11,suplente,Papinha,PP,alerj_bib_suplente+qs2
+11,suplente,RICARDO DA KAROL,PL,alerj_qs1
+11,suplente,Silas Bento,PSDB,alerj_bib_suplente+qs1
+11,suplente,Tiago Mohamed,PMDB,alerj_bib_suplente+qs2
+11,suplente,Tânia Rodrigues,PDT,alerj_bib_suplente+qs2
+12,suplente,Adriana Balthazar,PSD,alerj_bib_composicao_final+qs1
+12,suplente,Atila Nunes,PSD,alerj_bib_composicao_final+qs1
+12,suplente,BAGUEIRA,SDD,alerj_qs2+alerj_noticias
+12,suplente,CAPITÃO NELSON,Avante,alerj_qs2
+12,suplente,CAPITÃO PAULO TEIXEIRA,REP,alerj_qs2
+12,suplente,CARLO CAIADO,DEM,alerj_qs2
+12,suplente,Celia Jordão,PL,alerj_bib_composicao_final+qs1
+12,suplente,Charlles Batista,PSL,alerj_bib_composicao_final+qs1
+12,suplente,Dr. Pedro Ricardo,PROS,alerj_bib_composicao_final+qs2
+12,suplente,EURICO JUNIOR,PV,alerj_qs2
+12,suplente,Elton Cristo,PP,alerj_bib_composicao_final+qs1
+12,suplente,FELIPE PEIXOTO,PSD,alerj_qs2
+12,suplente,JALMIR JUNIOR,PRTB,alerj_qs2
+12,suplente,Jari Oliveira,PSB,alerj_bib_composicao_final+qs1
+12,suplente,Marcelo Queiroz,PP,alerj_bib_composicao_final+qs1
+12,suplente,Noel de Carvalho,SDD,alerj_bib_composicao_final+qs1
+12,suplente,Paula Tringuele,SDD,alerj_bib_composicao_final+qs1
+12,suplente,RONALDO ANQUIETA,MDB,alerj_qs2
+12,suplente,RUBENS BOMTEMPO,PSB,alerj_qs2
+12,suplente,Rafael do Gordo,DC,alerj_bib_composicao_final+qs1
+12,suplente,Sergio Fernandes,PSD,alerj_bib_composicao_final+qs1
+12,suplente,Sergio Louback,PSC,alerj_bib_composicao_final+qs1
+12,suplente,VANDRO FAMILIA,SDD,alerj_qs2
+12,suplente,Wellington José,PODE,alerj_bib_composicao_final+qs1
+13,suplente,ALEXANDRE KNOPLOCH,PL,alerj_qs1
+13,suplente,ATILA NUNES,PSD,alerj_qs2
+13,suplente,BERNARDO ROSSI,SDD,alerj_qs2
+13,suplente,BRUNO BOARETTO,PL,alerj_qs2
+13,suplente,CHIQUINHO DA MANGUEIRA,SDD,alerj_qs2
+13,suplente,DANIEL MARTINS,União,alerj_qs2
+13,suplente,DOUGLAS GOMES,PL,alerj_qs2
+13,suplente,ELTON CRISTO,PP,alerj_qs2
+13,suplente,FABIANI VASCONCELLOS,AGIR,alerj_qs1
+13,suplente,LILIAN BEHRING,PC do B,alerj_qs1
+13,suplente,LUIZ CLAUDIO RIBEIRO,REP,alerj_qs2
+13,suplente,MARCELO DINO,PL,alerj_qs1
+13,suplente,MARCOS MULLER,União,alerj_qs2
+13,suplente,RAFAEL PICCIANI,União,alerj_qs1
+13,suplente,RENAN JORDY,PL,alerj_qs1
+13,suplente,RICARDO DA KAROL,PL,alerj_qs2
+13,suplente,RODRIGO BACELLAR,União,alerj_qs2
+13,suplente,SARAH PONCIO,SDD,alerj_qs1
+13,suplente,SERGIO FERNANDES,PSD,alerj_qs1
+13,suplente,THIEGO SANTOS TH JÓIAS,MDB,alerj_qs2
+13,suplente,WELLINGTON JOSÉ,União,alerj_qs1
+7,suplente,Alessandro Calazans,PV,alerj_bib_suplente
+7,suplente,Bernard Rajzman,PSB,alerj_bib_suplente
+7,suplente,Carlos Corrêa,PDT,alerj_bib_suplente
+7,suplente,Eduardo Cunha,PPB,alerj_bib_suplente
+7,titular,Hairson Monteiro,PPB,alerj_bib_titular
+7,suplente,Heloneida Studart,PT,alerj_bib_suplente
+7,suplente,José Amorim,PPB,alerj_bib_suplente
+7,suplente,José Richard,PT,alerj_bib_suplente
+7,suplente,Luís Gomes,PFL,alerj_bib_suplente
+7,suplente,Nelci da Silva,PMDB,alerj_bib_suplente
+7,suplente,Ricardo Gaspar,PSB,alerj_bib_suplente
+7,suplente,Tutuca,PSB,alerj_bib_suplente
+8,suplente,Adroaldo Peixoto Garani,PSC,alerj_bib_suplente
+8,suplente,Alice Tamborindeguy,PSDB,alerj_bib_suplente
+8,suplente,Beto da Reta,PSC,alerj_bib_suplente
+8,titular,Caetano Amado,PR,alerj_bib_titular
+8,suplente,Cornélio Ribeiro,PL/PMDB,alerj_bib_suplente
+8,suplente,Hugo Leal,PSC,alerj_bib_suplente
+8,suplente,Iranildo Campos,PP,alerj_bib_suplente
+8,suplente,José Bonifácio,PDT,alerj_bib_suplente
+8,titular,Marcos Abrahão,PTdoB,alerj_bib_titular+alerj_noticias
+8,suplente,Noel de Carvalho,PMDB,alerj_bib_suplente
+8,suplente,Paulo Mustrangi,PT,alerj_bib_suplente
+8,suplente,Renato de Jesus,PMDB,alerj_bib_suplente
+8,suplente,Sivuca,PSC,alerj_bib_suplente
+8,suplente,Walney Rocha,PMDB,alerj_bib_suplente
+8,suplente,Átila Nunes,PMDB,alerj_bib_suplente
+9,suplente,Ademir Melo,PSDB,alerj_bib_suplente
+9,suplente,Alice Tamborindeguy,PSDB,alerj_bib_suplente
+9,suplente,Antônio Pedregal,PTdoB,alerj_bib_suplente
+9,suplente,Caetano Amado,PR,alerj_bib_suplente
+9,suplente,Délio Leal,PMDB,alerj_bib_suplente
+9,suplente,Geraldo Moreira,PMN,alerj_bib_suplente
+9,suplente,Iranildo Campos,PP,alerj_bib_suplente
+9,suplente,Joao Pedro Figueira,DEM,alerj_bib_suplente
+9,suplente,Marcos Soares,PDT,alerj_bib_suplente
+9,suplente,Marcus Vinícius,PTB,alerj_bib_suplente
+9,suplente,Nilton Salomão,PMDB,alerj_bib_suplente
+9,suplente,Rafael Aloísio Freitas,,alerj_bib_suplente
+9,suplente,Raleigh Ramalho,PTB,alerj_bib_suplente
+9,suplente,Ronaldo Medeiros,PSB,alerj_bib_suplente
+9,suplente,Átila Nunes,DEM,alerj_bib_suplente

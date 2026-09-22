@@ -1,0 +1,13 @@
+forma_saida,condicao,N
+fim_regular,titular,487
+,titular,89
+fim_regular,suplente,85
+outro,titular,69
+outro,suplente,30
+fim_regular,nao_informado,16
+outro,nao_informado,6
+,suplente,5
+cassacao,suplente,5
+renuncia,titular,5
+licenca,titular,1
+cassacao,nao_informado,1

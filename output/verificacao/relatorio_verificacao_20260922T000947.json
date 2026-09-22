@@ -1,0 +1,9 @@
+{
+  "alvo": "data/munic_exercicio_ampliado.csv",
+  "data_iso": "2026-09-22T00:09:47",
+  "checksum_script": "1164427ba6975e4814f7abc1b2347bc4",
+  "passou": ["chave (id_municipio_ibge, ano_munic) unica em 33399 linhas","forma_saida restrita ao vocabulario fechado (todas as linhas em nao_observado: a MUNIC nao documenta saida)","id_mandato_bocel preenchido so quando a evidencia confirma o eleito, e sempre existente em data/mandatos.csv","substituto_provavel preenchido apenas nas linhas de outra pessoa em exercicio","precisao da regra multiatributo medida na edicao de 2005 contra o nome (n = 5550)","nenhuma requisicao de rede: MUNIC e consulta_cand lidos de data_raw/","toda coluna de texto gravada em UTF-8 valido (validUTF8), sem mistura com o Latin-1 do TSE"],
+  "falhou": [],
+  "fora_de_cobertura": ["veracidade do que o municipio declarou ao IBGE (dado administrativo)","data da entrevista por municipio: a base nao a traz, e a idade foi calculada em 31 de dezembro do ano da pesquisa","motivo e data da interrupcao do mandato: a MUNIC nao pergunta, e por isso forma_saida fica em nao_observado","1999, 2001 e 2002 nao tem microdado por municipio; 2006, 2008, 2011, 2012, 2014, 2015, 2018, 2019, 2020, 2023 e 2024 nao tem bloco de perfil do prefeito","identificacao de quem substituiu quando nao e o vice da chapa"],
+  "veredito": "verificado"
+}

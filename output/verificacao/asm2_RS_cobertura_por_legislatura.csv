@@ -1,0 +1,8 @@
+ano_eleicao,n_bocel,n_pareados,n_fonte,n_titular,n_com_forma,fonte,taxa_pareamento
+1998,55,55,71,55,71,alrs_memorial_quadro_legislatura,1
+2002,55,55,71,55,71,alrs_memorial_quadro_legislatura,1
+2006,55,55,66,52,66,alrs_presencas_transparencia,1
+2010,55,54,67,56,67,alrs_presencas_transparencia,0.9818
+2014,55,53,66,62,66,alrs_presencas_transparencia,0.9636
+2018,55,54,64,55,64,alrs_presencas_transparencia,0.9818
+2022,55,54,65,57,9,alrs_presencas_transparencia,0.9818

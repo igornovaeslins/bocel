@@ -1,0 +1,21 @@
+numero,recontado,assinatura,doc,citado_nos_docs,bate
+pessoas,2.155,2155,2.155,TRUE,TRUE
+mandatos,4.253,4253,4.253,TRUE,TRUE
+posicoes_ano,18.092,18092,18.092,TRUE,TRUE
+filiacoes registros,5.942,5942,5.942,TRUE,TRUE
+pessoas com filiacao,2.126,2126,2.126,TRUE,TRUE
+pct pessoas com filiacao,"98,7%",0.9865,"98,7%",TRUE,TRUE
+federal forma_saida observada,3.314,,3.314,TRUE,TRUE
+federal pct forma_saida observada,"85,5%",,"85,5%",TRUE,TRUE
+estadual forma_saida observada,346,,346,TRUE,TRUE
+estadual pct forma_saida observada,"91,5%",,"91,5%",TRUE,TRUE
+fonte_situacao cadastro (recorte),4.138,,4.138,TRUE,TRUE
+"fonte_situacao imputacao_titular (recorte, vices)",112,,112,TRUE,TRUE
+fonte_situacao imputacao_votos (recorte),1,,1,TRUE,TRUE
+fonte_situacao fonte_oficial_casa (recorte),2,,2,TRUE,TRUE
+dedup titulo (recorte),2.155,,2.155,TRUE,TRUE
+senadores 2018 (EXCECOES),54,,54,TRUE,TRUE
+senadores MT 2018 (EXCECOES),2,,2,TRUE,TRUE
+n_imputados_por_votos (banco completo),205,205,205,TRUE,TRUE
+n_duplicatas_posicao_removidas (banco completo),894,894,894,TRUE,TRUE
+n_eleitos_sem_identidade_excluidos (banco completo),0,0,0,TRUE,TRUE

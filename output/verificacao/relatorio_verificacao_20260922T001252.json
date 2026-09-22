@@ -1,0 +1,9 @@
+{
+  "alvo": "data/diarios_eventos.csv",
+  "data_iso": "2026-09-22T00:12:52",
+  "checksum_script": "ecae4d9ad5ca5b2a60d94c1abaad3e04",
+  "passou": ["vocabulario fechado de evento_inferido","uma linha por mandato em diarios_mandatos_saida","todo id_mandato_bocel existe em mandatos.csv"],
+  "falhou": [],
+  "fora_de_cobertura": ["pertinencia semantica do excerto (homonimo de servidor, ato de conselho)","periodo do diario anterior a 2013 quase inexistente na base"],
+  "veredito": "verificado"
+}

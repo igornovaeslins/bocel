@@ -1,0 +1,16 @@
+forma_saida,condicao,N
+fim_regular,titular,280
+,titular,51
+suplente_efetivado,suplente,49
+outro,titular,32
+renuncia,titular,17
+outro,suplente,13
+afastamento,titular,8
+renuncia,suplente,6
+,suplente,5
+afastamento,suplente,2
+licenca,titular,2
+cassacao,suplente,2
+licenca,suplente,1
+falecimento,titular,1
+cassacao,titular,1

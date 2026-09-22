@@ -1,0 +1,65 @@
+# verifica_datajud — relatorio
+data: 2026-09-21
+
+## passou
+- colunas proc
+- chave unica proc
+- chave unica sinal
+- 28 tribunais
+- tribunais no conjunto
+- uf = tribunal
+- grau em G1/G2/SUP
+- logicos
+- ano_ajuizamento 2002-2026 (fora = pendencia registrada)
+- numero_processo 20 digitos
+- numero CNJ segmento eleitoral
+- linhas jsonl = contagem .ok
+- bruto: n = jsonl
+- unique(tribunal,numero) do bruto = nrow(proc)
+- classes no conjunto
+- assinatura dj_n_representac_ao
+- assinatura dj_n_ac_ao_de_investigac_ao_judicial_eleitoral
+- assinatura dj_n_representac_ao_criminal_not_icia_de_crime
+- assinatura dj_n_representac_ao_especial
+- assinatura dj_n_ac_ao_de_impugnac_ao_de_mandato_eletivo
+- assinatura dj_n_recurso_contra_expedic_ao_de_diploma
+- assinatura dj_n_representac_ao_por_excesso_de_prazo
+- assinatura dj_n_representac_ao_criminal
+- relevante_cassacao reproduzido
+- AIJE/AIME/RCED sempre relevantes
+- assinatura dj_n_relevantes_cassacao
+- indicio TRUE tem data e movimento
+- indicio FALSE sem data
+- movimento_indicio bate a regra
+- assinatura dj_n_com_indicio_cassacao
+- reparse: indicio bate (mesmo grau)
+- reparse: n_movimentos bate (mesmo grau)
+- reparse: ibge e ano batem (mesmo grau)
+- API: 40 processos amostrados
+- API: todos encontrados
+- API: indicio identico nos 40
+- API: n_movimentos identico nos 40
+- API: classe identica nos 40
+- API: ibge identico nos 40
+- sinal reproduzido linha a linha
+- sinal soma = relevantes com municipio ou TRE
+- eleicao_ref municipal multiplo de 4
+- eleicao_ref geral = 2 mod 4
+- eleicao_ref sem cargo = ano par
+- eleicao_ref em faixa (excluidos os anos fora de faixa da origem)
+- n_com_indicio <= n_processos
+- primeira_data_indicio so com indicio
+- assinatura dj_n_com_municipio
+- sg_ue vem da tabela TSE-IBGE
+- tse_ibge: ibge unico
+- UF do IBGE = UF do TRE
+- nota: API nao expoe partes
+- nota: sinal agregado sem atribuicao a mandato
+- readme cita os dois csv
+- livro: n linhas proc
+- livro: n linhas sinal
+- assinatura dj_n_processos
+- assinatura dj_n_tribunais
+
+## falhou
+- (nenhum)

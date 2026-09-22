@@ -1,0 +1,149 @@
+ano_eleicao,nome,condicao,data_inicio_exercicio,data_fim_exercicio,id_fonte
+1998,Ana do Carmo,suplente,2003-02-10,2003-03-14,300400
+1998,Antonio Mentor,suplente,2001-01-03,2003-03-14,300392
+1998,Bruno Feder,suplente,2003-01-13,2003-03-14,300398
+1998,Carlos Gaspar,suplente,2001-01-24,2002-01-21,300397
+1998,Carlos Gaspar,suplente,2003-02-03,2003-03-14,300397
+1998,Carlão Camargo,suplente,2001-01-03,2003-03-14,300391
+1998,Cândido Vaccarezza,suplente,2001-01-03,2003-03-14,300393
+1998,Djalma Bom,suplente,2003-01-06,2003-03-14,300307
+1998,Donisete Braga,suplente,2001-01-03,2003-03-14,300394
+1998,Emídio de Souza,suplente,2001-01-03,2002-11-20,300395
+1998,Emídio de Souza,suplente,2003-02-03,2003-03-14,300395
+1998,Flávio Chaves,suplente,2003-02-03,2003-03-14,300340
+1998,Jorge Tokuzumi,suplente,2003-02-25,2003-03-14,300409
+1998,José Carlos Tonin,suplente,2003-02-03,2003-03-14,300256
+1998,José Roberto Atalaia,suplente,2003-02-28,2003-03-14,300422
+1998,Milton Flávio,nao_informado,1999-03-15,2003-03-14,300311
+1998,Monica Becker,suplente,2003-02-03,2003-03-14,300399
+1998,Nabi Chedid,nao_informado,1999-03-15,2003-03-14,300042
+1998,Newton Brandão,nao_informado,1999-03-15,2003-03-14,300249
+1998,Rui Falcão,nao_informado,1999-03-15,2003-03-14,300272
+1998,Valdomiro Lopes,nao_informado,1999-03-15,2003-03-14,300396
+1998,Wadih Helú,suplente,1999-06-30,2003-03-14,300061
+1998,Wagner Lino,suplente,2001-01-03,2003-03-14,300285
+2002,Adilson Rossi,nao_informado,2003-03-15,2003-10-28,300432
+2002,Adilson Rossi,suplente,2006-08-15,2007-03-14,300432
+2002,Alfredo Ruzza,suplente,2007-02-01,2007-03-14,300448
+2002,Ana Martins,nao_informado,2003-03-15,2007-03-14,300410
+2002,Carlos Neder,nao_informado,2003-03-15,2007-03-14,300446
+2002,Ed Thomas,nao_informado,2003-03-15,2007-03-14,300454
+2002,Edir Sales,suplente,2006-09-12,2007-03-14,300357
+2002,Edmur Mesquita,suplente,2007-02-01,2007-03-14,300358
+2002,Henrique Pacheco,suplente,2007-02-01,2007-03-14,300365
+2002,José Augusto,suplente,2007-02-01,2007-03-14,300368
+2002,José Zico Prado,nao_informado,2003-03-15,2007-03-14,300228
+2002,João Barbosa,suplente,2007-02-01,2007-03-14,300447
+2002,Maria do Carmo Piunti,suplente,2007-02-01,2007-03-14,300213
+2002,Mauro Bragato,suplente,2005-01-04,2007-03-14,300098
+2002,Milton Flávio,suplente,2005-01-04,2006-03-30,300311
+2002,Milton Flávio,suplente,2007-01-01,2007-03-14,300311
+2002,Palmiro Mennucci,suplente,2005-01-04,2005-05-24,300444
+2002,Palmiro Mennucci,suplente,2006-02-20,2007-03-14,300444
+2002,Roberto Engler,suplente,2003-03-19,2007-03-14,300267
+2002,Roberto Felício,nao_informado,2003-03-15,2007-03-14,300442
+2002,Sebastião Batista Machado,suplente,2005-01-04,2007-03-14,300445
+2002,Terezinha da Paulina,nao_informado,2003-03-15,2007-03-14,300325
+2006,Aloísio Vieira,suplente,2007-03-16,2008-03-09,300296
+2006,Antônio Aguimarães de Caldas,suplente,2011-02-03,2011-03-14,300494
+2006,Beth Sahão,suplente,2009-01-05,2011-03-14,300435
+2006,Camilo Gava,suplente,2009-06-04,2010-03-31,300491
+2006,Carlos Neder,suplente,2009-01-05,2009-03-20,300446
+2006,Carlos Neder,suplente,2010-07-29,2011-03-14,300446
+2006,Corauci Sobrinho,suplente,2011-02-01,2011-03-14,300210
+2006,Cássio Navarro,suplente,2009-01-09,2009-01-28,300489
+2006,Davi Zaia,nao_informado,2007-03-15,2011-03-14,300461
+2006,Diniz Lopes,suplente,2011-02-03,2011-03-14,300493
+2006,Eli Corrêa Filho,suplente,2008-01-29,2008-06-04,300348
+2006,Eli Corrêa Filho,suplente,2008-06-24,2011-01-31,300348
+2006,Fausto Figueira,suplente,2008-12-22,2011-03-14,300411
+2006,Gilson de Souza,suplente,2007-03-16,2011-03-14,300346
+2006,Hélio Nishimoto,suplente,2009-01-05,2010-03-31,300488
+2006,Hélio Nishimoto,suplente,2011-01-04,2011-03-14,300488
+2006,Iduigues Martins,suplente,2011-03-02,2011-03-14,300495
+2006,José Zico Prado,nao_informado,2007-03-15,2011-03-14,300228
+2006,Marco Bertaiolli,suplente,2007-03-21,2008-12-31,300486
+2006,Marco Porta,suplente,2009-01-05,2011-03-14,300487
+2006,Marquinho Tortorello,suplente,2011-01-06,2011-03-14,300375
+2006,Mauro Menuchi,suplente,2011-02-01,2011-03-14,300434
+2006,Milton Flávio,suplente,2009-02-09,2010-03-30,300311
+2006,Milton Flávio,suplente,2011-01-04,2011-03-14,300311
+2006,Pedro Bigardi,suplente,2009-03-23,2011-03-14,300490
+2006,Terezinha da Paulina,suplente,2011-02-01,2011-03-14,300325
+2006,Widerson Anzelotti,suplente,2011-02-03,2011-03-14,300492
+2010,Alcides Amazonas,suplente,2013-01-03,2014-03-17,300525
+2010,Alexandre da Farmácia,suplente,2013-01-03,2015-03-14,300524
+2010,Beth Sahão,suplente,2012-02-16,2015-03-14,300435
+2010,Carlos Neder,suplente,2013-01-03,2014-02-10,300446
+2010,Carlos Neder,suplente,2014-02-12,2015-03-14,300446
+2010,Constância Félix,suplente,2015-02-01,2015-03-14,300588
+2010,Dilador Borges,suplente,2013-01-03,2014-04-03,300528
+2010,Dilador Borges,suplente,2015-02-01,2015-03-14,300528
+2010,Francisco Campos Tito,suplente,2013-01-03,2015-03-14,300527
+2010,Geraldo Vinholi,suplente,2011-03-18,2012-06-04,300390
+2010,Geraldo Vinholi,suplente,2012-07-24,2012-12-31,300390
+2010,José Zico Prado,nao_informado,2011-03-15,2015-03-14,300228
+2010,Leandro Klb,suplente,2013-01-03,2015-03-14,300529
+2010,Orlando Bolçone,nao_informado,2011-03-15,2012-07-15,300518
+2010,Orlando Bolçone,suplente,2013-01-03,2015-03-14,300518
+2010,Osvaldo Verginio,suplente,2013-01-03,2015-03-14,300530
+2010,Ramalho da Construção,suplente,2013-01-03,2015-03-14,300526
+2010,Regina Gonçalves,suplente,2011-03-16,2014-04-03,300522
+2010,Roberto Felício,suplente,2015-02-02,2015-03-14,300442
+2010,Sarah Munhoz,suplente,2014-03-18,2015-03-14,300531
+2010,Uebe Rezeck,suplente,2015-02-01,2015-03-14,300231
+2010,Ulisses Sales,suplente,2015-02-01,2015-03-14,300587
+2010,Vitor Sapienza,suplente,2011-03-16,2014-04-03,300209
+2010,Vitor Sapienza,suplente,2015-02-01,2015-03-14,300209
+2010,Welson Gasparini,suplente,2011-03-18,2015-03-14,300523
+2014,Airton Garcia,suplente,2015-11-25,2016-02-15,300591
+2014,Alexandre Pereira,nao_informado,2015-03-15,2015-11-26,300553
+2014,Antonio Carlos Junior,suplente,2019-01-04,2019-03-14,300598
+2014,Bruno Caetano,suplente,2019-01-28,2019-03-14,300601
+2014,Doutor Ulysses ,suplente,2017-01-03,2019-03-14,300521
+2014,Dr. Itamar,suplente,2019-01-17,2019-03-14,300600
+2014,Evandro Losacco,suplente,2019-01-30,2019-03-14,300602
+2014,Gerson Bittencourt,suplente,2019-02-18,2019-03-14,300507
+2014,Gilmar Gimenes,suplente,2017-01-01,2019-03-14,300595
+2014,Gustavo Petta,suplente,2018-05-14,2018-12-14,300597
+2014,José Bittencourt,suplente,2019-01-03,2019-03-14,300401
+2014,José Zico Prado,suplente,2015-08-25,2019-03-14,300228
+2014,João Caramez,suplente,2016-07-04,2019-03-14,300366
+2014,João Leite,suplente,2019-02-01,2019-02-12,300603
+2014,Julio Cesar,suplente,2019-02-05,2019-03-14,300604
+2014,Junior Aprillanti,suplente,2017-01-01,2019-03-14,300593
+2014,Luiz Gonzaga Vieira,suplente,2019-01-03,2019-03-14,300374
+2014,Marco Aurélio Cunha,suplente,2019-03-08,2019-03-14,300651
+2014,Marco Vinholi,suplente,2017-01-01,2019-03-14,300594
+2014,Pedro Kaká,suplente,2017-01-01,2019-03-14,300592
+2014,Vanessa Damo,nao_informado,2015-03-15,2016-05-18,300469
+2014,Vitor Sapienza,suplente,2017-07-18,2019-03-14,300209
+2018,Afonso Lobato,suplente,2021-04-09,2021-10-05,300404
+2018,Aldo Demarchi,suplente,2022-04-26,2022-12-19,300288
+2018,Aldo Demarchi,suplente,2022-12-22,2022-12-31,300288
+2018,Aldo Demarchi,suplente,2023-02-08,2023-03-14,300288
+2018,Alessandra Monteiro ,suplente,2020-02-06,2020-04-26,300652
+2018,Beth Sahão,nao_informado,2019-03-15,2020-08-27,300435
+2018,Castello Branco,nao_informado,2019-03-15,2023-03-14,300615
+2018,Daniela Braga,suplente,2023-02-01,2023-03-14,300691
+2018,Dr. Raul,suplente,2023-02-01,2023-03-14,300692
+2018,Edson Giriboni,suplente,2021-01-04,2023-03-14,300449
+2018,Major Mauro,nao_informado,2019-03-15,2019-03-26,300632
+2018,Monica Seixas do Movimento Pretas,nao_informado,2019-03-15,2023-03-14,300637
+2018,Murilo Felix,suplente,2021-01-04,2023-03-14,300654
+2018,Patrícia Gama,suplente,2021-03-17,2023-03-14,300655
+2018,Professor Walter Vicioni,suplente,2021-06-01,2022-03-31,300656
+2018,Raul Marcelo,suplente,2021-08-03,2021-11-30,300474
+2018,Tenente Carmelidia,suplente,2023-02-01,2023-03-14,300690
+2022,André Bueno,suplente,2024-04-10,2027-01-31,300694
+2022,Coronel Helena,suplente,2024-06-25,2026-03-31,300695
+2022,Danilo Campetti,suplente,2024-06-27,2026-03-31,300696
+2022,Delegada Raquel ,suplente,2025-11-28,2025-12-10,300701
+2022,Dra. Damaris Moura,suplente,2025-07-14,2025-09-14,300624
+2022,Dra. Damaris Moura,suplente,2026-05-07,2027-01-31,300624
+2022,Edson Giriboni,suplente,2025-01-06,2027-01-31,300449
+2022,Fábio Faria de Sá,suplente,2025-01-06,2027-01-31,300697
+2022,Marcelo Aguiar,suplente,2025-01-06,2027-01-31,300698
+2022,Ortiz Junior,suplente,2025-01-06,2025-07-13,300699
+2022,Ortiz Junior,suplente,2025-09-15,2026-05-06,300699
+2022,Simão Pedro,nao_informado,2023-03-15,2025-07-15,300416
