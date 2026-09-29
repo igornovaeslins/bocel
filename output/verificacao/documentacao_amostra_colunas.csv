@@ -1,11 +1,11 @@
 arquivo,variavel,preench_recontado,tipo_recontado,tipo_doc,preench_doc
-eleicoes_suplementares.csv,id_pleito,100.0%,texto,texto,100.0%
-eleicoes_suplementares.csv,sg_partido_vencedor,60.0%,texto,texto,60.0%
-eleicoes_suplementares.csv,unidade_posicao,100.0%,texto,texto,100.0%
-exercicio_camara.csv,data_inicio_exercicio,86.8%,data ISO,data ISO,86.8%
-exercicio_senado.csv,codigo_exercicio,100.0%,inteiro,inteiro,100.0%
+eleicoes_suplementares.csv,votos_vencedor,60.0%,inteiro,inteiro,60.0%
+exercicio_camara.csv,condicao,100.0%,texto,texto,100.0%
+exercicio_senado.csv,titular_codigo,36.8%,inteiro,inteiro,36.8%
+interregnos_legislativo_federal.csv,url_fonte,100.0%,texto,texto,100.0%
 mandatos.csv,reeleicao_declarada,43.3%,texto,texto,43.3%
-ocupacoes.csv,partido_difere_do_titular,4.1%,logico,logico,4.1%
-pessoas.csv,nome,100.0%,texto,texto,100.0%
-saida_legislativo_federal.csv,casa,100.0%,texto,texto,100.0%
-saida_legislativo_federal.csv,fonte,100.0%,texto,texto,100.0%
+ocupacoes.csv,url,32.4%,texto,texto,32.4%
+pessoas.csv,id_pessoa,100.0%,texto,texto,100.0%
+saida_legislativo_federal.csv,afastado_no_fim,72.0%,logico,logico,72.0%
+suplentes_identidade.csv,pessoa_tambem_eleita,100.0%,logico,logico,100.0%
+suplentes_identidade.csv,sg_partido,100.0%,texto,texto,100.0%

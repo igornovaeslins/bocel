@@ -120,7 +120,10 @@ for (f in arqs) {
                                                   trecho = substr(df, 1, 40), url = url)
   }
 }
-ev <- rbindlist(eventos); ps <- unique(rbindlist(posses))
+# OCU-06 (auditoria de 24/09): a biografia do deputado 178921 repete a mesma frase de licenca duas vezes
+# dentro da propria secao "Licencas:" da pagina da Camara, o que gera uma linha identica duplicada em
+# camara_biografia_eventos.csv (nao e bug de parsing, a fonte HTML repete o trecho). ps ja tinha unique().
+ev <- unique(rbindlist(eventos)); ps <- unique(rbindlist(posses))
 ev[, ano_eleicao := leg_inicio - 1L]; ps[, ano_eleicao := leg_inicio - 1L]
 fwrite(ev, "data/camara_biografia_eventos.csv", na = "NA", quote = TRUE)
 fwrite(ps, "data/camara_biografia_posses.csv", na = "NA", quote = TRUE)

@@ -13,9 +13,19 @@ setwd(Sys.getenv("BOCEL_ROOT", unset = path.expand("~/bocel")))  # 05/09/2026: o
 m <- fread("data/mandatos.csv", na.strings = c("NA", ""), colClasses = "character", encoding = "UTF-8")
 
 # 21/09/2026: cabecalho do balanco com a data da versao
+# 29/09/2026: a data deixou de ser digitada (ficava em 21 de setembro na v1.1) e sai de VERSAO,
+# a mesma fonte que R/05 usa para README, CITATION.cff e nota de cobertura
+data_ext <- function(iso) {
+  dt <- as.Date(iso)
+  meses <- c("janeiro", "fevereiro", "mar\u00e7o", "abril", "maio", "junho", "julho",
+             "agosto", "setembro", "outubro", "novembro", "dezembro")
+  sprintf("%d de %s de %d", as.integer(format(dt, "%d")), meses[as.integer(format(dt, "%m"))],
+          as.integer(format(dt, "%Y")))
+}
+DATA_VERSAO_EXT <- data_ext(trimws(read.dcf("VERSAO")[1, "data_lancamento"]))
 cab <- readLines("docs/ESTADO_DO_BANCO.md", encoding = "UTF-8", warn = FALSE, n = 5)
 if (length(cab) >= 4 && grepl("^# Estado do Banco", cab[1])) {
-  cab[1] <- sub(" — .*$", " — 21 de setembro de 2026", cab[1])
+  cab[1] <- paste0(sub("\\s+\u2014\\s+.*$", "", cab[1]), " \u2014 ", DATA_VERSAO_EXT)
   linhas <- readLines("docs/ESTADO_DO_BANCO.md", encoding = "UTF-8", warn = FALSE)
   linhas[seq_along(cab)] <- cab
   writeLines(linhas, "docs/ESTADO_DO_BANCO.md", useBytes = TRUE)

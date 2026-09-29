@@ -9,11 +9,71 @@ suppressPackageStartupMessages({ library(data.table) })
 # assembleias e municipios ficam para a v1.5/v2.0, e por isso a documentacao le data_v1/, nao data/
 root <- Sys.getenv("BOCEL_ROOT", unset = path.expand("~/bocel"))
 setwd(root)
+## 28/09/2026 (v1.1): os numeros novos da nota de cobertura que saem dos dados (pares de ocupacao sobrepostos)
+## passam por registrar_numero(), e por isso a biblioteca de proveniencia entra aqui
+source(file.path(root, "lib", "proveniencia.R"))
+SCRIPT_R05 <- "R/05_documentar.R"
 mand <- fread("data_v1/mandatos.csv", colClasses = "character", na.strings = "NA")
 pos  <- fread("data_v1/posicoes_ano.csv", colClasses = "character", na.strings = "NA")
 pess <- fread("data_v1/pessoas.csv", colClasses = "character", na.strings = "NA")
 
 pct <- function(x) sprintf("%.1f%%", 100 * mean(!is.na(x) & x != ""))
+fm <- function(n) format(n, big.mark = ".", decimal.mark = ",", trim = TRUE)
+
+## 24/09/2026: numero e data da versao atual saem do arquivo VERSAO (formato DCF), nunca digitados
+## a mao aqui; "vX.Y" e a forma de exibicao usada no titulo, na citacao e no CITATION.cff. Mencoes ao
+## "recorte da v1.0" como fronteira historica fixa do escopo (o que v1.1 herda e nao amplia) continuam
+## literais, porque descrevem o desenho que essa e as proximas versoes preservam, nao a versao atual
+ver_dcf <- read.dcf("VERSAO")
+# 29/09/2026: read.dcf devolve o valor com o nome do campo, e o identical() com a versao do deposito_info.json dava
+# falso mesmo com os dois valores iguais, o que deixava o README sem o DOI da versao corrente depois do rascunho criado
+VERSAO_ATUAL <- unname(trimws(ver_dcf[1, "versao"]))
+DATA_LANCAMENTO <- trimws(ver_dcf[1, "data_lancamento"])
+VERSAO_TAG <- paste0("v", VERSAO_ATUAL)
+data_por_extenso <- function(iso) {
+  dt <- as.Date(iso)
+  meses <- c("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
+             "agosto", "setembro", "outubro", "novembro", "dezembro")
+  sprintf("%d de %s de %d", as.integer(format(dt, "%d")), meses[as.integer(format(dt, "%m"))],
+          as.integer(format(dt, "%Y")))
+}
+DATA_LANCAMENTO_EXTENSO <- data_por_extenso(DATA_LANCAMENTO)
+## leitor do registro de numeros verificados (mesmo parse de R/06_amarracoes_fapesp.R), so para
+## numeros que dependem de um estado anterior ao arquivo final (por exemplo, a correcao de OCU-02
+## muda data_fim em ocupacoes.csv sem deixar o valor anterior no proprio arquivo)
+reg_txt <- readLines("output/numeros_assinatura.txt", warn = FALSE)
+reg_tab <- rbindlist(lapply(strsplit(reg_txt[grepl("|", reg_txt, fixed = TRUE)], "|", fixed = TRUE),
+                            function(p) data.table(chave = trimws(p[1]), valor = trimws(p[2]))))
+reg_tab <- reg_tab[, .SD[.N], by = chave]
+reg_num <- function(k) reg_tab[chave == k, valor]
+## versao estrita: chave ausente ou duplicada interrompe a geracao, em vez de virar texto vazio na nota
+rn <- function(k) {
+  v <- reg_num(k)
+  if (length(v) != 1L || is.na(suppressWarnings(as.numeric(v))))
+    stop(sprintf("rn(): a chave '%s' nao tem um unico valor numerico em output/numeros_assinatura.txt", k))
+  as.numeric(v)
+}
+
+## 29/09/2026 (F4): as constantes da regra de vinculo do R/42 sobem para o topo, lidas do proprio codigo, para que a
+## definicao de vinculo_cadeira no livro de codigos e o texto da nota de cobertura nunca divirjam delas
+r42_txt <- readLines("R/42_ocupacoes.R", warn = FALSE)
+const_r42 <- function(nome) {
+  l <- grep(sprintf("^ *%s *<- *[0-9]+L", nome), r42_txt, value = TRUE)
+  stopifnot(length(l) == 1L)
+  as.integer(sub(sprintf("^ *%s *<- *([0-9]+)L.*$", nome), "\\1", l))
+}
+JAN_TITULAR <- const_r42("JANELA_TITULAR"); JAN_EFET <- const_r42("JANELA_EFET"); TOL_R42 <- const_r42("TOL_DIAS")
+l_atraso <- grep("atraso >= -[0-9]+L & atraso <= [0-9]+L", r42_txt, value = TRUE)
+stopifnot(length(l_atraso) == 1L)
+ATRASO_DEPOIS <- as.integer(sub(".*atraso >= -([0-9]+)L.*", "\\1", l_atraso))
+ATRASO_ANTES  <- as.integer(sub(".*atraso <= ([0-9]+)L.*", "\\1", l_atraso))
+
+## 29/09/2026 (DADOS-02): o dicionario de pessoas afirma que toda pessoa ocupante_sem_mandato_no_recorte tem
+## n_mandatos >= 1 e primeiro_ano_eleito preenchido; a afirmacao so sai se as duas contagens do R/64 forem zero
+stopifnot(rn("v1_ocupante_sem_mandato_com_n_mandatos_menor_que_1") == 0,
+          rn("v1_ocupante_sem_mandato_com_primeiro_ano_eleito_na") == 0,
+          rn("v1_ocupantes_identificados_nao_eleitos_no_recorte") ==
+            rn("v1_pessoas_ocupantes_sem_mandato_no_recorte") + rn("v1_ocupantes_so_em_pessoas_suplentes"))
 
 dic_mand <- list(
   id_mandato = c("texto", "Identificador do mandato, na forma M<ano>_<unidade>_<cd_cargo>_<nr_candidato>_<sq_candidato>"),
@@ -43,7 +103,7 @@ dic_mand <- list(
   votos_turno_decisivo = c("inteiro", "Votos nominais no turno decisivo"),
   mandato_inicio = c("data ISO", "Inicio convencional do mandato (1o de fevereiro pos-eleicao para senador e deputados; 1o de janeiro para os demais)"),
   mandato_fim = c("data ISO", "Fim convencional do mandato (31 de janeiro apos o ultimo ano para senador e deputados; 31 de dezembro para os demais)"),
-  forma_saida = c("texto", "Forma de saida do cargo, vocabulario fechado (fim_regular, renuncia, falecimento, cassacao, afastamento, licenca, nao_tomou_posse, suplente_efetivado, perda_do_mandato_inferida_por_eleicao_suplementar, substituicao_inferida_munic, assumiu_titular, aposentadoria, impeachment, retotalizacao, outro, nao_observado). Em senador, deputado federal, presidente, vice-presidente, governador e vice-governador, licenca e afastamento temporario nao encerram mandato, e o periodo fora do exercicio fica em data/interregnos_legislativo_federal.csv; retotalizacao e a perda da vaga por nova totalizacao dos votos, sem ato ilicito"),
+  forma_saida = c("texto", paste0("Forma de saida do cargo, vocabulario fechado (fim_regular, renuncia, falecimento, cassacao, afastamento, licenca, nao_tomou_posse, suplente_efetivado, perda_do_mandato_inferida_por_eleicao_suplementar, substituicao_inferida_munic, assumiu_titular, aposentadoria, impeachment, retotalizacao, outro, nao_observado). Em senador, deputado federal, presidente, vice-presidente, governador e vice-governador, licenca e afastamento temporario nao encerram mandato, e o periodo fora do exercicio fica em data/interregnos_legislativo_federal.csv; retotalizacao e a perda da vaga por nova totalizacao dos votos, sem ato ilicito. Nos mandatos do recorte em que a forma de saida esta preenchida e data_posse esta vazia (pendencia 12), a forma vem da fonte que registra a saida e nao registra a entrada, como a renuncia de Jean Wyllys, e a ausencia da data de posse nao significa mandato nunca exercido. A explicacao e a contagem desses ", fm(rn("v1_p12_mandatos_sem_data_posse")), " mandatos estao em NOTA_DE_COBERTURA.md")),
   fonte_forma_saida = c("texto", "Fonte da forma de saida (camara_api, senado_api, camara_biografia, fonte_oficial_curada, base_dhbb_curada, noticia_orgao_publico_curada, pista_nao_oficial, assembleia_api, sapl_municipal, sapl_observacao, portal_camara, tce, assembleia_historico, assembleia_portal, assembleia_inventario, diario_oficial, wikipedia, wikidata, wikidata_obito, datajud, tse_suplementar, ibge_munic, cargo_incompativel, derivado_titular, data_fim_efetiva). sapl_observacao e o ato escrito no campo de texto livre do SAPL, lido por R/54; assembleia_inventario e a folha e a frequencia das casas estaduais; cargo_incompativel e a posse em outro cargo eletivo deduzida do proprio banco. camara_biografia e a biografia oficial do deputado na Camara, fonte da legislatura 1999-2003; fonte_oficial_curada e o evento das tabelas em ref/ com fonte oficial, e nos casos federais especiais tambem com materia e trecho literal conferido. Nos governos e na Presidencia, o evento curado sem fonte oficial leva o rotulo da melhor fonte que tem, base_dhbb_curada para o verbete do DHBB/CPDOC-FGV, noticia_orgao_publico_curada para a noticia publicada por orgao publico e pista_nao_oficial quando so ha imprensa ou Wikipedia, caso em que o mandato consta de docs/EXCECOES_CONHECIDAS.csv. derivado_titular marca o vice que assume quando o titular sai; data_fim_efetiva marca o fim efetivo registrado que iguala ou ultrapassa o fim convencional, promovido a fim_regular"),
   data_posse = c("data ISO", "Inicio do primeiro periodo de exercicio registrado (Camara, Senado, Assembleias, Wikidata)"),
   data_fim_efetiva = c("data ISO", "Fim do ultimo periodo de exercicio registrado, ou data da saida inferida"),
@@ -70,7 +130,8 @@ dic_pos <- list(
   ano_eleicao = c("inteiro", "Ano da eleicao de origem"),
   sg_partido = c("texto", "Sigla do partido na eleicao de origem"),
   nr_partido = c("inteiro", "Numero do partido na eleicao de origem"),
-  ano = c("inteiro", "Ano-calendario em que a pessoa ocupa a posicao")
+  ano = c("inteiro", "Ano-calendario em que a pessoa ocupa a posicao"),
+  exerceu_no_ano = c("logico", "Se o titular do mandato exerceu a cadeira em algum dia daquele ano, segundo a ocupacao titular registrada em ocupacoes.csv e a forma_saida do mandato (DEF-01, 24/09/2026). FALSE quando o mandato nunca foi exercido (forma_saida = nao_tomou_posse, ou data_fim da ocupacao titular em ocupacoes.csv anterior a data_inicio dessa ocupacao, que vale o inicio do mandato por convencao quando o mandato nao tem data_posse, padrao encontrado em Jean Wyllys e num mandato do PI em 2022, ambos com data_posse vazia em mandatos.csv) ou quando o ano fica fora do intervalo [inicio, fim] do exercicio; TRUE quando o ano cai dentro do intervalo com fim conhecido, ou quando o fim e desconhecido (mandato em curso) e o ano nao passa da data de referencia da reconstrucao (output/data_referencia.txt); NA quando o fim e desconhecido e o ano e posterior a essa data de referencia, porque ainda nao ha como saber. Nenhuma linha de posicoes_ano.csv foi removida ou acrescentada por esta coluna, que so marca as ja existentes (contagem no cabecalho desta secao)")
 )
 dic_pess <- list(
   id_pessoa = c("texto", "Identificador estavel da pessoa"),
@@ -86,7 +147,8 @@ dic_pess <- list(
   chave_dedup = c("texto", "Regra que identificou a pessoa (titulo, cpf ou nome_nascimento)"),
   dedup_ponte_nome_nascimento = c("logico", "Nome e data de nascimento sao a unica chave de identidade desta pessoa, sem titulo nem CPF em nenhuma candidatura (auditoria em data_v1/auditoria_homonimos.csv)"),
   dedup_auditoria = c("texto", "Classificacao da auditoria de homonimos (consistente, suspeito, indeterminado) para as pessoas auditadas em data_v1/auditoria_homonimos.csv; nao_auditado para as demais"),
-  dedup_suspeita_fusao = c("texto", "Leitura da fusao por documento que R/03 manteve porque nome ou nascimento coincidem entre as candidaturas unidas por um titulo ou CPF (nome_diferente_mesmo_nascimento, mesmo_nome_nascimento_diferente, mesmo_nome_e_nascimento_documento_reemitido); NA quando nao ha suspeita. A lista das fusoes desfeitas esta em output/verificacao/fusao_documentos_separacao.csv")
+  dedup_suspeita_fusao = c("texto", "Leitura da fusao por documento que R/03 manteve porque nome ou nascimento coincidem entre as candidaturas unidas por um titulo ou CPF (nome_diferente_mesmo_nascimento, mesmo_nome_nascimento_diferente, mesmo_nome_e_nascimento_documento_reemitido); NA quando nao ha suspeita. A lista das fusoes desfeitas esta em output/verificacao/fusao_documentos_separacao.csv"),
+  condicao_no_recorte = c("texto", paste0("Condicao da pessoa no recorte desta versao (pendencia 17, opcao A, 24/09/2026), com os valores eleito_no_recorte (a pessoa tem mandato em mandatos.csv ou posicao em posicoes_ano.csv dentro do recorte) e ocupante_sem_mandato_no_recorte (a pessoa aparece como ocupante de uma cadeira em ocupacoes.csv, por exemplo suplente convocado, vice que assumiu ou interino, sem mandato nem posicao no recorte, e foi eleita em algum cargo do banco fora dele, como Assembleia ou municipio). O identificador de todo ocupante de ocupacoes.csv resolve em pessoas.csv ou em pessoas_suplentes.csv. Entre os ", fm(rn("v1_ocupantes_identificados_nao_eleitos_no_recorte")), " ocupantes identificados que nao foram eleitos no recorte, ", fm(rn("v1_pessoas_ocupantes_sem_mandato_no_recorte")), " constam de pessoas.csv com esta condicao e ", fm(rn("v1_ocupantes_so_em_pessoas_suplentes")), ", que nunca foram eleitos em nenhuma esfera do banco, constam apenas de pessoas_suplentes.csv, onde respondem por ", fm(rn("v1_ocupacoes_de_ocupante_so_em_pessoas_suplentes")), " ocupacoes. As colunas n_mandatos, primeiro_ano_eleito e ultimo_ano_eleito continuam contadas sobre o banco completo, nunca recalculadas so para o recorte. Nas pessoas ocupante_sem_mandato_no_recorte elas resultam de mandato fora do recorte, e todas as ", fm(rn("v1_pessoas_ocupantes_sem_mandato_no_recorte")), " tem n_mandatos maior ou igual a 1 e primeiro_ano_eleito preenchido, sem excecao nesta versao, porque quem nunca foi eleito em nenhuma esfera fica em pessoas_suplentes.csv"))
 )
 
 dic_fil <- list(
@@ -478,9 +540,12 @@ dic_aux <- list(
       sg_partido_ocupante = "Partido de quem ocupou", sg_partido_titular = "Partido do titular eleito para a cadeira",
       partido_difere_do_titular = "A cadeira trocou de partido por dentro, sem eleicao (logico)",
       data_inicio = "Inicio da ocupacao", data_fim = "Fim da ocupacao",
-      origem_data_inicio = "fonte quando ha ato ou registro, convencao quando e a data legal do mandato",
+      ## 28/09/2026 (v1.1): origem_data_inicio passa a ter cinco valores documentados um a um, e origem_data_fim
+      ## entra como coluna nova; vinculo_cadeira ganha lista_vaga_inicial e lista_sucessao_vaga (regra geral de R/42, secao 4b)
+      origem_data_inicio = "De onde veio data_inicio, em cinco valores. fonte quando a data e a que a fonte da ocupacao registra (coluna fonte). convencao quando o titular nao tem data de posse registrada e vale o inicio legal do mandato. biografia_camara quando a data foi lida na biografia oficial do deputado na Camara, na posse ou na primeira data da clausula de efetivacao, em ocupacao federal que a fonte da ocupacao nao datava e que a regra geral de vinculo da cadeira vaga no inicio da legislatura ligou. sinal_efetivacao_api nas mesmas condicoes, quando a biografia nao traz a data e vale a do sinal de efetivacao que a API da Camara registra (exercicio_camara ou ocupantes_legislativo_federal); e um valor do vocabulario que pode nao ocorrer em uma versao. curadoria_ocu07 na unica data corrigida a mao (Walter Pinheiro, posse de 1999-02-01, docs/EXCECOES_CONHECIDAS.csv). Vazio quando data_inicio esta vazio",
+      origem_data_fim = paste0("De onde veio data_fim, em quatro valores; tem valor se, e somente se, data_fim tem valor. fonte quando a data e a que a fonte da ocupacao registra (coluna fonte), inclusive quando reduzida ao fim do proprio mandato (OCU-02). O caminho em que a regra geral atribui ao ultimo episodio da pessoa na legislatura a saida definitiva de mandatos.csv ou da API da Camara tambem grava fonte, esta definido no codigo e ", if (rn("ocu_regra_ocupacoes_com_data_fim_origem_fonte") == 0) "nao ocorre nesta versao, de modo que nenhuma data de fim vem da regra geral por esse caminho" else sprintf("ocorre em %s ocupacoes nesta versao", fm(rn("ocu_regra_ocupacoes_com_data_fim_origem_fonte"))), ". biografia_camara quando a saida definitiva, atribuida da mesma forma, foi lida na biografia oficial do deputado na Camara. convencao_fim_legislatura quando nenhuma saida definitiva vale para o ultimo episodio da pessoa e o fim e o da legislatura (a eleicao de 2022 segue sem data de fim). curadoria_biografia_camara na unica data corrigida a mao a partir da biografia (Jose Valdevan, SE 2018, fim da primeira ocupacao em 2022-04-27, docs/EXCECOES_CONHECIDAS.csv)"),
       forma_saida = "Forma de saida da ocupacao, no vocabulario fechado", fonte_forma_saida = "Fonte da forma de saida",
-      vinculo_cadeira = "Caminho pelo qual a cadeira foi identificada, entre eleicao, chapa_senado, cadeira_unica_da_unidade, lista_vaga_unica, lista_data ou casa_legislatura (nao identificada)",
+      vinculo_cadeira = paste0("Caminho pelo qual a cadeira foi identificada, em nove valores. eleicao no titular, cuja cadeira e a da propria eleicao. chapa_senado no suplente de senador, que a chapa liga ao titular. cadeira_unica_da_unidade quando a unidade tem uma so cadeira do cargo (vice e interino do Executivo). fonte_da_casa quando a cadeira e a que a tabela curada com fonte oficial da propria Casa nomeia para o ocupante federal. lista_vaga_unica quando a lista partidaria tem uma so cadeira que vagou. lista_data_estrita quando a cadeira e a da lista que vagou mais perto da entrada do convocado, com a vacancia ate ", ATRASO_ANTES, " dias antes da entrada ou ate ", ATRASO_DEPOIS, " dias depois dela. lista_vaga_inicial quando a cadeira de deputado federal estava vaga desde o inicio da legislatura (titular que nao tomou posse, que saiu antes de comecar ou que tomou posse mais de ", JAN_TITULAR, " dias depois do inicio) e o ocupante e o suplente da lista cuja efetivacao cai de ", JAN_EFET, " dias antes a ", JAN_EFET, " dias depois de mandato_inicio, com ligacao unica dos dois lados. lista_sucessao_vaga quando a cadeira de deputado federal ficou vaga pela saida definitiva do ocupante anterior dessa cadeira (a regra abre essa vaga depois de firmar a anterior) e a efetivacao do suplente da lista cai de ", TOL_R42, " dias antes a ", JAN_EFET, " dias depois da saida. casa_legislatura quando nenhum caminho identifica a cadeira, caso em que id_mandato fica vazio e a ocupacao conta como ocupante da Casa"),
       fonte = "Fonte do registro de ocupacao", url = "URL de origem",
       ordem_suplencia = "Posicao do ocupante na fila da lista, quando suplente",
       regra_pareamento_ocupacao = "Regra que ligou o nome da fonte a pessoa da lista de suplencia",
@@ -507,7 +572,7 @@ dic_aux <- list(
       pessoa_tambem_eleita = "A pessoa foi eleita em alguma eleicao do banco (logico)",
       id_mandato_cadeira = "Cadeira que a suplencia alcanca, quando a chapa a nomeia")),
   pessoas_suplentes = list(
-    titulo = "pessoas_suplentes.csv — pessoas que figuram como suplentes e nunca foram eleitas",
+    titulo = paste0("pessoas_suplentes.csv — pessoas que figuram como suplentes e nunca foram eleitas, ", fm(rn("v1_ocupantes_so_em_pessoas_suplentes")), " delas com ocupacao de cadeira em ocupacoes.csv"),
     chave = c("id_pessoa"),
     d = list(
       id_pessoa = "Identificador no mesmo espaco de pessoas.csv, sem colisao", nome = "Nome",
@@ -774,7 +839,7 @@ tabela_dic <- function(df, dic) {
 }
 
 ## ---------------------------------------------------------- LIVRO DE CODIGOS
-lc <- sprintf('# Livro de códigos — Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) v1.0
+lc <- sprintf('# Livro de códigos — Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) {{VERSAO_TAG}}
 
 O código de ausente em todos os arquivos CSV é a string `NA`, e nenhuma célula
 vazia tem significado. Os códigos de ausência do TSE (`#NE`, `#NULO`, `-1`, `-3`,
@@ -816,6 +881,7 @@ com risco residual de fusão indevida, e está quantificada na nota de cobertura
   if (tem_fil) sprintf("## filiacoes.csv — pessoa × partido × filiação (%s linhas)\n\n%s\n\nFonte: listas de filiados do TSE (Sistema FILIA), espelhadas pela Base dos Dados (`br_tse_filiacao_partidaria`, tabelas `microdados` e `microdados_antigos`), pareadas às pessoas do banco pelo título de eleitor.",
                        format(nrow(fil), big.mark = ".", decimal.mark = ","), tabela_dic(fil, dic_fil)) else "",
   aux_txt)
+lc <- gsub("{{VERSAO_TAG}}", VERSAO_TAG, lc, fixed = TRUE)
 writeLines(lc, "docs/LIVRO_DE_CODIGOS.md")
 # cobertura do livro de codigos: toda coluna dos arquivos principais tem de estar documentada
 for (nm in c("mandatos", "posicoes_ano", "pessoas")) {
@@ -836,7 +902,7 @@ dedup_tab <- paste(c("| regra | pessoas | proporção |", "|---|---|---|",
   pct_dedup[, sprintf("| %s | %s | %s |", chave_dedup, format(n, big.mark = ".", decimal.mark = ","), pct)]),
   collapse = "\n")
 
-nc <- sprintf('# Nota de cobertura — BOCEL v1.0
+nc <- sprintf('# Nota de cobertura — BOCEL {{VERSAO_TAG}}
 
 ## O que está completo
 
@@ -903,7 +969,7 @@ EXCECOES_CONHECIDAS.csv%s
 ', cob_tab, {
   # secao de posse/exercicio/saida: gerada das colunas integradas pelo script 10
   if (!"fonte_forma_saida" %in% names(mand)) {
-    "A v1.0 não observa posse, exercício nem forma de saída."
+    paste0("A ", VERSAO_TAG, " não observa posse, exercício nem forma de saída.")
   } else {
     fs <- mand[, .N, by = .(esfera, forma_saida)][order(esfera, -N)]
     ft <- mand[forma_saida != "nao_observado", .N, by = .(esfera, fonte_forma_saida)][order(esfera, -N)]
@@ -953,7 +1019,59 @@ EXCECOES_CONHECIDAS.csv%s
       "cada mandato. As tabelas de origem (exercicio_camara, exercicio_senado, camara_biografia_eventos, ",
       "camara_biografia_posses, interregnos_legislativo_federal, saida_executivos, saida_legislativo_federal, ",
       "ocupantes_legislativo_federal, eleicoes_suplementares) acompanham o depósito com os períodos e as ",
-      "causas originais.")
+      "causas originais.",
+      "\n\n", {
+        p12 <- mand[!is.na(forma_saida) & forma_saida != "" & is.na(data_posse)]
+        n_p12_exerceu <- uniqueN(pos[exerceu_no_ano == "TRUE" & id_mandato %in% p12$id_mandato, id_mandato])
+        sprintf(paste0(
+          "A auditoria de 24/09/2026 (padrão Jean Wyllys, pendência 12) separou %s mandatos do recorte ",
+          "em que a forma de saída está preenchida e a data de posse é desconhecida, porque a fonte que ",
+          "registra a saída não registra a entrada. Fiel à fonte, cada um manteve a forma de saída ",
+          "original, inclusive o próprio Jean Wyllys, deputado federal do RJ eleito em 2018, que renunciou ",
+          "sem posse observada; %s desses mandatos têm ao menos um ano exercido em posicoes_ano.csv antes ",
+          "da saída, o que descarta a leitura de que a ausência de data de posse implica mandato nunca ",
+          "exercido."),
+          fm(nrow(p12)), fm(n_p12_exerceu))
+      },
+      "\n\n", {
+        ocu_tit_ex <- fread("data_v1/ocupacoes.csv", select = c("id_mandato", "tipo_ocupante", "data_inicio", "data_fim"),
+                            colClasses = "character", na.strings = "NA")[tipo_ocupante == "titular"]
+        mand_ex <- merge(mand[, .(id_mandato, forma_saida)], ocu_tit_ex, by = "id_mandato")
+        mand_ex[, nunca_exerceu := forma_saida == "nao_tomou_posse" |
+                  (!is.na(data_fim) & !is.na(data_inicio) & as.IDate(data_fim) < as.IDate(data_inicio))]
+        n_nunca <- mand_ex[nunca_exerceu == TRUE, uniqueN(id_mandato)]
+        # 29/09/2026 (COB-08): mandatos com alguma linha FALSE, conferidos contra o registro do R/64
+        n_mand_falso <- uniqueN(pos[exerceu_no_ano == "FALSE", id_mandato])
+        stopifnot(n_mand_falso == rn("v1_mandatos_com_alguma_linha_nao_exercida"))
+        sprintf(paste0(
+          "A coluna `exerceu_no_ano` de posicoes_ano.csv (DEF-01) marca, ano a ano, se o titular esteve de ",
+          "fato na cadeira, lida da ocupação titular em ocupacoes.csv e da forma de saída do mandato, e não ",
+          "mais só da janela convencional do cargo. Ela vale TRUE em %s das %s linhas do painel, FALSE em ",
+          "%s e fica NA em %s, reservado ao mandato em curso cujo fim ainda não se conhece e cujo ano ",
+          "consultado é posterior à data de referência da reconstrução (output/data_referencia.txt). %s ",
+          "mandatos do recorte nunca chegaram a ser exercidos, entre eles Jean Wyllys e um mandato do Piauí ",
+          "eleito em 2022 que renunciou antes da posse. A auditoria de 24/09/2026 contou 276 mandatos e 552 ",
+          "linhas de painel posteriores à saída, comparando a data de fim efetiva com o fim convencional do ",
+          "cargo, e a coluna, que lê a ocupação titular, resulta em %s linhas FALSE, que pertencem a %s ",
+          "mandatos, de modo que os dois pares de números medem critérios distintos."),
+          fm(pos[exerceu_no_ano == "TRUE", .N]), fm(nrow(pos)),
+          fm(pos[exerceu_no_ano == "FALSE", .N]), fm(pos[is.na(exerceu_no_ano), .N]), fm(n_nunca),
+          fm(pos[exerceu_no_ano == "FALSE", .N]), fm(n_mand_falso))
+      },
+      "\n\n", {
+        pd <- mand[!is.na(precisao_data_fim) & precisao_data_fim != "", .N, by = precisao_data_fim]
+        n_pd <- function(k) if (k %in% pd$precisao_data_fim) pd[precisao_data_fim == k, N] else 0L
+        sprintf(paste0(
+          "`precisao_data_fim` classifica a data de fim do exercício em ato (%s mandatos, data do ato ",
+          "registrado pela casa ou por fonte oficial), convencional (%s, fim regular na data ",
+          "constitucional) e intervalo (%s, forma de saída confirmada e dia exato fora do alcance das ",
+          "fontes, com os limites na tabela curada). Esse vocabulário foi criado como adaptação ao recorte ",
+          "federal desta versão (pendência 2, opção B), e não cobre as Assembleias Legislativas; a v1.5 ",
+          "leva o painel de exercício das Assembleias a `serie_densa` (fonte com data exata, dia a dia) e ",
+          "`serie_esparsa` (fonte só por legislatura ou por ano), vocabulário próprio que substitui este ",
+          "aqui quando essas casas entrarem."),
+          fm(n_pd("ato")), fm(n_pd("convencional")), fm(n_pd("intervalo")))
+      })
   }
 }, {
   # divergencias de cadeiras nomeadas no texto (verifica_integracao_docs.R, 28/08/2026: a nota so remetia ao CSV
@@ -1013,67 +1131,374 @@ EXCECOES_CONHECIDAS.csv%s
   } else ""
   paste(Filter(nzchar, c(b_sup, b_hom)), collapse = "\n")
   },
-  if (tem_fil) sprintf("- **Filiação partidária longitudinal.** A tabela filiacoes.csv cobre %s das %s pessoas (%s), com %s registros de filiação vindos das listas do TSE espelhadas pela Base dos Dados. As pessoas sem título de eleitor válido no cadastro do TSE e as que só constam de listas anteriores ao espelhamento ficam sem histórico; o partido no momento de cada eleição está em mandatos.csv para todas.",
+  if (tem_fil) paste0(sprintf("- **Filiação partidária longitudinal.** A tabela filiacoes.csv cobre %s das %s pessoas (%s), com %s registros de filiação vindos das listas do TSE espelhadas pela Base dos Dados. As pessoas sem título de eleitor válido no cadastro do TSE e as que só constam de listas anteriores ao espelhamento ficam sem histórico; o partido no momento de cada eleição está em mandatos.csv para todas.",
     format(uniqueN(fil$id_pessoa), big.mark = ".", decimal.mark = ","), format(nrow(pess), big.mark = ".", decimal.mark = ","),
-    sub(".", ",", sprintf("%.1f%%", 100 * uniqueN(fil$id_pessoa) / nrow(pess)), fixed = TRUE), format(nrow(fil), big.mark = ".", decimal.mark = ","))
+    sub(".", ",", sprintf("%.1f%%", 100 * uniqueN(fil$id_pessoa) / nrow(pess)), fixed = TRUE), format(nrow(fil), big.mark = ".", decimal.mark = ",")),
+    "\n", {
+      dup_fil <- fil[, .N, by = .(id_pessoa, sigla_partido, data_filiacao)][N > 1]
+      # 29/09/2026 (COB-06): a auditoria de 24/09 contou 17 triplas na cópia da v1.0, que só tinha as pessoas eleitas
+      d_el <- rn("v1_doc01_triplas_filiacao_duplicadas_pessoas_eleitas")
+      d_oc <- rn("v1_doc01_triplas_filiacao_duplicadas_ocupantes_sem_mandato")
+      stopifnot(d_el + d_oc == nrow(dup_fil))
+      sprintf(paste0(
+        "- **Filiação repetida entre lista antiga e lista atual (DOC-01).** A fusão das listas ",
+        "histórica e atual do TSE deixou %s triplas de pessoa, partido e data de filiação repetidas em ",
+        "%s linhas de filiacoes.csv, sendo %s de pessoas eleitas no recorte, as únicas que a versão 1.0 trazia, ",
+        "e %s de ocupantes sem mandato, que a versão 1.1 acrescenta. Cada fonte conta a mesma filiação uma vez. ",
+        "A tabela preserva as duas linhas, e quem contar filiações por pessoa precisa agregar por essa tripla ",
+        "antes de somar."),
+        fm(nrow(dup_fil)), fm(sum(dup_fil$N)), fm(d_el), fm(d_oc))
+    })
   else "- **Filiação partidária longitudinal.** A v1 traz o partido no momento de cada eleição; o histórico de filiação com datas entra na v2.")
-## bloco da camada de ocupacao (decisao de 30/08/2026, pendencia 5)
+## bloco da camada de ocupacao (decisao de 30/08/2026, pendencia 5; reescrito em 29/09/2026 para a v1.1)
+## 29/09/2026: cada numero do bloco sai dos dados de data_v1/ ou do registro de numeros (rn()), e o que se
+## conta aqui pela primeira vez passa por registrar_numero() em reg05(), que devolve o proprio valor para o
+## texto usar o numero registrado. Nenhuma contagem e digitada.
 if (file.exists("data_v1/ocupacoes.csv") && file.exists("data_v1/lista_suplencia.csv")) {
-  ocu <- fread("data_v1/ocupacoes.csv", select = c("id_mandato","tipo_ocupante","vinculo_cadeira",
-                                                "partido_difere_do_titular"))
+  ocu <- fread("data_v1/ocupacoes.csv", select = c("id_ocupacao","id_mandato","id_pessoa","tipo_ocupante","cd_cargo",
+                                                "vinculo_cadeira","partido_difere_do_titular","data_inicio","data_fim",
+                                                "origem_data_inicio","origem_data_fim"),
+              colClasses = "character", na.strings = "NA")
   lsu <- fread("data_v1/lista_suplencia.csv", select = c("id_lista","ordem_suplencia",
                                                       "ordem_suplencia_tse","fonte_ordem"))
+  psu <- fread("data_v1/pessoas_suplentes.csv", select = c("id_pessoa","nome"), colClasses = "character", na.strings = "NA")
+  reg05 <- function(k, v) { registrar_numero(k, v, script = SCRIPT_R05); v }
+  enumera <- function(x) { x <- as.character(x); n <- length(x); if (n < 2L) x else paste(paste(x[-n], collapse = ", "), "e", x[n]) }
+  mes_ano <- function(iso) sub("^[0-9]+ de ", "", data_por_extenso(iso))
+  ## vinculos: a soma dos cinco grupos fecha com as ocupacoes de quem nao e titular
   vinc_direto <- ocu[vinculo_cadeira %in% c("chapa_senado","cadeira_unica_da_unidade",
                                             "lista_vaga_unica"), .N]
   vinc_inferido <- ocu[vinculo_cadeira == "lista_data_estrita", .N]
-  vinc_executivo <- ocu[vinculo_cadeira == "fonte_da_casa", .N]
-  nc <- c(nc, sprintf(
+  vinc_regra_ini <- ocu[vinculo_cadeira == "lista_vaga_inicial", .N]
+  vinc_regra_suc <- ocu[vinculo_cadeira == "lista_sucessao_vaga", .N]
+  vinc_fonte_casa <- ocu[vinculo_cadeira == "fonte_da_casa", .N]
+  vinc_fonte_dep <- ocu[vinculo_cadeira == "fonte_da_casa" & cd_cargo == "6", .N]
+  vinc_fonte_sen <- ocu[vinculo_cadeira == "fonte_da_casa" & cd_cargo == "5", .N]
+  vinc_casa <- ocu[vinculo_cadeira == "casa_legislatura", .N]
+  stopifnot(vinc_direto + vinc_inferido + vinc_regra_ini + vinc_regra_suc + vinc_fonte_casa + vinc_casa ==
+              ocu[tipo_ocupante != "titular", .N],
+            vinc_fonte_dep + vinc_fonte_sen == vinc_fonte_casa,
+            vinc_regra_ini + vinc_regra_suc == rn("ocu_regra_ocupacoes_com_cadeira_nova_pela_regra"),
+            vinc_regra_ini == rn("ocu_regra_ocupacoes_com_cadeira_nova_lista_vaga_inicial"),
+            vinc_regra_suc == rn("ocu_regra_ocupacoes_com_cadeira_nova_lista_sucessao_vaga"))
+  reg05("doc_ocu_vinculo_lista_vaga_inicial_recorte", vinc_regra_ini)
+  reg05("doc_ocu_vinculo_lista_sucessao_vaga_recorte", vinc_regra_suc)
+  reg05("doc_ocu_vinculo_fonte_da_casa_recorte", vinc_fonte_casa)
+  reg05("doc_ocu_vinculo_casa_legislatura_recorte", vinc_casa)
+  ## OCU-05: sobreposicao titular/suplente pela ordem de entrada na mesma cadeira, e multiplicacao
+  ## da ocupacao por ano quando se junta ocupacoes.csv a posicoes_ano.csv por id_mandato
+  ocu_ord <- ocu[!is.na(id_mandato) & !is.na(data_inicio)]
+  setorder(ocu_ord, id_mandato, data_inicio)
+  ocu_ord[, data_fim_ant := shift(data_fim), by = id_mandato]
+  ocu_ord[, sobrepoe := !is.na(data_fim_ant) & as.IDate(data_inicio) <= as.IDate(data_fim_ant)]
+  n_pares_sobrepostos <- ocu_ord[sobrepoe == TRUE, .N]
+  n_cadeiras_sobrepostas <- ocu_ord[sobrepoe == TRUE, uniqueN(id_mandato)]
+  n_join_ocu_pos <- nrow(pos[ocu[!is.na(id_mandato), .(id_mandato, id_ocupacao)], on = "id_mandato",
+                             allow.cartesian = TRUE])
+  ## sobreposicao entre dois ocupantes que nao sao o titular (auditoria de 24/09/2026): pares de ocupacoes da
+  ## mesma cadeira com mais de TOL_R42 dias em comum, a tolerancia do R/42; o fim ausente vale o fim do mandato
+  iv_ns <- merge(ocu[!is.na(id_mandato) & !is.na(id_pessoa) & !is.na(data_inicio) & tipo_ocupante != "titular",
+                     .(id_ocupacao, id_mandato, id_pessoa, cd_cargo, ini = as.IDate(data_inicio), fim_o = as.IDate(data_fim))],
+                 mand[, .(id_mandato, mandato_fim)], by = "id_mandato")
+  iv_ns[, fim := fifelse(is.na(fim_o), as.IDate(mandato_fim), fim_o)]
+  par_ns <- merge(iv_ns, iv_ns, by = "id_mandato", suffixes = c(".a", ".b"), allow.cartesian = TRUE)[id_ocupacao.a < id_ocupacao.b]
+  par_ns[, dias := as.integer(pmin(fim.a, fim.b) - pmax(ini.a, ini.b))]
+  par_ns <- par_ns[dias > TOL_R42]
+  par_ns[, `:=`(contido = (ini.a <= ini.b & fim.a >= fim.b) | (ini.b <= ini.a & fim.b >= fim.a),
+                chave_par = paste(id_ocupacao.a, id_ocupacao.b, sep = "|"),
+                ini_comum = pmax(ini.a, ini.b), fim_comum = pmin(fim.a, fim.b))]
+  stopifnot(nrow(par_ns) > 0L, all(par_ns$cd_cargo.a == "6"))
+  ## as linhas de EXCECOES_CONHECIDAS.csv da auditoria de 24/09/2026 que descrevem pares ainda sobrepostos
+  exc_o <- fread("docs/EXCECOES_CONHECIDAS.csv", colClasses = "character", na.strings = "NA")
+  exc_o <- exc_o[grepl("auditoria de 24/09/2026, par [0-9]+\\)", descricao)]
+  exc_o[, chave_par := vapply(descricao, function(d) {
+    ids <- sort(unique(regmatches(d, gregexpr("OC[0-9]{8}", d))[[1]])); paste(ids[1:2], collapse = "|") }, "")]
+  exc_o[, fim_leg := startsWith(descricao, "Sobreposicao no fim da legislatura")]
+  exc_o[, cadeira := vapply(descricao, function(d) regmatches(d, regexpr("M[0-9]{4}_[A-Z]{2}_6_[0-9A-Za-z_]+", d)), "")]
+  exc_p <- exc_o[chave_par %in% par_ns$chave_par]
+  exc_fl <- exc_p[fim_leg == TRUE]
+  exc_ce <- exc_p[fim_leg == FALSE]
+  stopifnot(nrow(exc_ce) == 1L, nrow(exc_fl) + nrow(exc_ce) == nrow(exc_p),
+            nrow(exc_p) == rn("voc_excecoes_linhas_de_sobreposicao_conferidas"))
+  par_sub <- par_ns[!chave_par %in% exc_p$chave_par]
+  n_pares_ns <- reg05("doc_ocu_pares_suplentes_sobrepostos", nrow(par_ns))
+  reg05("doc_ocu_pares_suplentes_sobrepostos_cadeiras", par_ns[, uniqueN(id_mandato)])
+  reg05("doc_ocu_pares_suplentes_sobrepostos_mesma_pessoa", par_ns[id_pessoa.a == id_pessoa.b, .N])
+  n_doc <- reg05("doc_ocu_pares_documentados_em_excecoes", nrow(exc_p))
+  n_sub <- reg05("doc_ocu_pares_substituicao_dentro_da_substituicao", nrow(par_sub))
+  n_sub_cont <- reg05("doc_ocu_pares_substituicao_periodo_contido", par_sub[contido == TRUE, .N])
+  n_sub_cruz <- reg05("doc_ocu_pares_substituicao_periodo_cruzado", par_sub[contido == FALSE, .N])
+  n_cad_errada <- reg05("doc_ocu_pares_ligacao_a_cadeira_errada", nrow(exc_ce))
+  n_fim_leg <- reg05("doc_ocu_pares_fim_de_legislatura", nrow(exc_fl))
+  stopifnot(n_sub + n_doc == n_pares_ns, n_sub_cont + n_sub_cruz == n_sub)
+  ## par 6 (ligacao a cadeira errada): as duas cadeiras e as datas saem da propria linha de excecoes
+  d6 <- exc_ce$descricao
+  cad6 <- unique(regmatches(d6, gregexpr("M[0-9]{4}_[A-Z]{2}_6_[0-9A-Za-z_]+", d6))[[1]])
+  stopifnot(length(cad6) == 2L)
+  p6 <- par_ns[chave_par == exc_ce$chave_par]
+  p6_uf_ano <- sub("^M([0-9]{4})_([A-Z]{2})_.*$", "\\2 \\1", cad6[1])
+  p6_oc <- regmatches(d6, gregexpr("OC[0-9]{8}", d6))[[1]]
+  p6_ord <- c(sub(".*suplente ordem ([0-9]+) da lista.*", "\\1", d6), sub(".*preenchida por OC[0-9]{8} \\(BOCEL[0-9]+, ordem ([0-9]+)\\).*", "\\1", d6))
+  p6_vaga_ligada <- sub(".*cuja vaga se abriu em ([0-9]{4}-[0-9]{2}-[0-9]{2}).*", "\\1", d6)
+  p6_renuncia <- sub(".*renuncia em ([0-9]{4}-[0-9]{2}-[0-9]{2})\\).*", "\\1", d6)
+  stopifnot(grepl("^[0-9]{4}-", p6_vaga_ligada), grepl("^[0-9]{4}-", p6_renuncia), nrow(p6) == 1L,
+            length(p6_oc) == 2L, grepl("^[0-9]+$", p6_ord), setequal(p6_oc, c(p6$id_ocupacao.a, p6$id_ocupacao.b)))
+  ## cinco pares de fim de legislatura: unidade e eleicao de cada cadeira, e o mes do periodo em comum
+  fl_tb <- table(sub("^M([0-9]{4})_([A-Z]{2})_.*$", "\\2 \\1", exc_fl$cadeira))
+  fl_ue <- sprintf("%s (%s %s)", names(fl_tb), fm(as.integer(fl_tb)), ifelse(as.integer(fl_tb) == 1L, "par", "pares"))
+  fl_par <- merge(par_ns[chave_par %in% exc_fl$chave_par], mand[, .(id_mandato, mandato_fim)], by = "id_mandato")
+  stopifnot(nrow(fl_par) == nrow(exc_fl), all(fl_par$fim_comum == as.IDate(fl_par$mandato_fim)),
+            all(grepl("sem segunda vacancia confirmada", exc_fl$descricao)),
+            all(grepl("nao registra afastamento antes da entrada do seguinte", exc_fl$descricao)),
+            all(grepl("nao mostra segunda cadeira vaga compativel", exc_fl$descricao)))
+  fl_meses <- unique(vapply(par_ns[chave_par %in% exc_fl$chave_par, ini_comum], function(z) mes_ano(as.character(z)), ""))
+  ## biografia da Camara (data_v1/camara_biografia_eventos.csv): trechos literais, com o URL da mesma linha
+  bio <- fread("data_v1/camara_biografia_eventos.csv", select = c("id_deputado_camara","tipo","datas","trecho","url"),
+               colClasses = "character", na.strings = "NA")
+  trecho_bio <- function(id, tp, padrao) {
+    x <- bio[id_deputado_camara == id & tipo == tp & grepl(padrao, trecho)]
+    stopifnot(nrow(x) == 1L)
+    list(trecho = x$trecho, url = x$url)
+  }
+  b_hel <- trecho_bio("73582", "efetivacao", "^Assumiu e foi efetivado")
+  b_tal <- trecho_bio("74523", "efetivacao", "Empossado e efetivado")
+  b_tal$trecho <- sub("^.*(Empossado e efetivado[^;]*)$", "\\1", b_tal$trecho)
+  b_sel <- trecho_bio("74403", "efetivacao", "^Assumiu e foi efetivada")
+  b_jor <- trecho_bio("205550", "efetivacao", "^Foi efetivado")
+  b_val <- trecho_bio("204385", "perda_mandato", "27 de Abril de 2022")
+  b_val$trecho <- sub("^(.*Recontagem de Votos).*$", "\\1", b_val$trecho)
+  stopifnot(grepl("^Empossado e efetivado.*1999\\.$", b_tal$trecho), grepl("Votos$", b_val$trecho))
+  nomes_pessoa <- rbind(pess[, .(id_pessoa, nome)], psu)
+  ## AL 1998: as duas ocupacoes datadas pela biografia
+  al98 <- ocu[origem_data_inicio == "biografia_camara"][order(data_inicio)]
+  stopifnot(nrow(al98) == 2L, al98[, uniqueN(id_mandato)] == 1L, grepl("^M1998_AL_6_", al98$id_mandato[1]),
+            grepl("TALVANE", nomes_pessoa[id_pessoa == al98$id_pessoa[1], nome]),
+            grepl("HELENILDO", nomes_pessoa[id_pessoa == al98$id_pessoa[2], nome]),
+            al98$origem_data_fim[1] == "biografia_camara", al98$origem_data_fim[2] == "convencao_fim_legislatura")
+  n_ini_bio <- reg05("doc_ocu_data_inicio_biografia_camara_recorte", ocu[origem_data_inicio == "biografia_camara", .N])
+  n_fim_bio <- reg05("doc_ocu_data_fim_biografia_camara_recorte", ocu[origem_data_fim == "biografia_camara", .N])
+  n_fim_conv <- reg05("doc_ocu_data_fim_convencao_fim_legislatura_recorte", ocu[origem_data_fim == "convencao_fim_legislatura", .N])
+  n_ini_api <- reg05("doc_ocu_data_inicio_sinal_efetivacao_api_recorte", ocu[origem_data_inicio == "sinal_efetivacao_api", .N])
+  ## 29/09/2026 (F3): as ligacoes da regra geral que o gabarito independente de 4 casos nao alcanca
+  gab_pessoas <- c("BOCEL0279852", "BOCEL0033384", "BOCEL0034572", "BOCEL0149063")
+  sem_gab <- ocu[vinculo_cadeira %in% c("lista_vaga_inicial", "lista_sucessao_vaga") & !id_pessoa %in% gab_pessoas][order(id_ocupacao)]
+  reg05("doc_ocu_ligacoes_da_regra_sem_gabarito_independente", nrow(sem_gab))
+  stopifnot(nrow(sem_gab) == 2L, nrow(sem_gab) == vinc_regra_ini + vinc_regra_suc - rn("ocu_regra_casos_obrigatorios_reproduzidos_de_4"),
+            sem_gab$id_ocupacao == c("OC00489947", "OC00491741"), sem_gab$id_pessoa == c("BOCEL0246485", "BOCEL0100491"),
+            grepl("^M2018_RJ_6_", sem_gab$id_mandato[1]), grepl("^M2022_PI_6_", sem_gab$id_mandato[2]))
+  sg_nome <- vapply(sem_gab$id_pessoa, function(z) tools::toTitleCase(tolower(nomes_pessoa[id_pessoa == z, nome])), "")
+  ## par 20 (SE 2018): a primeira ocupacao fechada pela biografia; a segunda ocupacao da mesma pessoa e da mesma cadeira
+  p20 <- ocu[origem_data_fim == "curadoria_biografia_camara"]
+  stopifnot(nrow(p20) == 1L)
+  p20_2 <- ocu[id_mandato == p20$id_mandato & id_pessoa == p20$id_pessoa & id_ocupacao != p20$id_ocupacao]
+  stopifnot(nrow(p20_2) == 1L, grepl("VALDEVAN", nomes_pessoa[id_pessoa == p20$id_pessoa, nome]),
+            p20$data_fim == b_val$datas)
+  d20 <- exc_o[grepl("par 20\\)", descricao), descricao]
+  stopifnot(length(d20) == 1L)
+  p20_outra_perda <- sub(".*registra outra perda em ([0-9]{4}-[0-9]{2}-[0-9]{2}).*", "\\1", d20)
+  stopifnot(grepl("^[0-9]{4}-", p20_outra_perda))
+  reg05("doc_ocu_par20_primeira_ocupacao_fechada_recorte", ocu[origem_data_fim == "curadoria_biografia_camara", .N])
+  n_walter <- reg05("doc_ocu_data_inicio_curadoria_ocu07_recorte", ocu[origem_data_inicio == "curadoria_ocu07", .N])
+  stopifnot(n_walter == 1L)
+  ## 29/09/2026 (COB-02): a curadoria de Walter Pinheiro alcancou so a ocupacao; o mandato guarda a data de posse da fonte
+  ## OCU-02 no recorte: o texto diz que as reduzidas sao todas de vice que assumiu o governo de estado
+  stopifnot(rn("ocu_data_fim_limitada_ao_fim_do_mandato_recorte") == rn("ocu_data_fim_limitada_ao_fim_do_mandato_recorte_vice_assumiu"),
+            rn("ocu_data_fim_limitada_ao_fim_do_mandato_recorte") == rn("ocu_data_fim_limitada_ao_fim_do_mandato_recorte_governador"),
+            rn("ocu_data_fim_limitada_ao_fim_do_mandato_recorte") + rn("ocu_data_fim_limitada_ao_fim_do_mandato_fora_do_recorte") ==
+              rn("ocu_data_fim_limitada_ao_fim_do_mandato"))
+  wal <- ocu[origem_data_inicio == "curadoria_ocu07"]
+  wal_mand <- mand[id_mandato == wal$id_mandato, data_posse]
+  wal_saida <- fread("data_v1/saida_legislativo_federal.csv", select = c("id_mandato", "data_posse"), colClasses = "character",
+                     na.strings = "NA")[id_mandato == wal$id_mandato, data_posse]
+  stopifnot(length(wal_mand) == 1L, length(wal_saida) == 1L, wal_mand == wal_saida, grepl("^[0-9]{4}-", wal_mand))
+  reg05("doc_ocu_curadoria_ocu07_mandato_com_data_posse_diferente_da_ocupacao", as.integer(wal_mand != wal$data_inicio))
+  wal_ini_leg <- mand[id_mandato == wal$id_mandato, mandato_inicio]
+  n_dominio <- rn("ocu_regra_dominio_cadeiras")
+  stopifnot(rn("ocu_regra_casos_obrigatorios_reproduzidos_de_4") == 4,
+            rn("ocu_regra_ocupacoes_caminho2_regra_diverge") == 0, rn("ocu_regra_pares_com_alerta_de_ordem_de_suplencia") == 0,
+            rn("ocu_regra_dominio_cadeiras_sem_nenhum_ocupante_nao_titular_ligado") == 0)
+  stopifnot(n_dominio == rn("ocu_regra_dominio_nao_tomou_posse") + rn("ocu_regra_dominio_saiu_antes_de_comecar") +
+              rn("ocu_regra_dominio_sem_data_de_inicio") + rn("ocu_regra_dominio_titular_tardio"),
+            rn("ocu_regra_vagas_ancora_sem_par") == rn("ocu_regra_vagas_sem_par_motivo_sem_sinal_de_efetivacao_na_janela") +
+              rn("ocu_regra_vagas_sem_par_motivo_entrante_efetivado_na_janela_fora_da_lista") +
+              rn("ocu_regra_vagas_sem_par_motivo_mais_de_um_entrante_efetivado_na_janela") +
+              rn("ocu_regra_vagas_sem_par_motivo_entrante_disputado_por_mais_de_uma_vaga"),
+            rn("ocu_regra_vagas_ancora_sem_par") == rn("ocu_regra_vagas_ancora_sem_par_ja_tratadas_pela_fonte_da_casa"),
+            rn("ocu_regra_ocupacoes_com_cadeira_nova_pela_regra") + rn("ocu_regra_ocupacoes_caminho2_regra_concorda") ==
+              rn("ocu_regra_ocupacoes_ligadas_pela_regra_pura"))
+  nc <- c(nc, paste(c(
+## paragrafo 1: a cadeira separada de quem a ocupa
+paste0(
 "
 ## Ocupação da cadeira e suplência
 
 O banco separa a cadeira de quem a ocupou. A tabela de mandatos guarda uma linha por cadeira
 ganha na eleição, e o número de cadeiras por lugar, cargo e eleição continua o mesmo depois da
-entrada dos suplentes. Sobre ela, `ocupacoes.csv` registra %s ocupações no recorte federal, das
-quais %s são de quem não é o titular eleito, distribuídas por %s cadeiras que passaram por mais
+entrada dos suplentes. Sobre ela, `ocupacoes.csv` registra ", fm(nrow(ocu)), " ocupações no recorte federal, das
+quais ", fm(ocu[tipo_ocupante != "titular", .N]), " são de quem não é o titular eleito, distribuídas por ",
+fm(ocu[!is.na(id_mandato), .N, by = id_mandato][N > 1, .N]), " cadeiras que passaram por mais
 de uma pessoa. A distinção importa porque a cadeira muda de partido sem eleição quando o
-convocado vem de outra legenda da mesma lista, o que se observa em %s ocupações.
-
-A fila de suplência de deputado federal e de senador está em `lista_suplencia.csv`, com %s
-suplentes em %s listas. A posição na fila vem da votação nominal dentro da lista, com empate
+convocado vem de outra legenda da mesma lista, o que se observa em ",
+fm(ocu[partido_difere_do_titular %in% TRUE, .N]), " ocupações."),
+## paragrafo 2: a fila de suplencia
+paste0(
+"A fila de suplência de deputado federal e de senador está em `lista_suplencia.csv`, com ", fm(nrow(lsu)), "
+suplentes em ", fm(uniqueN(lsu$id_lista)), " listas. A posição na fila vem da votação nominal dentro da lista, com empate
 resolvido pelo candidato mais idoso, que é a regra do Código Eleitoral. O TSE publica essa ordem
 já pronta só para vereador, cargo fora do recorte da v1.0, de modo que a fila de deputado federal
 e de senador é derivada sem conferência externa contra uma ordem publicada. Os suplentes de
 senador entram pela chapa, porque o TSE não os marca como eleitos, do mesmo modo que não marca o
-vice do executivo.
-
-O limite da camada está no vínculo entre o suplente e a cadeira que ele ocupou. Onde a chapa
-nomeia o titular, onde a unidade tem cadeira única e onde a lista teve uma só vaga aberta, o
-vínculo é direto, e assim se resolvem %s ocupações. Outras %s são ligadas por inferência, pela
-proximidade entre a data de entrada do convocado e a data em que uma cadeira da mesma lista
-vagou, exigindo que a vacância anteceda a entrada e que a distância não passe de um ano. Nas
-demais %s a casa registra o exercício sem dizer qual titular saiu, de modo que a ocupação fica
-com `vinculo_cadeira` igual a `casa_legislatura` e conta como ocupante da casa, sem que nenhuma
-cadeira tenha sido criada para acomodá-la. Presidência e governos estaduais somam %s ocupações
-por linha sucessória, eleição indireta pela casa legislativa ou nova totalização de votos, com
-`vinculo_cadeira` igual a `fonte_da_casa` e resolvidas pela curadoria de fonte oficial em
-saida_executivos.csv, não pela fila de suplência.
-
-A troca de partido dentro da cadeira só é medida onde ela pode ser medida. A sigla do ocupante
+vice do executivo."),
+## paragrafo 3: os vinculos diretos, inferidos, da casa e por falta de vinculo
+paste0(
+"O limite da camada está no vínculo entre o suplente e a cadeira que ele ocupou, e `vinculo_cadeira`
+registra o caminho pelo qual cada ocupação foi ligada. Onde a chapa nomeia o titular, onde a unidade tem
+cadeira única e onde a lista teve uma só vaga aberta, o vínculo é direto, e assim se resolvem ",
+fm(vinc_direto), " ocupações. Outras ", fm(vinc_inferido), " são ligadas por inferência de data
+(`lista_data_estrita`), quando várias cadeiras da mesma lista tinham vagado, e vale a que vagou mais perto da
+entrada do convocado, com a vacância até ", ATRASO_ANTES, " dias antes da entrada ou até ", ATRASO_DEPOIS,
+" dias depois dela, margem que absorve o atraso de registro da fonte. Em ", fm(vinc_fonte_casa), " ocupações (",
+fm(vinc_fonte_dep), " de deputado federal e ", fm(vinc_fonte_sen), " de senador) a cadeira é a que uma tabela
+curada com fonte oficial da própria Casa nomeia, o que cobre situações como a cassação do titular, a
+retotalização dos votos, a decisão judicial e a eleição suplementar, e o vínculo é `fonte_da_casa`. Outras ",
+fm(vinc_regra_ini + vinc_regra_suc), " foram ligadas pela regra geral das vagas permanentes,
+descrita adiante. Nas demais ", fm(vinc_casa), " a casa registra o exercício sem dizer qual titular saiu, de
+modo que a ocupação fica com `vinculo_cadeira` igual a `casa_legislatura` e conta como ocupante da casa, sem
+que nenhuma cadeira tenha sido criada para acomodá-la. Os ", fm(ocu[vinculo_cadeira == "cadeira_unica_da_unidade", .N]),
+" vices e interinos que assumiram o governo de um estado ocupam a cadeira única do cargo, e a fila de suplência
+não se aplica a eles."),
+## paragrafo 4: a regra geral, dominio e desenho
+paste0(
+"A regra geral (`R/42_ocupacoes.R`, seção 4b) decide o vínculo das cadeiras de deputado federal cujo titular não
+exerceu o mandato desde o começo da legislatura. O domínio soma ", fm(n_dominio), " cadeiras, das quais ",
+enumera(c(sprintf("%s têm titular que não tomou posse", fm(rn("ocu_regra_dominio_nao_tomou_posse"))),
+          sprintf("%s têm titular cuja saída antecede o início", fm(rn("ocu_regra_dominio_saiu_antes_de_comecar"))),
+          if (rn("ocu_regra_dominio_sem_data_de_inicio") > 0)
+            sprintf("%s têm titular sem data de início registrada", fm(rn("ocu_regra_dominio_sem_data_de_inicio"))),
+          sprintf("%s têm titular que tomou posse mais de %d dias depois do início do mandato", fm(rn("ocu_regra_dominio_titular_tardio")), JAN_TITULAR))),
+". Nas listas dessas cadeiras a regra reconhece ",
+fm(rn("ocu_regra_vagas_permanentes_nas_listas_do_dominio")), " vagas permanentes, entre as que existem desde o início
+da legislatura e as que se abrem depois com a saída definitiva de um ocupante. Um sinal de efetivação é a data em que um
+suplente passa a titular na API de exercício da Câmara, na tabela de ocupantes do legislativo federal ou na seção
+de suplências e efetivações da biografia oficial do deputado. A vaga se casa com o suplente cuja efetivação cai na
+janela da vaga, que vai de ", JAN_EFET, " dias antes a ", JAN_EFET, " dias depois do início do mandato quando a vaga é
+inicial, e de ", TOL_R42, " dias antes a ", JAN_EFET, " dias depois da saída quando é de sucessão, e o suplente tem de constar da
+lista da cadeira, com ligação única dos dois lados. A saída do suplente que entrou abre a vaga seguinte da mesma cadeira.
+Em 1998 a suplência pertence à coligação, e a ordem de suplência das listas foi recalculada pela votação nominal dentro
+dela, porque a ordem gravada nas listas daquele ano é a do partido. A regra nunca desfaz um vínculo mais firme. Vêm antes
+`fonte_da_casa`, `chapa_senado` e `cadeira_unica_da_unidade`, e `lista_vaga_unica` e `lista_data_estrita` são mantidos,
+com a regra apenas registrando se concorda ou diverge."),
+## paragrafo 5: resultados da regra por caminho e casos sem decisao
+paste0(
+"Aplicada ao banco, a regra firmou ", fm(rn("ocu_regra_pares_com_vaga_ancora")), " pares entre uma vaga e o suplente que a
+preencheu (", fm(rn("ocu_regra_pares_lista_vaga_inicial")), " de vaga inicial e ", fm(rn("ocu_regra_pares_lista_sucessao_vaga")),
+" de sucessão) e alcançou ", fm(rn("ocu_regra_ocupacoes_ligadas_pela_regra_pura")), " ocupações, contadas as posteriores da mesma
+pessoa na legislatura. Dessas, ", fm(vinc_regra_ini + vinc_regra_suc), " receberam cadeira nova, ", fm(vinc_regra_ini),
+" por `lista_vaga_inicial` e ", fm(vinc_regra_suc), " por `lista_sucessao_vaga`, em ",
+fm(rn("ocu_regra_cadeiras_com_ocupante_novo_pela_regra")), " cadeiras, e ", fm(rn("ocu_regra_ocupacoes_caminho2_regra_concorda")),
+" já estavam ligadas por `lista_vaga_unica` ou `lista_data_estrita` à mesma cadeira que a regra aponta. Nenhuma
+ocupação ligada por esses dois caminhos aponta cadeira diferente da regra, e nenhum par pulou a ordem de suplência da lista. A regra reproduz os ", fm(rn("ocu_regra_casos_obrigatorios_reproduzidos_de_4")), " casos que a biografia
+da Câmara resolve, que são Talvane Albuquerque e José Helenildo Ribeiro em AL 1998, Selma Schons em PR 2002 e Jorge Braz em RJ 2018. As outras ", fm(nrow(sem_gab)), " ligações da regra, ",
+sem_gab$id_ocupacao[1], " (", sem_gab$id_pessoa[1], ", ", sg_nome[1], ", RJ 2018", if (!is.na(sem_gab$data_fim[1])) paste0(", saída em ", data_por_extenso(sem_gab$data_fim[1])) else "", ") e ",
+sem_gab$id_ocupacao[2], " (", sem_gab$id_pessoa[2], ", ", sg_nome[2], ", PI 2022", if (is.na(sem_gab$data_fim[2])) ", sem data de fim" else "", "), não têm gabarito independente e
+não foram confirmadas por fonte externa à regra. Como a regra foi calibrada nesses casos, a reprodução deles não a valida onde ela decidiu
+sozinha, e a pertinência dessas ", fm(nrow(sem_gab)), " ligações fica fora do que os verificadores do banco atestam e a critério de quem usa o banco. Ficaram sem par ",
+fm(rn("ocu_regra_vagas_ancora_sem_par")), " vagas de cadeiras do domínio, ", fm(rn("ocu_regra_vagas_sem_par_motivo_sem_sinal_de_efetivacao_na_janela")),
+" sem sinal de efetivação na janela e ", fm(rn("ocu_regra_vagas_sem_par_motivo_entrante_efetivado_na_janela_fora_da_lista")),
+" com um entrante efetivado na janela que não consta da lista da vaga. As ", fm(rn("ocu_regra_vagas_ancora_sem_par_ja_tratadas_pela_fonte_da_casa")),
+" já tinham a cadeira nomeada por `fonte_da_casa`, e por isso todas as cadeiras do domínio têm ocupante não titular ligado.
+O que nenhum caminho decide segue para `casa_legislatura`. A regra infere a vacância quando nenhum ato a publica, e a
+validade dessa inferência não foi conferida contra o Diário da Câmara, o que fica a critério de quem usa o banco."),
+## paragrafo 6: datas dadas pela biografia (AL 1998)
+paste0(
+"A data ausente na fonte é lida na biografia oficial da Câmara, e só para a ocupação que a fonte não datava.
+Em AL 1998 as duas ocupações ligadas à cadeira de um titular que não tomou posse não tinham data na fonte, e as datas
+vieram da biografia da Câmara, com `origem_data_inicio` igual a `biografia_camara`. Talvane Albuquerque exerceu de ",
+data_por_extenso(al98$data_inicio[1]), " a ", data_por_extenso(al98$data_fim[1]), ", data de fim lida na mesma biografia, e
+José Helenildo Ribeiro Monteiro assumiu em ", data_por_extenso(al98$data_inicio[2]), " e ficou até ",
+data_por_extenso(al98$data_fim[2]), ", que é o fim da legislatura, com `origem_data_fim` igual a
+`convencao_fim_legislatura`, porque a biografia não registra saída definitiva dele antes do fim do mandato. Ao todo a regra deu data a ",
+fm(n_ini_bio), " inícios e a ", fm(n_fim_bio + n_fim_conv), " fins (", fm(n_fim_bio), " lido na biografia e ", fm(n_fim_conv),
+" pela convenção)", if (n_ini_api == 0L) ", e nenhum início veio do sinal de efetivação da API" else
+  paste0(", e ", fm(n_ini_api), " inícios vieram do sinal de efetivação da API"), ". As biografias oficiais que sustentam
+esses casos são as seguintes."),
+paste0(
+"- Helenildo Ribeiro, AL 1998, ", b_hel$url, ", “", b_hel$trecho, "”
+- Talvane Albuquerque, AL 1998, ", b_tal$url, ", “", b_tal$trecho, "”
+- Selma Schons, PR 2002, ", b_sel$url, ", “", b_sel$trecho, "”
+- Jorge Braz, RJ 2018, ", b_jor$url, ", “", b_jor$trecho, "”
+- José Valdevan de Jesus Santos, SE 2018, ", b_val$url, ", “", b_val$trecho, "”"),
+## paragrafo 7: troca de partido
+paste0(
+"A troca de partido dentro da cadeira só é medida onde ela pode ser medida. A sigla do ocupante
 entra apenas quando é sigla que existe no banco, porque o texto extraído de enciclopédia trazia
 nome de partido por extenso e frases inteiras no lugar dela, e a comparação vale somente para o
 suplente convocado, já que vice e interino ocupam por sucessão no Executivo, que é outro
-fenômeno.
-
-Quem foi suplente e nunca se elegeu tem identificador de pessoa no mesmo espaço do cadastro
+fenômeno."),
+## paragrafo 8: pessoas_suplentes
+paste0(
+"Quem foi suplente e nunca se elegeu tem identificador de pessoa no mesmo espaço do cadastro
 principal, gravado em `pessoas_suplentes.csv`, e nenhum identificador já publicado mudou com a
-entrada dessas pessoas.",
-    fm(nrow(ocu)), fm(ocu[tipo_ocupante != "titular", .N]),
-    fm(ocu[!is.na(id_mandato), .N, by = id_mandato][N > 1, .N]),
-    fm(ocu[partido_difere_do_titular %in% TRUE, .N]),
-    fm(nrow(lsu)), fm(uniqueN(lsu$id_lista)),
-    fm(vinc_direto), fm(vinc_inferido),
-    fm(ocu[vinculo_cadeira == "casa_legislatura", .N]), fm(vinc_executivo)))
+entrada dessas pessoas. O identificador de cada ocupante de `ocupacoes.csv` resolve em `pessoas.csv` ou
+em `pessoas_suplentes.csv`. Dos ", fm(rn("v1_ocupantes_identificados")), " ocupantes identificados, ",
+fm(rn("v1_ocupantes_identificados_nao_eleitos_no_recorte")), " não foram eleitos no recorte, e desses ",
+fm(rn("v1_pessoas_ocupantes_sem_mandato_no_recorte")), " constam de `pessoas.csv` como ocupantes sem mandato no recorte,
+por terem sido eleitos em algum cargo fora dele, enquanto ", fm(rn("v1_ocupantes_so_em_pessoas_suplentes")), " nunca foram eleitos em
+nenhuma esfera do banco e constam apenas de `pessoas_suplentes.csv`, onde respondem por ",
+fm(rn("v1_ocupacoes_de_ocupante_so_em_pessoas_suplentes")), " ocupações. Quem juntar `ocupacoes.csv` a `pessoas.csv` sem
+considerar o segundo arquivo perde essas ocupações."),
+## paragrafo 9: OCU-05
+paste0(
+"A sobreposição entre titular e suplente na mesma cadeira, e a repetição da ocupação por ano em
+posicoes_ano.csv, decorrem do desenho do banco (OCU-05). Ordenando as ocupações de uma
+cadeira pela data de início, ", fm(n_pares_sobrepostos), " pares consecutivos têm a entrada do ocupante seguinte na mesma
+data em que termina o anterior ou antes disso, o que ", fm(n_cadeiras_sobrepostas), " cadeiras concentram, pela convenção de
+data inclusiva do banco (a saída do suplente cai no mesmo dia da entrada de quem o sucede).
+Juntar `ocupacoes.csv` a `posicoes_ano.csv` por `id_mandato` sem agrupar por ano repete cada
+ocupação uma vez por ano do mandato, o que soma ", fm(n_join_ocu_pos), " linhas contra ", fm(nrow(ocu)),
+" ocupações e ", fm(nrow(pos)), " posições anuais no painel."),
+## paragrafo 10: sobreposicao entre dois suplentes
+paste0(
+"A sobreposição também ocorre entre dois ocupantes que não são o titular. Em deputado federal, ", fm(n_pares_ns),
+" pares de ocupações de suplentes compartilham mais de ", TOL_R42, " dias da mesma cadeira, em ",
+fm(par_ns[, uniqueN(id_mandato)]), " cadeiras, e nenhum deles reúne a mesma pessoa duas vezes. A auditoria de 24/09/2026
+separou ", fm(n_sub), " desses pares como substituição dentro da substituição. Um suplente em exercício se licencia e
+outro suplente cobre a licença dentro do período do primeiro, e a biografia da Câmara de ao menos um dos dois registra a
+entrada e a saída do substituto temporário. Em ", fm(n_sub_cont), " desses pares o período de uma das ocupações está contido no da outra, e em ", fm(n_sub_cruz),
+" os períodos se cruzam. Mantive os dados como vieram da fonte. Os outros ", fm(n_doc),
+" pares estão documentados linha a linha em `EXCECOES_CONHECIDAS.csv`. Um deles é uma ligação à cadeira
+errada (par 6 da auditoria, ", p6_uf_ano, "). Duas cadeiras da mesma lista vagaram em ", data_por_extenso(p6_renuncia),
+" e em ", data_por_extenso(p6_vaga_ligada), ". A ocupação ", p6_oc[1], ", de suplente de ordem ", p6_ord[1],
+", foi ligada por `lista_data_estrita` à cadeira que vagou em ", data_por_extenso(p6_vaga_ligada), ", que a ocupação ", p6_oc[2],
+", de ordem ", p6_ord[2], ", preencheu, e por isso as duas aparecem sobrepostas de ", data_por_extenso(p6$ini_comum), " a ",
+data_por_extenso(p6$fim_comum), ". Pela proximidade de data, a cadeira provável de ", p6_oc[1], " é a que vagou por
+renúncia do titular em ", data_por_extenso(p6_renuncia), ". Mantive a ligação atual e documentei o caso, e a troca da regra
+`lista_data_estrita` por um casamento que compare ao mesmo tempo todas as cadeiras vagas da lista fica para a v1.5. Os ",
+fm(n_fim_leg), " pares restantes ocorrem em ", enumera(fl_ue), ", sempre no mês final da legislatura, em ", enumera(fl_meses),
+". Em nenhum deles há segunda vacância confirmada, a biografia da Câmara do ocupante mais graduado
+não registra afastamento antes da entrada do seguinte, e a lista não tem outra cadeira vaga compatível. A resposta sobre
+qual das convocações prevalece está na ata de posse da Mesa ou no Diário da Câmara do período, que o banco não armazena.
+Mantive as duas ocupações de cada par, documentei os casos e deixei a curadoria para a v1.5."),
+## paragrafo 11: OCU-02, par 20 e OCU-07
+paste0(
+"Correções pontuais mudaram datas e identidades antes deste depósito, sem deixar o valor anterior no
+arquivo final. `data_fim` não pode ultrapassar o fim do próprio mandato, e ",
+fm(rn("ocu_data_fim_limitada_ao_fim_do_mandato_recorte")), " ocupações de ocupacoes.csv tiveram a data reduzida a esse limite
+(OCU-02), todas de vice que assumiu o governo de estado e cuja fonte secundária dava a saída depois do fim
+constitucional do mandato. A mesma regra reduziu a data de fim de ", fm(rn("ocu_data_fim_limitada_ao_fim_do_mandato_fora_do_recorte")),
+" ocupações de cargos que o recorte não inclui, e por isso o total do banco completo, de ", fm(rn("ocu_data_fim_limitada_ao_fim_do_mandato")),
+", não descreve este depósito. José Valdevan de Jesus Santos (SE 2018) tinha duas ocupações na mesma cadeira, ambas sem data de fim na
+API da Câmara, e a segunda, iniciada em ", data_por_extenso(p20_2$data_inicio), ", ficava sobreposta à primeira. Fechei a
+primeira em ", data_por_extenso(p20$data_fim), ", data em que a biografia da Câmara registra a perda do mandato,
+com `origem_data_fim` igual a `curadoria_biografia_camara`. A mesma biografia registra outra perda em ",
+data_por_extenso(p20_outra_perda), ", que não entra nesta curadoria, e a segunda ocupação segue como veio da API. A data de início da ocupação de Walter Pinheiro (BA 1998), com
+`origem_data_inicio` igual a `curadoria_ocu07`, passou a ser ", data_por_extenso(wal$data_inicio), ", o início da legislatura, e a identidade de
+Almerinda (RJ 2002) permanece corrigida por curadoria rastreável (OCU-07), com o detalhe de cada caso em EXCECOES_CONHECIDAS.csv. A correção
+de Walter Pinheiro alcançou só `ocupacoes.csv`. A `data_posse` do mandato dele, em `mandatos.csv` e em `saida_legislativo_federal.csv`, mantém o valor da fonte, ",
+data_por_extenso(wal_mand), ", anterior ao início da legislatura em ", data_por_extenso(wal_ini_leg), ", e as duas datas divergem para essa pessoa nessa cadeira.")
+), collapse = "\n\n"))
 }
+nc <- gsub("{{VERSAO_TAG}}", VERSAO_TAG, nc, fixed = TRUE)
 writeLines(nc, "docs/NOTA_DE_COBERTURA.md")
 
 ## ---------------------------------------------------------- README
@@ -1083,13 +1508,25 @@ doi_info <- tryCatch(jsonlite::fromJSON("zenodo/deposito_info.json"),
 # nunca existiu, o que deixava o README e o CITATION.cff sem DOI. A citacao da v1.0 usa o DOI da versao, que o
 # Zenodo reserva no rascunho; o concept DOI so se confirma quando a primeira versao publica
 doi_txt <- if (!is.null(doi_info)) doi_info$doi_reservado else NULL
+# 29/09/2026 (DOC-02 e REL-C da revisao de 28/09): enquanto o rascunho da versao corrente nao existe, o
+# deposito_info.json ainda descreve a versao anterior, e o README e o CITATION.cff citavam o DOI dela como se fosse o da
+# versao nova. O zenodo/deposit.py passou a gravar no deposito_info.json a versao que o rascunho descreve (campo versao);
+# um arquivo sem o campo e o da v1.0. O DOI so vale para a VERSAO corrente quando o campo confere, e nos demais casos o
+# README diz que o DOI e atribuido no deposito, e o CITATION.cff fica sem o bloco identifiers.
+ver_deposito <- if (!is.null(doi_info)) { if (is.null(doi_info$versao)) "1.0" else as.character(doi_info$versao) } else NA_character_
+if (!is.null(doi_txt) && !identical(sub("^v", "", ver_deposito), VERSAO_ATUAL)) {
+  cat(sprintf("05_documentar: deposito_info.json descreve a v%s e a versao corrente e a v%s; o DOI fica como atribuido no deposito\n",
+              ver_deposito, VERSAO_ATUAL))
+  doi_txt <- NULL
+}
+registrar_numero("doc_doi_da_versao_corrente_no_readme", as.integer(!is.null(doi_txt)), script = SCRIPT_R05)
 
 # 04/09/2026: o formato passou de 8.192 bytes, limite do sprintf, quando a tabela de arquivos ganhou
 # as 18 linhas do nivel de ocupacao e do interregno; o README e montado em tres pedacos.
-rd_cab <- sprintf('# Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) — v1.0
+rd_cab <- sprintf('# Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) — {{VERSAO_TAG}}
 
 Ocupação de cargo eletivo no Brasil, 1998–2024, construída a partir dos dados
-abertos do Tribunal Superior Eleitoral. A versão 1.0 fecha a Presidência, a
+abertos do Tribunal Superior Eleitoral. A versão {{VERSAO_ATUAL}} fecha a Presidência, a
 Câmara dos Deputados, o Senado e os governos estaduais, em que todo mandato
 encerrado tem forma de saída com a fonte identificada, e traz a ocupação de
 cada cadeira com a ordem da suplência e o histórico de filiação partidária de
@@ -1146,7 +1583,7 @@ uma API ou página pública e gravando o retorno sem alteração de conteúdo.
 
 O script de reconstrução acompanha o depósito (reconstruir_banco.zip) e roda
 do zero num diretório limpo com R 4.3+ (data.table, arrow, stringi, httr2,
-jsonlite). As bibliotecas de verificação (asserts_rigor.R, proveniencia.R)
+jsonlite, openxlsx). As bibliotecas de verificação (asserts_rigor.R, proveniencia.R)
 acompanham o pacote em lib/.
 
 ## Arquivos
@@ -1162,7 +1599,7 @@ rd_tab <- '| mandatos.csv/.parquet | pessoa × cargo × mandato, com partido, vo
 | filiacoes.csv/.parquet | histórico de filiação partidária das pessoas do banco (listas do TSE) |
 | ocupacoes.csv/.parquet | quem ocupou cada cadeira e em que período, com o titular, o suplente convocado, o vice que assumiu e o interino |
 | lista_suplencia.csv/.parquet | a fila de suplência de cada lista partidária de deputado federal e de senador, com a ordem derivada |
-| pessoas_suplentes.csv/.parquet | suplentes que nunca ocuparam cadeira, no mesmo espaço de identificador do cadastro |
+| pessoas_suplentes.csv/.parquet | pessoas que figuram como suplentes e nunca foram eleitas, no mesmo espaço de identificador do cadastro, entre elas os ocupantes de cadeira que não constam de pessoas.csv |
 | suplentes_identidade.csv | como cada suplente foi ligado a uma pessoa do banco |
 | mandatos_lista.csv | cadeira e a lista partidária que a ganhou |
 | saida_executivos.csv | forma de saída de presidente, vice-presidente, governador e vice-governador |
@@ -1170,7 +1607,15 @@ rd_tab <- '| mandatos.csv/.parquet | pessoa × cargo × mandato, com partido, vo
 | interregnos_legislativo_federal.csv | licenças, afastamentos e suspensões de senador e deputado federal que não encerram o mandato |
 | mandatos_forma_saida_suplementar.csv | mandato ordinário afetado por eleição suplementar e o sucessor |
 | eleicoes_suplementares.csv | pleitos suplementares majoritários do TSE (1998–2024), vencedor e mandato ordinário afetado |
-| ocupantes_legislativo_federal.csv | quem a Câmara ou o Senado registrou como titular sem mandato correspondente no arquivo do TSE |
+'
+# 24/09/2026 (INT-03): a linha acima citava 1998-2024 por engano, herdado do titulo do banco; o
+# intervalo real da coluna dt_eleicao_suplementar do proprio arquivo e bem mais estreito, e a linha
+# troca o intervalo escrito a mao pelo que o arquivo de fato cobre
+es_dt <- as.IDate(fread("data_v1/eleicoes_suplementares.csv", select = "dt_eleicao_suplementar",
+                        colClasses = "character")$dt_eleicao_suplementar)
+es_periodo <- sprintf("%s–%s", format(min(es_dt), "%Y"), format(max(es_dt), "%Y"))
+rd_tab <- sub("do TSE (1998–2024), vencedor", sprintf("do TSE (%s), vencedor", es_periodo), rd_tab, fixed = TRUE)
+rd_tab_2 <- '| ocupantes_legislativo_federal.csv | quem a Câmara ou o Senado registrou como titular sem mandato correspondente no arquivo do TSE |
 | exercicio_camara.csv | períodos de exercício dos deputados federais (API da Câmara), com posse, saída e causa |
 | exercicio_senado.csv | exercícios de senadores e suplentes (API do Senado), com causa de afastamento |
 | camara_biografia_eventos.csv | eventos de mandato lidos na biografia oficial do deputado federal na Câmara |
@@ -1184,12 +1629,45 @@ rd_tab <- '| mandatos.csv/.parquet | pessoa × cargo × mandato, com partido, vo
 | EXCECOES_CONHECIDAS.csv | divergências documentadas em relação às cadeiras esperadas |
 | reconstruir_banco.zip | scripts, bibliotecas de verificação e tabelas de referência que reconstroem o banco a partir dos dados brutos |
 '
+rd_tab <- paste0(rd_tab, rd_tab_2)
 doi_linha <- if (!is.null(doi_txt)) sprintf("> Zenodo. https://doi.org/%s", doi_txt) else "> Zenodo. DOI atribuído no momento do depósito."
+# 24/09/2026: o concept DOI (estavel entre versoes) vem do mesmo arquivo do DOI de versao, nunca
+# digitado a mao; ele so aparece de fato depois que a primeira versao publica no Zenodo
+concept_doi_txt <- if (!is.null(doi_info)) doi_info$conceptdoi_provisorio else NULL
+concept_doi_frase <- if (!is.null(concept_doi_txt)) sprintf(" (https://doi.org/%s)", concept_doi_txt) else ""
+# 29/09/2026 (v1.1): o texto da secao de mudancas sai de um paste0, fora do sprintf do restante, para carregar os
+# numeros da camada de ocupacao (todos calculados acima, no bloco da nota de cobertura, ou lidos do registro).
+# O titulo da secao precisa conter "mudan" e a versao, porque zenodo/publicar_github.sh extrai dele as notas da release
+stopifnot(exists("n_pares_ns"), exists("n_sub"), exists("n_doc"), exists("n_fim_leg"), exists("n_cad_errada"))
+rd_mud <- paste0(
+"A {{VERSAO_TAG}} corrige o recorte da v1.0 sem ampliá-lo. `pessoas.csv` passou a incluir, além dos eleitos no recorte, as
+pessoas que só ocuparam uma cadeira nele sem terem sido eleitas ali, com a condição de cada pessoa marcada na coluna
+`condicao_no_recorte`, e o identificador de todo ocupante de `ocupacoes.csv` resolve em `pessoas.csv` ou em
+`pessoas_suplentes.csv`, que guarda os ", fm(rn("v1_ocupantes_so_em_pessoas_suplentes")), " ocupantes nunca eleitos em nenhuma esfera do banco. `posicoes_ano.csv` ganhou a
+coluna `exerceu_no_ano`, que separa o ano em que o titular esteve de fato na cadeira do ano em que só ocupava o cargo no papel.
+
+Em `ocupacoes.csv`, `data_fim` deixou de ultrapassar o fim do próprio mandato, o que reduziu a data de fim de ",
+fm(rn("ocu_data_fim_limitada_ao_fim_do_mandato_recorte")), " ocupações (todas de vice que assumiu o governo de estado), e a nova coluna `origem_data_fim` registra a
+origem de cada data de saída. O vínculo entre o suplente e a cadeira passou a seguir uma regra geral para as cadeiras federais
+cujo titular não exerceu o mandato desde o começo da legislatura, que ligou ", fm(vinc_regra_ini + vinc_regra_suc),
+" ocupações a cadeira nova (", fm(vinc_regra_ini), " em `lista_vaga_inicial` e ", fm(vinc_regra_suc), " em `lista_sucessao_vaga`, dois valores
+novos de `vinculo_cadeira`). Em AL 1998, as datas de entrada de ", fm(n_ini_bio), " suplentes e a data de saída de ", fm(n_fim_bio), " deles vêm da biografia oficial da
+Câmara (a saída de ", fm(n_fim_conv), " deles segue a convenção de fim de legislatura), e `origem_data_inicio` ganhou o valor `biografia_camara` para registrá-lo",
+if (n_ini_api == 0L) " (o valor `sinal_efetivacao_api` está definido no livro de códigos e não ocorre nesta versão)" else "",
+". A primeira ocupação de José Valdevan de Jesus Santos (SE 2018) foi fechada em ", data_por_extenso(p20$data_fim),
+" pela mesma fonte (`origem_data_fim` igual a `curadoria_biografia_camara`), e nenhum par de ocupações sobrepostas reúne agora a
+mesma pessoa. Os ", fm(n_pares_ns), " pares de ocupações de suplentes que ainda compartilham mais de ", TOL_R42,
+" dias da mesma cadeira estão documentados. Em ", fm(n_sub), " deles um suplente em exercício se licenciou e outro cobriu a licença,
+e os dados ficam como vieram da fonte. Os outros ", fm(n_doc), " constam linha a linha em `EXCECOES_CONHECIDAS.csv`, e a troca da
+regra de ligação do par de AL 2010 e a curadoria dos ", fm(n_fim_leg), " pares de fim de legislatura estão previstas para a v1.5.
+As correções curadas de Walter Pinheiro e de Almerinda ganharam remissão em `EXCECOES_CONHECIDAS.csv`. NOTA_DE_COBERTURA.md e
+LIVRO_DE_CODIGOS.md documentam cada mudança com o número que a mede. O contato do autor passou a trazer o e-mail institucional,
+igor.lins@cebrap.org.br, ao lado do pessoal, igornovaeslins@gmail.com, no README, em CITATION.cff e nos metadados do depósito.")
 rd_cauda <- sprintf('
 ## Como citar
 
 > Lins, Igor Novaes. (2026). Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian
-> Elective Office Occupancy Database (BOCEL), 1998–2024 (v1.0) [Conjunto de dados].
+> Elective Office Occupancy Database (BOCEL), 1998–2024 ({{VERSAO_TAG}}) [Conjunto de dados].
 %s
 
 ## Fontes complementares da camada de posse e saída
@@ -1216,14 +1694,22 @@ acrescenta dado pessoal além do que essas fontes divulgam.
 
 ## Versão
 
-v1.0, 22 de setembro de 2026. Correções entram como versões novas no mesmo
-registro do Zenodo, sob o mesmo concept DOI.
+{{VERSAO_TAG}}, {{DATA_LANCAMENTO_EXTENSO}}. Correções entram como versões novas no mesmo
+registro do Zenodo, sob o mesmo concept DOI%s.
+
+### Mudanças da {{VERSAO_TAG}} em relação à v1.0
+
+{{MUDANCAS_TEXTO}}
 
 ## Contato
 
-Igor Novaes Lins — igornovaeslins@gmail.com — ORCID 0000-0003-0510-8355
-', doi_linha)
+Igor Novaes Lins, igor.lins@cebrap.org.br (institucional) e igornovaeslins@gmail.com. ORCID 0000-0003-0510-8355
+', doi_linha, concept_doi_frase)
 rd <- paste0(rd_cab, rd_tab, rd_cauda)
+rd <- gsub("{{MUDANCAS_TEXTO}}", rd_mud, rd, fixed = TRUE)
+rd <- gsub("{{VERSAO_TAG}}", VERSAO_TAG, rd, fixed = TRUE)
+rd <- gsub("{{VERSAO_ATUAL}}", VERSAO_ATUAL, rd, fixed = TRUE)
+rd <- gsub("{{DATA_LANCAMENTO_EXTENSO}}", DATA_LANCAMENTO_EXTENSO, rd, fixed = TRUE)
 writeLines(rd, "docs/README.md")
 
 ## ---------------------------------------------------------- CITATION.cff
@@ -1233,7 +1719,7 @@ cff_doi <- if (!is.null(doi_txt)) sprintf('
 identifiers:
   - type: doi
     value: "%s"
-    description: "DOI da versao v1.0 no Zenodo"', doi_txt) else ""
+    description: "DOI da versao {{VERSAO_TAG}} no Zenodo"', doi_txt) else ""
 cff <- sprintf('cff-version: 1.2.0
 message: "Ao usar este banco, cite-o conforme os metadados abaixo."
 type: dataset
@@ -1241,13 +1727,26 @@ title: "Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian Elective Of
 authors:
   - family-names: "Lins"
     given-names: "Igor Novaes"
+    email: "igor.lins@cebrap.org.br"
     orcid: "https://orcid.org/0000-0003-0510-8355"
     affiliation: "Centro Brasileiro de Análise e Planejamento (CEBRAP)"
-version: "v1.0"
-date-released: "2026-09-22"
+contact:
+  - family-names: "Lins"
+    given-names: "Igor Novaes"
+    email: "igor.lins@cebrap.org.br"
+    orcid: "https://orcid.org/0000-0003-0510-8355"
+    affiliation: "Centro Brasileiro de Análise e Planejamento (CEBRAP)"
+  - family-names: "Lins"
+    given-names: "Igor Novaes"
+    email: "igornovaeslins@gmail.com"
+    orcid: "https://orcid.org/0000-0003-0510-8355"
+version: "{{VERSAO_TAG}}"
+date-released: "{{DATA_LANCAMENTO}}"
 license: "CC-BY-4.0"
 repository-code: "https://github.com/igornovaeslins/bocel"%s
 ', cff_doi)
+cff <- gsub("{{VERSAO_TAG}}", VERSAO_TAG, cff, fixed = TRUE)
+cff <- gsub("{{DATA_LANCAMENTO}}", DATA_LANCAMENTO, cff, fixed = TRUE)
 writeLines(cff, "CITATION.cff")
 
 cat("docs gerados: LIVRO_DE_CODIGOS.md, NOTA_DE_COBERTURA.md, README.md, CITATION.cff\n")

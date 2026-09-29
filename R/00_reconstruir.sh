@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Reconstroi o BOCEL do zero num diretorio limpo.
-# Requisitos: R 4.3+ (data.table, arrow, stringi, httr2, jsonlite).
+# Requisitos: R 4.3+ (data.table, arrow, stringi, httr2, jsonlite, openxlsx).
 # Uso: bash R/00_reconstruir.sh   (a partir da raiz do repositorio)
 #
 # 21/09/2026: a cadeia deixou de chamar Python, pela regra sobre o que precisa de script:
@@ -31,8 +31,9 @@ Rscript --vanilla R/02_ingest_votacao.R
 # R/03 numera pela ordem das chaves, e os ids deixam de coincidir com os da versao publicada
 Rscript --vanilla R/03_build_banco.R
 # filiacoes: banco pronto da Base dos Dados via BigQuery (ref/fonte_filiacao.md), sem coletor proprio;
-# roda so se o parquet ja estiver em disco (a consulta ao BigQuery e feita a mao, fora desta cadeia)
-[ -f data_raw/filiacao/filiacao_atual.parquet ] && Rscript --vanilla R/03b_filiacoes.R || echo "filiacoes: pulado (falta data_raw/filiacao/filiacao_atual.parquet, ver ref/fonte_filiacao.md)"
+# roda so se os dois parquets ja estiverem em disco (a consulta ao BigQuery e feita a mao, fora desta cadeia).
+# 24/09/2026 (DIV-01/REL-10): a guarda conferia so filiacao_atual.parquet, e o R/03b tambem le filiacao_antiga.parquet
+[ -f data_raw/filiacao/filiacao_atual.parquet ] && [ -f data_raw/filiacao/filiacao_antiga.parquet ] && Rscript --vanilla R/03b_filiacoes.R || echo "filiacoes: pulado (falta data_raw/filiacao/filiacao_atual.parquet ou filiacao_antiga.parquet, ver ref/fonte_filiacao.md)"
 # posse, exercicio e forma de saida (fontes complementares; cada uma pula se a fonte falhar)
 Rscript --vanilla R/coleta/camara.R && Rscript --vanilla R/07_exercicio_camara.R || echo "camara: pulado"
 Rscript --vanilla R/coleta/senado.R && Rscript --vanilla R/07_exercicio_senado.R || echo "senado: pulado"

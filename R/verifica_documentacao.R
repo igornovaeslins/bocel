@@ -8,6 +8,8 @@ source(file.path(Sys.getenv("BOCEL_ROOT", unset = path.expand("~/bocel")), "lib"
 source(file.path(Sys.getenv("BOCEL_ROOT", unset = path.expand("~/bocel")), "lib", "proveniencia.R"))
 root <- Sys.getenv("BOCEL_ROOT", unset = path.expand("~/bocel")); setwd(root)
 script <- "R/verifica_documentacao.R"
+# 24/09/2026: a tag de versao esperada no README sai do arquivo VERSAO, nunca de um literal
+VERSAO_TAG <- paste0("v", trimws(read.dcf("VERSAO")[1, "versao"]))
 
 passou <- character(); falhou <- character()
 ok <- function(nome, expr) {
@@ -114,8 +116,10 @@ ult <- rbindlist(lapply(strsplit(ass, " \\| "), function(p) data.table(chave = t
 ult <- ult[, .SD[.N], by = chave]
 sig <- function(k) ult[chave == k, valor]
 
-docs_txt <- paste(readLines("docs/README.md"), readLines("docs/NOTA_DE_COBERTURA.md"),
-                  readLines("docs/AMARRACOES_FAPESP.md"), collapse = "\n")
+# 29/09/2026: paste() de tres vetores de tamanhos diferentes reciclava as linhas do menor e emparelhava linhas de arquivos
+# distintos; c() junta as linhas de cada arquivo uma vez, na ordem
+docs_txt <- paste(c(readLines("docs/README.md"), readLines("docs/NOTA_DE_COBERTURA.md"),
+                    readLines("docs/AMARRACOES_FAPESP.md")), collapse = "\n")
 # limite de digito nas duas pontas: sem isso um numero curto (ex.: "1") bate por acaso
 # dentro de qualquer numero maior que o contenha (ex.: "18.092"), o que nao prova nada
 cita <- function(s) grepl(paste0("(?<![0-9])", gsub(".", "\\.", s, fixed = TRUE), "(?![0-9])"),
@@ -159,12 +163,46 @@ recontas <- data.table(
 # a checagem substantiva e que o numero RECONTADO direto dos dados do recorte (ou, para os tres
 # ultimos, da construcao do banco completo) apareca nos docs gerados por R/05, e bata com o ultimo
 # numero registrado quando existe assinatura correspondente (recorte -> v1_*, banco completo -> bocel_*)
-recontas[, doc := recontado]
-recontas[, citado_nos_docs := vapply(doc, cita, logical(1))]
-recontas[, bate := doc == recontado]
+# 29/09/2026 (achado F5): doc recebia o proprio recontado e bate era verdadeira por construcao. Agora doc e o numero
+# EXTRAIDO do texto dos docs por um padrao de contexto (um grupo de captura) e bate compara o que o texto diz com o que os
+# dados dao. As duas linhas de senadores 2018 nao tem frase nos docs e ficam com doc NA (tem os proprios testes abaixo);
+# padrao que deixa de casar por mudanca de redacao derruba a checagem, em vez de passar em silencio.
+PADROES_DOC <- c(
+  "\\*\\*Pessoas:\\*\\*\\s+([0-9.]+)",
+  "\\*\\*Mandatos:\\*\\*\\s+([0-9.]+)",
+  "\\*\\*Posi\u00e7\u00f5es pessoa \u00d7 cargo \u00d7 ano:\\*\\*\\s+([0-9.]+)",
+  "com\\s+([0-9.]+)\\s+registros\\s+de\\s+filia\u00e7\u00e3o\\s+vindos",
+  "cobre\\s+([0-9.]+)\\s+das\\s+[0-9.]+\\s+pessoas",
+  "pessoas\\s+\\(([0-9,]+%)\\),\\s+com",
+  "\\|\\s*federal\\s*\\|\\s*[0-9.]+\\s*\\|\\s*([0-9.]+)\\s+\\([0-9,]+%\\)",
+  "\\|\\s*federal\\s*\\|\\s*[0-9.]+\\s*\\|\\s*[0-9.]+\\s+\\(([0-9,]+%)\\)",
+  "\\|\\s*estadual\\s*\\|\\s*[0-9.]+\\s*\\|\\s*([0-9.]+)\\s+\\([0-9,]+%\\)",
+  "\\|\\s*estadual\\s*\\|\\s*[0-9.]+\\s*\\|\\s*[0-9.]+\\s+\\(([0-9,]+%)\\)",
+  "dos\\s+[0-9.]+\\s+mandatos,\\s+([0-9.]+)\\s+t\u00eam\\s+a\\s+condi\u00e7\u00e3o\\s+de\\s+eleito\\s+lida\\s+do\\s+cadastro",
+  "cadastro,\\s+([0-9.]+)\\s+herdada\\s+do\\s+titular",
+  "\\(vices\\),\\s+([0-9.]+)\\s+atribu\u00edda\\s+pela\\s+vota\u00e7\u00e3o",
+  "vota\u00e7\u00e3o\\s+e\\s+([0-9.]+)\\s+corrigida\\s+pela\\s+fonte\\s+oficial",
+  "\\|\\s*titulo\\s*\\|\\s*([0-9.]+)\\s*\\|",
+  NA_character_, NA_character_,
+  "banco\\s+completo,\\s+antes\\s+do\\s+recorte\\s+da\\s+v1\\.0,\\s+([0-9.]+)\\s+mandatos\\s+majorit\u00e1rios",
+  ",\\s+([0-9.]+)\\s+candidaturas\\s+repetidas\\s+na\\s+mesma\\s+posi\u00e7\u00e3o",
+  "e\\s+([0-9.]+)\\s+registros\\s+eleitos\\s+sem\\s+nome")
+stopifnot(length(PADROES_DOC) == nrow(recontas))
+docs_linhas <- paste(c(readLines("docs/README.md"), readLines("docs/NOTA_DE_COBERTURA.md"),
+                       readLines("docs/AMARRACOES_FAPESP.md")), collapse = "\n")
+extrai_doc <- function(pad) {
+  if (is.na(pad)) return(NA_character_)
+  mt <- regmatches(docs_linhas, regexec(pad, docs_linhas, perl = TRUE))[[1]]
+  if (length(mt) < 2L) NA_character_ else mt[2L]
+}
+recontas[, doc := vapply(PADROES_DOC, extrai_doc, character(1))]
+recontas[, citado_nos_docs := vapply(recontado, cita, logical(1))]
+recontas[, bate := fifelse(is.na(doc), NA, doc == recontado)]
 cat("\n== Numeros recontados ==\n"); print(recontas)
 fwrite(recontas, "output/verificacao/documentacao_numeros_recontados.csv")
-ok(sprintf("%d numeros dos docs batem com a recontagem", nrow(recontas)), stopifnot(all(recontas$bate)))
+ok(sprintf("%d numeros dos docs batem com a recontagem", nrow(recontas)),
+   stopifnot(all(recontas$bate, na.rm = TRUE), sum(!is.na(PADROES_DOC)) == 18L,
+             recontas[!is.na(PADROES_DOC), !anyNA(doc)], recontas[is.na(PADROES_DOC), .N] == 2L))
 ok("numeros citados existem nos docs", stopifnot(all(recontas$citado_nos_docs)))
 # chaves de assinatura, quando existem, batem com os dados
 chk <- recontas[!is.na(assinatura) & !grepl("%", doc)]
@@ -245,11 +283,170 @@ ok("README: como citar", stopifnot(grepl("## Como citar", rd)))
   # FAPESP (versoes de 6 e 7/09); a checagem continua exigindo a licenca nomeada no README e passa a reprovar a CC0
   ok("README: licenca CC BY 4.0", stopifnot(grepl("CC BY 4\\.0", rd), !grepl("CC0 1\\.0", rd)))
 ok("README: contato", stopifnot(grepl("igornovaeslins@gmail.com", rd), grepl("ORCID", rd)))
-ok("README: versao v1.0", stopifnot(grepl("## Versão", rd), grepl("v1.0", rd)))
+# 29/09/2026 (v1.1): os dois e-mails do autor (pessoal e institucional) aparecem no README, no CITATION.cff e nos
+# dois textos do depositor do Zenodo (portugues e ingles), e a secao de mudancas da versao tem o titulo que
+# zenodo/publicar_github.sh procura (linha de titulo com "mudan" e a tag da versao)
+EMAILS_AUTOR <- c("igornovaeslins@gmail.com", "igor.lins@cebrap.org.br")
+ok("README: os dois e-mails do autor", stopifnot(all(vapply(EMAILS_AUTOR, grepl, logical(1), x = rd, fixed = TRUE))))
+ok("README: secao de mudancas da versao (titulo com 'mudan' e a tag, como publicar_github.sh procura)",
+   stopifnot(any(grepl("^#+ ", strsplit(rd, "\n")[[1]]) & grepl("mudan", strsplit(rd, "\n")[[1]], ignore.case = TRUE) &
+                   grepl(VERSAO_TAG, strsplit(rd, "\n")[[1]], fixed = TRUE))))
+cff_txt <- readLines("CITATION.cff")
+ok("CITATION.cff: os dois e-mails do autor",
+   stopifnot(all(vapply(EMAILS_AUTOR, function(e) any(grepl(e, cff_txt, fixed = TRUE)), logical(1)))))
+ok("CITATION.cff: e-mail institucional em authors e os dois e-mails em contact",
+   { i_aut <- grep("^authors:", cff_txt); i_con <- grep("^contact:", cff_txt); i_ver <- grep("^version:", cff_txt)
+     stopifnot(length(i_aut) == 1L, length(i_con) == 1L, i_aut < i_con, i_con < i_ver,
+               any(grepl("igor.lins@cebrap.org.br", cff_txt[i_aut:(i_con - 1L)], fixed = TRUE)),
+               all(vapply(EMAILS_AUTOR, function(e) any(grepl(e, cff_txt[i_con:(i_ver - 1L)], fixed = TRUE)), logical(1)))) })
+for (idm in c("Contato do autor", "Author's contact")) {
+  lin <- grep(idm, dep, fixed = TRUE)
+  ok(sprintf("deposit.py: '%s' traz os dois e-mails", idm),
+     stopifnot(length(lin) == 1L, all(vapply(EMAILS_AUTOR, grepl, logical(1), x = dep[lin], fixed = TRUE))))
+}
+ok(paste0("README: versao ", VERSAO_TAG), stopifnot(grepl("## Versão", rd), grepl(VERSAO_TAG, rd, fixed = TRUE)))
+# 29/09/2026 (achado DOC-02): a README e o CITATION.cff da v1.1 traziam o DOI da v1.0 como se fosse o da v1.1, e o
+# verificador passava. O DOI de versao so pode ser citado quando o deposito_info.json descreve a versao corrente (campo
+# versao, ausente = 1.0); antes disso so o DOI do conceito pode aparecer, e o DOI de publicado.json (a versao ja publicada)
+# nao pode ser citado como o da versao corrente.
+VERSAO_NUM <- trimws(read.dcf("VERSAO")[1, "versao"])
+dep_info_v <- tryCatch(jsonlite::fromJSON("zenodo/deposito_info.json"), error = function(e) NULL)
+ver_dep <- if (is.null(dep_info_v)) NA_character_ else if (is.null(dep_info_v$versao)) "1.0" else sub("^v", "", as.character(dep_info_v$versao))
+dois_citados <- unique(unlist(regmatches(c(rd, cff_txt), gregexpr("10\\.5281/zenodo\\.[0-9]+", c(rd, cff_txt)))))
+registrar_numero("doc_doi_citados_na_readme_e_cff", length(dois_citados), script = script)
+registrar_numero("doc_doi_de_versao_citado_na_readme_e_cff", as.integer(any(dois_citados != dep_info_v$conceptdoi_provisorio)), script = script)
+ok("README e CITATION.cff: so o DOI do conceito, ou o DOI de versao do deposito_info que descreve a versao corrente",
+   { permitidos <- c(dep_info_v$conceptdoi_provisorio, if (isTRUE(ver_dep == VERSAO_NUM)) dep_info_v$doi_reservado)
+     pub_doi <- tryCatch(jsonlite::fromJSON("zenodo/publicado.json")$doi, error = function(e) NA_character_)
+     if (!all(dois_citados %in% permitidos))
+       stop("DOI citado que nao e o do conceito nem o da versao corrente (v", VERSAO_NUM, "; deposito_info descreve a v", ver_dep, "): ",
+            paste(setdiff(dois_citados, permitidos), collapse = ", "))
+     stopifnot(!(pub_doi %in% dois_citados) || isTRUE(ver_dep == VERSAO_NUM)) })
 ok("README: todo CSV depositado esta na tabela de arquivos",
    stopifnot(all(vapply(basename(csvs[file.exists(csvs)]), function(b) grepl(b, rd, fixed = TRUE) || grepl(sub("\\.csv$", ".csv/.parquet", b), rd, fixed = TRUE), logical(1)))))
 # DOI placeholder
 if (grepl("\\[DOI reservado no Zenodo\\]", rd)) message("AVISO: README ainda com placeholder de DOI (zenodo/deposito_info.json ausente)")
+
+## ------------------------------------------------ camada de ocupacao: vocabulario no livro e pares sobrepostos
+# 29/09/2026 (v1.1): todo valor de vinculo_cadeira, origem_data_inicio e origem_data_fim presente em ocupacoes.csv
+# tem definicao no livro de codigos, os docs gerados nao citam a tabela explicita de tres cadeiras (liga_ocu03) que a
+# regra geral do R/42 substituiu, e os pares de ocupacoes de suplentes sobrepostos citados na nota de cobertura
+# batem com uma recontagem feita aqui a partir de ocupacoes.csv, mandatos.csv e EXCECOES_CONHECIDAS.csv
+oc <- dados[["ocupacoes.csv"]]
+i_oc <- sec_idx[startsWith(lc[sec_idx], "## ocupacoes.csv")]
+stopifnot(length(i_oc) == 1L)
+f_oc <- c(sec_idx[sec_idx > i_oc], length(lc) + 1L)[1] - 1L
+desc_oc <- function(v) {
+  l <- grep(sprintf("^\\| `%s` \\|", v), lc[i_oc:f_oc], value = TRUE)
+  stopifnot(length(l) == 1L)
+  strsplit(l, "\\|")[[1]][4]
+}
+for (v in c("vinculo_cadeira", "origem_data_inicio", "origem_data_fim")) {
+  ok(sprintf("livro: todo valor de ocupacoes.%s presente nos dados esta definido", v), {
+    vals <- sort(unique(oc[[v]][!is.na(oc[[v]]) & oc[[v]] != ""]))
+    d <- desc_oc(v)
+    # 29/09/2026 (achado F8): a palavra inteira em qualquer ponto da descricao deixava 'fonte' passar sem definicao, porque
+    # a palavra reaparece em outras frases ('a fonte da ocupacao', 'coluna fonte'). Agora o valor tem de estar em posicao
+    # de definicao, isto e, seguido de 'quando', 'no', 'na', 'nas' ou 'nos', que e como o livro define cada valor.
+    sem <- vals[!vapply(vals, function(x) grepl(paste0("(?<![a-z_])", x, "\\s+(quando|no|na|nas|nos)\\b"), d, perl = TRUE), logical(1))]
+    if (length(sem)) stop("sem definicao no livro: ", paste(sem, collapse = ", "))
+    stopifnot(length(vals) > 0L)
+  })
+}
+# 29/09/2026 (achado F4): os parametros da regra de vinculo escritos na definicao de vinculo_cadeira (60, 31, 3, 365 e 30
+# dias) tem de bater com as constantes do R/42 lidas do codigo aqui, de forma independente do R/05, que as interpola. Se o
+# R/42 mudar uma constante e o livro nao for regenerado, a checagem reprova.
+r42_v <- readLines("R/42_ocupacoes.R", warn = FALSE)
+c42_v <- function(nome) {
+  l <- grep(sprintf("^ *%s *<- *[0-9]+L", nome), r42_v, value = TRUE)
+  stopifnot(length(l) == 1L)
+  as.integer(sub(sprintf("^ *%s *<- *([0-9]+)L.*$", nome), "\\1", l))
+}
+l_atraso_v <- grep("atraso >= -[0-9]+L & atraso <= [0-9]+L", r42_v, value = TRUE)
+stopifnot(length(l_atraso_v) == 1L)
+num_do_livro <- function(d, pad) {
+  mt <- regmatches(d, regexec(pad, d, perl = TRUE))[[1]]
+  if (length(mt) < 2L) stop("trecho nao encontrado na definicao de vinculo_cadeira: ", pad)
+  as.integer(mt[-1L])
+}
+# 29/09/2026 (achado F1): a README dizia que a data de saida tambem vinha da biografia para tantos suplentes quantos
+# tinham a data de entrada nela (usava o mesmo n nos dois lados), e nenhum verificador cruzava a frase com origem_data_fim.
+# Aqui a frase da README e a da nota de cobertura sobre a regra geral em AL 1998 sao lidas do texto e comparadas com a
+# recontagem de origem_data_inicio e origem_data_fim em ocupacoes.csv.
+n_ini_bio_v <- oc[origem_data_inicio == "biografia_camara", .N]
+n_fim_bio_v <- oc[origem_data_fim == "biografia_camara", .N]
+n_fim_conv_v <- oc[origem_data_fim == "convencao_fim_legislatura", .N]
+registrar_numero("doc_ocu_data_inicio_biografia_camara_recontado", n_ini_bio_v, script = script)
+registrar_numero("doc_ocu_data_fim_biografia_camara_recontado", n_fim_bio_v, script = script)
+registrar_numero("doc_ocu_data_fim_convencao_fim_legislatura_recontado", n_fim_conv_v, script = script)
+ok("README e nota: entradas e saidas lidas da biografia e da convencao de fim de legislatura batem com origem_data_inicio e origem_data_fim",
+   { rd_plano <- gsub("\\s+", " ", rd); nota_p <- gsub("\\s+", " ", paste(nc, collapse = " "))
+     m_rd <- regmatches(rd_plano, regexec("as datas de entrada de ([0-9.]+) suplentes e a data de sa.da de ([0-9.]+) deles v.m da biografia oficial da C.mara \\(a sa.da de ([0-9.]+) deles segue a conven..o de fim de legislatura\\)", rd_plano, perl = TRUE))[[1]]
+     if (length(m_rd) != 4L) stop("frase da README sobre entradas e saidas da biografia nao encontrada")
+     m_nc <- regmatches(nota_p, regexec("a regra deu data a ([0-9.]+) in.cios e a ([0-9.]+) fins \\(([0-9.]+) lido na biografia e ([0-9.]+) pela conven..o\\)", nota_p, perl = TRUE))[[1]]
+     if (length(m_nc) != 5L) stop("frase da nota sobre inicios e fins nao encontrada")
+     num <- function(x) as.integer(gsub("\\.", "", x))
+     stopifnot(num(m_rd[2]) == n_ini_bio_v, num(m_rd[3]) == n_fim_bio_v, num(m_rd[4]) == n_fim_conv_v,
+               num(m_nc[2]) == n_ini_bio_v, num(m_nc[3]) == n_fim_bio_v + n_fim_conv_v,
+               num(m_nc[4]) == n_fim_bio_v, num(m_nc[5]) == n_fim_conv_v,
+               n_fim_bio_v + n_fim_conv_v > 0L) })
+ok("livro: constantes da regra de vinculo (60, 31, 3, 365 e 30 dias) batem com o R/42",
+   { d_vc <- gsub("\\s+", " ", desc_oc("vinculo_cadeira"))
+     stopifnot(
+       identical(num_do_livro(d_vc, "tomou posse mais de ([0-9]+) dias depois do in"), c42_v("JANELA_TITULAR")),
+       identical(num_do_livro(d_vc, "de ([0-9]+) dias antes a [0-9]+ dias depois de mandato_inicio"), c42_v("JANELA_EFET")),
+       identical(num_do_livro(d_vc, "de [0-9]+ dias antes a ([0-9]+) dias depois de mandato_inicio"), c42_v("JANELA_EFET")),
+       identical(num_do_livro(d_vc, "cai de ([0-9]+) dias antes a [0-9]+ dias depois da sa"), c42_v("TOL_DIAS")),
+       identical(num_do_livro(d_vc, "cai de [0-9]+ dias antes a ([0-9]+) dias depois da sa"), c42_v("JANELA_EFET")),
+       identical(num_do_livro(d_vc, "at. ([0-9]+) dias antes da entrada ou at. [0-9]+ dias depois dela"),
+                 as.integer(sub(".*atraso <= ([0-9]+)L.*", "\\1", l_atraso_v))),
+       identical(num_do_livro(d_vc, "at. [0-9]+ dias antes da entrada ou at. ([0-9]+) dias depois dela"),
+                 as.integer(sub(".*atraso >= -([0-9]+)L.*", "\\1", l_atraso_v)))) })
+ok("docs geradas nao citam liga_ocu03 nem OCU-03 (tabela explicita de tres cadeiras substituida pela regra geral)",
+   stopifnot(!grepl("liga_ocu03|OCU-03", paste(c(lc, readLines("docs/README.md"), readLines("docs/NOTA_DE_COBERTURA.md")), collapse = "\n"))))
+iv_v <- merge(oc[!is.na(id_mandato) & !is.na(id_pessoa) & !is.na(data_inicio) & tipo_ocupante != "titular",
+                 .(id_ocupacao, id_mandato, id_pessoa, ini = as.IDate(data_inicio), f0 = as.IDate(data_fim))],
+              mand[, .(id_mandato, mandato_fim)], by = "id_mandato")
+iv_v[, fim := fifelse(is.na(f0), as.IDate(mandato_fim), f0)]
+pares_ns <- merge(iv_v, iv_v, by = "id_mandato", suffixes = c(".a", ".b"), allow.cartesian = TRUE)[id_ocupacao.a < id_ocupacao.b]
+pares_ns[, dias := as.integer(pmin(fim.a, fim.b) - pmax(ini.a, ini.b))]
+pares_ns <- pares_ns[dias > 3L]
+pares_ns[, chave_par := paste(id_ocupacao.a, id_ocupacao.b, sep = "|")]
+exc_v <- fread("docs/EXCECOES_CONHECIDAS.csv", colClasses = "character")
+exc_v <- exc_v[grepl("auditoria de 24/09/2026, par [0-9]+\\)", descricao)]
+exc_v[, chave_par := vapply(descricao, function(d) paste(sort(unique(regmatches(d, gregexpr("OC[0-9]{8}", d))[[1]]))[1:2], collapse = "|"), "")]
+# 29/09/2026 (achado F2): n_sub_v era o complemento (total menos documentados), e um par novo na base entraria como
+# substituicao legitima sem evidencia. Agora so conta como substituicao dentro da substituicao o par cuja chave (as duas
+# ocupacoes) esta na tabela congelada da auditoria de 24/09/2026, ref/pares_substituicao_legitima_auditoria_24set.csv,
+# gerada de logs/auditoria_v11_24set/scripts/pares21/pares21_classificados.csv (categoria sub_substituicao_legitima).
+# Par que nao esta nem em EXCECOES_CONHECIDAS.csv nem nessa tabela reprova, em vez de ser aceito por exclusao.
+ref_sub <- fread("ref/pares_substituicao_legitima_auditoria_24set.csv", colClasses = "character")
+n_ns_v <- nrow(pares_ns); n_doc_v <- exc_v[chave_par %in% pares_ns$chave_par, .N]
+nd_v <- pares_ns[!chave_par %in% exc_v$chave_par]
+n_sub_v <- nd_v[chave_par %in% ref_sub$chave_par, .N]
+n_fora_v <- nrow(nd_v) - n_sub_v
+registrar_numero("doc_ocu_pares_suplentes_sobrepostos_recontado", n_ns_v, script = script)
+registrar_numero("doc_ocu_pares_documentados_em_excecoes_recontado", n_doc_v, script = script)
+registrar_numero("doc_ocu_pares_substituicao_dentro_da_substituicao_recontado", n_sub_v, script = script)
+registrar_numero("doc_ocu_pares_sem_documentacao_nem_auditoria_recontado", n_fora_v, script = script)
+registrar_numero("doc_ocu_pares_suplentes_sobrepostos_mesma_pessoa_recontado", pares_ns[id_pessoa.a == id_pessoa.b, .N], script = script)
+nota_plana <- gsub("\\s+", " ", paste(nc, collapse = " "))
+ok("nota: pares de ocupacoes de suplentes sobrepostos (total, substituicao dentro da substituicao, documentados) = recontagem",
+   stopifnot(n_ns_v > 0L, n_doc_v > 0L, n_sub_v > 0L,
+             grepl(sprintf("%s pares de ocupações de suplentes compartilham mais de 3 dias da mesma cadeira", fmt(n_ns_v)), nota_plana, fixed = TRUE),
+             grepl(sprintf("separou %s desses pares como substituição dentro da substituição", fmt(n_sub_v)), nota_plana, fixed = TRUE),
+             grepl(sprintf("Os outros %s pares estão documentados linha a linha", fmt(n_doc_v)), nota_plana, fixed = TRUE),
+             sig("doc_ocu_pares_suplentes_sobrepostos") == as.character(n_ns_v),
+             sig("doc_ocu_pares_substituicao_dentro_da_substituicao") == as.character(n_sub_v),
+             sig("doc_ocu_pares_documentados_em_excecoes") == as.character(n_doc_v)))
+ok("todo par sobreposto fora de EXCECOES_CONHECIDAS.csv esta na tabela congelada da auditoria de 24/09 (mesma cadeira e mesmas ocupacoes)",
+   { stopifnot(n_fora_v == 0L, nrow(ref_sub) == 14L, uniqueN(ref_sub$chave_par) == 14L,
+               setequal(nd_v$chave_par, ref_sub$chave_par),
+               all(ref_sub$categoria == "sub_substituicao_legitima"))
+     m_ref <- merge(nd_v[, .(chave_par, id_mandato)], ref_sub[, .(chave_par, id_mandato_ref = id_mandato)], by = "chave_par")
+     stopifnot(nrow(m_ref) == 14L, all(m_ref$id_mandato == m_ref$id_mandato_ref)) })
+ok("nota: afirma que nenhum par sobreposto reune a mesma pessoa somente se a recontagem confirma",
+   stopifnot(pares_ns[id_pessoa.a == id_pessoa.b, .N] == 0L, grepl("nenhum deles reúne a mesma pessoa duas vezes", nota_plana, fixed = TRUE)))
 
 ## ------------------------------------------------ EXCECOES_CONHECIDAS
 exc <- fread("docs/EXCECOES_CONHECIDAS.csv", colClasses = "character")
@@ -258,9 +455,19 @@ ok("excecoes: colunas esperadas", stopifnot(identical(names(exc), c("ano_eleicao
 ok("senadores 2018 = 54 no banco", stopifnot(mand[ano_eleicao == "2018" & cargo == "SENADOR", .N] == 54))
 ok("MT 2018 tem 2 senadores", stopifnot(mand[ano_eleicao == "2018" & cargo == "SENADOR" & sg_uf == "MT", .N] == 2))
 
+# 29/09/2026 (achado F6): o registro e append-only e guarda o ultimo valor de ocu_tres_cadeiras_ligadas_ocu03 (3, de
+# 24/09/2026), da tabela explicita de tres cadeiras que a regra geral do R/42 substituiu. A chave nao e editada; este
+# verificador confere que nenhum script a le ou a escreve mais e grava no proprio registro que ela e historica.
+CHAVE_HISTORICA <- "ocu_tres_cadeiras_ligadas_ocu03"
+scripts_r <- setdiff(list.files("R", pattern = "\\.(R|sh)$", recursive = TRUE, full.names = TRUE), script)
+ok("registro: a chave ocu_tres_cadeiras_ligadas_ocu03 (regra explicita de tres cadeiras, substituida) nao e lida nem escrita por nenhum script",
+   stopifnot(!any(vapply(scripts_r, function(f) any(grepl(CHAVE_HISTORICA, readLines(f, warn = FALSE), fixed = TRUE)), logical(1)))))
+registrar_numero("doc_chave_historica_ocu_tres_cadeiras_ligadas_ocu03_descontinuada", 1L, script = script)
 fora <- c("pertinencia semantica das descricoes do livro de codigos",
-          "validade do pareamento por nome nas fontes complementares (fora do escopo documental)")
-rel <- gravar_relatorio_verificacao(alvo = "BOCEL v1.0 — documentacao", script = script,
+          "validade do pareamento por nome nas fontes complementares (fora do escopo documental)",
+          "a chave ocu_tres_cadeiras_ligadas_ocu03 de numeros_assinatura.txt guarda o valor 3 de 24/09/2026, de uma regra que a v1.1 substituiu, e nenhum texto gerado a cita; o registro nao se edita",
+          "cruzamento das citacoes de fonte da nota de cobertura com o texto original da biografia oficial (fica com o julgamento de Igor)")
+rel <- gravar_relatorio_verificacao(alvo = paste0("BOCEL ", VERSAO_TAG, " — documentacao"), script = script,
                                     passou = passou, falhou = falhou, fora_de_cobertura = fora)
 cat("\nRelatorio:", rel, "\nPASSOU:", length(passou), "| FALHOU:", length(falhou), "\n")
 if (length(falhou)) { cat("Falhas:\n"); cat(paste("-", falhou), sep = "\n"); quit(status = 1) }

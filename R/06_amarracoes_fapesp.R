@@ -5,6 +5,11 @@ suppressPackageStartupMessages({ library(data.table) })
 root <- Sys.getenv("BOCEL_ROOT", unset = path.expand("~/bocel"))
 setwd(root)
 
+# 24/09/2026: numero e tag de versao saem do arquivo VERSAO (formato DCF), nunca digitados a mao
+ver_dcf <- read.dcf("VERSAO")
+VERSAO_ATUAL <- trimws(ver_dcf[1, "versao"])
+VERSAO_TAG <- paste0("v", VERSAO_ATUAL)
+
 # parse robusto do registro (chave | valor | ...): so os dois primeiros campos; vale o ultimo registro por chave
 reg_l <- readLines("output/numeros_assinatura.txt", warn = FALSE)
 reg <- rbindlist(lapply(strsplit(reg_l[grepl("|", reg_l, fixed = TRUE)], "|", fixed = TRUE),
@@ -13,7 +18,9 @@ reg <- reg[, .SD[.N], by = chave]
 n <- function(k) reg[chave == k, valor]
 fmt <- function(x) format(as.numeric(x), big.mark = ".", decimal.mark = ",")
 
-n_pess <- fmt(n("v1_n_pessoas")); n_mand <- fmt(n("v1_n_mandatos"))
+# 24/09/2026 (pendencia 17): pessoas eleitas no recorte, nao o total do cadastro de pessoas.csv,
+# que desde a v1.1 tambem inclui ocupante_sem_mandato_no_recorte (condicao_no_recorte)
+n_pess <- fmt(n("v1_pessoas_eleitas_no_recorte")); n_mand <- fmt(n("v1_n_mandatos"))
 n_pos  <- fmt(n("v1_n_posicoes_ano"))
 n_fil  <- if ("v1_n_filiacoes" %in% reg$chave) fmt(n("v1_n_filiacoes")) else NA
 pct_fil <- if ("v1_pct_pessoas_com_filiacao" %in% reg$chave)
@@ -43,11 +50,11 @@ Todos os números abaixo vêm de `output/numeros_assinatura.txt` (script 04_veri
 
 ## Nota de rodapé 4 (substitui a versão truncada)
 
-> Parto do Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL, v1.0, DOI %s), que construí a partir dos resultados eleitorais do TSE e que registra %s pessoas em %s mandatos na Presidência, no Senado, na Câmara dos Deputados e nos governos estaduais, nas eleições ordinárias de 1998 a 2024, com identificador estável de pessoa e a sucessão de cada cadeira, com a ordem de suplência de cada mandato.%s%s A unidade de observação é pessoa × cargo × ano (%s posições), o que permite acompanhar permanência, saída e substituição ao longo dos mandatos.
+> Parto do Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL, {{VERSAO_TAG}}, DOI %s), que construí a partir dos resultados eleitorais do TSE e que registra %s pessoas em %s mandatos na Presidência, no Senado, na Câmara dos Deputados e nos governos estaduais, nas eleições ordinárias de 1998 a 2022, com identificador estável de pessoa e a sucessão de cada cadeira, com a ordem de suplência de cada mandato.%s%s A unidade de observação é pessoa × cargo × ano (%s posições), o que permite acompanhar permanência, saída e substituição ao longo dos mandatos.
 
 ## §2 — resultados esperados (produto entregue)
 
-O BOCEL v1.0, primeiro produto do projeto, está depositado no Zenodo sob licença CC BY 4.0, com livro de códigos, nota de cobertura e script de reconstrução a partir dos brutos do TSE, e cobre %s pessoas e %s mandatos na Presidência, no Senado, na Câmara dos Deputados e nos governos estaduais de 1998 a 2024, com posse, exercício e forma de saída fechados no recorte (a nota 4 dá a cobertura).%s A v1.5, prevista para o segundo ano da bolsa, acrescenta as Assembleias Legislativas e os cargos municipais, com posse, exercício e forma de saída a partir dos diários oficiais das casas legislativas e da Justiça Eleitoral, e a sucessão por cadeira nessas casas, que junto com a saída forma a variável dependente da frente 2.
+O BOCEL {{VERSAO_TAG}}, primeiro produto do projeto, está depositado no Zenodo sob licença CC BY 4.0, com livro de códigos, nota de cobertura e script de reconstrução a partir dos brutos do TSE, e cobre %s pessoas e %s mandatos na Presidência, no Senado, na Câmara dos Deputados e nos governos estaduais, nas eleições de 1998 a 2022, com posse, exercício e forma de saída fechados no recorte (a nota 4 dá a cobertura).%s A v1.5, prevista para o segundo ano da bolsa, acrescenta as Assembleias Legislativas e os cargos municipais, com posse, exercício e forma de saída a partir dos diários oficiais das casas legislativas e da Justiça Eleitoral, e a sucessão por cadeira nessas casas, que junto com a saída forma a variável dependente da frente 2.
 
 ## §6 — contribuição ao Auxílio 2024/19449-2
 
@@ -55,13 +62,15 @@ O BOCEL entra no Auxílio como infraestrutura de dados compartilhada e citável 
 
 ## Plano de Gestão de Dados
 
-Os dados do projeto derivam de fontes públicas de transparência ativa (TSE) e já estão organizados no BOCEL v1.0 (Zenodo, DOI %s, CC BY 4.0), em CSV UTF-8 e parquet, com livro de códigos por variável, nota de cobertura e script que reconstrói o banco do zero. As versões seguintes entram no mesmo registro por *New version*, sob o mesmo concept DOI, e o histórico de correções fica público no próprio Zenodo.
+Os dados do projeto derivam de fontes públicas de transparência ativa (TSE) e já estão organizados no BOCEL {{VERSAO_TAG}} (Zenodo, DOI %s, CC BY 4.0), em CSV UTF-8 e parquet, com livro de códigos por variável, nota de cobertura e script que reconstrói o banco do zero. As versões seguintes entram no mesmo registro por *New version*, sob o mesmo concept DOI, e o histórico de correções fica público no próprio Zenodo.
 
 ## Súmula curricular
 
-Lins, Igor Novaes. Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian Elective Office Occupancy Database (BOCEL), 1998–2024. Versão 1.0. Conjunto de dados. Zenodo, 2026. DOI %s.
+Lins, Igor Novaes. Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian Elective Office Occupancy Database (BOCEL), 1998–2024. Versão {{VERSAO_ATUAL}}. Conjunto de dados. Zenodo, 2026. DOI %s.
 ', doi, doi, n_pess, n_mand, fil_frase, saida_frase, n_pos, n_pess, n_mand, "", doi, doi)
 # 12/09/2026: o Auxilio 2024/19449-2 nao financiou o banco, e a secao 6 deixou de dizer que o
 # deposito o registra como financiador; a referencia da sumula segue o titulo do registro no Zenodo
+txt <- gsub("{{VERSAO_TAG}}", VERSAO_TAG, txt, fixed = TRUE)
+txt <- gsub("{{VERSAO_ATUAL}}", VERSAO_ATUAL, txt, fixed = TRUE)
 writeLines(txt, "docs/AMARRACOES_FAPESP.md")
 cat("docs/AMARRACOES_FAPESP.md gerado\n")

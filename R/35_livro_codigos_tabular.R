@@ -90,7 +90,11 @@ derivadas <- c("id_mandato", "id_pessoa", "esfera", "unidade_posicao", "forma_sa
                "data_posse", "data_fim_efetiva", "exercicio_confirmado", "fonte_exercicio", "antecessor_id",
                "sucessor_id", "via_sucessao", "reeleito_mesma_pessoa", "chave_dedup", "dedup_ponte_nome_nascimento",
                "dedup_auditoria", "regiao", "nome_normalizado", "metodo_pareamento", "tipo_pareamento",
-               "id_pessoa_bocel", "id_mandato_bocel", "negra", "troca_efetiva", "origem_canon", "destino_canon", "tipo")
+               "id_pessoa_bocel", "id_mandato_bocel", "negra", "troca_efetiva", "origem_canon", "destino_canon", "tipo",
+               # 24/09/2026 (pendencia 17): condicao_no_recorte classifica a pessoa dentro do universo do
+               # recorte, e nao vem direto do TSE; exerceu_no_ano fica de fora porque posicoes_ano.csv ja
+               # tem fonte "Autor, a partir de mandatos.csv" por arquivo, sem parenteses para o sub() cortar
+               "condicao_no_recorte")
 cb[variavel %in% derivadas, fonte := paste0("Autor, a partir de ", sub(" \\(.*", "", fonte))]
 cb[variavel %in% c("id_mandato", "id_pessoa") & arquivo %in% c("mandatos.csv", "pessoas.csv", "posicoes_ano.csv"),
    fonte := "Autor, identificador construido na deduplicacao"]

@@ -1,7 +1,7 @@
-# Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) — v1.0
+# Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) — v1.1
 
 Ocupação de cargo eletivo no Brasil, 1998–2024, construída a partir dos dados
-abertos do Tribunal Superior Eleitoral. A versão 1.0 fecha a Presidência, a
+abertos do Tribunal Superior Eleitoral. A versão 1.1 fecha a Presidência, a
 Câmara dos Deputados, o Senado e os governos estaduais, em que todo mandato
 encerrado tem forma de saída com a fonte identificada, e traz a ocupação de
 cada cadeira com a ordem da suplência e o histórico de filiação partidária de
@@ -20,7 +20,7 @@ ele se reconstitui a carreira de um político, se descobre quem exerceu a
 cadeira quando o titular se licenciou, renunciou ou foi cassado, e se liga o
 histórico partidário de cada pessoa aos cargos que ocupou.
 
-- **Pessoas:** 2.155
+- **Pessoas:** 2.424
 - **Mandatos:** 4.253
 - **Posições pessoa × cargo × ano:** 18.092
 - **Cobertura:** eleições ordinárias de 1998 a 2022, no recorte federal (ver NOTA_DE_COBERTURA.md)
@@ -58,7 +58,7 @@ uma API ou página pública e gravando o retorno sem alteração de conteúdo.
 
 O script de reconstrução acompanha o depósito (reconstruir_banco.zip) e roda
 do zero num diretório limpo com R 4.3+ (data.table, arrow, stringi, httr2,
-jsonlite). As bibliotecas de verificação (asserts_rigor.R, proveniencia.R)
+jsonlite, openxlsx). As bibliotecas de verificação (asserts_rigor.R, proveniencia.R)
 acompanham o pacote em lib/.
 
 ## Arquivos
@@ -71,14 +71,14 @@ acompanham o pacote em lib/.
 | filiacoes.csv/.parquet | histórico de filiação partidária das pessoas do banco (listas do TSE) |
 | ocupacoes.csv/.parquet | quem ocupou cada cadeira e em que período, com o titular, o suplente convocado, o vice que assumiu e o interino |
 | lista_suplencia.csv/.parquet | a fila de suplência de cada lista partidária de deputado federal e de senador, com a ordem derivada |
-| pessoas_suplentes.csv/.parquet | suplentes que nunca ocuparam cadeira, no mesmo espaço de identificador do cadastro |
+| pessoas_suplentes.csv/.parquet | pessoas que figuram como suplentes e nunca foram eleitas, no mesmo espaço de identificador do cadastro, entre elas os ocupantes de cadeira que não constam de pessoas.csv |
 | suplentes_identidade.csv | como cada suplente foi ligado a uma pessoa do banco |
 | mandatos_lista.csv | cadeira e a lista partidária que a ganhou |
 | saida_executivos.csv | forma de saída de presidente, vice-presidente, governador e vice-governador |
 | saida_legislativo_federal.csv | forma de saída de senador e deputado federal pela história completa de exercício na própria casa |
 | interregnos_legislativo_federal.csv | licenças, afastamentos e suspensões de senador e deputado federal que não encerram o mandato |
 | mandatos_forma_saida_suplementar.csv | mandato ordinário afetado por eleição suplementar e o sucessor |
-| eleicoes_suplementares.csv | pleitos suplementares majoritários do TSE (1998–2024), vencedor e mandato ordinário afetado |
+| eleicoes_suplementares.csv | pleitos suplementares majoritários do TSE (2017–2026), vencedor e mandato ordinário afetado |
 | ocupantes_legislativo_federal.csv | quem a Câmara ou o Senado registrou como titular sem mandato correspondente no arquivo do TSE |
 | exercicio_camara.csv | períodos de exercício dos deputados federais (API da Câmara), com posse, saída e causa |
 | exercicio_senado.csv | exercícios de senadores e suplentes (API do Senado), com causa de afastamento |
@@ -96,8 +96,8 @@ acompanham o pacote em lib/.
 ## Como citar
 
 > Lins, Igor Novaes. (2026). Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian
-> Elective Office Occupancy Database (BOCEL), 1998–2024 (v1.0) [Conjunto de dados].
-> Zenodo. https://doi.org/10.5281/zenodo.22896272
+> Elective Office Occupancy Database (BOCEL), 1998–2024 (v1.1) [Conjunto de dados].
+> Zenodo. https://doi.org/10.5281/zenodo.23035176
 
 ## Fontes complementares da camada de posse e saída
 
@@ -123,10 +123,30 @@ acrescenta dado pessoal além do que essas fontes divulgam.
 
 ## Versão
 
-v1.0, 22 de setembro de 2026. Correções entram como versões novas no mesmo
-registro do Zenodo, sob o mesmo concept DOI.
+v1.1, 29 de setembro de 2026. Correções entram como versões novas no mesmo
+registro do Zenodo, sob o mesmo concept DOI (https://doi.org/10.5281/zenodo.22896271).
+
+### Mudanças da v1.1 em relação à v1.0
+
+A v1.1 corrige o recorte da v1.0 sem ampliá-lo. `pessoas.csv` passou a incluir, além dos eleitos no recorte, as
+pessoas que só ocuparam uma cadeira nele sem terem sido eleitas ali, com a condição de cada pessoa marcada na coluna
+`condicao_no_recorte`, e o identificador de todo ocupante de `ocupacoes.csv` resolve em `pessoas.csv` ou em
+`pessoas_suplentes.csv`, que guarda os 304 ocupantes nunca eleitos em nenhuma esfera do banco. `posicoes_ano.csv` ganhou a
+coluna `exerceu_no_ano`, que separa o ano em que o titular esteve de fato na cadeira do ano em que só ocupava o cargo no papel.
+
+Em `ocupacoes.csv`, `data_fim` deixou de ultrapassar o fim do próprio mandato, o que reduziu a data de fim de 52 ocupações (todas de vice que assumiu o governo de estado), e a nova coluna `origem_data_fim` registra a
+origem de cada data de saída. O vínculo entre o suplente e a cadeira passou a seguir uma regra geral para as cadeiras federais
+cujo titular não exerceu o mandato desde o começo da legislatura, que ligou 6 ocupações a cadeira nova (5 em `lista_vaga_inicial` e 1 em `lista_sucessao_vaga`, dois valores
+novos de `vinculo_cadeira`). Em AL 1998, as datas de entrada de 2 suplentes e a data de saída de 1 deles vêm da biografia oficial da
+Câmara (a saída de 1 deles segue a convenção de fim de legislatura), e `origem_data_inicio` ganhou o valor `biografia_camara` para registrá-lo (o valor `sinal_efetivacao_api` está definido no livro de códigos e não ocorre nesta versão). A primeira ocupação de José Valdevan de Jesus Santos (SE 2018) foi fechada em 27 de abril de 2022 pela mesma fonte (`origem_data_fim` igual a `curadoria_biografia_camara`), e nenhum par de ocupações sobrepostas reúne agora a
+mesma pessoa. Os 20 pares de ocupações de suplentes que ainda compartilham mais de 3 dias da mesma cadeira estão documentados. Em 14 deles um suplente em exercício se licenciou e outro cobriu a licença,
+e os dados ficam como vieram da fonte. Os outros 6 constam linha a linha em `EXCECOES_CONHECIDAS.csv`, e a troca da
+regra de ligação do par de AL 2010 e a curadoria dos 5 pares de fim de legislatura estão previstas para a v1.5.
+As correções curadas de Walter Pinheiro e de Almerinda ganharam remissão em `EXCECOES_CONHECIDAS.csv`. NOTA_DE_COBERTURA.md e
+LIVRO_DE_CODIGOS.md documentam cada mudança com o número que a mede. O contato do autor passou a trazer o e-mail institucional,
+igor.lins@cebrap.org.br, ao lado do pessoal, igornovaeslins@gmail.com, no README, em CITATION.cff e nos metadados do depósito.
 
 ## Contato
 
-Igor Novaes Lins — igornovaeslins@gmail.com — ORCID 0000-0003-0510-8355
+Igor Novaes Lins, igor.lins@cebrap.org.br (institucional) e igornovaeslins@gmail.com. ORCID 0000-0003-0510-8355
 

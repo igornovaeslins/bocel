@@ -1,4 +1,4 @@
-# Livro de códigos — Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) v1.0
+# Livro de códigos — Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) v1.1
 
 O código de ausente em todos os arquivos CSV é a string `NA`, e nenhuma célula
 vazia tem significado. Os códigos de ausência do TSE (`#NE`, `#NULO`, `-1`, `-3`,
@@ -35,7 +35,7 @@ vazia tem significado. Os códigos de ausência do TSE (`#NE`, `#NULO`, `-1`, `-
 | `votos_turno_decisivo` | inteiro | Votos nominais no turno decisivo | 95.4% |
 | `mandato_inicio` | data ISO | Inicio convencional do mandato (1o de fevereiro pos-eleicao para senador e deputados; 1o de janeiro para os demais) | 100.0% |
 | `mandato_fim` | data ISO | Fim convencional do mandato (31 de janeiro apos o ultimo ano para senador e deputados; 31 de dezembro para os demais) | 100.0% |
-| `forma_saida` | texto | Forma de saida do cargo, vocabulario fechado (fim_regular, renuncia, falecimento, cassacao, afastamento, licenca, nao_tomou_posse, suplente_efetivado, perda_do_mandato_inferida_por_eleicao_suplementar, substituicao_inferida_munic, assumiu_titular, aposentadoria, impeachment, retotalizacao, outro, nao_observado). Em senador, deputado federal, presidente, vice-presidente, governador e vice-governador, licenca e afastamento temporario nao encerram mandato, e o periodo fora do exercicio fica em data/interregnos_legislativo_federal.csv; retotalizacao e a perda da vaga por nova totalizacao dos votos, sem ato ilicito | 100.0% |
+| `forma_saida` | texto | Forma de saida do cargo, vocabulario fechado (fim_regular, renuncia, falecimento, cassacao, afastamento, licenca, nao_tomou_posse, suplente_efetivado, perda_do_mandato_inferida_por_eleicao_suplementar, substituicao_inferida_munic, assumiu_titular, aposentadoria, impeachment, retotalizacao, outro, nao_observado). Em senador, deputado federal, presidente, vice-presidente, governador e vice-governador, licenca e afastamento temporario nao encerram mandato, e o periodo fora do exercicio fica em data/interregnos_legislativo_federal.csv; retotalizacao e a perda da vaga por nova totalizacao dos votos, sem ato ilicito. Nos mandatos do recorte em que a forma de saida esta preenchida e data_posse esta vazia (pendencia 12), a forma vem da fonte que registra a saida e nao registra a entrada, como a renuncia de Jean Wyllys, e a ausencia da data de posse nao significa mandato nunca exercido. A explicacao e a contagem desses 21 mandatos estao em NOTA_DE_COBERTURA.md | 100.0% |
 | `antecessor_id` | texto | id_pessoa de quem ocupou a mesma posicao no mandato anterior (executivos) | 4.0% |
 | `sucessor_id` | texto | id_pessoa de quem ocupou a mesma posicao no mandato seguinte (executivos) | 4.0% |
 | `via_sucessao` | texto | Via institucional da sucessao; v1 = nova_eleicao (executivos) | 4.6% |
@@ -66,8 +66,9 @@ vazia tem significado. Os códigos de ausência do TSE (`#NE`, `#NULO`, `-1`, `-
 | `sg_partido` | texto | Sigla do partido na eleicao de origem | 100.0% |
 | `nr_partido` | inteiro | Numero do partido na eleicao de origem | 100.0% |
 | `ano` | inteiro | Ano-calendario em que a pessoa ocupa a posicao | 100.0% |
+| `exerceu_no_ano` | logico | Se o titular do mandato exerceu a cadeira em algum dia daquele ano, segundo a ocupacao titular registrada em ocupacoes.csv e a forma_saida do mandato (DEF-01, 24/09/2026). FALSE quando o mandato nunca foi exercido (forma_saida = nao_tomou_posse, ou data_fim da ocupacao titular em ocupacoes.csv anterior a data_inicio dessa ocupacao, que vale o inicio do mandato por convencao quando o mandato nao tem data_posse, padrao encontrado em Jean Wyllys e num mandato do PI em 2022, ambos com data_posse vazia em mandatos.csv) ou quando o ano fica fora do intervalo [inicio, fim] do exercicio; TRUE quando o ano cai dentro do intervalo com fim conhecido, ou quando o fim e desconhecido (mandato em curso) e o ano nao passa da data de referencia da reconstrucao (output/data_referencia.txt); NA quando o fim e desconhecido e o ano e posterior a essa data de referencia, porque ainda nao ha como saber. Nenhuma linha de posicoes_ano.csv foi removida ou acrescentada por esta coluna, que so marca as ja existentes (contagem no cabecalho desta secao) | 99.4% |
 
-## pessoas.csv — cadastro de pessoas (2.155 linhas)
+## pessoas.csv — cadastro de pessoas (2.424 linhas)
 
 | variavel | tipo | descricao | preenchimento |
 |---|---|---|---|
@@ -77,7 +78,7 @@ vazia tem significado. Os códigos de ausência do TSE (`#NE`, `#NULO`, `-1`, `-
 | `dt_nascimento` | data ISO | Data de nascimento | 100.0% |
 | `genero` | texto | Genero declarado ao TSE | 100.0% |
 | `nr_titulo_eleitoral` | texto | Titulo de eleitor (12 digitos, divulgado pelo TSE) | 100.0% |
-| `nr_cpf` | texto | CPF (11 digitos, divulgado pelo TSE) | 99.9% |
+| `nr_cpf` | texto | CPF (11 digitos, divulgado pelo TSE) | 99.4% |
 | `n_mandatos` | inteiro | Numero de mandatos da pessoa no banco | 100.0% |
 | `primeiro_ano_eleito` | inteiro | Primeiro ano em que foi eleita | 100.0% |
 | `ultimo_ano_eleito` | inteiro | Ultimo ano em que foi eleita | 100.0% |
@@ -85,8 +86,9 @@ vazia tem significado. Os códigos de ausência do TSE (`#NE`, `#NULO`, `-1`, `-
 | `dedup_suspeita_fusao` | texto | Leitura da fusao por documento que R/03 manteve porque nome ou nascimento coincidem entre as candidaturas unidas por um titulo ou CPF (nome_diferente_mesmo_nascimento, mesmo_nome_nascimento_diferente, mesmo_nome_e_nascimento_documento_reemitido); NA quando nao ha suspeita. A lista das fusoes desfeitas esta em output/verificacao/fusao_documentos_separacao.csv | 0.1% |
 | `dedup_ponte_nome_nascimento` | logico | Nome e data de nascimento sao a unica chave de identidade desta pessoa, sem titulo nem CPF em nenhuma candidatura (auditoria em data_v1/auditoria_homonimos.csv) | 100.0% |
 | `dedup_auditoria` | texto | Classificacao da auditoria de homonimos (consistente, suspeito, indeterminado) para as pessoas auditadas em data_v1/auditoria_homonimos.csv; nao_auditado para as demais | 100.0% |
+| `condicao_no_recorte` | texto | Condicao da pessoa no recorte desta versao (pendencia 17, opcao A, 24/09/2026), com os valores eleito_no_recorte (a pessoa tem mandato em mandatos.csv ou posicao em posicoes_ano.csv dentro do recorte) e ocupante_sem_mandato_no_recorte (a pessoa aparece como ocupante de uma cadeira em ocupacoes.csv, por exemplo suplente convocado, vice que assumiu ou interino, sem mandato nem posicao no recorte, e foi eleita em algum cargo do banco fora dele, como Assembleia ou municipio). O identificador de todo ocupante de ocupacoes.csv resolve em pessoas.csv ou em pessoas_suplentes.csv. Entre os 573 ocupantes identificados que nao foram eleitos no recorte, 269 constam de pessoas.csv com esta condicao e 304, que nunca foram eleitos em nenhuma esfera do banco, constam apenas de pessoas_suplentes.csv, onde respondem por 513 ocupacoes. As colunas n_mandatos, primeiro_ano_eleito e ultimo_ano_eleito continuam contadas sobre o banco completo, nunca recalculadas so para o recorte. Nas pessoas ocupante_sem_mandato_no_recorte elas resultam de mandato fora do recorte, e todas as 269 tem n_mandatos maior ou igual a 1 e primeiro_ano_eleito preenchido, sem excecao nesta versao, porque quem nunca foi eleito em nenhuma esfera fica em pessoas_suplentes.csv | 100.0% |
 
-## filiacoes.csv — pessoa × partido × filiação (5.942 linhas)
+## filiacoes.csv — pessoa × partido × filiação (6.855 linhas)
 
 | variavel | tipo | descricao | preenchimento |
 |---|---|---|---|
@@ -96,11 +98,11 @@ vazia tem significado. Os códigos de ausência do TSE (`#NE`, `#NULO`, `-1`, `-
 | `cd_municipio_tse` | texto | Codigo TSE do municipio da zona eleitoral | 100.0% |
 | `data_filiacao` | data ISO | Data de filiacao | 99.6% |
 | `situacao_registro` | texto | Situacao do registro na lista (REGULAR, CANCELADO, DESFILIADO, ...) | 100.0% |
-| `data_desfiliacao` | data ISO | Data de desfiliacao, quando houve | 28.3% |
-| `data_cancelamento` | data ISO | Data de cancelamento, quando houve | 44.8% |
-| `motivo` | texto | Motivo de desfiliacao ou cancelamento | 42.7% |
+| `data_desfiliacao` | data ISO | Data de desfiliacao, quando houve | 28.8% |
+| `data_cancelamento` | data ISO | Data de cancelamento, quando houve | 45.5% |
+| `motivo` | texto | Motivo de desfiliacao ou cancelamento | 43.4% |
 | `fonte` | texto | lista_atual (extracao TSE 2026) ou lista_antiga (listas historicas ate 2019) | 100.0% |
-| `data_referencia` | data ISO | Data de extracao ou processamento da lista de origem | 29.9% |
+| `data_referencia` | data ISO | Data de extracao ou processamento da lista de origem | 30.2% |
 
 Fonte: listas de filiados do TSE (Sistema FILIA), espelhadas pela Base dos Dados (`br_tse_filiacao_partidaria`, tabelas `microdados` e `microdados_antigos`), pareadas às pessoas do banco pelo título de eleitor.
 
@@ -166,7 +168,7 @@ A chave declarada é `codigo_exercicio`.
 | `fonte` | texto | senado_api | 100.0% |
 | `url_fonte` | texto | URL do recurso na API | 100.0% |
 
-## camara_biografia_eventos.csv — eventos de mandato lidos na biografia oficial do deputado federal na Camara (4.969 linhas)
+## camara_biografia_eventos.csv — eventos de mandato lidos na biografia oficial do deputado federal na Camara (4.968 linhas)
 
 A chave declarada é `id_deputado_camara` × `secao` × `leg_inicio` × `tipo` × `datas`.
 
@@ -289,10 +291,10 @@ A chave declarada é `id_ocupacao`.
 | variavel | tipo | descricao | preenchimento |
 |---|---|---|---|
 | `id_ocupacao` | texto | Identificador da ocupacao | 100.0% |
-| `id_mandato` | texto | Cadeira ocupada; NA quando a fonte nao permite identificar qual foi | 74.6% |
+| `id_mandato` | texto | Cadeira ocupada; NA quando a fonte nao permite identificar qual foi | 74.7% |
 | `id_pessoa` | texto | Pessoa que ocupou (cadastro do nucleo ou de suplentes) | 97.7% |
 | `tipo_ocupante` | texto | titular, suplente, vice_assumiu ou interino | 100.0% |
-| `ordem_ocupacao` | inteiro | 1 no titular, 2 em diante nos demais | 74.6% |
+| `ordem_ocupacao` | inteiro | 1 no titular, 2 em diante nos demais | 74.7% |
 | `id_lista` | texto | Lista partidaria de origem do suplente (coligacao, federacao ou partido) | 8.3% |
 | `ano_eleicao` | inteiro | Eleicao que criou a cadeira | 100.0% |
 | `cd_cargo` | inteiro | Codigo do cargo (TSE) | 100.0% |
@@ -303,13 +305,14 @@ A chave declarada é `id_ocupacao`.
 | `nm_ue` | texto | Nome da unidade | 67.6% |
 | `unidade_posicao` | texto | Unidade em que a posicao e disputada | 100.0% |
 | `sg_partido_ocupante` | texto | Partido de quem ocupou | 91.6% |
-| `sg_partido_titular` | texto | Partido do titular eleito para a cadeira | 74.6% |
+| `sg_partido_titular` | texto | Partido do titular eleito para a cadeira | 74.7% |
 | `data_inicio` | data ISO | Inicio da ocupacao | 96.3% |
-| `data_fim` | data ISO | Fim da ocupacao | 86.1% |
-| `origem_data_inicio` | texto | fonte quando ha ato ou registro, convencao quando e a data legal do mandato | 96.3% |
+| `data_fim` | data ISO | Fim da ocupacao | 86.2% |
+| `origem_data_inicio` | texto | De onde veio data_inicio, em cinco valores. fonte quando a data e a que a fonte da ocupacao registra (coluna fonte). convencao quando o titular nao tem data de posse registrada e vale o inicio legal do mandato. biografia_camara quando a data foi lida na biografia oficial do deputado na Camara, na posse ou na primeira data da clausula de efetivacao, em ocupacao federal que a fonte da ocupacao nao datava e que a regra geral de vinculo da cadeira vaga no inicio da legislatura ligou. sinal_efetivacao_api nas mesmas condicoes, quando a biografia nao traz a data e vale a do sinal de efetivacao que a API da Camara registra (exercicio_camara ou ocupantes_legislativo_federal); e um valor do vocabulario que pode nao ocorrer em uma versao. curadoria_ocu07 na unica data corrigida a mao (Walter Pinheiro, posse de 1999-02-01, docs/EXCECOES_CONHECIDAS.csv). Vazio quando data_inicio esta vazio | 96.3% |
+| `origem_data_fim` | texto | De onde veio data_fim, em quatro valores; tem valor se, e somente se, data_fim tem valor. fonte quando a data e a que a fonte da ocupacao registra (coluna fonte), inclusive quando reduzida ao fim do proprio mandato (OCU-02). O caminho em que a regra geral atribui ao ultimo episodio da pessoa na legislatura a saida definitiva de mandatos.csv ou da API da Camara tambem grava fonte, esta definido no codigo e nao ocorre nesta versao, de modo que nenhuma data de fim vem da regra geral por esse caminho. biografia_camara quando a saida definitiva, atribuida da mesma forma, foi lida na biografia oficial do deputado na Camara. convencao_fim_legislatura quando nenhuma saida definitiva vale para o ultimo episodio da pessoa e o fim e o da legislatura (a eleicao de 2022 segue sem data de fim). curadoria_biografia_camara na unica data corrigida a mao a partir da biografia (Jose Valdevan, SE 2018, fim da primeira ocupacao em 2022-04-27, docs/EXCECOES_CONHECIDAS.csv) | 86.2% |
 | `forma_saida` | texto | Forma de saida da ocupacao, no vocabulario fechado | 94.4% |
 | `fonte_forma_saida` | texto | Fonte da forma de saida | 90.6% |
-| `vinculo_cadeira` | texto | Caminho pelo qual a cadeira foi identificada, entre eleicao, chapa_senado, cadeira_unica_da_unidade, lista_vaga_unica, lista_data ou casa_legislatura (nao identificada) | 100.0% |
+| `vinculo_cadeira` | texto | Caminho pelo qual a cadeira foi identificada, em nove valores. eleicao no titular, cuja cadeira e a da propria eleicao. chapa_senado no suplente de senador, que a chapa liga ao titular. cadeira_unica_da_unidade quando a unidade tem uma so cadeira do cargo (vice e interino do Executivo). fonte_da_casa quando a cadeira e a que a tabela curada com fonte oficial da propria Casa nomeia para o ocupante federal. lista_vaga_unica quando a lista partidaria tem uma so cadeira que vagou. lista_data_estrita quando a cadeira e a da lista que vagou mais perto da entrada do convocado, com a vacancia ate 365 dias antes da entrada ou ate 30 dias depois dela. lista_vaga_inicial quando a cadeira de deputado federal estava vaga desde o inicio da legislatura (titular que nao tomou posse, que saiu antes de comecar ou que tomou posse mais de 60 dias depois do inicio) e o ocupante e o suplente da lista cuja efetivacao cai de 31 dias antes a 31 dias depois de mandato_inicio, com ligacao unica dos dois lados. lista_sucessao_vaga quando a cadeira de deputado federal ficou vaga pela saida definitiva do ocupante anterior dessa cadeira (a regra abre essa vaga depois de firmar a anterior) e a efetivacao do suplente da lista cai de 3 dias antes a 31 dias depois da saida. casa_legislatura quando nenhum caminho identifica a cadeira, caso em que id_mandato fica vazio e a ocupacao conta como ocupante da Casa | 100.0% |
 | `fonte` | texto | Fonte do registro de ocupacao | 100.0% |
 | `url` | texto | URL de origem | 32.4% |
 | `ordem_suplencia` | inteiro | Posicao do ocupante na fila da lista, quando suplente | 8.3% |
@@ -353,7 +356,7 @@ A chave declarada é `id_suplencia`.
 | `pessoa_tambem_eleita` | logico | A pessoa foi eleita em alguma eleicao do banco (logico) | 100.0% |
 | `id_mandato_cadeira` | texto | Cadeira que a suplencia alcanca, quando a chapa a nomeia | 2.1% |
 
-## pessoas_suplentes.csv — pessoas que figuram como suplentes e nunca foram eleitas (19.095 linhas)
+## pessoas_suplentes.csv — pessoas que figuram como suplentes e nunca foram eleitas, 304 delas com ocupacao de cadeira em ocupacoes.csv (19.095 linhas)
 
 A chave declarada é `id_pessoa`.
 
@@ -455,7 +458,7 @@ A chave declarada é `id_mandato_ordinario_afetado`.
 | `vencedor_e_o_ocupante_ordinario` | logico | O vencedor e a mesma pessoa do mandato afetado (logico) | 66.7% |
 | `fonte` | texto | Arquivos do TSE usados | 100.0% |
 
-## pessoas_flags_dedup.csv — marcas da auditoria de homonimos sobre a deduplicacao de pessoas (2.155 linhas)
+## pessoas_flags_dedup.csv — marcas da auditoria de homonimos sobre a deduplicacao de pessoas (2.424 linhas)
 
 A chave declarada é `id_pessoa`.
 
