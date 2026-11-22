@@ -1,5 +1,5 @@
 arquivo,variavel,preench_recontado,tipo_recontado,tipo_doc,preench_doc
-eleicoes_suplementares.csv,votos_vencedor,60.0%,inteiro,inteiro,60.0%
+eleicoes_suplementares.csv,vencedor_cpf,60.0%,inteiro,inteiro,60.0%
 exercicio_camara.csv,condicao,100.0%,texto,texto,100.0%
 exercicio_senado.csv,titular_codigo,36.8%,inteiro,inteiro,36.8%
 interregnos_legislativo_federal.csv,url_fonte,100.0%,texto,texto,100.0%
@@ -7,5 +7,5 @@ mandatos.csv,reeleicao_declarada,43.3%,texto,texto,43.3%
 ocupacoes.csv,url,32.4%,texto,texto,32.4%
 pessoas.csv,id_pessoa,100.0%,texto,texto,100.0%
 saida_legislativo_federal.csv,afastado_no_fim,72.0%,logico,logico,72.0%
-suplentes_identidade.csv,pessoa_tambem_eleita,100.0%,logico,logico,100.0%
 suplentes_identidade.csv,sg_partido,100.0%,texto,texto,100.0%
+suplentes_identidade.csv,sg_uf,100.0%,texto,texto,100.0%

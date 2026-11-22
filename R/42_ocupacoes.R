@@ -882,11 +882,61 @@ oc[, sg_partido_ocupante := {
   fifelse(!is.na(v) & v %in% siglas, v, NA_character_)
 }]
 oc[, sg_partido_titular := toupper(trimws(sg_partido_titular))]
-oc[, partido_difere_do_titular := fifelse(
-  tipo_ocupante != "suplente" | is.na(sg_partido_ocupante) | is.na(sg_partido_titular), NA,
-  sg_partido_ocupante != sg_partido_titular)]
 reg("ocu_partido_ocupante_descartado_por_nao_ser_sigla",
     oc[tipo_ocupante != "titular" & is.na(sg_partido_ocupante), .N])
+## v1.2 (21/11/2026, decisao de Igor, regra A de docs/DECISOES_V12_21NOV.md): o partido do ocupante
+## nao titular da Camara e o do inicio da ocupacao. A API nao traz partido no evento de efetivacao,
+## e 344 das 1.674 ocupacoes nao titulares do recorte ficavam vazias. Ordem: o que a fonte ja trazia,
+## a filiacao do TSE ativa na data de inicio (ou em 1o de fevereiro do ano seguinte a eleicao, quando
+## a ocupacao nao tem data), so quando aponta um partido unico, e por ultimo a candidatura na lista
+## de suplentes do TSE. A filiacao concorda com a API em 700 dos 736 casos em que as duas existem.
+oc[, origem_partido_ocupante := fifelse(!is.na(sg_partido_ocupante), "fonte_da_ocupacao",
+                                        NA_character_)]
+cand <- unique(fread(file.path(root, "data", "lista_suplencia.csv"), colClasses = "character",
+                     na.strings = c("NA", ""))[
+  cd_cargo == "6" & !is.na(id_pessoa), .(id_pessoa, ano_eleicao, sg_uf, p_cand = sg_partido)])
+stopifnot(!anyDuplicated(cand[, .(id_pessoa, ano_eleicao, sg_uf)]))
+nt <- oc[cd_cargo == 6L & tipo_ocupante != "titular",
+         .(id_pessoa, ano_eleicao = as.character(ano_eleicao), sg_uf,
+           dref = fcoalesce(as.IDate(as.character(data_inicio)),
+                            as.IDate(paste0(as.integer(ano_eleicao) + 1L, "-02-01"))))]
+nt[, k := oc[, which(cd_cargo == 6L & tipo_ocupante != "titular")]]
+nt[cand, on = .(id_pessoa, ano_eleicao, sg_uf), p_cand := i.p_cand]
+fil <- as.data.table(read_parquet(file.path(root, "data", "filiacoes.parquet"),
+                                  col_select = c("id_pessoa", "sigla_partido", "data_filiacao",
+                                                 "data_desfiliacao", "data_cancelamento")))
+fil <- fil[id_pessoa %in% nt$id_pessoa]
+for (col in c("data_filiacao", "data_desfiliacao", "data_cancelamento"))
+  set(fil, j = col, value = as.IDate(fil[[col]]))
+pf <- fil[nt[!is.na(id_pessoa), .(k, id_pessoa, dref)], on = "id_pessoa", nomatch = NULL,
+          allow.cartesian = TRUE][
+  data_filiacao <= dref & (is.na(data_desfiliacao) | data_desfiliacao > dref) &
+    (is.na(data_cancelamento) | data_cancelamento > dref),
+  .(p = unique(toupper(trimws(sigla_partido)))), by = k][, if (.N == 1L) .(p_fil = p), by = k]
+## a filiacao do TSE grafa PCDOB; o resto do banco grava PC DO B (21/11/2026)
+pf[p_fil == "PCDOB", p_fil := "PC DO B"]
+nt[pf, on = "k", p_fil := i.p_fil]
+oc[nt$k, sg_partido_candidatura := toupper(trimws(nt$p_cand))]
+vazio <- nt$k[is.na(oc$sg_partido_ocupante[nt$k])]
+reg("ocu_camara_partido_ocupante_vazio_antes_v12", length(vazio))
+via_fil <- vazio[!is.na(nt$p_fil[match(vazio, nt$k)])]
+oc[via_fil, `:=`(sg_partido_ocupante = nt$p_fil[match(via_fil, nt$k)],
+                 origem_partido_ocupante = "filiacao_tse_na_data")]
+via_cand <- setdiff(vazio, via_fil)
+via_cand <- via_cand[!is.na(oc$sg_partido_candidatura[via_cand])]
+oc[via_cand, `:=`(sg_partido_ocupante = sg_partido_candidatura,
+                  origem_partido_ocupante = "candidatura_tse")]
+reg("ocu_camara_partido_via_filiacao_na_data", length(via_fil))
+reg("ocu_camara_partido_via_candidatura", length(via_cand))
+reg("ocu_camara_partido_ocupante_vazio_v12",
+    oc[cd_cargo == 6L & tipo_ocupante != "titular" & is.na(sg_partido_ocupante), .N])
+## A troca de legenda por dentro vale para o suplente convocado e, desde a v1.2 (decisao de Igor de
+## 21/11/2026), tambem para o suplente efetivado, que assume a cadeira em definitivo.
+oc[, partido_difere_do_titular := fifelse(
+  !tipo_ocupante %in% c("suplente", "suplente_efetivado") | is.na(sg_partido_ocupante) |
+    is.na(sg_partido_titular), NA, sg_partido_ocupante != sg_partido_titular)]
+reg("ocu_troca_de_partido_suplente_efetivado",
+    oc[tipo_ocupante == "suplente_efetivado" & partido_difere_do_titular %in% TRUE, .N])
 ## OCU-02 (24/09/2026, achado da auditoria de 24/09/2026): a Wikipedia as vezes da o fim do vice
 ## que assumiu um dia depois do proprio fim do mandato da cadeira (52 casos de vice_assumiu em
 ## GOVERNADOR). Nenhuma ocupacao pode terminar depois do fim do mandato que a origina, e por isso

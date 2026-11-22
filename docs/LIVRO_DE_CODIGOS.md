@@ -1,4 +1,4 @@
-# Livro de códigos — Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) v1.1
+# Livro de códigos — Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) v1.2
 
 O código de ausente em todos os arquivos CSV é a string `NA`, e nenhuma célula
 vazia tem significado. Os códigos de ausência do TSE (`#NE`, `#NULO`, `-1`, `-3`,
@@ -304,7 +304,7 @@ A chave declarada é `id_ocupacao`.
 | `sg_ue` | texto | Unidade eleitoral nos cargos municipais | 67.6% |
 | `nm_ue` | texto | Nome da unidade | 67.6% |
 | `unidade_posicao` | texto | Unidade em que a posicao e disputada | 100.0% |
-| `sg_partido_ocupante` | texto | Partido de quem ocupou | 91.6% |
+| `sg_partido_ocupante` | texto | Partido de quem ocupou. No ocupante da Camara que nao e o titular, quando a fonte da ocupacao nao traz a sigla, vale a filiacao do TSE ativa no inicio da ocupacao e, sem ela, o partido pelo qual a pessoa concorreu (coluna origem_partido_ocupante) | 96.4% |
 | `sg_partido_titular` | texto | Partido do titular eleito para a cadeira | 74.7% |
 | `data_inicio` | data ISO | Inicio da ocupacao | 96.3% |
 | `data_fim` | data ISO | Fim da ocupacao | 86.2% |
@@ -317,7 +317,9 @@ A chave declarada é `id_ocupacao`.
 | `url` | texto | URL de origem | 32.4% |
 | `ordem_suplencia` | inteiro | Posicao do ocupante na fila da lista, quando suplente | 8.3% |
 | `regra_pareamento_ocupacao` | texto | Regra que ligou o nome da fonte a pessoa da lista de suplencia | 8.3% |
-| `partido_difere_do_titular` | logico | A cadeira trocou de partido por dentro, sem eleicao (logico) | 4.1% |
+| `origem_partido_ocupante` | texto | De onde veio sg_partido_ocupante, em tres valores, com valor se e somente se sg_partido_ocupante tem valor. fonte_da_ocupacao quando a sigla e a que a fonte da ocupacao registra. filiacao_tse_na_data quando a fonte nao trazia a sigla e o cadastro de filiacao do TSE mostra um so partido ativo no inicio da ocupacao, ou em 1 de fevereiro do ano seguinte a eleicao quando a ocupacao nao tem data de inicio. candidatura_tse quando a filiacao nao resolve e vale o partido pelo qual a pessoa concorreu na eleicao que criou a cadeira. Os dois ultimos valores so ocorrem em ocupante nao titular de deputado federal | 96.4% |
+| `sg_partido_candidatura` | texto | Partido pelo qual o ocupante nao titular de deputado federal concorreu na eleicao que criou a cadeira (TSE). Vazio nos demais cargos e no titular | 25.2% |
+| `partido_difere_do_titular` | logico | A cadeira trocou de partido por dentro, sem eleicao (logico). Medida no suplente convocado e no suplente efetivado, quando os dois partidos sao conhecidos, e vazia nos demais | 5.0% |
 | `datas_inconsistentes` | logico | A fonte publicou fim anterior ao inicio (logico); a linha nao foi corrigida | 100.0% |
 
 ## lista_suplencia.csv — a fila de suplencia de cada lista partidaria (24.706 linhas)

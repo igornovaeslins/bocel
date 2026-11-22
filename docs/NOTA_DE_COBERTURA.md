@@ -1,4 +1,4 @@
-# Nota de cobertura — BOCEL v1.1
+# Nota de cobertura — BOCEL v1.2
 
 ## O que está completo
 
@@ -158,7 +158,7 @@ ganha na eleição, e o número de cadeiras por lugar, cargo e eleição continu
 entrada dos suplentes. Sobre ela, `ocupacoes.csv` registra 6.287 ocupações no recorte federal, das
 quais 2.034 são de quem não é o titular eleito, distribuídas por 273 cadeiras que passaram por mais
 de uma pessoa. A distinção importa porque a cadeira muda de partido sem eleição quando o
-convocado vem de outra legenda da mesma lista, o que se observa em 97 ocupações.
+convocado vem de outra legenda da mesma lista, o que se observa em 123 ocupações.
 
 A fila de suplência de deputado federal e de senador está em `lista_suplencia.csv`, com 24.706
 suplentes em 1.428 listas. A posição na fila vem da votação nominal dentro da lista, com empate
@@ -218,9 +218,12 @@ esses casos são as seguintes.
 
 A troca de partido dentro da cadeira só é medida onde ela pode ser medida. A sigla do ocupante
 entra apenas quando é sigla que existe no banco, porque o texto extraído de enciclopédia trazia
-nome de partido por extenso e frases inteiras no lugar dela, e a comparação vale somente para o
-suplente convocado, já que vice e interino ocupam por sucessão no Executivo, que é outro
-fenômeno.
+nome de partido por extenso e frases inteiras no lugar dela, e a comparação vale para o
+suplente convocado e para o suplente efetivado, já que vice e interino ocupam por sucessão no
+Executivo, que é outro fenômeno. Na Câmara, quando a fonte da ocupação não traz a sigla de quem
+não é o titular, o partido vem do cadastro de filiação do TSE no início da ocupação, em 242 ocupações, e, sem filiação que aponte um só partido, da candidatura que criou a
+cadeira, em 61. Ficam sem partido 41 ocupações, e a coluna
+`origem_partido_ocupante` registra o caminho de cada sigla. A marca de troca alcança 26 suplentes efetivados.
 
 Quem foi suplente e nunca se elegeu tem identificador de pessoa no mesmo espaço do cadastro
 principal, gravado em `pessoas_suplentes.csv`, e nenhum identificador já publicado mudou com a

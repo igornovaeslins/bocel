@@ -18,12 +18,12 @@ contact:
     given-names: "Igor Novaes"
     email: "igornovaeslins@gmail.com"
     orcid: "https://orcid.org/0000-0003-0510-8355"
-version: "v1.1"
-date-released: "2026-09-29"
+version: "v1.2"
+date-released: "2026-11-22"
 license: "CC-BY-4.0"
 repository-code: "https://github.com/igornovaeslins/bocel"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23035176"
-    description: "DOI da versao v1.1 no Zenodo"
+    value: "10.5281/zenodo.24432652"
+    description: "DOI da versao v1.2 no Zenodo"
 

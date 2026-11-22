@@ -1,7 +1,7 @@
-# Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) — v1.1
+# Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) — v1.2
 
 Ocupação de cargo eletivo no Brasil, 1998–2024, construída a partir dos dados
-abertos do Tribunal Superior Eleitoral. A versão 1.1 fecha a Presidência, a
+abertos do Tribunal Superior Eleitoral. A versão 1.2 fecha a Presidência, a
 Câmara dos Deputados, o Senado e os governos estaduais, em que todo mandato
 encerrado tem forma de saída com a fonte identificada, e traz a ocupação de
 cada cadeira com a ordem da suplência e o histórico de filiação partidária de
@@ -96,8 +96,8 @@ acompanham o pacote em lib/.
 ## Como citar
 
 > Lins, Igor Novaes. (2026). Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian
-> Elective Office Occupancy Database (BOCEL), 1998–2024 (v1.1) [Conjunto de dados].
-> Zenodo. https://doi.org/10.5281/zenodo.23035176
+> Elective Office Occupancy Database (BOCEL), 1998–2024 (v1.2) [Conjunto de dados].
+> Zenodo. https://doi.org/10.5281/zenodo.24432652
 
 ## Fontes complementares da camada de posse e saída
 
@@ -123,8 +123,20 @@ acrescenta dado pessoal além do que essas fontes divulgam.
 
 ## Versão
 
-v1.1, 29 de setembro de 2026. Correções entram como versões novas no mesmo
+v1.2, 22 de novembro de 2026. Correções entram como versões novas no mesmo
 registro do Zenodo, sob o mesmo concept DOI (https://doi.org/10.5281/zenodo.22896271).
+
+### Mudanças da v1.2 em relação à v1.1
+
+A v1.2 completa o partido de quem ocupou uma cadeira de deputado federal sem ser o titular eleito e
+não muda o recorte. Quando a fonte da ocupação não traz a sigla, `sg_partido_ocupante` passa a
+receber o partido em que o cadastro de filiação do TSE mostra a pessoa filiada no início da
+ocupação, o que preencheu 242 ocupações, e, quando a filiação não aponta um só
+partido, o partido pelo qual a pessoa concorreu na eleição que criou a cadeira, em mais 61. Seguem sem partido 41 ocupações. Duas colunas novas acompanham
+a mudança, `origem_partido_ocupante`, que registra de onde veio cada sigla, e
+`sg_partido_candidatura`. A marca `partido_difere_do_titular` passou a valer também para o
+suplente efetivado e registra troca de partido em 26 deles. Nenhuma outra
+coluna e nenhum identificador mudaram, e as demais tabelas seguem iguais às da v1.1.
 
 ### Mudanças da v1.1 em relação à v1.0
 

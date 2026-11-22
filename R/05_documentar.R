@@ -537,8 +537,12 @@ dic_aux <- list(
       ano_eleicao = "Eleicao que criou a cadeira", cd_cargo = "Codigo do cargo (TSE)", cargo = "Cargo",
       esfera = "federal, estadual ou municipal", sg_uf = "UF", sg_ue = "Unidade eleitoral nos cargos municipais",
       nm_ue = "Nome da unidade", unidade_posicao = "Unidade em que a posicao e disputada",
-      sg_partido_ocupante = "Partido de quem ocupou", sg_partido_titular = "Partido do titular eleito para a cadeira",
-      partido_difere_do_titular = "A cadeira trocou de partido por dentro, sem eleicao (logico)",
+      ## 21/11/2026 (v1.2): partido do ocupante nao titular da Camara pela regra A (docs/DECISOES_V12_21NOV.md)
+      sg_partido_ocupante = "Partido de quem ocupou. No ocupante da Camara que nao e o titular, quando a fonte da ocupacao nao traz a sigla, vale a filiacao do TSE ativa no inicio da ocupacao e, sem ela, o partido pelo qual a pessoa concorreu (coluna origem_partido_ocupante)",
+      sg_partido_titular = "Partido do titular eleito para a cadeira",
+      origem_partido_ocupante = "De onde veio sg_partido_ocupante, em tres valores, com valor se e somente se sg_partido_ocupante tem valor. fonte_da_ocupacao quando a sigla e a que a fonte da ocupacao registra. filiacao_tse_na_data quando a fonte nao trazia a sigla e o cadastro de filiacao do TSE mostra um so partido ativo no inicio da ocupacao, ou em 1 de fevereiro do ano seguinte a eleicao quando a ocupacao nao tem data de inicio. candidatura_tse quando a filiacao nao resolve e vale o partido pelo qual a pessoa concorreu na eleicao que criou a cadeira. Os dois ultimos valores so ocorrem em ocupante nao titular de deputado federal",
+      sg_partido_candidatura = "Partido pelo qual o ocupante nao titular de deputado federal concorreu na eleicao que criou a cadeira (TSE). Vazio nos demais cargos e no titular",
+      partido_difere_do_titular = "A cadeira trocou de partido por dentro, sem eleicao (logico). Medida no suplente convocado e no suplente efetivado, quando os dois partidos sao conhecidos, e vazia nos demais",
       data_inicio = "Inicio da ocupacao", data_fim = "Fim da ocupacao",
       ## 28/09/2026 (v1.1): origem_data_inicio passa a ter cinco valores documentados um a um, e origem_data_fim
       ## entra como coluna nova; vinculo_cadeira ganha lista_vaga_inicial e lista_sucessao_vaga (regra geral de R/42, secao 4b)
@@ -1157,7 +1161,8 @@ EXCECOES_CONHECIDAS.csv%s
 if (file.exists("data_v1/ocupacoes.csv") && file.exists("data_v1/lista_suplencia.csv")) {
   ocu <- fread("data_v1/ocupacoes.csv", select = c("id_ocupacao","id_mandato","id_pessoa","tipo_ocupante","cd_cargo",
                                                 "vinculo_cadeira","partido_difere_do_titular","data_inicio","data_fim",
-                                                "origem_data_inicio","origem_data_fim"),
+                                                "origem_data_inicio","origem_data_fim",
+                                                "origem_partido_ocupante"),
               colClasses = "character", na.strings = "NA")
   lsu <- fread("data_v1/lista_suplencia.csv", select = c("id_lista","ordem_suplencia",
                                                       "ordem_suplencia_tse","fonte_ordem"))
@@ -1184,6 +1189,13 @@ if (file.exists("data_v1/ocupacoes.csv") && file.exists("data_v1/lista_suplencia
   reg05("doc_ocu_vinculo_lista_vaga_inicial_recorte", vinc_regra_ini)
   reg05("doc_ocu_vinculo_lista_sucessao_vaga_recorte", vinc_regra_suc)
   reg05("doc_ocu_vinculo_fonte_da_casa_recorte", vinc_fonte_casa)
+  ## 21/11/2026 (v1.2): partido do ocupante nao titular da Camara e marca no suplente efetivado
+  dep_nt <- ocu[cd_cargo == "6" & tipo_ocupante != "titular"]
+  part_fil <- reg05("doc_ocu_partido_via_filiacao_recorte", dep_nt[origem_partido_ocupante %in% "filiacao_tse_na_data", .N])
+  part_cand <- reg05("doc_ocu_partido_via_candidatura_recorte", dep_nt[origem_partido_ocupante %in% "candidatura_tse", .N])
+  part_vazio <- reg05("doc_ocu_partido_vazio_recorte", dep_nt[is.na(origem_partido_ocupante), .N])
+  troca_efet <- reg05("doc_ocu_troca_partido_efetivado_recorte",
+                      ocu[tipo_ocupante == "suplente_efetivado" & partido_difere_do_titular %in% "TRUE", .N])
   reg05("doc_ocu_vinculo_casa_legislatura_recorte", vinc_casa)
   ## OCU-05: sobreposicao titular/suplente pela ordem de entrada na mesma cadeira, e multiplicacao
   ## da ocupacao por ano quando se junta ocupacoes.csv a posicoes_ano.csv por id_mandato
@@ -1432,9 +1444,14 @@ paste0(
 paste0(
 "A troca de partido dentro da cadeira só é medida onde ela pode ser medida. A sigla do ocupante
 entra apenas quando é sigla que existe no banco, porque o texto extraído de enciclopédia trazia
-nome de partido por extenso e frases inteiras no lugar dela, e a comparação vale somente para o
-suplente convocado, já que vice e interino ocupam por sucessão no Executivo, que é outro
-fenômeno."),
+nome de partido por extenso e frases inteiras no lugar dela, e a comparação vale para o
+suplente convocado e para o suplente efetivado, já que vice e interino ocupam por sucessão no
+Executivo, que é outro fenômeno. Na Câmara, quando a fonte da ocupação não traz a sigla de quem
+não é o titular, o partido vem do cadastro de filiação do TSE no início da ocupação, em ",
+fm(part_fil), " ocupações, e, sem filiação que aponte um só partido, da candidatura que criou a
+cadeira, em ", fm(part_cand), ". Ficam sem partido ", fm(part_vazio), " ocupações, e a coluna
+`origem_partido_ocupante` registra o caminho de cada sigla. A marca de troca alcança ",
+fm(troca_efet), " suplentes efetivados."),
 ## paragrafo 8: pessoas_suplentes
 paste0(
 "Quem foi suplente e nunca se elegeu tem identificador de pessoa no mesmo espaço do cadastro
@@ -1638,9 +1655,22 @@ concept_doi_frase <- if (!is.null(concept_doi_txt)) sprintf(" (https://doi.org/%
 # 29/09/2026 (v1.1): o texto da secao de mudancas sai de um paste0, fora do sprintf do restante, para carregar os
 # numeros da camada de ocupacao (todos calculados acima, no bloco da nota de cobertura, ou lidos do registro).
 # O titulo da secao precisa conter "mudan" e a versao, porque zenodo/publicar_github.sh extrai dele as notas da release
-stopifnot(exists("n_pares_ns"), exists("n_sub"), exists("n_doc"), exists("n_fim_leg"), exists("n_cad_errada"))
+stopifnot(exists("n_pares_ns"), exists("n_sub"), exists("n_doc"), exists("n_fim_leg"), exists("n_cad_errada"),
+          exists("part_fil"), exists("part_cand"), exists("part_vazio"), exists("troca_efet"))
+## 21/11/2026 (v1.2): a secao da v1.2 vem primeiro e a da v1.1 fica com o titulo e o texto fixos
+rd_mud12 <- paste0(
+"A v1.2 completa o partido de quem ocupou uma cadeira de deputado federal sem ser o titular eleito e
+não muda o recorte. Quando a fonte da ocupação não traz a sigla, `sg_partido_ocupante` passa a
+receber o partido em que o cadastro de filiação do TSE mostra a pessoa filiada no início da
+ocupação, o que preencheu ", fm(part_fil), " ocupações, e, quando a filiação não aponta um só
+partido, o partido pelo qual a pessoa concorreu na eleição que criou a cadeira, em mais ",
+fm(part_cand), ". Seguem sem partido ", fm(part_vazio), " ocupações. Duas colunas novas acompanham
+a mudança, `origem_partido_ocupante`, que registra de onde veio cada sigla, e
+`sg_partido_candidatura`. A marca `partido_difere_do_titular` passou a valer também para o
+suplente efetivado e registra troca de partido em ", fm(troca_efet), " deles. Nenhuma outra
+coluna e nenhum identificador mudaram, e as demais tabelas seguem iguais às da v1.1.")
 rd_mud <- paste0(
-"A {{VERSAO_TAG}} corrige o recorte da v1.0 sem ampliá-lo. `pessoas.csv` passou a incluir, além dos eleitos no recorte, as
+"A v1.1 corrige o recorte da v1.0 sem ampliá-lo. `pessoas.csv` passou a incluir, além dos eleitos no recorte, as
 pessoas que só ocuparam uma cadeira nele sem terem sido eleitas ali, com a condição de cada pessoa marcada na coluna
 `condicao_no_recorte`, e o identificador de todo ocupante de `ocupacoes.csv` resolve em `pessoas.csv` ou em
 `pessoas_suplentes.csv`, que guarda os ", fm(rn("v1_ocupantes_so_em_pessoas_suplentes")), " ocupantes nunca eleitos em nenhuma esfera do banco. `posicoes_ano.csv` ganhou a
@@ -1697,7 +1727,11 @@ acrescenta dado pessoal além do que essas fontes divulgam.
 {{VERSAO_TAG}}, {{DATA_LANCAMENTO_EXTENSO}}. Correções entram como versões novas no mesmo
 registro do Zenodo, sob o mesmo concept DOI%s.
 
-### Mudanças da {{VERSAO_TAG}} em relação à v1.0
+### Mudanças da {{VERSAO_TAG}} em relação à v1.1
+
+{{MUDANCAS_TEXTO_12}}
+
+### Mudanças da v1.1 em relação à v1.0
 
 {{MUDANCAS_TEXTO}}
 
@@ -1706,6 +1740,7 @@ registro do Zenodo, sob o mesmo concept DOI%s.
 Igor Novaes Lins, igor.lins@cebrap.org.br (institucional) e igornovaeslins@gmail.com. ORCID 0000-0003-0510-8355
 ', doi_linha, concept_doi_frase)
 rd <- paste0(rd_cab, rd_tab, rd_cauda)
+rd <- gsub("{{MUDANCAS_TEXTO_12}}", rd_mud12, rd, fixed = TRUE)
 rd <- gsub("{{MUDANCAS_TEXTO}}", rd_mud, rd, fixed = TRUE)
 rd <- gsub("{{VERSAO_TAG}}", VERSAO_TAG, rd, fixed = TRUE)
 rd <- gsub("{{VERSAO_ATUAL}}", VERSAO_ATUAL, rd, fixed = TRUE)

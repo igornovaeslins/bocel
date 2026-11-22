@@ -142,8 +142,10 @@ if (nrow(todos_com_cadeira)) {
 }
 ok("ordem de ocupacao so existe onde a cadeira foi identificada",
    stopifnot(oc[is.na(id_mandato), all(is.na(ordem_ocupacao))]))
-ok("troca de partido so se mede em suplente convocado",
-   stopifnot(oc[partido_difere_do_titular %in% TRUE, all(tipo_ocupante == "suplente")]))
+# 21/11/2026, v1.2: Igor estendeu a marca ao suplente efetivado (docs/DECISOES_V12_21NOV.md, decisao 2)
+ok("troca de partido so se mede em suplente convocado ou efetivado",
+   stopifnot(oc[partido_difere_do_titular %in% TRUE,
+                all(tipo_ocupante %in% c("suplente", "suplente_efetivado"))]))
 ok("ocupacao do titular sempre ligada a cadeira pela eleicao",
    stopifnot(oc[tipo_ocupante == "titular", all(vinculo_cadeira == "eleicao")]))
 
@@ -310,6 +312,41 @@ ok("as seis linhas de EXCECOES_CONHECIDAS das sobreposicoes (pares 6, 12, 13, 14
      } })
 reg("voc_excecoes_linhas_de_sobreposicao_conferidas", nrow(exc_par))
 
+## ------------------------------------------------------- partido do ocupante na Camara (v1.2, 21/11/2026)
+# Regra A de docs/DECISOES_V12_21NOV.md: fonte da ocupacao, depois filiacao do TSE na data,
+# depois partido da candidatura. Nada acima foi retirado; o que segue so acrescenta.
+ORIG_PART <- c("fonte_da_ocupacao", "filiacao_tse_na_data", "candidatura_tse")
+nt6 <- oc$cd_cargo == 6L & oc$tipo_ocupante != "titular"
+ok("origem_partido_ocupante em vocabulario fechado, preenchida se e somente se ha partido",
+   { in_set(oc$origem_partido_ocupante, ORIG_PART, permitir_na = TRUE)
+     stopifnot(identical(is.na(oc$origem_partido_ocupante), is.na(oc$sg_partido_ocupante))) })
+ok("partido preenchido pelo TSE so em ocupante nao titular da Camara",
+   stopifnot(all(nt6[oc$origem_partido_ocupante %in% ORIG_PART[2:3]]),
+             all(is.na(oc$sg_partido_candidatura[!nt6]))))
+ok("origem candidatura_tse repete o partido da candidatura",
+   stopifnot(oc[origem_partido_ocupante %in% "candidatura_tse",
+                all(sg_partido_ocupante == sg_partido_candidatura)]))
+# refaz a filiacao por fora do R/42: o partido gravado tem de estar ativo na data de referencia
+fv <- oc[origem_partido_ocupante %in% "filiacao_tse_na_data",
+         .(id_ocupacao, id_pessoa, sg_partido_ocupante,
+           dref = fcoalesce(as.IDate(data_inicio), as.IDate(sprintf("%d-02-01", ano_eleicao + 1L))))]
+fl <- as.data.table(arrow::read_parquet("data/filiacoes.parquet",
+        col_select = c("id_pessoa", "sigla_partido", "data_filiacao", "data_desfiliacao", "data_cancelamento")))
+fl <- merge(fl[id_pessoa %in% fv$id_pessoa], fv, by = "id_pessoa", allow.cartesian = TRUE)
+fl[, ativa := as.IDate(data_filiacao) <= dref &
+     (is.na(data_desfiliacao) | as.IDate(data_desfiliacao) > dref) &
+     (is.na(data_cancelamento) | as.IDate(data_cancelamento) > dref)]
+fl[, sig := sub("^PCDOB$", "PC DO B", toupper(trimws(sigla_partido)))]
+ok("partido vindo da filiacao era o unico ativo na data de referencia",
+   { a <- fl[ativa == TRUE, .(n = uniqueN(sig), sig = sig[1]), by = .(id_ocupacao, sg_partido_ocupante)]
+     stopifnot(nrow(a) == nrow(fv), all(a$n == 1L), all(a$sig == a$sg_partido_ocupante)) })
+ok("nenhuma sigla PCDOB sobra no banco", stopifnot(oc[sg_partido_ocupante %in% "PCDOB", .N] == 0L))
+reg("voc_camara_partido_via_filiacao_na_data", oc[origem_partido_ocupante %in% "filiacao_tse_na_data", .N])
+reg("voc_camara_partido_via_candidatura", oc[origem_partido_ocupante %in% "candidatura_tse", .N])
+reg("voc_camara_partido_ocupante_vazio", oc[nt6 & is.na(sg_partido_ocupante), .N])
+reg("voc_troca_de_partido_suplente_efetivado",
+    oc[tipo_ocupante == "suplente_efetivado" & partido_difere_do_titular %in% TRUE, .N])
+
 ## ------------------------------------------------------- universo comparavel
 mm <- fread("data/mandatos.csv", select = c("id_mandato","esfera","sg_uf","sg_ue","cd_cargo",
                                             "ano_eleicao","forma_saida","universo_comparavel","chave_tse"))
@@ -346,7 +383,9 @@ fc <- c("veracidade do registro de exercicio publicado por cada casa legislativa
         "duas ligacoes de cadeira feitas pela regra sem gabarito independente (OC00489947 e OC00491741, R/42 secao 4b), cuja reproducao pelos casos de calibracao nao as valida onde a regra decidiu sozinha",
         paste0("mesma pessoa em duas ocupacoes sobrepostas na mesma cadeira fora da esfera federal, com ",
                mp[dias > 0L & esfera.a != "federal", .N], " pares em ", mp[dias > 0L & esfera.a != "federal", uniqueN(id_mandato)],
-               " cadeira(s) vindos da fonte e sem correcao aqui"))
+               " cadeira(s) vindos da fonte e sem correcao aqui"),
+        # 21/11/2026, v1.2
+        "partido do suplente da Camara tirado da filiacao do TSE, que registra a ficha partidaria e nao a bancada em que a pessoa exerceu; filiacao com dois partidos ativos na mesma data cai para o partido da candidatura sem decidir qual vale")
 gravar_relatorio_verificacao("ocupacoes e suplencia (R/40, R/41, R/42)", script,
                              passou = passou, falhou = falhas, fora_de_cobertura = fc)
 cat("\nverifica_ocupacoes: PASSOU:", pass, "| FALHOU:", fail, "\n")
