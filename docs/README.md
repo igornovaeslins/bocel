@@ -1,6 +1,6 @@
 # Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) — v1.2
 
-Ocupação de cargo eletivo no Brasil, 1998–2024, construída a partir dos dados
+Ocupação de cargo eletivo no Brasil, 1998–2026, construída a partir dos dados
 abertos do Tribunal Superior Eleitoral. A versão 1.2 fecha a Presidência, a
 Câmara dos Deputados, o Senado e os governos estaduais, em que todo mandato
 encerrado tem forma de saída com a fonte identificada, e traz a ocupação de
@@ -96,7 +96,7 @@ acompanham o pacote em lib/.
 ## Como citar
 
 > Lins, Igor Novaes. (2026). Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian
-> Elective Office Occupancy Database (BOCEL), 1998–2024 (v1.2) [Conjunto de dados].
+> Elective Office Occupancy Database (BOCEL), 1998–2026 (v1.2) [Conjunto de dados].
 > Zenodo. https://doi.org/10.5281/zenodo.24432652
 
 ## Fontes complementares da camada de posse e saída

@@ -66,7 +66,7 @@ Os dados do projeto derivam de fontes públicas de transparência ativa (TSE) e 
 
 ## Súmula curricular
 
-Lins, Igor Novaes. Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian Elective Office Occupancy Database (BOCEL), 1998–2024. Versão {{VERSAO_ATUAL}}. Conjunto de dados. Zenodo, 2026. DOI %s.
+Lins, Igor Novaes. Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian Elective Office Occupancy Database (BOCEL), 1998–2026. Versão {{VERSAO_ATUAL}}. Conjunto de dados. Zenodo, 2026. DOI %s.
 ', doi, doi, n_pess, n_mand, fil_frase, saida_frase, n_pos, n_pess, n_mand, "", doi, doi)
 # 12/09/2026: o Auxilio 2024/19449-2 nao financiou o banco, e a secao 6 deixou de dizer que o
 # deposito o registra como financiador; a referencia da sumula segue o titulo do registro no Zenodo

@@ -1542,7 +1542,7 @@ registrar_numero("doc_doi_da_versao_corrente_no_readme", as.integer(!is.null(doi
 # as 18 linhas do nivel de ocupacao e do interregno; o README e montado em tres pedacos.
 rd_cab <- sprintf('# Banco de Ocupação de Cargos Eletivos no Brasil (BOCEL) — {{VERSAO_TAG}}
 
-Ocupação de cargo eletivo no Brasil, 1998–2024, construída a partir dos dados
+Ocupação de cargo eletivo no Brasil, 1998–2026, construída a partir dos dados
 abertos do Tribunal Superior Eleitoral. A versão {{VERSAO_ATUAL}} fecha a Presidência, a
 Câmara dos Deputados, o Senado e os governos estaduais, em que todo mandato
 encerrado tem forma de saída com a fonte identificada, e traz a ocupação de
@@ -1697,7 +1697,7 @@ rd_cauda <- sprintf('
 ## Como citar
 
 > Lins, Igor Novaes. (2026). Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian
-> Elective Office Occupancy Database (BOCEL), 1998–2024 ({{VERSAO_TAG}}) [Conjunto de dados].
+> Elective Office Occupancy Database (BOCEL), 1998–2026 ({{VERSAO_TAG}}) [Conjunto de dados].
 %s
 
 ## Fontes complementares da camada de posse e saída
@@ -1758,7 +1758,7 @@ identifiers:
 cff <- sprintf('cff-version: 1.2.0
 message: "Ao usar este banco, cite-o conforme os metadados abaixo."
 type: dataset
-title: "Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian Elective Office Occupancy Database (BOCEL), 1998–2024"
+title: "Banco de Ocupação de Cargos Eletivos no Brasil / Brazilian Elective Office Occupancy Database (BOCEL), 1998–2026"
 authors:
   - family-names: "Lins"
     given-names: "Igor Novaes"
